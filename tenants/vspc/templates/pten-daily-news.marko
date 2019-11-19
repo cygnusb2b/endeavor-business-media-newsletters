@@ -5,8 +5,11 @@ $ const { newsletter, date } = data;
   description=newsletter.description
   date=date
 >
-  <@body style="margin: 0px !important;">
-    <h1>${newsletter.name}</h1>
-    <h2>${date.format("MMM Do, YYYY")}</h2>
+  <@head>
+    <common-endeavor-styles />
+  </@head>
+  <@body style="margin: 0px !important;" class="body">
+    <h3>${newsletter.name}</h3>
+    <p>${date.format("MMM Do, YYYY")}</p>
   </@body>
 </marko-newsletter-root>

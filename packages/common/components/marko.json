@@ -1,0 +1,5 @@
+{
+  "<common-endeavor-styles>": {
+    "template": "./endeavor-styles.marko"
+  }
+}
