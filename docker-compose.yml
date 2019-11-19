@@ -23,7 +23,7 @@ x-env-defaults: &env
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
 
 x-env-gemenon: &env-gemenon
-  GRAPHQL_URI: ${GRAPHQL_URI-https://gemenon.graphql-staging.base-cms.io}
+  GRAPHQL_URI: ${GRAPHQL_URI-https://gemenon.graphql.base-cms.io}
 
 services:
   terminal:
