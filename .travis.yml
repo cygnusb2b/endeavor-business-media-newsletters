@@ -1,0 +1,12 @@
+language: node_js
+node_js: "10.15"
+cache: yarn
+
+stages:
+  - name: test
+
+jobs:
+  include:
+    - stage: test
+      env:
+        - NODE_ENV=test
