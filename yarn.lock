@@ -90,10 +90,10 @@
     "@base-cms/utils" "^1.0.0-rc.1"
     moment "^2.24.0"
 
-"@base-cms/marko-newsletters@^1.0.0-rc.5":
-  version "1.0.0-rc.8"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters/-/marko-newsletters-1.0.0-rc.8.tgz#4fccda07608a80098e3f3cf738289cc7fa5d2ead"
-  integrity sha512-P4bDXsvCD8ipx60taFbJOF/i+6sy/OsNIkzAefXlNzf6KH7xSyCkVBIoVkAnpAcubs96iYiNBn5kZAfvTPMukQ==
+"@base-cms/marko-newsletters@^1.0.0-rc.9":
+  version "1.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters/-/marko-newsletters-1.0.0-rc.9.tgz#41deb492bc2575dae91bda0d295afd646a599714"
+  integrity sha512-+M2YfKDJSsvpLkdm7l119RkYhhNDhi5ytDeik0ykt/WmnK0HJdlI/CWd24fyt9ZjdsaXaGDndLAjANbYLeZ7+A==
   dependencies:
     "@base-cms/express-apollo" "^1.0.0-rc.5"
     "@base-cms/image" "^1.0.0-rc.1"
