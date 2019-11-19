@@ -1,0 +1,12 @@
+$ const { newsletter, date } = data;
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@body style="margin: 0px !important;">
+    <h1>${newsletter.name}</h1>
+    <h2>${date.format("MMM Do, YYYY")}</h2>
+  </@body>
+</marko-newsletter-root>
