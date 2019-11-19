@@ -25,6 +25,9 @@ x-env-defaults: &env
 x-env-gemenon: &env-gemenon
   GRAPHQL_URI: ${GRAPHQL_URI-https://gemenon.graphql.base-cms.io}
 
+x-env-picon: &env-picon
+  GRAPHQL_URI: ${GRAPHQL_URI-https://picon.graphql.base-cms.io}
+
 services:
   terminal:
     <<: *node
@@ -54,6 +57,21 @@ services:
     ports:
       - "19400:80"
       - "29400:29400"
+
+  vspc:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/vspc
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19401
+      LIVERELOAD_PORT: 29401
+      TENANT_KEY: cygnus_vspc
+    ports:
+      - "19401:80"
+      - "29401:29401"
 
 volumes:
   yarn-cache: {}
