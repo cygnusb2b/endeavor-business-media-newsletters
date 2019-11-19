@@ -22,8 +22,8 @@ x-env-defaults: &env
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
 
-x-env-caprica: &env-caprica
-  GRAPHQL_URI: ${GRAPHQL_URI-https://caprica.graphql-staging.base-cms.io}
+x-env-gemenon: &env-gemenon
+  GRAPHQL_URI: ${GRAPHQL_URI-https://gemenon.graphql-staging.base-cms.io}
 
 services:
   terminal:
@@ -40,35 +40,20 @@ services:
     environment:
       <<: *env
 
-  ien:
+  tdworld:
     <<: *node
     <<: *newsletter-cmd
-    working_dir: /root/tenants/ien
+    working_dir: /root/tenants/tdworld
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-gemenon
       PORT: 80
-      EXPOSED_PORT: 21090
-      LIVERELOAD_PORT: 31090
-      TENANT_KEY: indm_ien
+      EXPOSED_PORT: 19400
+      LIVERELOAD_PORT: 29400
+      TENANT_KEY: ebm_tdworld
     ports:
-      - "21090:80"
-      - "31090:31090"
-
-  all:
-    <<: *node
-    <<: *newsletter-cmd
-    working_dir: /root/tenants/all
-    environment:
-      <<: *env
-      <<: *env-caprica
-      PORT: 80
-      EXPOSED_PORT: 21091
-      LIVERELOAD_PORT: 31091
-      TENANT_KEY: indm_all
-    ports:
-      - "21091:80"
-      - "31091:31091"
+      - "19400:80"
+      - "29400:29400"
 
 volumes:
   yarn-cache: {}
