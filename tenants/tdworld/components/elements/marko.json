@@ -1,0 +1,8 @@
+{
+  "<tenant-banner-element>": {
+    "template": "./banner.marko",
+    "@name": "string",
+    "@date": "date",
+    "@ad-unit": "object"
+  }
+}

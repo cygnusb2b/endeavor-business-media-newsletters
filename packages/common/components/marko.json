@@ -1,5 +1,16 @@
 {
   "<common-endeavor-styles>": {
     "template": "./endeavor-styles.marko"
+  },
+  "<common-table>": {
+    "template": "./core-table.marko",
+    "@border": "number",
+    "@width": "string",
+    "@class": "string",
+    "@spacing": "number",
+    "@padding": "number",
+    "@align": "string",
+    "@style": "string",
+    "@attrs": "object"
   }
 }
