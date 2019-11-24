@@ -12,6 +12,7 @@
       "@separator-type": "string",
       "@clear-floats": "boolean"
     },
+    "@date": "string",
     "@name": "string",
     "@href": "string",
     "@image-src": "string",

@@ -10,35 +10,8 @@ $ const getReadMoreText = (node) => {
 
 $ const { website } = out.global;
 $ const { newsletter, date } = data;
-$ const primaryColor = "#00B39E";
 $ const blackBarText = "text-decoration: none !important; font-size: 10px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-weight: regular;"
 $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b398; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px;";
-$ const contentLinkStyle = {
-  "text-decoration": "none",
-   "text-align": "left",
-  "text-decoration": "none !important",
-  "font-size": "14px",
-  "line-height": "24px",
-  "font-family": "Arial, Helvetica, sans-serif",
-  "color": primaryColor,
-  "font-weight": "bold"
-};
-$ const contentReadMoreLinkStyle = {
-  "text-decoration": "none",
-   "text-align": "left",
-  "text-decoration": "none !important",
-  "font-size": "12px",
-  "font-family": "Arial, Helvetica, sans-serif",
-  "color": "#407f7f",
-};
-$ const teaserStyle = {
-  "font-size": "12px",
-  "line-height": "146%",
-  "margin": 0,
-  "padding": 0,
-  color: "#000000",
-  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
-};
 
 <marko-newsletter-root
   title=newsletter.name
@@ -60,27 +33,9 @@ $ const teaserStyle = {
             href=website.get("origin")
             image-src="/files/base/ebm/tdworld/image/2019/11/newVMIHeader.5dd592df02443.png"
             bg-color="#ffffff"
+            date=date
           />
         </td>
-      </tr>
-      <tr>
-        <td>
-          <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td align="left">
-                <div style=`text-transform: uppercase; font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #6b6b6b; font-weight: 700; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;`>
-                  ${date.format("MMMM Do, YYYY")}
-                </div>
-              </td>
-            </tr>
-          </common-table>
-        </td>
-      </tr>
-      <tr>
-        <td><hr></td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
       </tr>
     </common-table>
 
@@ -109,26 +64,7 @@ $ const teaserStyle = {
               </tr>
             </common-table>
             <for|node| of=nodes>
-              <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                <marko-newsletter-imgix
-                  src=image.src
-                  alt=image.alt
-                  options={ w: 640 }
-                  class="main"
-                  attrs={ border: 0, width: 640 }
-                >
-                  <@link href=node.siteContext.url target="_blank" />
-                </marko-newsletter-imgix>
-              </marko-core-obj-value>
-
-              <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
-                <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-              </marko-core-obj-text>
-              <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
-              <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-              <marko-core-text value=getReadMoreText(node)>
-                <@link href=node.siteContext.url target="_blank" attrs={ style: contentReadMoreLinkStyle } />
-              </marko-core-text>
+              <tenant-simple-card-block table-width=640 img-width=640 node=node />
             </for>
           </marko-web-query>
         </td>
@@ -176,65 +112,10 @@ $ const teaserStyle = {
                   <for|node, index| of=nodes>
                     $ const alignment = (index === 0 || true === index % 2) ? "right" : "left";
                     <if(node.type === 'promotion')>
-                      <common-table width="300" style="border-collapse:collapse;" align=alignment class=`${alignment}` padding=0 spacing=0>
-                        <tr>
-                          <td>
-                            <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
-                              Advertisment
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                              <marko-newsletter-imgix
-                                src=image.src
-                                alt=image.alt
-                                options={ w: 300 }
-                                class="main"
-                                attrs={ border: 0, width: 300 }
-                              >
-                                <@link href=node.siteContext.url target="_blank" />
-                              </marko-newsletter-imgix>
-                            </marko-core-obj-value>
-                            <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
+                      <tenant-promotion-block node=node alingment=alignment />
                     </if>
                     <else>
-                      <common-table width="300" style="border-collapse:collapse;" align=alignment class=`${alignment}` padding=0 spacing=0>
-                        <tr>
-                          <td>
-                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                              <marko-newsletter-imgix
-                                src=image.src
-                                alt=image.alt
-                                options={ w: 300 }
-                                class="main"
-                                attrs={ border: 0, width: 300 }
-                              >
-                                <@link href=node.siteContext.url target="_blank" />
-                              </marko-newsletter-imgix>
-                            </marko-core-obj-value>
-
-                            <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
-                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                            </marko-core-obj-text>
-                            <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
-                            <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-                            <marko-core-text value=getReadMoreText(node)>
-                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentReadMoreLinkStyle } />
-                            </marko-core-text>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
+                      <tenant-simple-card-block node=node alingment=alignment />
                     </else>
                     <if(index % 2 && index !== nodes.length - 1)>
                       <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
@@ -266,7 +147,7 @@ $ const teaserStyle = {
           <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
             <tr>
               <td style=`${titleStyle}`>
-                From the Archives
+                Announcments
               </td>
             </tr>
             <tr>
@@ -293,65 +174,10 @@ $ const teaserStyle = {
                   <for|node, index| of=nodes>
                     $ const alignment = (index === 0 || true === index % 2) ? "right" : "left";
                     <if(node.type === 'promotion')>
-                      <common-table width="300" style="border-collapse:collapse;" align=alignment class=`${alignment}` padding=0 spacing=0>
-                        <tr>
-                          <td>
-                            <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
-                              Advertisment
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                              <marko-newsletter-imgix
-                                src=image.src
-                                alt=image.alt
-                                options={ w: 300 }
-                                class="main"
-                                attrs={ border: 0, width: 300 }
-                              >
-                                <@link href=node.siteContext.url target="_blank" />
-                              </marko-newsletter-imgix>
-                            </marko-core-obj-value>
-                            <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
+                      <tenant-promotion-block node=node alingment=alignment />
                     </if>
                     <else>
-                      <common-table width="300" style="border-collapse:collapse;" align=alignment class=`${alignment}` padding=0 spacing=0>
-                        <tr>
-                          <td>
-                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                              <marko-newsletter-imgix
-                                src=image.src
-                                alt=image.alt
-                                options={ w: 300 }
-                                class="main"
-                                attrs={ border: 0, width: 300 }
-                              >
-                                <@link href=node.siteContext.url target="_blank" />
-                              </marko-newsletter-imgix>
-                            </marko-core-obj-value>
-
-                            <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
-                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                            </marko-core-obj-text>
-                            <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
-                            <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-                            <marko-core-text value=getReadMoreText(node)>
-                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentReadMoreLinkStyle } />
-                            </marko-core-text>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
+                      <tenant-simple-card-block node=node alingment=alignment />
                     </else>
                     <if(index % 2 && index !== nodes.length - 1)>
                       <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
@@ -410,65 +236,10 @@ $ const teaserStyle = {
                   <for|node, index| of=nodes>
                     $ const alignment = (index === 0 || true === index % 2) ? "right" : "left";
                     <if(node.type === 'promotion')>
-                      <common-table width="300" style="border-collapse:collapse;" align=alignment class=`${alignment}` padding=0 spacing=0>
-                        <tr>
-                          <td>
-                            <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
-                              Advertisment
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                              <marko-newsletter-imgix
-                                src=image.src
-                                alt=image.alt
-                                options={ w: 300 }
-                                class="main"
-                                attrs={ border: 0, width: 300 }
-                              >
-                                <@link href=node.siteContext.url target="_blank" />
-                              </marko-newsletter-imgix>
-                            </marko-core-obj-value>
-                            <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
+                      <tenant-promotion-block node=node alingment=alignment />
                     </if>
                     <else>
-                      <common-table width="300" style="border-collapse:collapse;" align=alignment class=`${alignment}` padding=0 spacing=0>
-                        <tr>
-                          <td>
-                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                              <marko-newsletter-imgix
-                                src=image.src
-                                alt=image.alt
-                                options={ w: 300 }
-                                class="main"
-                                attrs={ border: 0, width: 300 }
-                              >
-                                <@link href=node.siteContext.url target="_blank" />
-                              </marko-newsletter-imgix>
-                            </marko-core-obj-value>
-
-                            <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
-                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                            </marko-core-obj-text>
-                            <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
-                            <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-                            <marko-core-text value=getReadMoreText(node)>
-                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentReadMoreLinkStyle } />
-                            </marko-core-text>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
+                      <tenant-simple-card-block node=node alingment=alignment />
                     </else>
                     <if(index % 2 && index !== nodes.length - 1)>
                       <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>

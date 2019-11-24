@@ -9,7 +9,6 @@ $ const wrapper = getAsObject(input, "wrapper");
   <common-table width="640" align="center" class="main" style=styles>
     <tr>
       <td>
-        <!-- left -->
         <common-table width="640" align="left" class="main">
           <tr>
             <td align="left" valign="top">
@@ -19,11 +18,26 @@ $ const wrapper = getAsObject(input, "wrapper");
             </td>
           </tr>
         </common-table>
-        <!-- right -->
-        <common-table width="180" align="right" class="mobileHide">
-
-        </common-table>
       </td>
+    </tr>
+    <tr>
+      <td>
+        <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td align="left">
+                <div style=`text-transform: uppercase; font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #6b6b6b; font-weight: 700; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;`>
+                  ${input.date.format("MMMM Do, YYYY")}
+                </div>
+              </td>
+            </tr>
+          </common-table>
+        </td>
+    </tr>
+    <tr>
+      <td><hr></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
     </tr>
   </common-table>
 </tenant-header-wrapper>
