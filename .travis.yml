@@ -5,8 +5,77 @@ cache: yarn
 stages:
   - name: test
 
+  - name: production-started
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+  - name: production
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+  - name: production-finished
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+
+  - name: staging-started
+    if: tag is present
+  - name: staging
+    if: tag is present
+  - name: staging-finished
+    if: tag is present
+
 jobs:
   include:
     - stage: test
-      env:
-        - NODE_ENV=test
+      env: [NODE_ENV=test]
+
+    - stage: production-started
+      name: Deployment Started
+      script: npx @base-cms/newsletter-deployment-tool notify-started
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging-started
+      name: Deployment Started
+      script: npx @base-cms/newsletter-deployment-tool notify-started
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    #############################
+    # vvv ADD SERVICES HERE vvv #
+    #############################
+
+    - stage: production
+      name: TDWorld
+      script: npx @base-cms/newsletter-deployment-tool deploy tdworld gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: TDWorld
+      script: npx @base-cms/newsletter-deployment-tool deploy tdworld gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: VSPC
+      script: npx @base-cms/newsletter-deployment-tool deploy vspc picon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: VSPC
+      script: npx @base-cms/newsletter-deployment-tool deploy vspc picon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    #############################
+    # ^^^ ADD SERVICES HERE ^^^ #
+    #############################
+
+    - stage: production-finished
+      name: Deployment Finished
+      script: npx @base-cms/newsletter-deployment-tool notify-finished
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging-finished
+      name: Deployment Finished
+      script: npx @base-cms/newsletter-deployment-tool notify-finished
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
