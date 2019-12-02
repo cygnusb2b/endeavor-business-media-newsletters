@@ -5,21 +5,22 @@ $ const {
   imgWidth,
   contentLinkStyle,
   teaserStyle,
-  contentReadMoreLinkStyle
+  contentReadMoreLinkStyle,
+  buttonStyle,
+  buttonTextStyle
 } = input;
 $ const getReadMoreText = (node) => {
   const { type, typeTitle } = node;
   const viewType = ['video', 'photo-gallery', 'whitepaper'];
   return viewType.includes(type) ? node.typeTitle : `Full ${node.typeTitle}`;
 };
-$ const newImageWidth = imgWidth - 1;
 $ const innerPadding = 15;
-$ const innerTableWidth = tableWidth - (innerPadding * 2) - 1;
+$ const innerTableWidth = tableWidth - (innerPadding * 2);
 
-<common-table width=tableWidth style="border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=alingment class=`${alingment}` padding=0 spacing=0>
+<common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=alingment class=`${alingment}` padding=0 spacing=0>
   <tr>
     <td style=`padding: 0; padding-${alingment}: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
-      <common-table width=innerTableWidth style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align=alingment class=`${alingment}` padding=0 spacing=0>
+      <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align=alingment class=`${alingment}` padding=0 spacing=0>
         <tr>
           <td>
             <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
@@ -33,9 +34,9 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2) - 1;
               <marko-newsletter-imgix
                 src=image.src
                 alt=image.alt
-                options={ w: newImageWidth }
+                options={ w: imgWidth }
                 class="main"
-                attrs={ border: 0, width: newImageWidth }
+                attrs={ border: 0, width: imgWidth }
               >
                 <@link href=node.siteContext.url target="_blank" />
               </marko-newsletter-imgix>
@@ -46,9 +47,20 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2) - 1;
             </marko-core-obj-text>
             <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
             <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-            <marko-core-text value=getReadMoreText(node)>
-              <@link href=node.siteContext.url target="_blank" attrs={ style: contentReadMoreLinkStyle } />
-            </marko-core-text>
+            <common-table align="center" class="main" padding=0 spacing=0>
+              <tr>
+                <td>
+                  &nbsp;
+                </td>
+              </tr>
+              <tr>
+                <td style=`${buttonStyle}`> 
+                  <marko-core-text value=getReadMoreText(node)>
+                    <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
+                  </marko-core-text>
+                  </td>
+                </tr>
+            </common-table>
           </td>
         </tr>
       </common-table>
