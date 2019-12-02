@@ -11,11 +11,11 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 345
     },
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 320
     },
     "@contentLinkStyle": {
       "type" : "object",
@@ -60,9 +60,12 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 345
     },
-    "@img-width": "300",
+    "@img-width": {
+      "type": "number",
+      "default-value": 320
+    },
     "@teaserStyle": {
       "type" : "object",
       "default-value": {

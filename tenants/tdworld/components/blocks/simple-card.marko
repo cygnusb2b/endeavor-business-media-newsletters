@@ -12,29 +12,46 @@ $ const getReadMoreText = (node) => {
   const viewType = ['video', 'photo-gallery', 'whitepaper'];
   return viewType.includes(type) ? node.typeTitle : `Full ${node.typeTitle}`;
 };
-<common-table width=tableWidth style="border-collapse:collapse;" align=alingment class=`${alingment}` padding=0 spacing=0>
-  <tr>
-    <td>
-      <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-        <marko-newsletter-imgix
-          src=image.src
-          alt=image.alt
-          options={ w: imgWidth }
-          class="main"
-          attrs={ border: 0, width: imgWidth }
-        >
-          <@link href=node.siteContext.url target="_blank" />
-        </marko-newsletter-imgix>
-      </marko-core-obj-value>
+$ const newImageWidth = imgWidth - 1;
+$ const innerPadding = 15;
+$ const innerTableWidth = tableWidth - (innerPadding * 2) - 1;
 
-      <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
-        <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-      </marko-core-obj-text>
-      <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
-      <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-      <marko-core-text value=getReadMoreText(node)>
-        <@link href=node.siteContext.url target="_blank" attrs={ style: contentReadMoreLinkStyle } />
-      </marko-core-text>
+<common-table width=tableWidth style="border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=alingment class=`${alingment}` padding=0 spacing=0>
+  <tr>
+    <td style=`padding: 0; padding-${alingment}: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
+      <common-table width=innerTableWidth style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align=alingment class=`${alingment}` padding=0 spacing=0>
+        <tr>
+          <td>
+            <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
+              &nbsp;
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
+              <marko-newsletter-imgix
+                src=image.src
+                alt=image.alt
+                options={ w: newImageWidth }
+                class="main"
+                attrs={ border: 0, width: newImageWidth }
+              >
+                <@link href=node.siteContext.url target="_blank" />
+              </marko-newsletter-imgix>
+            </marko-core-obj-value>
+
+            <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+              <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
+            </marko-core-obj-text>
+            <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
+            <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+            <marko-core-text value=getReadMoreText(node)>
+              <@link href=node.siteContext.url target="_blank" attrs={ style: contentReadMoreLinkStyle } />
+            </marko-core-text>
+          </td>
+        </tr>
+      </common-table>
     </td>
   </tr>
 </common-table>
