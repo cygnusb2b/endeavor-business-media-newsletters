@@ -297,35 +297,18 @@ $ const contentLinkStyle = {
                 </td>
               </tr>
               <tr>
-                <td valign="top">
+                <td>
+                  <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
+                    &nbsp;
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top" style="padding: 0 15px 15px 15px;">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
-                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
-                    <if(isFull)>
-                      <if(node.type === 'promotion')>
-                        <tenant-promotion-full-block node=node alingment=alignment />
-                      </if>
-                      <else>
-                        <tenant-simple-card-full-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
-                      </else>
-                    </if>
-                    <else>
-                      <if(node.type === 'promotion')>
-                        <tenant-promotion-block node=node alingment=alignment />
-                      </if>
-                      <else>
-                        <tenant-simple-card-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
-                      </else>
-                      <if(index % 2 && index !== nodes.length - 1)>
-                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                          <tr>
-                            <td valign="top">
-                              <hr style="margin:0;">
-                            </td>
-                          </tr>
-                        </common-table>
-                      </if>
-                    </else>
+                    <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+                      <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
+                    </marko-core-obj-text>
                   </for>
                 </td>
               </tr>
