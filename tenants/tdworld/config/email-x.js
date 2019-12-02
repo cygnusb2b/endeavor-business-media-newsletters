@@ -10,6 +10,14 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('vegetation-management-insights', [
+    {
+      name: 'leaderboard_primary',
+      id: '5de5647376787a064e115293',
+      width: 670,
+      height: 90,
+    },
   ]);
 
 module.exports = config;
