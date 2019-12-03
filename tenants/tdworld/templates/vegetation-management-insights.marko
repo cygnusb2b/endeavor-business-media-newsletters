@@ -48,7 +48,13 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
           &nbsp;
         </td>
         <td height="75" valign="top" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; background-color: #ffffff; width: 140px; margin-left: 10px; border-top: 2px solid #bbb; border-bottom: 2px solid #bbb;">
-          <img style="float: right; padding: 10px; width: 120px;" src="http://enewspro.penton.com/site-files/enewspro.penton.com/files/uploads/857020e5847c39b703162712145203cb-TDW-Logo-2017.jpg" alt="TDW Energizing" width="120" height="auto">
+          <marko-newsletter-imgix
+              src="/files/base/ebm/tdworld/image/static/newsletter/header_logo.jpg"
+              alt="Twitter"
+              options={ w: 120 }
+              attrs={ border: 0, width: 120 }
+            >
+            </marko-newsletter-imgix>
         </td>
         <td style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; width: 5px;">
           &nbsp;
@@ -357,23 +363,33 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
         <td style="background-color: #e5e5e5; text-align: center;">
           <p class="connect_info" style="font-size: 14px; line-height: 146%; margin: 10px; padding: 0; color: #000000; -webkit-margin-after: 10px; -webkit-margin-before: 10px; -webkit-margin-end: 10px; -webkit-margin-start: 10px; font-weight: bold; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;">Connect With Us</p>
           <div>
-            <a href="https://twitter.com/tdworldmag?elqTrack=true" style="margin: 0; padding: 0;"><img src="http://assets.penton.com/NewMedia/enews-social-icons/twitter-39x39.png" alt="" width="38" height="39" border="0" hspace="0" vspace="0" style="margin: 0; padding: 0; border: 0;"></a>
+            <marko-newsletter-imgix
+              src="/files/base/newsletter/connect/twitter.png"
+              alt="Twitter"
+              options={ w: 39 }
+              attrs={ border: 0, width: 39 }
+            >
+              <@link href= "http://www.facebook.com/pages/Transmission-Distribution-World/110964078942390?elqTrack=true" target="_blank" />
+            </marko-newsletter-imgix>
             &nbsp;&nbsp;
-            <a href="http://www.facebook.com/pages/Transmission-Distribution-World/110964078942390?elqTrack=true" style="margin: 0; padding: 0;"><img src="http://assets.penton.com/NewMedia/enews-social-icons/facebook-39x39.png" alt="" width="38" height="39" border="0" hspace="0" vspace="0" style="margin: 0; padding: 0; border: 0;"></a>
+            <marko-newsletter-imgix
+              src="/files/base/newsletter/connect/facebook.png"
+              alt="Twitter"
+              options={ w: 39 }
+              attrs={ border: 0, width: 39 }
+            >
+              <@link href= "https://twitter.com/tdworldmag?elqTrack=true" target="_blank" />
+            </marko-newsletter-imgix>
             &nbsp;&nbsp;
-            <a href="http://www.linkedin.com/groups/Transmission-Distribution-World-4078692?elqTrack=true" style="margin: 0; padding: 0;"><img src="http://assets.penton.com/NewMedia/enews-social-icons/linkedin-39x39.png" alt="" width="38" height="39" border="0" hspace="0" vspace="0" style="margin: 0; padding: 0; border: 0;"></a>
-            &nbsp;&nbsp;
-            <a href="http://feeds.feedburner.com/TDWMostRecent?NL=TDW-08&amp;amp;Issue=TDW-08_20191112_TDW-08_886&amp;amp;sfvc4enews=42&amp;amp;cl=footer_1&amp;amp;elqTrack=true" style="margin: 0; padding: 0;"><img src="http://assets.penton.com/NewMedia/enews-social-icons/rss-39x39.png" alt="" width="38" height="39" border="0" hspace="0" vspace="0" style="margin: 0; padding: 0; border: 0;"></a>
+            <marko-newsletter-imgix
+              src="/files/base/newsletter/connect/linkedin.png"
+              alt="Twitter"
+              options={ w: 39 }
+              attrs={ border: 0, width: 39 }
+            >
+              <@link href= "http://www.linkedin.com/groups/Transmission-Distribution-World-4078692?elqTrack=true" target="_blank" />
+            </marko-newsletter-imgix>
           </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="background-color: #444; padding: 10px; text-align: center;">
-          <p style="font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #ffffff; -webkit-margin-after: 0; -webkit-margin-before: 0; -webkit-margin-end: 0; -webkit-margin-start: 0; font-weight: normal; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;">
-            <a href="http://pages.tdworld.com/newsletter-preference" style="margin: 0; padding: 0; color: #ffffff; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-weight: bold; text-decoration: none;">Manage Subscriptions</a>
-            | <a href="http://penton-sub.halldata.com/TWNew?PK=%5BcampaignID%5D&amp;amp;YM_RID=%60email%60&amp;amp;elqTrack=true" style="margin: 0; padding: 0; color: #ffffff; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-weight: bold; text-decoration: none;">Subscribe To Print</a>
-            | <a href="http://enewspro.penton.com/new-archives/14731?elqTrack=true" style="margin: 0; padding: 0; color: #ffffff; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-weight: bold; text-decoration: none;">Archive</a>
-          </p>
         </td>
       </tr>
       <tr>
@@ -389,7 +405,7 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
             | <a style="text-decoration: underline !important;" href="{{ subscribe }}">Manage Newsletter Subscriptions</a>
             | <a style="text-decoration: underline !important;" href="@{forwardtoafriendlink}@">Forward to a Friend</a>
             | <a style="text-decoration: underline !important;" href="https://www.{{ config.get('site.url') }}/contact-us">Customer Service Center</a>
-            | <a style="text-decoration: underline !important;" href="https://www.{{ config.get('site.url') }}/privacy-policy">Read Privacy Policy</a>
+            | <a style="text-decoration: underline !important;" href="https://www.endeavorbusinessmedia.com/privacy-policyd">Read Privacy Policy</a>
           </p>
 
           <p style="margin:0px;margin-bottom:1em;">
@@ -405,14 +421,6 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
             1233 Janesville Ave<br />
             Fort Atkinson, WI 53538
           </p>
-          <p style="font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #000000; -webkit-margin-after: 0; -webkit-margin-before: 0; -webkit-margin-end: 0; -webkit-margin-start: 0; font-weight: normal;">
-            <a style="margin: 0; padding: 0; float: left; color: #000000;" href="https://informa.com/privacy-policy?elqTrack=true"> Privacy Policy</a>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td style="background-color: #bfbfc1; padding: 10px;">
-          <img id="powered-by-img" src="http://enewspro.penton.com/sites/all/themes/clean/assets/images/powered_by_img.png" alt="" width="150" style="margin: 0; padding: 0; border: 0;">
         </td>
       </tr>
     </common-table>
