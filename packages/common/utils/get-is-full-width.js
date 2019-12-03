@@ -1,3 +1,3 @@
 module.exports = (nodes, index) => { 
-  return (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false 
+  return !!((nodes.length === 1 || (index % 2 === 0 && index === nodes.length - 1)));
 };
