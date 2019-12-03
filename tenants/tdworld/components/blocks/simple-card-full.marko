@@ -1,9 +1,9 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 
-$ const { 
-  node, 
-  alignment, 
-  tableWidth, 
+$ const {
+  node,
+  alignment,
+  tableWidth,
   imgWidth,
 } = input;
 $ const teaserStyle = defaultValue(input.teaserStyle, {
@@ -102,7 +102,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
     <td style=`padding: 0; padding-${alignment}: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
       <common-table align="center" class="main" padding=0 spacing=0>
         <tr>
-          <td style=`${buttonStyle}`> 
+          <td style=`${buttonStyle}`>
             <marko-core-text value=getReadMoreText(node)>
               <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
             </marko-core-text>
