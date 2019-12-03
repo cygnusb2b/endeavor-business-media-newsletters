@@ -1,5 +1,7 @@
 import { getAsObject } from "@base-cms/object-path";
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
+import getAlignment from "@endeavor-business-media/common/utils/get-alignment";
+import getIsFullWidth from "@endeavor-business-media/common/utils/get-is-full-width";
 import emailX from "../config/email-x";
 
 $ const { website } = out.global;
@@ -92,8 +94,8 @@ $ const contentLinkStyle = {
               <tr>
                 <td valign="top">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
-                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    $ const alignment = getAlignment(index);
+$ const isFull = getIsFullWidth(nodes, index);
                     <if(isFull)>
                       <if(node.type === "promotion")>
                         <tenant-promotion-full-block node=node alignment=alignment />
@@ -156,8 +158,8 @@ $ const contentLinkStyle = {
               <tr>
                 <td valign="top">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
-                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    $ const alignment = getAlignment(index);
+$ const isFull = getIsFullWidth(nodes, index);
                     <if(isFull)>
                       <if(node.type === "promotion")>
                         <tenant-promotion-full-block node=node alignment=alignment />
@@ -220,8 +222,8 @@ $ const contentLinkStyle = {
               <tr>
                 <td valign="top">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
-                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    $ const alignment = getAlignment(index);
+$ const isFull = getIsFullWidth(nodes, index);
                     <if(isFull)>
                       <if(node.type === "promotion")>
                         <tenant-promotion-full-block node=node alignment=alignment />
@@ -284,8 +286,8 @@ $ const contentLinkStyle = {
               <tr>
                 <td valign="top">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
-                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    $ const alignment = getAlignment(index);
+$ const isFull = getIsFullWidth(nodes, index);
                     <if(isFull)>
                       <if(node.type === "promotion")>
                         <tenant-promotion-full-block node=node alignment=alignment />
