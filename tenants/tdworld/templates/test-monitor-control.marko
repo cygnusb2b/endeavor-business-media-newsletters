@@ -71,7 +71,7 @@ $ const contentLinkStyle = {
     </common-table>
     <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
 
-    <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+    <!-- <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
       <tr>
         <td style="font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
           <h3 style="margin:0;font-weight:bold;height:27px;margin:1px 0 5px 0px; font-family:Helvetica, Arial, sans-serif; font-size:11px; color:#999;text-align:left;">
@@ -83,7 +83,7 @@ $ const contentLinkStyle = {
           </marko-newsletters-email-x-display>
         </td>
       </tr>
-    </common-table>
+    </common-table> -->
 
     <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
 
@@ -296,25 +296,42 @@ $ const contentLinkStyle = {
                   <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
                     <tr>
                       <td>
-                        <h3 style=`${titleStyle}`>Sponsored</h3>
+                        <h3 style=`${titleStyle}`>Announcments</h3>
                       </td>
                     </tr>
                   </common-table>
                 </td>
               </tr>
               <tr>
-                <td>
-                  <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
-                    &nbsp;
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td valign="top" style="padding: 0 15px 15px 15px;">
+                <td valign="top">
                   <for|node, index| of=nodes>
-                    <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
-                      <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                    </marko-core-obj-text>
+                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
+                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    <if(isFull)>
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-full-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-full-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
+                    </if>
+                    <else>
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
+                      <if(index % 2 && index !== nodes.length - 1)>
+                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                          <tr>
+                            <td valign="top">
+                              <hr style="margin:0;">
+                            </td>
+                          </tr>
+                        </common-table>
+                      </if>
+                    </else>
                   </for>
                 </td>
               </tr>
