@@ -2,12 +2,6 @@ import { getAsObject } from "@base-cms/object-path";
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
 import emailX from "../config/email-x";
 
-$ const getReadMoreText = (node) => {
-  const { type, typeTitle } = node;
-  const viewType = ['video', 'photo-gallery', 'whitepaper'];
-  return viewType.includes(type) ? node.typeTitle : `Full ${node.typeTitle}`;
-};
-
 $ const { website } = out.global;
 $ const { newsletter, date } = data;
 $ const leaderboard_primary = emailX.getAdUnit({ name: "leaderboard_primary", alias: newsletter.alias });
