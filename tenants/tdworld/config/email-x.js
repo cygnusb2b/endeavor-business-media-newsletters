@@ -4,7 +4,7 @@ const config = new EmailXConfiguration('https://ebm.serve.email-x.io');
 config
   .setAdUnits('energizing', [
     {
-      name: 'leaderboard_primary',
+      name: 'leaderboardPrimary',
       id: '5de588b1d30077baaef1e89f',
       width: 670,
       height: 90,
@@ -26,7 +26,7 @@ config
   ])
   .setAdUnits('grid-innovations', [
     {
-      name: 'leaderboard_primary',
+      name: 'leaderboardPrimary',
       id: '5ddbfb17ec515565e49a82d3',
       width: 670,
       height: 90,
@@ -86,7 +86,7 @@ config
   ])
   .setAdUnits('vegetation-management-insights', [
     {
-      name: 'leaderboard_primary',
+      name: 'leaderboardPrimary',
       id: '5de5647376787a064e115293',
       width: 670,
       height: 90,
@@ -106,7 +106,7 @@ config
   ])
   .setAdUnits('ieee-pes-show-update', [
     {
-      name: 'leaderboard_primary',
+      name: 'leaderboardPrimary',
       id: '5de59009d300773218f1eb00',
       width: 670,
       height: 90,

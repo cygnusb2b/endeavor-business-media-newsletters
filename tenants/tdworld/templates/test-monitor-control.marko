@@ -4,7 +4,7 @@ import emailX from "../config/email-x";
 
 $ const { website } = out.global;
 $ const { newsletter, date } = data;
-$ const leaderboard_primary = emailX.getAdUnit({ name: "leaderboard_primary", alias: newsletter.alias });
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
 $ const contentLinkStyle = {
@@ -72,7 +72,7 @@ $ const contentLinkStyle = {
             Advertisement
           </h3>
           <marko-newsletters-email-x-display decoded-params=["email", "send"]>
-            <@ad-unit ...leaderboard_primary />
+            <@ad-unit ...leaderboardPrimary />
             <@params date=date email="%%emailaddr%%" send="%%jobid%%" />
           </marko-newsletters-email-x-display>
         </td>
