@@ -1,4 +1,67 @@
 {
+  "<tenant-opt-out-block>": {
+    "template": "./opt-out.marko"
+  },
+  "<tenant-section-spacer-block>": {
+    "template": "./section-spacer.marko"
+  },
+  "<tenant-header-block>": {
+    "template": "./header.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "<tenant-card-section-wrapper-block>": {
+    "template": "./card-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 24
+    },
+    "@title": "string",
+    "@title-style": "string",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<tenant-list-section-wrapper-block>": {
+    "template": "./list-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 24
+    },
+    "@title": "string",
+    "@title-style": "string",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
   "<tenant-simple-card-block>": {
     "template": "./simple-card.marko",
     "@node": "object",
