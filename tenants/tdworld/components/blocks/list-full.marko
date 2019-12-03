@@ -1,0 +1,23 @@
+$ const { 
+  node, 
+  alignment, 
+  tableWidth, 
+  contentLinkStyle,
+} = input;
+
+<common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:15px; margin:0;" align="right" class="right" padding=15 spacing=0>
+  <tr>
+    <td>
+      <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
+        &nbsp;
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+        <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
+      </marko-core-obj-text>
+    </td>
+  </tr>
+</common-table>
