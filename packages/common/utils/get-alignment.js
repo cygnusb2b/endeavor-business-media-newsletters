@@ -1,1 +1,3 @@
-module.exports = index => ((index === 0 || (index % 2) === 0) ? 'left' : 'right');
+const isEven = require('./is-even');
+
+module.exports = index => ((isEven(index)) ? 'left' : 'right');

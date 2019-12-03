@@ -1,1 +1,4 @@
-module.exports = (nodes, index) => !!(((index % 2 === 0 && index === nodes.length - 1)));
+const isLast = require('./is-last');
+const isEven = require('./is-even');
+
+module.exports = (nodes, index) => (isEven(nodes, index) && isLast(nodes, index));
