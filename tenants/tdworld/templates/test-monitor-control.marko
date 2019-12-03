@@ -2,6 +2,7 @@ import { getAsObject } from "@base-cms/object-path";
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
 import getAlignment from "@endeavor-business-media/common/utils/get-alignment";
 import getIsFullWidth from "@endeavor-business-media/common/utils/get-is-full-width";
+import showDivider from "@endeavor-business-media/common/utils/show-divider";
 import emailX from "../config/email-x";
 
 $ const { website } = out.global;
@@ -38,7 +39,7 @@ $ const contentLinkStyle = {
             </span><br>
             <span style="font-size:30px; line-height:19px;">
               ${date.format("d")}
-            </span> 
+            </span>
           </div>
         </td>
         <td height="75" valign="center" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; text-align: left; width: 460px; border-top: 2px solid #052e4b; border-bottom: 2px solid #000000; background-color: #ffffff; margin-right: 10px;">
@@ -95,32 +96,32 @@ $ const contentLinkStyle = {
                 <td valign="top">
                   <for|node, index| of=nodes>
                     $ const alignment = getAlignment(index);
-$ const isFull = getIsFullWidth(nodes, index);
-                    <if(isFull)>
-                      <if(node.type === "promotion")>
+                    $ const isFull = getIsFullWidth(nodes, index);
+                    <if(node.type === "promotion")>
+                      <if(isFull)>
                         <tenant-promotion-full-block node=node alignment=alignment />
                       </if>
                       <else>
-                        <tenant-simple-card-full-block node=node alignment=alignment content-link-style=contentLinkStyle />
+                        <tenant-promotion-block node=node alignment=alignment />
                       </else>
                     </if>
                     <else>
-                      <if(node.type === "promotion")>
-                        <tenant-promotion-block node=node alignment=alignment />
+                      <if(isFull)>
+                        <tenant-simple-card-full-block node=node alignment=alignment content-link-style=contentLinkStyle />
                       </if>
                       <else>
                         <tenant-simple-card-block node=node alignment=alignment content-link-style=contentLinkStyle />
                       </else>
-                      <if(index % 2 && index !== nodes.length - 1)>
-                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                          <tr>
-                            <td valign="top">
-                              <hr style="margin:0;">
-                            </td>
-                          </tr>
-                        </common-table>
-                      </if>
                     </else>
+                    <if(showDivider(nodes, index))>
+                      <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                        <tr>
+                          <td valign="top">
+                            <hr style="margin:0;">
+                          </td>
+                        </tr>
+                      </common-table>
+                    </if>
                   </for>
                 </td>
               </tr>
@@ -159,32 +160,32 @@ $ const isFull = getIsFullWidth(nodes, index);
                 <td valign="top">
                   <for|node, index| of=nodes>
                     $ const alignment = getAlignment(index);
-$ const isFull = getIsFullWidth(nodes, index);
-                    <if(isFull)>
-                      <if(node.type === "promotion")>
+                    $ const isFull = getIsFullWidth(nodes, index);
+                    <if(node.type === "promotion")>
+                      <if(isFull)>
                         <tenant-promotion-full-block node=node alignment=alignment />
                       </if>
                       <else>
-                        <tenant-simple-card-full-block node=node alignment=alignment content-link-style=contentLinkStyle />
+                        <tenant-promotion-block node=node alignment=alignment />
                       </else>
                     </if>
                     <else>
-                      <if(node.type === "promotion")>
-                        <tenant-promotion-block node=node alignment=alignment />
+                      <if(isFull)>
+                        <tenant-simple-card-full-block node=node alignment=alignment content-link-style=contentLinkStyle />
                       </if>
                       <else>
                         <tenant-simple-card-block node=node alignment=alignment content-link-style=contentLinkStyle />
                       </else>
-                      <if(index % 2 && index !== nodes.length - 1)>
-                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                          <tr>
-                            <td valign="top">
-                              <hr style="margin:0;">
-                            </td>
-                          </tr>
-                        </common-table>
-                      </if>
                     </else>
+                    <if(showDivider(nodes, index))>
+                      <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                        <tr>
+                          <td valign="top">
+                            <hr style="margin:0;">
+                          </td>
+                        </tr>
+                      </common-table>
+                    </if>
                   </for>
                 </td>
               </tr>
@@ -223,32 +224,32 @@ $ const isFull = getIsFullWidth(nodes, index);
                 <td valign="top">
                   <for|node, index| of=nodes>
                     $ const alignment = getAlignment(index);
-$ const isFull = getIsFullWidth(nodes, index);
-                    <if(isFull)>
-                      <if(node.type === "promotion")>
+                    $ const isFull = getIsFullWidth(nodes, index);
+                    <if(node.type === "promotion")>
+                      <if(isFull)>
                         <tenant-promotion-full-block node=node alignment=alignment />
                       </if>
                       <else>
-                        <tenant-simple-card-full-block node=node alignment=alignment content-link-style=contentLinkStyle />
+                        <tenant-promotion-block node=node alignment=alignment />
                       </else>
                     </if>
                     <else>
-                      <if(node.type === "promotion")>
-                        <tenant-promotion-block node=node alignment=alignment />
+                      <if(isFull)>
+                        <tenant-simple-card-full-block node=node alignment=alignment content-link-style=contentLinkStyle />
                       </if>
                       <else>
                         <tenant-simple-card-block node=node alignment=alignment content-link-style=contentLinkStyle />
                       </else>
-                      <if(index % 2 && index !== nodes.length - 1)>
-                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                          <tr>
-                            <td valign="top">
-                              <hr style="margin:0;">
-                            </td>
-                          </tr>
-                        </common-table>
-                      </if>
                     </else>
+                    <if(showDivider(nodes, index))>
+                      <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                        <tr>
+                          <td valign="top">
+                            <hr style="margin:0;">
+                          </td>
+                        </tr>
+                      </common-table>
+                    </if>
                   </for>
                 </td>
               </tr>
@@ -287,32 +288,32 @@ $ const isFull = getIsFullWidth(nodes, index);
                 <td valign="top">
                   <for|node, index| of=nodes>
                     $ const alignment = getAlignment(index);
-$ const isFull = getIsFullWidth(nodes, index);
-                    <if(isFull)>
-                      <if(node.type === "promotion")>
+                    $ const isFull = getIsFullWidth(nodes, index);
+                    <if(node.type === "promotion")>
+                      <if(isFull)>
                         <tenant-promotion-full-block node=node alignment=alignment />
                       </if>
                       <else>
-                        <tenant-simple-card-full-block node=node alignment=alignment content-link-style=contentLinkStyle />
+                        <tenant-promotion-block node=node alignment=alignment />
                       </else>
                     </if>
                     <else>
-                      <if(node.type === "promotion")>
-                        <tenant-promotion-block node=node alignment=alignment />
+                      <if(isFull)>
+                        <tenant-simple-card-full-block node=node alignment=alignment content-link-style=contentLinkStyle />
                       </if>
                       <else>
                         <tenant-simple-card-block node=node alignment=alignment content-link-style=contentLinkStyle />
                       </else>
-                      <if(index % 2 && index !== nodes.length - 1)>
-                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                          <tr>
-                            <td valign="top">
-                              <hr style="margin:0;">
-                            </td>
-                          </tr>
-                        </common-table>
-                      </if>
                     </else>
+                    <if(showDivider(nodes, index))>
+                      <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                        <tr>
+                          <td valign="top">
+                            <hr style="margin:0;">
+                          </td>
+                        </tr>
+                      </common-table>
+                    </if>
                   </for>
                 </td>
               </tr>
@@ -364,7 +365,7 @@ $ const isFull = getIsFullWidth(nodes, index);
             <a style="text-decoration: underline !important;" href="mailto:@{email name}@">@{email name}@</a>.
           </p>
           <p style="margin:0px;margin-bottom:1em;">
-            Please add news.endeavorb2b.com and mail.endeavorb2b.com to your address book or safe sender list to receive our emails in your inbox. 
+            Please add news.endeavorb2b.com and mail.endeavorb2b.com to your address book or safe sender list to receive our emails in your inbox.
           </p>
           <p style="margin:0px;margin-bottom:1em;">
             <a style="text-decoration: underline !important;" href="@{confirmunsubscribelink}@">Unsubscribe</a>
