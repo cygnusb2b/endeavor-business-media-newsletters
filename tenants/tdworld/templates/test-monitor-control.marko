@@ -1,7 +1,7 @@
+import { getAsObject } from "@base-cms/object-path";
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
 import emailX from "../config/email-x";
 
-//https://manage.tdworld.com/content/edit/article/21112277
 $ const getReadMoreText = (node) => {
   const { type, typeTitle } = node;
   const viewType = ['video', 'photo-gallery', 'whitepaper'];
@@ -10,8 +10,16 @@ $ const getReadMoreText = (node) => {
 
 $ const { website } = out.global;
 $ const { newsletter, date } = data;
-$ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b398; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px;";
-
+$ const leaderboard_primary = emailX.getAdUnit({ name: "leaderboard_primary", alias: newsletter.alias });
+$ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
+$ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
+$ const contentLinkStyle = {
+  "font-weight": "bold",
+  "color": "#00b398",
+  "font-size": "19.5px",
+  "line-height": "20px",
+  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+}
 <marko-newsletter-root
   title=newsletter.name
   description=newsletter.description
@@ -20,81 +28,130 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
   <@head>
     <tenant-styles />
   </@head>
-  <@body style="margin: 0px !important;">
-
-    <!-- Header -->
-    <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+  <@body style="margin: 0px !important; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+    />
+    <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
       <tr>
-        <td>
-          <div style="line-height:20px; font-size:2px;">&nbsp;</div>
-          <tenant-default-header-block
-            name=newsletter.name
-            href=website.get("origin")
-            image-src="/files/base/ebm/tdworld/image/2019/11/newVMIHeader.5dd592df02443.png"
-            bg-color="#ffffff"
-            date=date
-          />
+        <td height="75" valign="top" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; min-width: 55px; border-top: 2px solid #000000; border-bottom: 2px solid #000000; background-color: #ffffff; vertical-align: middle;">
+          <div style="font-size: 12px; color: #000000; text-transform:uppercase; font-weight: normal; margin: 0 0 0 15px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 19px  !important; text-align: center; white-space: nowrap;">
+            <span style="font-size: 18px;">
+              ${date.format("MMM")}
+            </span><br>
+            <span style="font-size:30px; line-height:19px;">
+              ${date.format("d")}
+            </span> 
+          </div>
+        </td>
+        <td height="75" valign="center" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; text-align: left; width: 460px; border-top: 2px solid #052e4b; border-bottom: 2px solid #000000; background-color: #ffffff; margin-right: 10px;">
+          <h1 style="color: #00af97; font-size: 26px; line-height: 28px; margin: 5px 0 5px 15px; padding-right: 3px; text-transform: none; font-weight: bold; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+          ${newsletter.name}
+          </h1>
+        </td>
+        <td height="75" valign="top" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; width: 5px;">
+          &nbsp;
+        </td>
+        <td height="75" valign="center" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; background-color: #ffffff; width: 140px; margin-left: 10px; border-top: 2px solid #bbb; border-bottom: 2px solid #bbb;">
+          <marko-newsletter-imgix
+              src="/files/base/ebm/tdworld/image/static/newsletter/header_logo.jpg"
+              alt="Twitter"
+              options={ w: 120 }
+              attrs={ border: 0, width: 120 }
+            >
+            </marko-newsletter-imgix>
+        </td>
+        <td style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; width: 5px;">
+          &nbsp;
+        </td>
+        <td height="75" valign="top" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; width: 5px; border-top: 2px solid #000000; border-bottom: 2px solid #000000; background-color: #ffffff; vertical-align: middle;">
+        </td>
+      </tr>
+    </common-table>
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
+
+    <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td style="font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
+          <h3 style="margin:0;font-weight:bold;height:27px;margin:1px 0 5px 0px; font-family:Helvetica, Arial, sans-serif; font-size:11px; color:#999;text-align:left;">
+            Advertisement
+          </h3>
+          <marko-newsletters-email-x-display decoded-params=["email", "send"]>
+            <@ad-unit ...leaderboard_primary />
+            <@params date=date email="%%emailaddr%%" send="%%jobid%%" />
+          </marko-newsletters-email-x-display>
         </td>
       </tr>
     </common-table>
 
-    <!-- Featrued Full -->
-    <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
+
+    <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
       <tr>
         <td>
+          <!-- Section Query Wrapper -->
           <marko-web-query|{ nodes }| name="newsletter-scheduled-content" params={
             date: date.valueOf(),
             newsletterId: newsletter.id,
             sectionId: 68406,
-            limit: 1,
+            limit: 24,
             queryFragment: contentList,
           }>
-            <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
               <tr>
-                <td style=`${titleStyle}`>
-                  Top Story
+                <td>
+                  <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
+                    <tr>
+                      <td>
+                        <h3 style=`${titleStyle}`>Top Story</h3>
+                      </td>
+                    </tr>
+                  </common-table>
                 </td>
               </tr>
               <tr>
-                <td><hr></td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
+                <td valign="top">
+                  <for|node, index| of=nodes>
+                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
+                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    <if(isFull)>
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-full-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-full-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
+                    </if>
+                    <else>
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
+                      <if(index % 2 && index !== nodes.length - 1)>
+                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                          <tr>
+                            <td valign="top">
+                              <hr style="margin:0;">
+                            </td>
+                          </tr>
+                        </common-table>
+                      </if>
+                    </else>
+                  </for>
+                </td>
               </tr>
             </common-table>
-            <for|node| of=nodes>
-              <tenant-simple-card-block table-width=640 img-width=640 node=node />
-            </for>
           </marko-web-query>
         </td>
       </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
     </common-table>
-    
-    <!-- Featured Split Left||Right -->
-    <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-      <tr>
-        <td>
-          <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td style=`${titleStyle}`>
-                Highlights
-              </td>
-            </tr>
-            <tr>
-              <td><hr></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </common-table>
-        </td>
-      </tr>
+
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
+
+    <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
       <tr>
         <td>
           <!-- Section Query Wrapper -->
@@ -105,29 +162,48 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
             limit: 24,
             queryFragment: contentList,
           }>
-            <common-table width="640" style="border-collapse:collapse;" align="left" class="main" padding=0 spacing=0>
+            <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
+              <tr>
+                <td>
+                  <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
+                    <tr>
+                      <td>
+                        <h3 style=`${titleStyle}`>Highlights</h3>
+                      </td>
+                    </tr>
+                  </common-table>
+                </td>
+              </tr>
               <tr>
                 <td valign="top">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || true === index % 2) ? "right" : "left";
-                    <if(node.type === 'promotion')>
-                      <tenant-promotion-block node=node alingment=alignment />
+                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
+                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    <if(isFull)>
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-full-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-full-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
                     </if>
                     <else>
-                      <tenant-simple-card-block node=node alingment=alignment />
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
+                      <if(index % 2 && index !== nodes.length - 1)>
+                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                          <tr>
+                            <td valign="top">
+                              <hr style="margin:0;">
+                            </td>
+                          </tr>
+                        </common-table>
+                      </if>
                     </else>
-                    <if(index % 2 && index !== nodes.length - 1)>
-                      <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                        <tr>
-                          <td valign="top">
-                            <hr>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
-                    </if>
                   </for>
                 </td>
               </tr>
@@ -135,123 +211,110 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
           </marko-web-query>
         </td>
       </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
     </common-table>
 
-    <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
+
+    <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
       <tr>
         <td>
-          <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td style=`${titleStyle}`>
-                Announcments
-              </td>
-            </tr>
-            <tr>
-              <td><hr></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </common-table>
-        </td>
-      </tr>
-      <tr>
-        <td>
+          <!-- Section Query Wrapper -->
           <marko-web-query|{ nodes }| name="newsletter-scheduled-content" params={
             date: date.valueOf(),
             newsletterId: newsletter.id,
             sectionId: 68408,
-            limit: 25,
+            limit: 24,
             queryFragment: contentList,
           }>
-            <common-table width="640" style="border-collapse:collapse;" align="left" class="main" padding=0 spacing=0>
+            <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
+              <tr>
+                <td>
+                  <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
+                    <tr>
+                      <td>
+                        <h3 style=`${titleStyle}`>Announcments</h3>
+                      </td>
+                    </tr>
+                  </common-table>
+                </td>
+              </tr>
               <tr>
                 <td valign="top">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || true === index % 2) ? "right" : "left";
-                    <if(node.type === 'promotion')>
-                      <tenant-promotion-block node=node alingment=alignment />
+                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
+                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    <if(isFull)>
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-full-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-full-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
                     </if>
                     <else>
-                      <tenant-simple-card-block node=node alingment=alignment />
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
+                      <if(index % 2 && index !== nodes.length - 1)>
+                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                          <tr>
+                            <td valign="top">
+                              <hr style="margin:0;">
+                            </td>
+                          </tr>
+                        </common-table>
+                      </if>
                     </else>
-                    <if(index % 2 && index !== nodes.length - 1)>
-                      <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                        <tr>
-                          <td valign="top">
-                            <hr>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
-                    </if>
                   </for>
                 </td>
               </tr>
             </common-table>
           </marko-web-query>
         </td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
       </tr>
     </common-table>
 
-    <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
+
+    <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
       <tr>
         <td>
-          <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td style=`${titleStyle}`>
-                Sponsored
-              </td>
-            </tr>
-            <tr>
-              <td><hr></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </common-table>
-        </td>
-      </tr>
-      <tr>
-        <td>
+          <!-- Section Query Wrapper -->
           <marko-web-query|{ nodes }| name="newsletter-scheduled-content" params={
             date: date.valueOf(),
             newsletterId: newsletter.id,
-            sectionId: 68408,
-            limit: 25,
+            sectionId: 68409,
+            limit: 24,
             queryFragment: contentList,
           }>
-            <common-table width="640" style="border-collapse:collapse;" align="left" class="main" padding=0 spacing=0>
+            <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
               <tr>
-                <td valign="top">
+                <td>
+                  <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
+                    <tr>
+                      <td>
+                        <h3 style=`${titleStyle}`>Sponsored</h3>
+                      </td>
+                    </tr>
+                  </common-table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
+                    &nbsp;
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top" style="padding: 0 15px 15px 15px;">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || true === index % 2) ? "right" : "left";
-                    <if(node.type === 'promotion')>
-                      <tenant-promotion-block node=node alingment=alignment />
-                    </if>
-                    <else>
-                      <tenant-simple-card-block node=node alingment=alignment />
-                    </else>
-                    <if(index % 2 && index !== nodes.length - 1)>
-                      <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                        <tr>
-                          <td valign="top">
-                            <hr>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
-                    </if>
+                    <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+                      <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
+                    </marko-core-obj-text>
                   </for>
                 </td>
               </tr>
@@ -259,47 +322,73 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
           </marko-web-query>
         </td>
       </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
     </common-table>
-    <common-table width="640" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0 attrs={ style: { "background-color": "#e5e5e5" } } >
+
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
+
+    <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0 attrs={ style: { "background-color": "#e5e5e5" } } >
       <tr>
         <td style="background-color: #e5e5e5; text-align: center;">
           <p class="connect_info" style="font-size: 14px; line-height: 146%; margin: 10px; padding: 0; color: #000000; -webkit-margin-after: 10px; -webkit-margin-before: 10px; -webkit-margin-end: 10px; -webkit-margin-start: 10px; font-weight: bold; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;">Connect With Us</p>
           <div>
-            <a href="https://twitter.com/tdworldmag?elqTrack=true" style="margin: 0; padding: 0;"><img src="http://assets.penton.com/NewMedia/enews-social-icons/twitter-39x39.png" alt="" width="38" height="39" border="0" hspace="0" vspace="0" style="margin: 0; padding: 0; border: 0;"></a>
+            <marko-newsletter-imgix
+              src="/files/base/newsletter/connect/twitter.png"
+              alt="Twitter"
+              options={ w: 39 }
+              attrs={ border: 0, width: 39 }
+            >
+              <@link href= "http://www.facebook.com/pages/Transmission-Distribution-World/110964078942390?elqTrack=true" target="_blank" />
+            </marko-newsletter-imgix>
             &nbsp;&nbsp;
-            <a href="http://www.facebook.com/pages/Transmission-Distribution-World/110964078942390?elqTrack=true" style="margin: 0; padding: 0;"><img src="http://assets.penton.com/NewMedia/enews-social-icons/facebook-39x39.png" alt="" width="38" height="39" border="0" hspace="0" vspace="0" style="margin: 0; padding: 0; border: 0;"></a>
+            <marko-newsletter-imgix
+              src="/files/base/newsletter/connect/facebook.png"
+              alt="Twitter"
+              options={ w: 39 }
+              attrs={ border: 0, width: 39 }
+            >
+              <@link href= "https://twitter.com/tdworldmag?elqTrack=true" target="_blank" />
+            </marko-newsletter-imgix>
             &nbsp;&nbsp;
-            <a href="http://www.linkedin.com/groups/Transmission-Distribution-World-4078692?elqTrack=true" style="margin: 0; padding: 0;"><img src="http://assets.penton.com/NewMedia/enews-social-icons/linkedin-39x39.png" alt="" width="38" height="39" border="0" hspace="0" vspace="0" style="margin: 0; padding: 0; border: 0;"></a>
-            &nbsp;&nbsp;
-            <a href="http://feeds.feedburner.com/TDWMostRecent?NL=TDW-08&amp;amp;Issue=TDW-08_20191112_TDW-08_886&amp;amp;sfvc4enews=42&amp;amp;cl=footer_1&amp;amp;elqTrack=true" style="margin: 0; padding: 0;"><img src="http://assets.penton.com/NewMedia/enews-social-icons/rss-39x39.png" alt="" width="38" height="39" border="0" hspace="0" vspace="0" style="margin: 0; padding: 0; border: 0;"></a>
+            <marko-newsletter-imgix
+              src="/files/base/newsletter/connect/linkedin.png"
+              alt="Twitter"
+              options={ w: 39 }
+              attrs={ border: 0, width: 39 }
+            >
+              <@link href= "http://www.linkedin.com/groups/Transmission-Distribution-World-4078692?elqTrack=true" target="_blank" />
+            </marko-newsletter-imgix>
           </div>
         </td>
       </tr>
       <tr>
-        <td style="background-color: #444; padding: 10px; text-align: center;">
-          <p style="font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #ffffff; -webkit-margin-after: 0; -webkit-margin-before: 0; -webkit-margin-end: 0; -webkit-margin-start: 0; font-weight: normal; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;">
-            <a href="http://pages.tdworld.com/newsletter-preference" style="margin: 0; padding: 0; color: #ffffff; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-weight: bold; text-decoration: none;">Manage Subscriptions</a>
-            | <a href="http://penton-sub.halldata.com/TWNew?PK=%5BcampaignID%5D&amp;amp;YM_RID=%60email%60&amp;amp;elqTrack=true" style="margin: 0; padding: 0; color: #ffffff; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-weight: bold; text-decoration: none;">Subscribe To Print</a>
-            | <a href="http://enewspro.penton.com/new-archives/14731?elqTrack=true" style="margin: 0; padding: 0; color: #ffffff; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-weight: bold; text-decoration: none;">Archive</a>
+        <td style="background-color: #e5e5e5; padding: 10px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 17px;">
+          <p style="margin:0px;margin-bottom:1em;">This email is being sent to
+            <a style="text-decoration: underline !important;" href="mailto:@{email name}@">@{email name}@</a>.
           </p>
-        </td>
-      </tr>
-      <tr>
-        <td style="background-color: #e5e5e5; padding: 10px; text-align: center;">
-          <p class="legal-info" style="font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #000000; -webkit-margin-after: 0; -webkit-margin-before: 0; -webkit-margin-end: 0; -webkit-margin-start: 0; font-weight: normal; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; text-align: left;">
-            You are subscribed to this newsletter as <span class="eloquaemail" style="font-size: 12px; line-height: 146%; margin: 0; padding: 0;">EmailAddress</span> <br><strong style="font-weight: bold;">Questions or problems?</strong> Contact <a href="mailto:informa_cem@inbound.bamboocricket.com" style="margin: 0; padding: 0; color: #000000; text-decoration: underline;">Customer Service</a> <br><span class="site_name" style="font-size: 12px; line-height: 146%; margin: 0; padding: 0; font-style: italic;">T&amp;D World</span> | Informa | 605 Third Avenue, 22nd Floor, New York, NY 10158 <br><span class="copyright_info" style="font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #999;">© 2019, Informa USA, Inc., All Rights Reserved . </span>
+          <p style="margin:0px;margin-bottom:1em;">
+            Please add news.southcommmail.com and mail.southcommmail.com to your address book or safe sender list to receive our emails in your inbox. 
           </p>
-          <p style="font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #000000; -webkit-margin-after: 0; -webkit-margin-before: 0; -webkit-margin-end: 0; -webkit-margin-start: 0; font-weight: normal;">
-            <a style="margin: 0; padding: 0; float: left; color: #000000;" href="https://informa.com/privacy-policy?elqTrack=true"> Privacy Policy</a>
+          <p style="margin:0px;margin-bottom:1em;">
+            <a style="text-decoration: underline !important;" href="{{ config.get('unsubscribe_link')|raw }}">Unsubscribe</a>
+            | <a style="text-decoration: underline !important;" href="{{ subscribe }}">Manage Newsletter Subscriptions</a>
+            | <a style="text-decoration: underline !important;" href="@{forwardtoafriendlink}@">Forward to a Friend</a>
+            | <a style="text-decoration: underline !important;" href="https://www.{{ config.get('site.url') }}/contact-us">Customer Service Center</a>
+            | <a style="text-decoration: underline !important;" href="https://www.endeavorbusinessmedia.com/privacy-policyd">Read Privacy Policy</a>
           </p>
-        </td>
-      </tr>
-      <tr>
-        <td style="background-color: #bfbfc1; padding: 10px;">
-          <img id="powered-by-img" src="http://enewspro.penton.com/sites/all/themes/clean/assets/images/powered_by_img.png" alt="" width="150" style="margin: 0; padding: 0; border: 0;">
+
+          <p style="margin:0px;margin-bottom:1em;">
+            If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href="{{ subscribe }}">click here</a> to sign-up.
+          </p>
+
+          <p style="margin:0px;margin-bottom:1em;">
+            If you have trouble with any of these methods, you can reach us toll-free at 800-547-7377.
+          </p>
+          <p>
+            {{ context.getGroup().name }}<br>
+            Endeavor Business Media<br />
+            1233 Janesville Ave<br />
+            Fort Atkinson, WI 53538
+          </p>
         </td>
       </tr>
     </common-table>

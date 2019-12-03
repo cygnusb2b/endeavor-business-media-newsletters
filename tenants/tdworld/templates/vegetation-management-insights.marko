@@ -1,7 +1,7 @@
+import { getAsObject } from "@base-cms/object-path";
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
 import emailX from "../config/email-x";
 
-//https://manage.tdworld.com/content/edit/article/21112277
 $ const getReadMoreText = (node) => {
   const { type, typeTitle } = node;
   const viewType = ['video', 'photo-gallery', 'whitepaper'];
@@ -10,8 +10,16 @@ $ const getReadMoreText = (node) => {
 
 $ const { website } = out.global;
 $ const { newsletter, date } = data;
-$ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b398; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px;";
-
+$ const leaderboard_primary = emailX.getAdUnit({ name: "leaderboard_primary", alias: newsletter.alias });
+$ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
+$ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
+$ const contentLinkStyle = {
+  "font-weight": "bold",
+  "color": "#00b398",
+  "font-size": "19.5px",
+  "line-height": "20px",
+  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+}
 <marko-newsletter-root
   title=newsletter.name
   description=newsletter.description
@@ -21,8 +29,6 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
     <tenant-styles />
   </@head>
   <@body style="margin: 0px !important; background-color: #efefef;">
-
-    <!-- Header -->
     <common-banner-element
       name=newsletter.name
       date=date
@@ -47,7 +53,7 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
         <td height="75" valign="top" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; width: 5px;">
           &nbsp;
         </td>
-        <td height="75" valign="top" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; background-color: #ffffff; width: 140px; margin-left: 10px; border-top: 2px solid #bbb; border-bottom: 2px solid #bbb;">
+        <td height="75" valign="center" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; background-color: #ffffff; width: 140px; margin-left: 10px; border-top: 2px solid #bbb; border-bottom: 2px solid #bbb;">
           <marko-newsletter-imgix
               src="/files/base/ebm/tdworld/image/static/newsletter/header_logo.jpg"
               alt="Twitter"
@@ -63,7 +69,6 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
         </td>
       </tr>
     </common-table>
-
     <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
 
     <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
@@ -82,89 +87,71 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
 
     <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
 
-    <!-- Featrued Full -->
     <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
       <tr>
         <td>
+          <!-- Section Query Wrapper -->
           <marko-web-query|{ nodes }| name="newsletter-scheduled-content" params={
             date: date.valueOf(),
             newsletterId: newsletter.id,
             sectionId: 68402,
-            limit: 1,
+            limit: 24,
             queryFragment: contentList,
           }>
-            <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
               <tr>
-                <td style=`${titleStyle}`>
-                  Top Story
-                </td>
-              </tr>
-              <tr>
-                <td><hr></td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-            </common-table>
-            <for|node, index| of=nodes>
-              $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
-              $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
-              <if(isFull)>
-                <if(node.type === 'promotion')>
-                  <tenant-promotion-full-block node=node alingment=alignment />
-                </if>
-                <else>
-                  <tenant-simple-card-full-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
-                </else>
-              </if>
-              <else>
-                <if(node.type === 'promotion')>
-                  <tenant-promotion-block node=node alingment=alignment />
-                </if>
-                <else>
-                  <tenant-simple-card-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
-                </else>
-                <if(index % 2 && index !== nodes.length - 1)>
-                  <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                <td>
+                  <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
                     <tr>
-                      <td valign="top">
-                        <hr style="margin:0;">
+                      <td>
+                        <h3 style=`${titleStyle}`>Top Story</h3>
                       </td>
                     </tr>
                   </common-table>
-                </if>
-              </else>
-            </for>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">
+                  <for|node, index| of=nodes>
+                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
+                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
+                    <if(isFull)>
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-full-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-full-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
+                    </if>
+                    <else>
+                      <if(node.type === 'promotion')>
+                        <tenant-promotion-block node=node alingment=alignment />
+                      </if>
+                      <else>
+                        <tenant-simple-card-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
+                      </else>
+                      <if(index % 2 && index !== nodes.length - 1)>
+                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+                          <tr>
+                            <td valign="top">
+                              <hr style="margin:0;">
+                            </td>
+                          </tr>
+                        </common-table>
+                      </if>
+                    </else>
+                  </for>
+                </td>
+              </tr>
+            </common-table>
           </marko-web-query>
         </td>
       </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
     </common-table>
-    
-    <!-- Featured Split Left||Right -->
+
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
+
     <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-      <tr>
-        <td>
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td style=`${titleStyle}`>
-                Highlights
-              </td>
-            </tr>
-            <tr>
-              <td><hr></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </common-table>
-        </td>
-      </tr>
       <tr>
         <td>
           <!-- Section Query Wrapper -->
@@ -175,7 +162,18 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
             limit: 24,
             queryFragment: contentList,
           }>
-            <common-table width="700" style="border-collapse:collapse;" align="left" class="main" padding=0 spacing=0>
+            <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
+              <tr>
+                <td>
+                  <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
+                    <tr>
+                      <td>
+                        <h3 style=`${titleStyle}`>Highlights</h3>
+                      </td>
+                    </tr>
+                  </common-table>
+                </td>
+              </tr>
               <tr>
                 <td valign="top">
                   <for|node, index| of=nodes>
@@ -213,39 +211,33 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
           </marko-web-query>
         </td>
       </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
     </common-table>
+
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
 
     <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
       <tr>
         <td>
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td style=`${titleStyle}`>
-                Announcments
-              </td>
-            </tr>
-            <tr>
-              <td><hr></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </common-table>
-        </td>
-      </tr>
-      <tr>
-        <td>
+          <!-- Section Query Wrapper -->
           <marko-web-query|{ nodes }| name="newsletter-scheduled-content" params={
             date: date.valueOf(),
             newsletterId: newsletter.id,
             sectionId: 68404,
-            limit: 25,
+            limit: 24,
             queryFragment: contentList,
           }>
-            <common-table width="700" style="border-collapse:collapse;" align="left" class="main" padding=0 spacing=0>
+            <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
+              <tr>
+                <td>
+                  <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
+                    <tr>
+                      <td>
+                        <h3 style=`${titleStyle}`>Announcments</h3>
+                      </td>
+                    </tr>
+                  </common-table>
+                </td>
+              </tr>
               <tr>
                 <td valign="top">
                   <for|node, index| of=nodes>
@@ -283,69 +275,46 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
           </marko-web-query>
         </td>
       </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
     </common-table>
+
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
 
     <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
       <tr>
         <td>
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td style=`${titleStyle}`>
-                From the Archives
-              </td>
-            </tr>
-            <tr>
-              <td><hr></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </common-table>
-        </td>
-      </tr>
-      <tr>
-        <td>
+          <!-- Section Query Wrapper -->
           <marko-web-query|{ nodes }| name="newsletter-scheduled-content" params={
             date: date.valueOf(),
             newsletterId: newsletter.id,
             sectionId: 68405,
-            limit: 25,
+            limit: 24,
             queryFragment: contentList,
           }>
-            <common-table width="700" style="border-collapse:collapse;" align="left" class="main" padding=0 spacing=0>
+            <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
               <tr>
-                <td valign="top">
+                <td>
+                  <common-table width="100%" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;" align="center" class="main" padding=0 spacing=0>
+                    <tr>
+                      <td>
+                        <h3 style=`${titleStyle}`>From The Archives</h3>
+                      </td>
+                    </tr>
+                  </common-table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
+                    &nbsp;
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top" style="padding: 0 15px 15px 15px;">
                   <for|node, index| of=nodes>
-                    $ const alignment = (index === 0 || 0 === index % 2) ? "left" : "right";
-                    $ const  isFull = (nodes.length === 1 || (0 === index % 2 && index === nodes.length - 1)) ? true : false;
-                    <if(isFull)>
-                      <if(node.type === 'promotion')>
-                        <tenant-promotion-full-block node=node alingment=alignment />
-                      </if>
-                      <else>
-                        <tenant-simple-card-full-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
-                      </else>
-                    </if>
-                    <else>
-                      <if(node.type === 'promotion')>
-                        <tenant-promotion-block node=node alingment=alignment />
-                      </if>
-                      <else>
-                        <tenant-simple-card-block node=node alingment=alignment contentLinkStyle=contentLinkStyle />
-                      </else>
-                      <if(index % 2 && index !== nodes.length - 1)>
-                        <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-                          <tr>
-                            <td valign="top">
-                              <hr style="margin:0;">
-                            </td>
-                          </tr>
-                        </common-table>
-                      </if>
-                    </else>
+                    <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+                      <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
+                    </marko-core-obj-text>
                   </for>
                 </td>
               </tr>
@@ -353,10 +322,9 @@ $ const titleStyle = "font-weight: bold; background-color: #ffffff; color: #00b3
           </marko-web-query>
         </td>
       </tr>
-      <tr>
-        <td>&nbsp;</td>
-      </tr>
     </common-table>
+
+    <div class="sect-gap" style="height:8px;line-height: 8px;font-size: 1px;">&nbsp;</div>
 
     <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0 attrs={ style: { "background-color": "#e5e5e5" } } >
       <tr>
