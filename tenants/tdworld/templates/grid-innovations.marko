@@ -50,7 +50,7 @@ $ const contentLinkStyle = {
         <td height="75" valign="center" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; background-color: #ffffff; width: 140px; margin-left: 10px; border-top: 2px solid #bbb; border-bottom: 2px solid #bbb;">
           <marko-newsletter-imgix
               src="/files/base/ebm/tdworld/image/static/newsletter/header_logo.jpg"
-              alt="Twitter"
+              alt=newsletter.name
               options={ w: 120 }
               attrs={ border: 0, width: 120 }
             >
@@ -363,10 +363,10 @@ $ const contentLinkStyle = {
             Please add news.southcommmail.com and mail.southcommmail.com to your address book or safe sender list to receive our emails in your inbox. 
           </p>
           <p style="margin:0px;margin-bottom:1em;">
-            <a style="text-decoration: underline !important;" href="{{ config.get('unsubscribe_link')|raw }}">Unsubscribe</a>
-            | <a style="text-decoration: underline !important;" href="{{ subscribe }}">Manage Newsletter Subscriptions</a>
+            <a style="text-decoration: underline !important;" href=`${website.get("origin")}/subscribe`>Unsubscribe</a>
+            | <a style="text-decoration: underline !important;" href=`${website.get("origin")}/subscribe`>Manage Newsletter Subscriptions</a>
             | <a style="text-decoration: underline !important;" href="@{forwardtoafriendlink}@">Forward to a Friend</a>
-            | <a style="text-decoration: underline !important;" href="https://www.{{ config.get('site.url') }}/contact-us">Customer Service Center</a>
+            | <a style="text-decoration: underline !important;" href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
             | <a style="text-decoration: underline !important;" href="https://www.endeavorbusinessmedia.com/privacy-policyd">Read Privacy Policy</a>
           </p>
 
