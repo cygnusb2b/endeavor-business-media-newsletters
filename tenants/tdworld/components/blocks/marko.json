@@ -14,44 +14,10 @@
       "type": "number",
       "default-value": 320
     },
-    "@content-link-style": {
-      "type" : "object",
-      "default-value": {
-        "text-align": "left",
-        "text-decoration": "none !important",
-        "font-size": "14px",
-        "line-height": "24px",
-        "font-family": "Arial, Helvetica, sans-serif",
-        "color": "#00B39E",
-        "font-weight": "bold"
-      } 
-    },
-    "@teaser-style": {
-      "type" : "object",
-      "default-value": {
-        "font-size": "12px",
-        "line-height": "146%",
-        "margin": "0",
-        "padding": "0",
-        "color": "#000000",
-        "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
-      }
-    },
-    "@button-style" : {
-      "type": "string",
-      "default-value": "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00b398;"
-    },
-    "@button-text-style" : {
-      "type": "object",
-      "default-value": {
-        "color": "#ffffff",
-        "font-family": "Helvetica, Arial, sans-serif",
-        "font-size": "14px",
-        "font-weight": "bold",
-        "text-decoration": "none",
-        "text-transform": "uppercase"
-      }
-    }
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object"
   },
   "<tenant-simple-card-full-block>": {
     "template": "./simple-card-full.marko",
@@ -68,44 +34,10 @@
       "type": "number",
       "default-value": 320
     },
-    "@content-link-style": {
-      "type" : "object",
-      "default-value": {
-        "text-align": "left",
-        "text-decoration": "none !important",
-        "font-size": "14px",
-        "line-height": "24px",
-        "font-family": "Arial, Helvetica, sans-serif",
-        "color": "#00B39E",
-        "font-weight": "bold"
-      } 
-    },
-    "@teaser-style": {
-      "type" : "object",
-      "default-value": {
-        "font-size": "12px",
-        "line-height": "146%",
-        "margin": "0",
-        "padding": "0",
-        "color": "#000000",
-        "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
-      }
-    },
-    "@button-style" : {
-      "type": "string",
-      "default-value": "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00b398;"
-    },
-    "@button-text-style" : {
-      "type": "object",
-      "default-value": {
-        "color": "#ffffff",
-        "font-family": "Helvetica, Arial, sans-serif",
-        "font-size": "14px",
-        "font-weight": "bold",
-        "text-decoration": "none",
-        "text-transform": "uppercase"
-      }
-    }
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object"
   },
   "<tenant-promotion-block>": {
     "template": "./promotion.marko",
@@ -122,17 +54,7 @@
       "type": "number",
       "default-value": 320
     },
-    "@teaser-style": {
-      "type" : "object",
-      "default-value": {
-        "font-size": "12px",
-        "line-height": "146%",
-        "margin": "0",
-        "padding": "0",
-        "color": "#000000",
-        "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
-      }
-    }
+    "@teaser-style": "object"
   },
   "<tenant-promotion-full-block>": {
     "template": "./promotion-full.marko",
@@ -149,16 +71,6 @@
       "type": "number",
       "default-value": 320
     },
-    "@teaser-style": {
-      "type" : "object",
-      "default-value": {
-        "font-size": "12px",
-        "line-height": "146%",
-        "margin": "0",
-        "padding": "0",
-        "color": "#000000",
-        "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
-      }
-    }
+    "@teaser-style":  "object"
   }
 }
