@@ -1,4 +1,8 @@
 {
+  "<common-view-online-element>": {
+    "template": "./view-online.marko",
+    "@name": "string"
+  },
   "<tenant-banner-element>": {
     "template": "./banner.marko",
     "@name": "string",
