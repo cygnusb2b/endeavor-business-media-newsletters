@@ -1,7 +1,4 @@
 {
-  "taglib-imports": [
-    "./header/marko.json"
-  ],
   "<tenant-simple-card-block>": {
     "template": "./simple-card.marko",
     "@node": "object",
