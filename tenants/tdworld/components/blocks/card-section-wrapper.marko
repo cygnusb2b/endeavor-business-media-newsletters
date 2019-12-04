@@ -50,12 +50,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle = {
                 $ const alignment = getAlignment(index);
                 $ const isFull = getIsFullWidth(nodes, index);
                 <if(node.type === "promotion")>
-                  <if(isFull)>
-                    <tenant-promotion-full-block node=node alignment=alignment />
-                  </if>
-                  <else>
                     <tenant-promotion-block node=node alignment=alignment />
-                  </else>
                 </if>
                 <else>
                   <if(isFull)>
