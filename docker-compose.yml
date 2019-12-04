@@ -79,7 +79,7 @@ services:
     working_dir: /root/tenants/ewweb
     environment:
       <<: *env
-      <<: *env-picon
+      <<: *env-gemenon
       PORT: 80
       EXPOSED_PORT: 19402
       LIVERELOAD_PORT: 29402
