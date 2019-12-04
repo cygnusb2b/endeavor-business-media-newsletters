@@ -35,6 +35,7 @@
       "default-value": 24
     },
     "@title": "string",
+    "@button-style": "string",
     "@title-style": "string",
     "@main-table-style": "string",
     "@content-link-style": "object"
