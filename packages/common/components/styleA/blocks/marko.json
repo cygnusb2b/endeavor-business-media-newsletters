@@ -28,6 +28,7 @@
       "default-value": 0
     },
     "@title": "string",
+    "@title-table-style": "string",
     "@title-style": "string",
     "@teaser-style": "object",
     "@button-style": "string",
@@ -58,6 +59,7 @@
       "default-value": 0
     },
     "@title": "string",
+    "@title-table-style": "string",
     "@title-style": "string",
     "@teaser-style": "object",
     "@button-style": "string",
@@ -88,6 +90,7 @@
       "default-value": 0
     },
     "@title": "string",
+    "@title-table-style": "string",
     "@title-style": "string",
     "@main-table-style": "string",
     "@content-link-style": "object"
