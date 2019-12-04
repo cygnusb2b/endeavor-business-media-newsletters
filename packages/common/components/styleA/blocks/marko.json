@@ -1,0 +1,170 @@
+{
+  "<common-style-a-opt-out-block>": {
+    "template": "./opt-out.marko"
+  },
+  "<common-style-a-section-spacer-block>": {
+    "template": "./section-spacer.marko"
+  },
+  "<common-style-a-featured-section-wrapper-block>": {
+    "template": "./featured-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 24
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<common-style-a-card-section-wrapper-block>": {
+    "template": "./card-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 24
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<common-style-a-list-section-wrapper-block>": {
+    "template": "./list-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 24
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-style": "string",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<common-style-a-simple-card-block>": {
+    "template": "./simple-card.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 310
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object"
+  },
+  "<common-style-a-simple-card-full-block>": {
+    "template": "./simple-card-full.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 310
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object"
+  },
+  "<common-style-a-promotion-block>": {
+    "template": "./promotion.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 310
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object"
+  },
+  "<common-style-a-promotion-full-block>": {
+    "template": "./promotion-full.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 310
+    },
+    "@teaser-style":  "object"
+  }
+}
