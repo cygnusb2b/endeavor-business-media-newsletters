@@ -73,5 +73,20 @@ services:
       - "19401:80"
       - "29401:29401"
 
+  ewweb:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/ewweb
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19402
+      LIVERELOAD_PORT: 29402
+      TENANT_KEY: ebm_ewweb
+    ports:
+      - "19402:80"
+      - "29402:29402"
+
 volumes:
   yarn-cache: {}
