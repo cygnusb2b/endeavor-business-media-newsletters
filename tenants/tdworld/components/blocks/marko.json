@@ -39,6 +39,29 @@
     "@main-table-style": "string",
     "@content-link-style": "object"
   },
+  "<tenant-featured-section-wrapper-block>": {
+    "template": "./featured-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 24
+    },
+    "@title": "string",
+    "@title-style": "string",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
   "<tenant-list-section-wrapper-block>": {
     "template": "./list-section-wrapper.marko",
     "@date": {
