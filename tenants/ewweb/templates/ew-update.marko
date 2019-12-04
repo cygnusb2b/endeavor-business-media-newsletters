@@ -1,0 +1,78 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <tenant-styles />
+  </@head>
+  <@body style="margin: 0px !important; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+    />
+    <tenant-header-block date=date newsletter=newsletter />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73016 date=date newsletter=newsletter title="EW Market Planning Guide" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73017 date=date newsletter=newsletter title="Big Construction Projects" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73018 date=date newsletter=newsletter title="EW Podcast" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73019 date=date newsletter=newsletter title="Product News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73020 date=date newsletter=newsletter title="2020 Market Forecast" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73021 date=date newsletter=newsletter title="Top 10 LED Picks for October" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73022 date=date newsletter=newsletter title="Rep News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73023 date=date newsletter=newsletter title="People" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73024 date=date newsletter=newsletter title="2019 Electrical Pyramid" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73025 date=date newsletter=newsletter title="Top 200 Distributors" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73026 date=date newsletter=newsletter title="More Industry News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73027 date=date newsletter=newsletter title="Acquisition News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73028 date=date newsletter=newsletter title="More People News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-opt-out-block />
+
+  </@body>
+</marko-newsletter-root>
