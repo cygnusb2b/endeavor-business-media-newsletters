@@ -43,6 +43,21 @@ services:
     environment:
       <<: *env
 
+  ecmweb:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/ecmweb
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19400
+      LIVERELOAD_PORT: 29400
+      TENANT_KEY: ebm_ecmweb
+    ports:
+      - "19400:80"
+      - "29400:29400"
+
   tdworld:
     <<: *node
     <<: *newsletter-cmd
@@ -51,12 +66,12 @@ services:
       <<: *env
       <<: *env-gemenon
       PORT: 80
-      EXPOSED_PORT: 19400
-      LIVERELOAD_PORT: 29400
+      EXPOSED_PORT: 19401
+      LIVERELOAD_PORT: 29401
       TENANT_KEY: ebm_tdworld
     ports:
-      - "19400:80"
-      - "29400:29400"
+      - "19401:80"
+      - "29401:29401"
 
   vspc:
     <<: *node
@@ -66,12 +81,12 @@ services:
       <<: *env
       <<: *env-picon
       PORT: 80
-      EXPOSED_PORT: 19401
-      LIVERELOAD_PORT: 29401
+      EXPOSED_PORT: 19402
+      LIVERELOAD_PORT: 29402
       TENANT_KEY: cygnus_vspc
     ports:
-      - "19401:80"
-      - "29401:29401"
+      - "19402:80"
+      - "29402:29402"
 
 volumes:
   yarn-cache: {}
