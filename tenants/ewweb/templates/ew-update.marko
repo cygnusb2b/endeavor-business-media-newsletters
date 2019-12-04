@@ -1,0 +1,95 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <tenant-styles />
+  </@head>
+  <@body style="margin: 0px !important; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+    />
+    <tenant-header-block date=date newsletter=newsletter />
+
+    <tenant-section-spacer-block />
+
+    <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td style="font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
+          <h3 style="margin:0;font-weight:bold;height:27px;margin:1px 0 5px 0px; font-family:Helvetica, Arial, sans-serif; font-size:11px; color:#999;text-align:left;">
+            Advertisement
+          </h3>
+          <marko-newsletters-email-x-display decoded-params=["email"]>
+            <@ad-unit ...leaderboardPrimary />
+            <@params date=date email="@{email name}@"/>
+          </marko-newsletters-email-x-display>
+        </td>
+      </tr>
+    </common-table>
+
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73016 date=date newsletter=newsletter title="EW Market Planning Guide" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73017 date=date newsletter=newsletter title="Big Construction Projects" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73018 date=date newsletter=newsletter title="EW Podcast" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73019 date=date newsletter=newsletter title="Product News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73020 date=date newsletter=newsletter title="2020 Market Forecast" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73021 date=date newsletter=newsletter title="Top 10 LED Picks for October" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73022 date=date newsletter=newsletter title="Rep News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73023 date=date newsletter=newsletter title="People" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73024 date=date newsletter=newsletter title="2019 Electrical Pyramid" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73025 date=date newsletter=newsletter title="Top 200 Distributors" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73026 date=date newsletter=newsletter title="More Industry News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73027 date=date newsletter=newsletter title="Acquisition News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=73028 date=date newsletter=newsletter title="More People News" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-opt-out-block />
+
+  </@body>
+</marko-newsletter-root>
