@@ -16,7 +16,7 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
 $ const contentLinkStyle = defaultValue(input.contentLinkStyle = {
   "font-weight": "bold",
   "color": "#00b398",
-  "font-size": "19.5px",
+  "font-size": "16px",
   "line-height": "20px",
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
 });
@@ -54,7 +54,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle = {
           <tr>
             <td valign="top">
               <for|node, index| of=nodes>
-                <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+                <marko-core-obj-text obj=node field="name" attrs={ style: { "margin": "10px 20px", "text-align": "left" } } >
                   <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
                 </marko-core-obj-text>
               </for>
