@@ -6,7 +6,7 @@ module.exports = {
     phoneNumber: '800-547-7377',
   },
   socialLink: {
-    twitter: 'ttps://twitter.com/ElecWholesaling?elqTrack=true" target="_blank',
+    twitter: 'https://twitter.com/ElecWholesaling?elqTrack=true" target="_blank',
     facebook: 'https://www.facebook.com/elecwholesalingmag?elqTrack=true',
     linkedIn: 'https://www.linkedin.com/groups/2187051?elqTrack=true',
   },
