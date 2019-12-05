@@ -1,7 +1,7 @@
 {
   "taglib-imports": [
     "./elements/marko.json",
-    "./styleA/marko.json"
+    "./style-a/marko.json"
   ],
   "<common-endeavor-styles>": {
     "template": "./endeavor-styles.marko"
