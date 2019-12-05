@@ -1,8 +1,5 @@
 {
   "taglib-imports": [
     "./blocks/marko.json"
-  ],
-  "<tenant-styles>": {
-    "template": "./default-style.marko"
-  }
+  ]
 }
