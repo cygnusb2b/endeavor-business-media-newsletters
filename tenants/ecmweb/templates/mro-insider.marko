@@ -2,6 +2,25 @@ import emailX from "../config/email-x";
 
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;";
+$ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
+$ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const contentLinkStyle = {
+  "font-weight": "bold",
+  "color": "#00b398",
+  "font-size": "19.5px",
+  "line-height": "20px",
+  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+};
+$ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00b398;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font-family": "Helvetica, Arial, sans-serif",
+  "font-size": "14px",
+  "font-weight": "bold",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
 
 <marko-newsletter-root
   title=newsletter.name
@@ -20,7 +39,18 @@ $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alia
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72989 date=date newsletter=newsletter title="Maintenance" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72989
+      title="Maintenance"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
@@ -40,39 +70,138 @@ $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alia
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72990 date=date newsletter=newsletter title="Repair" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72990
+      title="Repair"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72991 date=date newsletter=newsletter title="Operations" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72991
+      title="Operations"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72992 date=date newsletter=newsletter title="Design" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72992
+      title="Design"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72993 date=date newsletter=newsletter title="Special Report" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72993
+      title="Special Report"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72994 date=date newsletter=newsletter title="Web Exclusive" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72994
+      title="Web Exclusive"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72995 date=date newsletter=newsletter title="Around the Circuit" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72995
+      title="Around the Circuit"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72996 date=date newsletter=newsletter title="Code Quiz of the Week" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72996
+      title="Code Quiz of the Week"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72997 date=date newsletter=newsletter title="Eye On Safety" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72997
+      title="Eye On Safety"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block section-id=72998 date=date newsletter=newsletter title="In Case You Missed It" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72998
+      title="In Case You Missed It"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
     <common-style-a-section-spacer-block />
 
