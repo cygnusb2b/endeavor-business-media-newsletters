@@ -8,17 +8,17 @@ module.exports = {
   socialMediaLinks: [
     {
       provider: 'twitter',
-      href: 'https://twitter.com/ElecWholesaling?elqTrack=true',
+      href: 'https://twitter.com/contractormag?elqTrack=true',
       title: 'Follow us on Twitter',
     },
     {
       provider: 'facebook',
-      href: 'https://www.facebook.com/ElectricalConstructionMaintenanceMagazine?elqTrack=true',
+      href: 'https://www.facebook.com/CONTRACTOR-Magazine-95416372437?ref=ts&elqTrack=true',
       title: 'Follow us on Facebook',
     },
     {
       provider: 'linkedin',
-      href: 'https://www.linkedin.com/groups/2685562?elqTrack=true',
+      href: 'https://www.linkedin.com/groups/4078340?elqTrack=true',
       title: 'Follow us on LinkedIn',
     },
   ],
