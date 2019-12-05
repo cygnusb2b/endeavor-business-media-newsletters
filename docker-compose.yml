@@ -88,17 +88,17 @@ services:
       - "19402:80"
       - "29402:29402"
 
-  vspc:
+  rermag:
     <<: *node
     <<: *newsletter-cmd
-    working_dir: /root/tenants/vspc
+    working_dir: /root/tenants/rermag
     environment:
       <<: *env
-      <<: *env-picon
+      <<: *env-gemenon
       PORT: 80
       EXPOSED_PORT: 19403
       LIVERELOAD_PORT: 29403
-      TENANT_KEY: cygnus_vspc
+      TENANT_KEY: ebm_rermag
     ports:
       - "19403:80"
       - "29403:29403"
@@ -117,6 +117,21 @@ services:
     ports:
       - "19404:80"
       - "29404:29404"
+
+  vspc:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/vspc
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19405
+      LIVERELOAD_PORT: 29405
+      TENANT_KEY: cygnus_vspc
+    ports:
+      - "19405:80"
+      - "29405:29405"
 
 volumes:
   yarn-cache: {}
