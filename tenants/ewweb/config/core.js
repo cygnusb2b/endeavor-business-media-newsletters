@@ -7,7 +7,7 @@ module.exports = {
   },
   socialLink: {
     twitter: 'https://twitter.com/ElecWholesaling?elqTrack=true" target="_blank',
-    facebook: 'https://www.facebook.com/elecwholesalingmag?elqTrack=true',
-    linkedIn: 'https://www.linkedin.com/groups/2187051?elqTrack=true',
+    facebook: 'https://www.facebook.com/ElectricalConstructionMaintenanceMagazine?elqTrack=true',
+    linkedIn: 'https://www.linkedin.com/groups/2685562?elqTrack=true',
   },
 };
