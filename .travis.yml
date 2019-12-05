@@ -77,6 +77,18 @@ jobs:
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
+      name: hpac
+      script: npx @base-cms/newsletter-deployment-tool deploy hpac gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: hpac
+      script: npx @base-cms/newsletter-deployment-tool deploy hpac gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
       name: tdworld
       script: npx @base-cms/newsletter-deployment-tool deploy tdworld gemenon
       install: skip

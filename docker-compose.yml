@@ -118,6 +118,21 @@ services:
       - "19404:80"
       - "29404:29404"
 
+  hpac:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/hpac
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19405
+      LIVERELOAD_PORT: 29405
+      TENANT_KEY: ebm_hpac
+    ports:
+      - "19405:80"
+      - "29405:29405"
+
   vspc:
     <<: *node
     <<: *newsletter-cmd
@@ -126,12 +141,12 @@ services:
       <<: *env
       <<: *env-picon
       PORT: 80
-      EXPOSED_PORT: 19405
-      LIVERELOAD_PORT: 29405
+      EXPOSED_PORT: 19406
+      LIVERELOAD_PORT: 29406
       TENANT_KEY: cygnus_vspc
     ports:
-      - "19405:80"
-      - "29405:29405"
+      - "19406:80"
+      - "29406:29406"
 
 volumes:
   yarn-cache: {}
