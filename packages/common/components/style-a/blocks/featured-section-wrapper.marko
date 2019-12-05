@@ -38,18 +38,20 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         skip: skip,
         queryFragment: contentList,
       }>
-        <common-table width="700" style=mainTableStyle align="left" class="main" padding=0 spacing=0>
-          <tr>
-            <td>
-              <common-table width="100%" style=titleTableStyle align="center" class="main" padding=0 spacing=0>
-                <tr>
-                  <td>
-                    <h3 style=`${titleStyle}`>${title}</h3>
-                  </td>
-                </tr>
-              </common-table>
-            </td>
-          </tr>
+        <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
+          <if(title)>
+            <tr>
+              <td>
+                <common-table width="100%" style=titleTableStyle align="center" class="main" padding=0 spacing=0>
+                  <tr>
+                    <td>
+                      <h3 style=`${titleStyle}`>${title}</h3>
+                    </td>
+                  </tr>
+                </common-table>
+              </td>
+            </tr>
+          </if>
           <tr>
             <td valign="top">
               <for|node, index| of=nodes>
