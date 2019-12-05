@@ -73,6 +73,14 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('etrain', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5de9681776787a84a311bba4',
+      width: 670,
+      height: 90,
+    },
   ]);
 
 module.exports = config;
