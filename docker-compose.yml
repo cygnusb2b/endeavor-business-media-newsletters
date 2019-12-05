@@ -118,5 +118,20 @@ services:
       - "19404:80"
       - "29404:29404"
 
+  hpac:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/hpac
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19405
+      LIVERELOAD_PORT: 29405
+      TENANT_KEY: ebm_hpac
+    ports:
+      - "19405:80"
+      - "29405:29405"
+
 volumes:
   yarn-cache: {}
