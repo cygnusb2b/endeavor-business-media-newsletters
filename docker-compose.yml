@@ -103,17 +103,17 @@ services:
       - "19403:80"
       - "29403:29403"
 
-  vspc:
+  contractormag:
     <<: *node
     <<: *newsletter-cmd
-    working_dir: /root/tenants/vspc
+    working_dir: /root/tenants/contractormag
     environment:
       <<: *env
-      <<: *env-picon
+      <<: *env-gemenon
       PORT: 80
       EXPOSED_PORT: 19404
       LIVERELOAD_PORT: 29404
-      TENANT_KEY: cygnus_vspc
+      TENANT_KEY: ebm_contractormag
     ports:
       - "19404:80"
       - "29404:29404"
@@ -132,6 +132,21 @@ services:
     ports:
       - "19405:80"
       - "29405:29405"
+
+  vspc:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/vspc
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19406
+      LIVERELOAD_PORT: 29406
+      TENANT_KEY: cygnus_vspc
+    ports:
+      - "19406:80"
+      - "29406:29406"
 
 volumes:
   yarn-cache: {}

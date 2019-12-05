@@ -41,6 +41,18 @@ jobs:
     #############################
 
     - stage: production
+      name: contractormag
+      script: npx @base-cms/newsletter-deployment-tool deploy contractormag gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: contractormag
+      script: npx @base-cms/newsletter-deployment-tool deploy contractormag gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
       name: ecmweb
       script: npx @base-cms/newsletter-deployment-tool deploy ecmweb gemenon
       install: skip
