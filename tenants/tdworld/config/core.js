@@ -8,6 +8,6 @@ module.exports = {
   socialLink: {
     twitter: 'https://twitter.com/tdworldmag?elqTrack=true',
     facebook: 'https://www.facebook.com/pages/Transmission-Distribution-World/110964078942390?elqTrack=true',
-    linkedIn: 'https://www.linkedin.com/groups/Transmission-Distribution-World-4078692?elqTrack=true',
+    linkedin: 'https://www.linkedin.com/groups/Transmission-Distribution-World-4078692?elqTrack=true',
   },
 };

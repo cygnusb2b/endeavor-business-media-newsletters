@@ -5,32 +5,17 @@ $ const { website, config } = out.global;
     <td style="background-color: #e5e5e5; text-align: center;">
       <p class="connect_info" style="font-size: 14px; line-height: 146%; margin: 10px; padding: 0; color: #000000; -webkit-margin-after: 10px; -webkit-margin-before: 10px; -webkit-margin-end: 10px; -webkit-margin-start: 10px; font-weight: bold; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;">Connect With Us</p>
       <div>
-        <marko-newsletter-imgix
-          src="/files/base/newsletter/connect/twitter.png"
-          alt="Twitter"
-          options={ w: 39 }
-          attrs={ border: 0, width: 39 }
-        >
-          <@link href=config.get("socialLink.twitter") target="_blank" />
-        </marko-newsletter-imgix>
-        &nbsp;&nbsp;
-        <marko-newsletter-imgix
-          src="/files/base/newsletter/connect/facebook.png"
-          alt="Facebook"
-          options={ w: 39 }
-          attrs={ border: 0, width: 39 }
-        >
-          <@link href=config.get("socialLink.facebook") target="_blank" />
-        </marko-newsletter-imgix>
-        &nbsp;&nbsp;
-        <marko-newsletter-imgix
-          src="/files/base/newsletter/connect/linkedin.png"
-          alt="LinkedIn"
-          options={ w: 39 }
-          attrs={ border: 0, width: 39 }
-        >
-          <@link href=config.get("socialLink.linkedin") target="_blank" />
-        </marko-newsletter-imgix>
+        <for|provider, url| in=config.get("socialLink")>
+          <marko-newsletter-imgix
+            src=`/files/base/newsletter/connect/${provider}.png`
+            alt=provider
+            options={ w: 39 }
+            attrs={ border: 0, width: 39 }
+          >
+            <@link href=url target="_blank" />
+          </marko-newsletter-imgix>
+          &nbsp;&nbsp;
+        </for>
       </div>
     </td>
   </tr>

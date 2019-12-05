@@ -6,8 +6,8 @@ module.exports = {
     phoneNumber: '800-547-7377',
   },
   socialLink: {
-    twitter: 'https://twitter.com/ElecWholesaling?elqTrack=true" target="_blank',
+    twitter: 'https://twitter.com/ElecWholesaling?elqTrack=true',
     facebook: 'https://www.facebook.com/ElectricalConstructionMaintenanceMagazine?elqTrack=true',
-    linkedIn: 'https://www.linkedin.com/groups/2685562?elqTrack=true',
+    linkedin: 'https://www.linkedin.com/groups/2685562?elqTrack=true',
   },
 };

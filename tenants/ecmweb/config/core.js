@@ -5,4 +5,9 @@ module.exports = {
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
   },
+  socialLink: {
+    twitter: 'https://twitter.com/?elqTrack=true#1/ecmweb',
+    facebook: 'https://www.facebook.com/pages/Electrical-Construction-Maintenance/46473364997?elqTrack=true',
+    linkedin: 'https://www.linkedin.com/groups?home=&gid=2685562&trk=anet_ug_hm&elqTrack=true',
+  },
 };
