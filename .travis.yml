@@ -41,6 +41,18 @@ jobs:
     #############################
 
     - stage: production
+      name: asumag
+      script: npx @base-cms/newsletter-deployment-tool deploy asumag gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: asumag
+      script: npx @base-cms/newsletter-deployment-tool deploy asumag gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
       name: contractormag
       script: npx @base-cms/newsletter-deployment-tool deploy contractormag gemenon
       install: skip
