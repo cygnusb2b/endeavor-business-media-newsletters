@@ -2,10 +2,10 @@ const EmailXConfiguration = require('@base-cms/marko-newsletters-email-x/config'
 
 const config = new EmailXConfiguration('https://ebm.serve.email-x.io');
 config
-  .setAdUnits('ew-update', [
+  .setAdUnits('fastrack', [
     {
       name: 'leaderboardPrimary',
-      id: '5de7f1ddd3007738c2f2249b',
+      id: '5de93a9076787ae73911b7eb',
       width: 670,
       height: 90,
     },
