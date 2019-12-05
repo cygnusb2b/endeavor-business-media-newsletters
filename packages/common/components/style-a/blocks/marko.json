@@ -21,7 +21,7 @@
     },
     "@limit": {
       "type": "number",
-      "default-value": 24
+      "default-value": 0
     },
     "@skip": {
       "type": "number",
@@ -52,7 +52,7 @@
     },
     "@limit": {
       "type": "number",
-      "default-value": 24
+      "default-value": 0
     },
     "@skip": {
       "type": "number",
@@ -83,7 +83,7 @@
     },
     "@limit": {
       "type": "number",
-      "default-value": 24
+      "default-value": 0
     },
     "@skip": {
       "type": "number",
@@ -114,7 +114,7 @@
     },
     "@limit": {
       "type": "number",
-      "default-value": 24
+      "default-value": 0
     },
     "@skip": {
       "type": "number",
@@ -168,6 +168,26 @@
   },
   "<common-style-a-simple-card-third-two-thirds-block>": {
     "template": "./simple-card-third-two-thirds.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 700
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 240
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object"
+  },
+  "<common-style-a-simple-card-full-wrapper-block>": {
+    "template": "./simple-card-full-wrapper.marko",
     "@node": "object",
     "@alignment": {
       "type": "string",
