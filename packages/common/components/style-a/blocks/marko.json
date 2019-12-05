@@ -188,23 +188,34 @@
   },
   "<common-style-a-simple-card-full-wrapper-block>": {
     "template": "./simple-card-full-wrapper.marko",
-    "@node": "object",
-    "@alignment": {
-      "type": "string",
-      "default-value": "left"
+    "@date": {
+      "type": "object",
+      "required": true
     },
-    "@table-width": {
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
       "type": "number",
-      "default-value": 700
+      "required": true
     },
-    "@img-width": {
+    "@limit": {
       "type": "number",
-      "default-value": 240
+      "default-value": 0
     },
-    "@content-link-style": "object",
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
     "@teaser-style": "object",
     "@button-style": "string",
-    "@button-text-style": "object"
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
   },
   "<common-style-a-promotion-block>": {
     "template": "./promotion.marko",
