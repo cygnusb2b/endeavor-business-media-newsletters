@@ -20,10 +20,10 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "font-size": "14px",
   "line-height": "24px",
   "font-family": "Arial, Helvetica, sans-serif",
-  "color": "#00897a",
+  "color": "#00B39E",
   "font-weight": "bold"
 });
-$ const buttonStyle = defaultValue(input.buttonStyle, "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00897a;");
+$ const buttonStyle = defaultValue(input.buttonStyle, "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00b398;");
 $ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
   "color": "#ffffff",
   "font-family": "Helvetica, Arial, sans-serif",
@@ -38,12 +38,12 @@ $ const getReadMoreText = (node) => {
   const viewType = ["video", "photo-gallery", "whitepaper"];
   return viewType.includes(type) ? node.typeTitle : `Full ${node.typeTitle}`;
 };
-$ const innerPadding = 15;
+$ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
 
 <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
   <tr>
-    <td style=`padding: 0; padding-${alignment}: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
+    <td style=`padding: 0; padding-left: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
       <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="left" class="left" padding=0 spacing=0>
         <tr>
           <td>
@@ -74,7 +74,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
 
 <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="right" class="right" padding=0 spacing=0>
   <tr>
-    <td style=`padding: 0; padding-${alignment}: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
+    <td style=`padding: 0; padding-right: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
       <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
         <tr>
           <td>

@@ -1,5 +1,5 @@
 {
-  "<tenant-view-online-element>": {
+  "<common-style-a-view-online-element>": {
     "template": "./view-online.marko",
     "@name": "string"
   }

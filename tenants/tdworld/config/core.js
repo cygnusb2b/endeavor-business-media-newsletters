@@ -5,4 +5,21 @@ module.exports = {
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
   },
+  socialMediaLinks: [
+    {
+      provider: 'twitter',
+      href: 'https://twitter.com/tdworldmag?elqTrack=true',
+      title: 'Follow us on Twitter',
+    },
+    {
+      provider: 'facebook',
+      href: 'https://www.facebook.com/pages/Transmission-Distribution-World/110964078942390?elqTrack=true',
+      title: 'Follow us on Facebook',
+    },
+    {
+      provider: 'linkedin',
+      href: 'https://www.linkedin.com/groups/Transmission-Distribution-World-4078692?elqTrack=true',
+      title: 'Follow us on LinkedIn',
+    },
+  ],
 };

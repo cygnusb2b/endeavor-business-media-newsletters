@@ -2,6 +2,9 @@ import emailX from "../config/email-x";
 
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #014570; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #014570;";
+$ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const contentLinkStyle = {
   "font-weight": "bold",
   "color": "#00897a",
@@ -10,6 +13,14 @@ $ const contentLinkStyle = {
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
 };
 $ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00897a;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font-family": "Helvetica, Arial, sans-serif",
+  "font-size": "14px",
+  "font-weight": "bold",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
 
 <marko-newsletter-root
   title=newsletter.name
@@ -17,7 +28,7 @@ $ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-heigh
   date=date
 >
   <@head>
-    <tenant-styles />
+    <common-style-a-styles/>
   </@head>
   <@body style="margin: 0px !important; background-color: #efefef;">
     <common-banner-element
@@ -26,7 +37,7 @@ $ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-heigh
     />
     <tenant-header-block date=date newsletter=newsletter />
 
-    <!-- <tenant-section-spacer-block />
+    <!-- <common-style-a-section-spacer-block />
 
     <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
       <tr>
@@ -42,25 +53,63 @@ $ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-heigh
       </tr>
     </common-table> -->
 
-    <tenant-section-spacer-block />
+    <common-style-a-section-spacer-block />
 
-    <tenant-card-section-wrapper-block section-id=72985 date=date newsletter=newsletter button-style=buttonStyle content-link-style=contentLinkStyle title="From the Show Floor" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72985
+      title="From the Show Floor"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
 
-    <tenant-section-spacer-block />
+    <common-style-a-section-spacer-block />
 
-    <tenant-card-section-wrapper-block section-id=72986 date=date newsletter=newsletter button-style=buttonStyle content-link-style=contentLinkStyle title="Event Recap" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72986
+      title="Event Recap"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      button-style=buttonStyle
+      content-link-style=contentLinkStyle
+    />
 
-    <tenant-section-spacer-block />
+    <common-style-a-section-spacer-block />
 
-    <tenant-card-section-wrapper-block section-id=72987 date=date newsletter=newsletter button-style=buttonStyle content-link-style=contentLinkStyle title="New Product Debuts" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72987
+      title="New Product Debuts"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      button-style=buttonStyle
+      content-link-style=contentLinkStyle
+    />
 
-    <tenant-section-spacer-block />
+    <common-style-a-section-spacer-block />
 
-    <tenant-card-section-wrapper-block section-id=72988 date=date newsletter=newsletter button-style=buttonStyle content-link-style=contentLinkStyle title="Awards" />
+    <common-style-a-card-section-wrapper-block
+      section-id=72988
+      title="Awards"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      button-style=buttonStyle
+      content-link-style=contentLinkStyle
+    />
 
-    <tenant-section-spacer-block />
+    <common-style-a-section-spacer-block />
 
-    <tenant-opt-out-block />
+    <common-style-a-opt-out-block />
 
   </@body>
 </marko-newsletter-root>

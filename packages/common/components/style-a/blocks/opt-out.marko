@@ -1,36 +1,26 @@
+import { getAsArray } from "@base-cms/object-path";
+import { asObject } from "@base-cms/utils";
+
 $ const { website, config } = out.global;
+$ const socialMediaProviders = config.getAsArray('socialMediaLinks');
+
 
 <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0 attrs={ style: { "background-color": "#e5e5e5" } } >
   <tr>
     <td style="background-color: #e5e5e5; text-align: center;">
       <p class="connect_info" style="font-size: 14px; line-height: 146%; margin: 10px; padding: 0; color: #000000; -webkit-margin-after: 10px; -webkit-margin-before: 10px; -webkit-margin-end: 10px; -webkit-margin-start: 10px; font-weight: bold; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;">Connect With Us</p>
       <div>
-        <marko-newsletter-imgix
-          src="/files/base/newsletter/connect/twitter.png"
-          alt="Twitter"
-          options={ w: 39 }
-          attrs={ border: 0, width: 39 }
-        >
-          <@link href="https://twitter.com/ElecWholesaling?elqTrack=true" target="_blank" />
-        </marko-newsletter-imgix>
-        &nbsp;&nbsp;
-        <marko-newsletter-imgix
-          src="/files/base/newsletter/connect/facebook.png"
-          alt="Facebook"
-          options={ w: 39 }
-          attrs={ border: 0, width: 39 }
-        >
-          <@link href="https://www.facebook.com/elecwholesalingmag?elqTrack=true" target="_blank" />
-        </marko-newsletter-imgix>
-        &nbsp;&nbsp;
-        <marko-newsletter-imgix
-          src="/files/base/newsletter/connect/linkedin.png"
-          alt="LinkeIn"
-          options={ w: 39 }
-          attrs={ border: 0, width: 39 }
-        >
-          <@link href="https://www.linkedin.com/groups/2187051?elqTrack=true" target="_blank" />
-        </marko-newsletter-imgix>
+        <for|socialLinks| of=socialMediaProviders>
+          <marko-newsletter-imgix
+            src=`/files/base/newsletter/connect/${socialLinks.provider}.png`
+            alt="social icon"
+            options={ w: 39 }
+            attrs={ border: 0, width: 39 }
+          >
+            <@link href=socialLinks.href title=socialLinks.title target="_blank" />
+          </marko-newsletter-imgix>
+          &nbsp;&nbsp;
+        </for>
       </div>
     </td>
   </tr>
