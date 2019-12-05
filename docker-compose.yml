@@ -148,5 +148,20 @@ services:
       - "19406:80"
       - "29406:29406"
 
+  asumag:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/asumag
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19407
+      LIVERELOAD_PORT: 29407
+      TENANT_KEY: ebm_asumag
+    ports:
+      - "19407:80"
+      - "29407:29407"
+
 volumes:
   yarn-cache: {}
