@@ -21,5 +21,10 @@ module.exports = {
       href: 'https://www.linkedin.com/groups/Transmission-Distribution-World-4078692?elqTrack=true',
       title: 'Follow us on LinkedIn',
     },
+    {
+      provider: 'youtube',
+      href: 'https://www.youtube.com/channel/UCD6JFCCOwOPu2v-KBcww_qw?elqTrack=true',
+      title: 'Watch our videos on Youtube',
+    },
   ],
 };
