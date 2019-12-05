@@ -41,37 +41,49 @@ jobs:
     #############################
 
     - stage: production
-      name: EWWeb
+      name: ecmweb
+      script: npx @base-cms/newsletter-deployment-tool deploy ecmweb gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: ecmweb
+      script: npx @base-cms/newsletter-deployment-tool deploy ecmweb gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: ewweb
       script: npx @base-cms/newsletter-deployment-tool deploy ewweb gemenon
       install: skip
       env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
     - stage: staging
-      name: EWWeb
+      name: ewweb
       script: npx @base-cms/newsletter-deployment-tool deploy ewweb gemenon
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
-      name: TDWorld
+      name: tdworld
       script: npx @base-cms/newsletter-deployment-tool deploy tdworld gemenon
       install: skip
       env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
     - stage: staging
-      name: TDWorld
+      name: tdworld
       script: npx @base-cms/newsletter-deployment-tool deploy tdworld gemenon
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
-      name: VSPC
+      name: vspc
       script: npx @base-cms/newsletter-deployment-tool deploy vspc picon
       install: skip
       env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
     - stage: staging
-      name: VSPC
+      name: vspc
       script: npx @base-cms/newsletter-deployment-tool deploy vspc picon
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]

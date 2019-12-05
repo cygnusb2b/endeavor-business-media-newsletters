@@ -1,0 +1,82 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <tenant-styles />
+  </@head>
+  <@body style="margin: 0px !important; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+    />
+    <tenant-header-block date=date newsletter=newsletter />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72989 date=date newsletter=newsletter title="Maintenance" />
+
+    <tenant-section-spacer-block />
+
+    <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td style="font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
+          <h3 style="margin:0;font-weight:bold;height:27px;margin:1px 0 5px 0px; font-family:Helvetica, Arial, sans-serif; font-size:11px; color:#999;text-align:left;">
+            Advertisement
+          </h3>
+          <marko-newsletters-email-x-display decoded-params=["email"]>
+            <@ad-unit ...leaderboardPrimary />
+            <@params date=date email="@{email name}@"/>
+          </marko-newsletters-email-x-display>
+        </td>
+      </tr>
+    </common-table>
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72990 date=date newsletter=newsletter title="Repair" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72991 date=date newsletter=newsletter title="Operations" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72992 date=date newsletter=newsletter title="Design" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72993 date=date newsletter=newsletter title="Special Report" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72994 date=date newsletter=newsletter title="Web Exclusive" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72995 date=date newsletter=newsletter title="Around the Circuit" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72996 date=date newsletter=newsletter title="Code Quiz of the Week" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72997 date=date newsletter=newsletter title="Eye On Safety" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-card-section-wrapper-block section-id=72998 date=date newsletter=newsletter title="In Case You Missed It" />
+
+    <tenant-section-spacer-block />
+
+    <tenant-opt-out-block />
+
+  </@body>
+</marko-newsletter-root>
