@@ -5,7 +5,7 @@ config
   .setAdUnits('ew-update', [
     {
       name: 'leaderboardPrimary',
-      id: '5de7f1ddd3007738c2f2249b',
+      id: '5de92a29d30077523df2358d',
       width: 670,
       height: 90,
     },
