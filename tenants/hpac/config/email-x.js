@@ -9,5 +9,14 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('engineering-green-buildings', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5dea8c3b76787a3b7c11cd42',
+      width: 670,
+      height: 90,
+    },
   ]);
+
 module.exports = config;
