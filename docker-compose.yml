@@ -148,21 +148,6 @@ services:
       - "19406:80"
       - "29406:29406"
 
-  contractingbusiness:
-    <<: *node
-    <<: *newsletter-cmd
-    working_dir: /root/tenants/contractingbusiness
-    environment:
-      <<: *env
-      <<: *env-gemenon
-      PORT: 80
-      EXPOSED_PORT: 19406
-      LIVERELOAD_PORT: 29406
-      TENANT_KEY: ebm_contractingbusiness
-    ports:
-      - "19406:80"
-      - "29406:29406"
-
   asumag:
     <<: *node
     <<: *newsletter-cmd
@@ -177,6 +162,21 @@ services:
     ports:
       - "19407:80"
       - "29407:29407"
+
+  contractingbusiness:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/contractingbusiness
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19408
+      LIVERELOAD_PORT: 29408
+      TENANT_KEY: ebm_contractingbusiness
+    ports:
+      - "19408:80"
+      - "29408:29408"
 
 volumes:
   yarn-cache: {}
