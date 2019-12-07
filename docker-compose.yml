@@ -178,5 +178,20 @@ services:
       - "19408:80"
       - "29408:29408"
 
+  electricalmarketing:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/electricalmarketing
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19409
+      LIVERELOAD_PORT: 29409
+      TENANT_KEY: ebm_electricalmarketing
+    ports:
+      - "19409:80"
+      - "29409:29409"
+
 volumes:
   yarn-cache: {}
