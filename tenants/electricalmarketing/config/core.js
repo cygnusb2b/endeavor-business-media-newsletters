@@ -8,17 +8,17 @@ module.exports = {
   socialMediaLinks: [
     {
       provider: 'twitter',
-      href: 'http://twitter.com/electricalmarketing?elqTrack=true',
+      href: 'https://twitter.com/electricalmarketing?elqTrack=true',
       title: 'Follow us on Twitter',
     },
     {
       provider: 'facebook',
-      href: 'http://www.facebook.com/elecwholesalingmag?elqTrack=true',
+      href: 'https://www.facebook.com/elecwholesalingmag?elqTrack=true',
       title: 'Follow us on Facebook',
     },
     {
       provider: 'linkedin',
-      href: 'http://www.linkedin.com/groups2187051?elqTrack=true',
+      href: 'https://www.linkedin.com/groups2187051?elqTrack=true',
       title: 'Follow us on LinkedIn',
     },
   ],
