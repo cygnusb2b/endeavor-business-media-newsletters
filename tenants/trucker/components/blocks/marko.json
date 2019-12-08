@@ -8,6 +8,7 @@
     "@newsletter": {
       "type": "object",
       "required": true
-    }
+    },
+    "@image-path": "string"
   }
 }
