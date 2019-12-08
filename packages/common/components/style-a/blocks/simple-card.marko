@@ -1,4 +1,5 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
+import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
 
 $ const {
   node,
@@ -47,7 +48,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
         <tr>
           <td>
             <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
-              &nbsp;
+              $!{getSponsoredByText(node, '&nbsp;')}
             </div>
           </td>
         </tr>
