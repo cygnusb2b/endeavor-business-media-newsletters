@@ -208,5 +208,20 @@ services:
       - "19410:80"
       - "29410:29410"
 
+  electronicdesign:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/electronicdesign
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19411
+      LIVERELOAD_PORT: 29411
+      TENANT_KEY: ebm_electronicdesign
+    ports:
+      - "19411:80"
+      - "29411:29411"
+
 volumes:
   yarn-cache: {}
