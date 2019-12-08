@@ -193,5 +193,20 @@ services:
       - "19409:80"
       - "29409:29409"
 
+  trucker:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/trucker
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19410
+      LIVERELOAD_PORT: 29410
+      TENANT_KEY: ebm_trucker
+    ports:
+      - "19410:80"
+      - "29410:29410"
+
 volumes:
   yarn-cache: {}
