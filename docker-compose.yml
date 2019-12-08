@@ -238,5 +238,20 @@ services:
       - "19412:80"
       - "29412:29412"
 
+  hydraulicspneumatics:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/hydraulicspneumatics
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19413
+      LIVERELOAD_PORT: 29413
+      TENANT_KEY: ebm_hydraulicspneumatics
+    ports:
+      - "19413:80"
+      - "29413:29413"
+
 volumes:
   yarn-cache: {}
