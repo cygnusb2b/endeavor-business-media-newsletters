@@ -1,13 +1,15 @@
 $ const {
   newsletter,
-  date
+  date,
+  imagePath
 } = input;
+
 <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
   <tr>
     <td>
       <span>
         <marko-newsletter-imgix
-          src="/files/base/ebm/electronicdesign/image/static/newsletter/today_header.jpg"
+          src=imagePath
           alt=newsletter.name
           options={ w: 700 }
           attrs={ border: 0, width: 700 }
