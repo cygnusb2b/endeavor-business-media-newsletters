@@ -8,18 +8,13 @@ module.exports = {
   socialMediaLinks: [
     {
       provider: 'twitter',
-      href: 'https://twitter.com/electricalmarketing?elqTrack=true',
+      href: 'https://twitter.com/truckerAMT?elqTrack=true',
       title: 'Follow us on Twitter',
     },
     {
       provider: 'facebook',
-      href: 'https://www.facebook.com/elecwholesalingmag?elqTrack=true',
+      href: 'https://www.facebook.com/pages/American-Trucker-Magazine/37172697238?elqTrack=true',
       title: 'Follow us on Facebook',
-    },
-    {
-      provider: 'linkedin',
-      href: 'https://www.linkedin.com/groups2187051?elqTrack=true',
-      title: 'Follow us on LinkedIn',
     },
   ],
 };
