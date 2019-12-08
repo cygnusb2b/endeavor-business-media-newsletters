@@ -223,5 +223,20 @@ services:
       - "19411:80"
       - "29411:29411"
 
+  fleetowner:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/fleetowner
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19412
+      LIVERELOAD_PORT: 29412
+      TENANT_KEY: ebm_fleetowner
+    ports:
+      - "19412:80"
+      - "29412:29412"
+
 volumes:
   yarn-cache: {}
