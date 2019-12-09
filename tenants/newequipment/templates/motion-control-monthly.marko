@@ -1,0 +1,59 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #e65525; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #e65525;";
+$ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
+$ const mainTableStyle ="border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const contentLinkStyle = {
+  "font-weight": "bold",
+  "color": "#1d3a4a",
+  "font-size": "19.5px",
+  "line-height": "20px",
+  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+};
+$ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #1d3a4a;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font-family": "Helvetica, Arial, sans-serif",
+  "font-size": "14px",
+  "font-weight": "bold",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-a-styles />
+  </@head>
+  <@body style="margin: 0px !important; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+    />
+    <tenant-header-block date=date newsletter=newsletter />
+
+    <common-style-a-section-spacer-block />
+
+    <common-style-a-featured-section-wrapper-block
+      section-id=73120
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <common-style-a-section-spacer-block />
+
+    <common-style-a-opt-out-block />
+
+  </@body>
+</marko-newsletter-root>
