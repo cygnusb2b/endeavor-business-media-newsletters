@@ -13,6 +13,11 @@ fragment NewsletterContentListFragment on Content {
     src
     alt
   }
+  labels
+  company {
+    id
+    name
+  }
   published
   ... on ContentTextAd {
     body(input: { mutation: Email })
