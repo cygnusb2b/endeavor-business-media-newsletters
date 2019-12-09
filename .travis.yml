@@ -232,6 +232,18 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
+    - stage: production
+      name: sourcetoday
+      script: npx @base-cms/newsletter-deployment-tool deploy sourcetoday gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: sourcetoday
+      script: npx @base-cms/newsletter-deployment-tool deploy sourcetoday gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #
     #############################
