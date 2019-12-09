@@ -9,5 +9,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('motion-control-monthly', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5dee7b1ad300779475f2798a',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;
