@@ -160,6 +160,90 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
+    - stage: production
+      name: trucker
+      script: npx @base-cms/newsletter-deployment-tool deploy trucker gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: trucker
+      script: npx @base-cms/newsletter-deployment-tool deploy trucker gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: electronicdesign
+      script: npx @base-cms/newsletter-deployment-tool deploy electronicdesign gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: electronicdesign
+      script: npx @base-cms/newsletter-deployment-tool deploy electronicdesign gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: fleetowner
+      script: npx @base-cms/newsletter-deployment-tool deploy fleetowner gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: fleetowner
+      script: npx @base-cms/newsletter-deployment-tool deploy fleetowner gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: hydraulicspneumatics
+      script: npx @base-cms/newsletter-deployment-tool deploy hydraulicspneumatics gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: hydraulicspneumatics
+      script: npx @base-cms/newsletter-deployment-tool deploy hydraulicspneumatics gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: mwrf
+      script: npx @base-cms/newsletter-deployment-tool deploy mwrf gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: mwrf
+      script: npx @base-cms/newsletter-deployment-tool deploy mwrf gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: newequipment
+      script: npx @base-cms/newsletter-deployment-tool deploy newequipment gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: newequipment
+      script: npx @base-cms/newsletter-deployment-tool deploy newequipment gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: sourcetoday
+      script: npx @base-cms/newsletter-deployment-tool deploy sourcetoday gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: sourcetoday
+      script: npx @base-cms/newsletter-deployment-tool deploy sourcetoday gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #
     #############################

@@ -193,5 +193,110 @@ services:
       - "19409:80"
       - "29409:29409"
 
+  trucker:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/trucker
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19410
+      LIVERELOAD_PORT: 29410
+      TENANT_KEY: ebm_trucker
+    ports:
+      - "19410:80"
+      - "29410:29410"
+
+  electronicdesign:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/electronicdesign
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19411
+      LIVERELOAD_PORT: 29411
+      TENANT_KEY: ebm_electronicdesign
+    ports:
+      - "19411:80"
+      - "29411:29411"
+
+  fleetowner:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/fleetowner
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19412
+      LIVERELOAD_PORT: 29412
+      TENANT_KEY: ebm_fleetowner
+    ports:
+      - "19412:80"
+      - "29412:29412"
+
+  hydraulicspneumatics:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/hydraulicspneumatics
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19413
+      LIVERELOAD_PORT: 29413
+      TENANT_KEY: ebm_hydraulicspneumatics
+    ports:
+      - "19413:80"
+      - "29413:29413"
+
+  mwrf:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/mwrf
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19414
+      LIVERELOAD_PORT: 29414
+      TENANT_KEY: ebm_mwrf
+    ports:
+      - "19414:80"
+      - "29414:29414"
+
+  newequipment:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/newequipment
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19415
+      LIVERELOAD_PORT: 29415
+      TENANT_KEY: ebm_newequipment
+    ports:
+      - "19415:80"
+      - "29415:29415"
+
+  sourcetoday:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/sourcetoday
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19416
+      LIVERELOAD_PORT: 29416
+      TENANT_KEY: ebm_sourcetoday
+    ports:
+      - "19416:80"
+      - "29416:29416"
+
 volumes:
   yarn-cache: {}
