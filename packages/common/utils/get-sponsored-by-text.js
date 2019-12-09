@@ -5,5 +5,5 @@ module.exports = (node, fallbackValue = '') => {
   const sponsored = labels.includes('Sponsored');
   const companyName = get(node, 'company.name');
   if (!sponsored) return fallbackValue;
-  return companyName ? `Sponsored by ${node.company.name}` : 'Sponsored';
+  return companyName ? `Sponsored by ${companyName}` : 'Sponsored';
 };
