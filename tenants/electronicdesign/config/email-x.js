@@ -10,6 +10,14 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('automotive-electronics', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5deea57e76787a6e8d11efe9',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('electronic-design-daily', [
     {
       name: 'leaderboardPrimary',
