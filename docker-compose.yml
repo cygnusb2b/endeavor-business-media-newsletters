@@ -253,5 +253,20 @@ services:
       - "19413:80"
       - "29413:29413"
 
+  mwrf:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/mwrf
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19414
+      LIVERELOAD_PORT: 29414
+      TENANT_KEY: ebm_mwrf
+    ports:
+      - "19414:80"
+      - "29414:29414"
+
 volumes:
   yarn-cache: {}
