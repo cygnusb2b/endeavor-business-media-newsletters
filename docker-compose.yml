@@ -298,5 +298,20 @@ services:
       - "19416:80"
       - "29416:29416"
 
+  machinedesign:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/machinedesign
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19417
+      LIVERELOAD_PORT: 29417
+      TENANT_KEY: ebm_machinedesign
+    ports:
+      - "19417:80"
+      - "29417:29417"
+
 volumes:
   yarn-cache: {}
