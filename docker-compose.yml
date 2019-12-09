@@ -283,5 +283,20 @@ services:
       - "19415:80"
       - "29415:29415"
 
+  sourcetoday:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/sourcetoday
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19416
+      LIVERELOAD_PORT: 29416
+      TENANT_KEY: ebm_sourcetoday
+    ports:
+      - "19416:80"
+      - "29416:29416"
+
 volumes:
   yarn-cache: {}
