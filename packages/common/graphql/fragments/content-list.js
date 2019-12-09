@@ -15,6 +15,7 @@ fragment NewsletterContentListFragment on Content {
   }
   labels
   company {
+    id
     name
   }
   published
