@@ -2,10 +2,10 @@ const EmailXConfiguration = require('@base-cms/marko-newsletters-email-x/config'
 
 const config = new EmailXConfiguration('https://ebm.serve.email-x.io');
 config
-  .setAdUnits('fluid-power', [
+  .setAdUnits('defense-electronics', [
     {
       name: 'leaderboardPrimary',
-      id: '5ded50a576787a26fd11e3c3',
+      id: '5dee672ed300774863f27718',
       width: 670,
       height: 90,
     },
