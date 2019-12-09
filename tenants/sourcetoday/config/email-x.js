@@ -2,18 +2,10 @@ const EmailXConfiguration = require('@base-cms/marko-newsletters-email-x/config'
 
 const config = new EmailXConfiguration('https://ebm.serve.email-x.io');
 config
-  .setAdUnits('analog-power-source', [
+  .setAdUnits('source-today', [
     {
       name: 'leaderboardPrimary',
-      id: '5ded409dd300776c6af275f4',
-      width: 670,
-      height: 90,
-    },
-  ])
-  .setAdUnits('electronic-design-daily', [
-    {
-      name: 'leaderboardPrimary',
-      id: '5ded40d076787ae65c11e341',
+      id: '5dee7f1a76787a66ec11e79f',
       width: 670,
       height: 90,
     },
