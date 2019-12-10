@@ -358,5 +358,20 @@ services:
       - "19420:80"
       - "29420:29420"
 
+  bulktransporter:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/bulktransporter
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19421
+      LIVERELOAD_PORT: 29421
+      TENANT_KEY: ebm_bulktransporter
+    ports:
+      - "19421:80"
+      - "29421:29421"
+
 volumes:
   yarn-cache: {}
