@@ -328,10 +328,10 @@ services:
       - "19418:80"
       - "29418:29418"
 
-  trailer-bodybuilders:
+  trailerbodybuilders:
     <<: *node
     <<: *newsletter-cmd
-    working_dir: /root/tenants/trailer-bodybuilders
+    working_dir: /root/tenants/trailerbodybuilders
     environment:
       <<: *env
       <<: *env-gemenon
