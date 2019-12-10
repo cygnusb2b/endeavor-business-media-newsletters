@@ -8,18 +8,13 @@ module.exports = {
   socialMediaLinks: [
     {
       provider: 'twitter',
-      href: 'https://twitter.com/ElecWholesaling?elqTrack=true',
+      href: 'http://twitter.com/?elqTrack=true#!/EHSToday',
       title: 'Follow us on Twitter',
     },
     {
       provider: 'facebook',
-      href: 'https://www.facebook.com/ElectricalConstructionMaintenanceMagazine?elqTrack=true',
+      href: 'http://www.facebook.com/pages/EHS-Today/66542218626?ref=ts&elqTrack=true',
       title: 'Follow us on Facebook',
-    },
-    {
-      provider: 'linkedin',
-      href: 'https://www.linkedin.com/groups/2685562?elqTrack=true',
-      title: 'Follow us on LinkedIn',
     },
   ],
 };
