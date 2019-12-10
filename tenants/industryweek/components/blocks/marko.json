@@ -1,0 +1,13 @@
+{
+  "<tenant-header-qmn-block>": {
+    "template": "./header-qmn.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    }
+  }
+}

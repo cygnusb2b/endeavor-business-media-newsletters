@@ -313,5 +313,20 @@ services:
       - "19417:80"
       - "29417:29417"
 
+  industryweek:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/industryweek
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19418
+      LIVERELOAD_PORT: 29418
+      TENANT_KEY: ebm_industryweek
+    ports:
+      - "19418:80"
+      - "29418:29418"
+
 volumes:
   yarn-cache: {}
