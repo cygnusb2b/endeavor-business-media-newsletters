@@ -328,5 +328,35 @@ services:
       - "19418:80"
       - "29418:29418"
 
+  trailerbodybuilder:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/trailerbodybuilder
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19419
+      LIVERELOAD_PORT: 29419
+      TENANT_KEY: ebm_trailerbodybuilder
+    ports:
+      - "19419:80"
+      - "29419:29419"
+
+  ehstoday:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/ehstoday
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19420
+      LIVERELOAD_PORT: 29420
+      TENANT_KEY: ebm_ehstoday
+    ports:
+      - "19420:80"
+      - "29420:29420"
+
 volumes:
   yarn-cache: {}
