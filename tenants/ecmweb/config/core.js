@@ -4,6 +4,8 @@ module.exports = {
     safeSenders: 'enews.ecmweb.com and mail.ecmweb.com',
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
+    manageSubscriptions: 'https://endeavor.dragonforms.com/ECMPrefPage?r=@{encrypted_customer_id}@&pk=NLFooter',
+    signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=ECMnewpref',
   },
   socialMediaLinks: [
     {
