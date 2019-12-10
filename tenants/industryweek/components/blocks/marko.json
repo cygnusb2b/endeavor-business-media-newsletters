@@ -1,17 +1,6 @@
 {
-  "<tenant-header-red-block>": {
-    "template": "./header-red.marko",
-    "@date": {
-      "type": "object",
-      "required": true
-    },
-    "@newsletter": {
-      "type": "object",
-      "required": true
-    }
-  },
-  "<tenant-header-blue-block>": {
-    "template": "./header-blue.marko",
+  "<tenant-header-qmn-block>": {
+    "template": "./header-qmn.marko",
     "@date": {
       "type": "object",
       "required": true
