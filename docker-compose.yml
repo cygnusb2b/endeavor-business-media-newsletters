@@ -338,7 +338,7 @@ services:
       PORT: 80
       EXPOSED_PORT: 19419
       LIVERELOAD_PORT: 29419
-      TENANT_KEY: ebm_trailer-bodybuilders
+      TENANT_KEY: ebm_trailerbodybuilders
     ports:
       - "19419:80"
       - "29419:29419"
