@@ -1,8 +1,8 @@
 {
-  "name": "@endeavor-business-media/contractorbusiness",
+  "name": "@endeavor-business-media/contractingbusiness",
   "version": "1.8.0",
   "author": "Jacob Bare <jacob@limit0.io>",
-  "repository": "https://github.com/base-cms-newsletters/endeavor-business-media/tree/master/tenants/contractorbusiness",
+  "repository": "https://github.com/base-cms-newsletters/endeavor-business-media/tree/master/tenants/contractingbusiness",
   "license": "MIT",
   "private": true,
   "scripts": {
