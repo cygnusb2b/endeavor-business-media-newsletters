@@ -10,12 +10,12 @@ module.exports = {
   socialMediaLinks: [
     {
       provider: 'twitter',
-      href: 'http://twitter.com/?elqTrack=true#!/bulktransporter',
+      href: 'https://twitter.com/?elqTrack=true#!/bulktransporter',
       title: 'Follow us on Twitter',
     },
     {
       provider: 'facebook',
-      href: 'http://www.facebook.com/bulktrans?elqTrack=true',
+      href: 'https://www.facebook.com/bulktrans?elqTrack=true',
       title: 'Follow us on Facebook',
     },
   ],

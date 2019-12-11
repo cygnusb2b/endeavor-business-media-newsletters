@@ -10,12 +10,12 @@ module.exports = {
   socialMediaLinks: [
     {
       provider: 'twitter',
-      href: 'http://twitter.com/?elqTrack=true#!/EHSToday',
+      href: 'https://twitter.com/?elqTrack=true#!/EHSToday',
       title: 'Follow us on Twitter',
     },
     {
       provider: 'facebook',
-      href: 'http://www.facebook.com/pages/EHS-Today/66542218626?ref=ts&elqTrack=true',
+      href: 'https://www.facebook.com/pages/EHS-Today/66542218626?ref=ts&elqTrack=true',
       title: 'Follow us on Facebook',
     },
   ],
