@@ -328,5 +328,80 @@ services:
       - "19418:80"
       - "29418:29418"
 
+  trailerbodybuilder:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/trailerbodybuilder
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19419
+      LIVERELOAD_PORT: 29419
+      TENANT_KEY: ebm_trailerbodybuilder
+    ports:
+      - "19419:80"
+      - "29419:29419"
+
+  ehstoday:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/ehstoday
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19420
+      LIVERELOAD_PORT: 29420
+      TENANT_KEY: ebm_ehstoday
+    ports:
+      - "19420:80"
+      - "29420:29420"
+
+  bulktransporter:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/bulktransporter
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19421
+      LIVERELOAD_PORT: 29421
+      TENANT_KEY: ebm_bulktransporter
+    ports:
+      - "19421:80"
+      - "29421:29421"
+
+  refrigeratedtransporter:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/refrigeratedtransporter
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19422
+      LIVERELOAD_PORT: 29422
+      TENANT_KEY: ebm_refrigeratedtransporter
+    ports:
+      - "19422:80"
+      - "29422:29422"
+
+  mhlnews:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/mhlnews
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19423
+      LIVERELOAD_PORT: 29423
+      TENANT_KEY: ebm_mhlnews
+    ports:
+      - "19423:80"
+      - "29423:29423"
+
 volumes:
   yarn-cache: {}
