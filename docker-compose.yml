@@ -328,17 +328,17 @@ services:
       - "19418:80"
       - "29418:29418"
 
-  trailerbodybuilder:
+  trailerbodybuilders:
     <<: *node
     <<: *newsletter-cmd
-    working_dir: /root/tenants/trailerbodybuilder
+    working_dir: /root/tenants/trailerbodybuilders
     environment:
       <<: *env
       <<: *env-gemenon
       PORT: 80
       EXPOSED_PORT: 19419
       LIVERELOAD_PORT: 29419
-      TENANT_KEY: ebm_trailerbodybuilder
+      TENANT_KEY: ebm_trailerbodybuilders
     ports:
       - "19419:80"
       - "29419:29419"

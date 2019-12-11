@@ -55,16 +55,28 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
           <tr>
             <td valign="top">
               <for|node, index| of=nodes>
-                <common-style-a-simple-card-block
-                  node=node
-                  alignment="left"
-                  img-width=660
-                  table-width=700
-                  content-link-style=contentLinkStyle
-                  button-style=buttonStyle
-                  button-text-style=buttonTextStyle
-                  teaser-style=teaserStyle
-                />
+                <if(node.type === "promotion")>
+                  <common-style-a-promotion-block
+                    node=node
+                    alignment="left"
+                    img-width=660
+                    table-width=700
+                    content-link-style=contentLinkStyle
+                    teaser-style=teaserStyle
+                  />
+                </if>
+                <else>
+                  <common-style-a-simple-card-block
+                    node=node
+                    alignment="left"
+                    img-width=660
+                    table-width=700
+                    content-link-style=contentLinkStyle
+                    button-style=buttonStyle
+                    button-text-style=buttonTextStyle
+                    teaser-style=teaserStyle
+                  />
+                </else>
                 <if(showDivider(nodes, index))>
                   <common-table width="100%" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
                     <tr>

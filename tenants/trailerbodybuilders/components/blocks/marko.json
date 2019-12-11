@@ -1,0 +1,24 @@
+{
+  "<tenant-header-block>": {
+    "template": "./header.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "<tenant-header-gold-block>": {
+    "template": "./header-gold.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    }
+  }
+}
