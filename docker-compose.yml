@@ -388,5 +388,20 @@ services:
       - "19422:80"
       - "29422:29422"
 
+  mhlnews:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/mhlnews
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19423
+      LIVERELOAD_PORT: 29423
+      TENANT_KEY: ebm_mhlnews
+    ports:
+      - "19423:80"
+      - "29423:29423"
+
 volumes:
   yarn-cache: {}
