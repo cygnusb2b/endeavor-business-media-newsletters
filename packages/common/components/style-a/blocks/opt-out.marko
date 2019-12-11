@@ -34,14 +34,14 @@ $ const socialMediaProviders = config.getAsArray('socialMediaLinks');
       </p>
       <p style="margin:0px;margin-bottom:1em;">
         <a style="text-decoration: underline !important;" href="@{confirmunsubscribelink}@">Unsubscribe</a>
-        | <a style="text-decoration: underline !important;" href=`${website.get("origin")}/subscribe`>Manage Newsletter Subscriptions</a>
+        | <a style="text-decoration: underline !important;" href=`${config.get("optOut.manageSubscriptions")}`>Manage Newsletter Subscriptions</a>
         | <a style="text-decoration: underline !important;" href="@{forwardtoafriendlink}@">Forward to a Friend</a>
         | <a style="text-decoration: underline !important;" href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
         | <a style="text-decoration: underline !important;" href=`${config.get("optOut.privacyPolicyUrl")}`>Read Privacy Policy</a>
       </p>
 
       <p style="margin:0px;margin-bottom:1em;">
-        If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=`${website.get("origin")}/subscribe`>click here</a> to sign-up.
+        If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=`${config.get("optOut.signup")}`>click here</a> to sign-up.
       </p>
 
       <p style="margin:0px;margin-bottom:1em;">
