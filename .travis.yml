@@ -280,6 +280,54 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
+    - stage: production
+      name: ehstoday
+      script: npx @base-cms/newsletter-deployment-tool deploy ehstoday gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: ehstoday
+      script: npx @base-cms/newsletter-deployment-tool deploy ehstoday gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: bulktransporter
+      script: npx @base-cms/newsletter-deployment-tool deploy bulktransporter gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: bulktransporter
+      script: npx @base-cms/newsletter-deployment-tool deploy bulktransporter gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: refrigeratedtransporter
+      script: npx @base-cms/newsletter-deployment-tool deploy refrigeratedtransporter gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: refrigeratedtransporter
+      script: npx @base-cms/newsletter-deployment-tool deploy refrigeratedtransporter gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: mhlnews
+      script: npx @base-cms/newsletter-deployment-tool deploy mhlnews gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: mhlnews
+      script: npx @base-cms/newsletter-deployment-tool deploy mhlnews gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #
     #############################
