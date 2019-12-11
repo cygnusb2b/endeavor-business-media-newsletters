@@ -373,5 +373,20 @@ services:
       - "19421:80"
       - "29421:29421"
 
+  refrigeratedtransporter:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/refrigeratedtransporter
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19422
+      LIVERELOAD_PORT: 29422
+      TENANT_KEY: ebm_refrigeratedtransporter
+    ports:
+      - "19422:80"
+      - "29422:29422"
+
 volumes:
   yarn-cache: {}
