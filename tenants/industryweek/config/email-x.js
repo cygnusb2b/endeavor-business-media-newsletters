@@ -26,10 +26,10 @@ config
       height: 90,
     },
   ])
-  .setAdUnits('quick-manufacturing-news', [
+  .setAdUnits('workforce-watch', [
     {
       name: 'leaderboardPrimary',
-      id: '5defc9f276787a1ee611fd13',
+      id: '5df15a9576787af7fe121e77',
       width: 670,
       height: 90,
     },
