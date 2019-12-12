@@ -26,7 +26,7 @@ config
       height: 90,
     },
   ])
-  .setAdUnits('manufacuring-technology', [
+  .setAdUnits('manufacturing-technology', [
     {
       name: 'leaderboardPrimary',
       id: '5df268c3d300776370f2b5f2',
