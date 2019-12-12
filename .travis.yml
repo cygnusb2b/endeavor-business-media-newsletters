@@ -269,14 +269,14 @@ jobs:
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
-      name: trailerbodybuilder
-      script: npx @base-cms/newsletter-deployment-tool deploy trailerbodybuilder gemenon
+      name: trailerbodybuilders
+      script: npx @base-cms/newsletter-deployment-tool deploy trailerbodybuilders gemenon
       install: skip
       env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
     - stage: staging
-      name: trailerbodybuilder
-      script: npx @base-cms/newsletter-deployment-tool deploy trailerbodybuilder gemenon
+      name: trailerbodybuilders
+      script: npx @base-cms/newsletter-deployment-tool deploy trailerbodybuilders gemenon
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
