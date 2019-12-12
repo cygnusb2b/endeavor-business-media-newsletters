@@ -17,5 +17,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('commercial-work-truck', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df24f36d30077482ef2b38a',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;
