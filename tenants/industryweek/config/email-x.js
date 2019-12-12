@@ -18,10 +18,34 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('industry-insight', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df25ea2d30077a785f2b521',
+      width: 670,
+      height: 90,
+    },
+  ])
+  .setAdUnits('manufacguring-technology', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df268c3d300776370f2b5f2',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('supply-chain-insights', [
     {
       name: 'leaderboardPrimary',
       id: '5defddea76787a9deb12000c',
+      width: 670,
+      height: 90,
+    },
+  ])
+  .setAdUnits('weekly-hotlist', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df261e476787a6ffa12255a',
       width: 670,
       height: 90,
     },
