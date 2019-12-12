@@ -25,5 +25,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('iot-for-engineers', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df1552176787a65d9121cf3',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;

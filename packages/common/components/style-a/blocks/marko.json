@@ -58,6 +58,10 @@
       "type": "number",
       "default-value": 0
     },
+    "@allow-full-promotion": {
+      "type": "boolean",
+      "default-value": false
+    },
     "@title": "string",
     "@title-table-style": "string",
     "@title-style": "string",
@@ -250,6 +254,7 @@
       "type": "number",
       "default-value": 310
     },
-    "@teaser-style":  "object"
+    "@content-link-style": "object",
+    "@teaser-style": "object"
   }
 }

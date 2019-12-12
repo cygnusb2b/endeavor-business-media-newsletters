@@ -9,5 +9,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('marketplace', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df1506d76787a2ba6121c97',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;
