@@ -18,7 +18,7 @@ config
       height: 90,
     },
   ])
-  .setAdUnits('industry-insight', [
+  .setAdUnits('leadership-insight', [
     {
       name: 'leaderboardPrimary',
       id: '5df25ea2d30077a785f2b521',
@@ -26,7 +26,7 @@ config
       height: 90,
     },
   ])
-  .setAdUnits('manufacguring-technology', [
+  .setAdUnits('manufacuring-technology', [
     {
       name: 'leaderboardPrimary',
       id: '5df268c3d300776370f2b5f2',
