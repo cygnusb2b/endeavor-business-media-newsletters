@@ -17,5 +17,21 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('pipes-valves-and-fittings-monthly', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df26f4ad300770b1ef2b75e',
+      width: 670,
+      height: 90,
+    },
+  ])
+  .setAdUnits('sensor-monthly', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df26f86d30077438af2b7bd',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;
