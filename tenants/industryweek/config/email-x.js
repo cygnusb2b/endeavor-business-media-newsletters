@@ -18,7 +18,7 @@ config
       height: 90,
     },
   ])
-  .setAdUnits('leadership-insight', [
+  .setAdUnits('leadership-insights', [
     {
       name: 'leaderboardPrimary',
       id: '5df25ea2d30077a785f2b521',
