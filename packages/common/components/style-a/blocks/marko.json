@@ -36,6 +36,38 @@
     "@main-table-style": "string",
     "@content-link-style": "object"
   },
+  "<common-style-a-featured-ad-wrapper-block>": {
+    "template": "./featured-ad-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@label-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
   "<common-style-a-card-section-wrapper-block>": {
     "template": "./card-section-wrapper.marko",
     "@date": {
