@@ -10,7 +10,7 @@ config
       height: 90,
     },
   ])
-  .setAdUnits('machine-design', [
+  .setAdUnits('medical-design', [
     {
       name: 'leaderboardPrimary',
       id: '5deeb1f1d300774019f28319',
@@ -18,10 +18,18 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('motion', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df3bf7376787a5822124f44',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('robotics-automation', [
     {
       name: 'leaderboardPrimary',
-      id: '5deeb1f1d300774019f28319',
+      id: '5df3bf8ad30077083af2e125',
       width: 670,
       height: 90,
     },
