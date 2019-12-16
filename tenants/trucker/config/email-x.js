@@ -6,8 +6,8 @@ config
     {
       name: 'leaderboardPrimary',
       id: '5ded36dbd30077d1dff275b3',
-      width: 670,
-      height: 90,
+      width: 580,
+      height: 80,
     },
   ])
   .setAdUnits('marketplace', [

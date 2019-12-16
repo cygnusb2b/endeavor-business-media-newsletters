@@ -14,20 +14,20 @@ config
     {
       name: 'leaderboardPrimary',
       id: '5ded47c676787ab38911e38b',
-      width: 670,
-      height: 90,
+      width: 580,
+      height: 80,
     },
     {
       name: 'leaderboardSecondary',
       id: '5df79fd7d300772175f2e724',
-      width: 670,
-      height: 90,
+      width: 580,
+      height: 80,
     },
     {
       name: 'leaderboardTertiary',
       id: '5df7a020d3007739f2f2e747',
-      width: 670,
-      height: 90,
+      width: 580,
+      height: 80,
     },
   ])
   .setAdUnits('commercial-work-truck', [
