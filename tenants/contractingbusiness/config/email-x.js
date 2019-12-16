@@ -18,6 +18,14 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('hvacr-hydronics-distribution-bus', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df7b3c0d30077c037f2e9d6',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('refrigerant-4-1-1', [
     {
       name: 'leaderboardPrimary',
