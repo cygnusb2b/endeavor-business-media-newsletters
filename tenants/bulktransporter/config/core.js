@@ -4,8 +4,8 @@ module.exports = {
     safeSenders: 'news.endeavorb2b.com and mail.endeavorb2b.com',
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
-    manageSubscriptions: '',
-    signUp: '',
+    manageSubscriptions: 'https://endeavor.dragonforms.com/BKTPrefPage?r=@{encrypted_customer_id}@&pk=NLFooter',
+    signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=BKTPrefPage',
   },
   socialMediaLinks: [
     {
