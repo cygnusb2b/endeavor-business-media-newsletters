@@ -46,8 +46,8 @@ $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
   <common-table width=700 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=imageAlignment class=imageAlignment padding=0 spacing=0>
     <tr>
       <td>
-        <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
-          $!{getSponsoredByText(node, '&nbsp;')}
+        <div style=`padding-left: ${innerPadding}px; font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;`>
+          $!{getSponsoredByText(node, 'Advertisement')}
         </div>
       </td>
     </tr>
@@ -104,6 +104,13 @@ $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
 </if>
 <else>
   <common-table width=700 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
+    <tr>
+      <td>
+        <div style=`padding-left: ${innerPadding}px; font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;`>
+          $!{getSponsoredByText(node, 'Advertisement')}
+        </div>
+      </td>
+    </tr>
     <tr>
       <td style=`padding: ${innerPadding}px;`>
         <if(showTitle)>
