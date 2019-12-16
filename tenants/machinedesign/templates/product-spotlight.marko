@@ -3,7 +3,7 @@ import emailX from "../config/email-x";
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const featuredTitleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
-$ const featuredMainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; background-color: #034b8d; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const featuredMainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; background-color: #333333; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const featuredContentLinkStyle = {
   "font-weight": "bold",
   "color": "#fff",
@@ -34,12 +34,12 @@ $ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif
 $ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const contentLinkStyle = {
   "font-weight": "bold",
-  "color": "#034b8d",
+  "color": "#0071CC",
   "font-size": "19.5px",
   "line-height": "20px",
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
 };
-$ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #034b8d;";
+$ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #0071CC;";
 $ const buttonTextStyle = {
   "color": "#ffffff",
   "font-family": "Helvetica, Arial, sans-serif",
@@ -62,36 +62,19 @@ $ const buttonTextStyle = {
       name=newsletter.name
       date=date
     />
-    <tenant-header-block header-style="background-color: #034b8d; color: #fff;" image-path="/files/base/ebm/hydraulicspneumatics/image/static/newsletter/fluid_power_header.png" date=date newsletter=newsletter />
+    <tenant-header-block image-path="/files/base/ebm/machinedesign/image/static/newsletter/product_spotlight_header.jpg" date=date newsletter=newsletter />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-featured-ad-wrapper-block
-      section-id=73114
+    <common-style-a-product-spotlight-180-section-wrapper-block
+      section-id=74479
       date=date
-      limit=1
       newsletter=newsletter
       main-table-style=featuredMainTableStyle
       content-link-style=featuredContentLinkStyle
       teaser-style=featuredTeaserStyle
-      label-style=featuredLabelStyle
       button-style=featuredButtonStyle
       button-text-style=featuredButtonTextStyle
-    />
-
-    <common-style-a-section-spacer-block />
-
-    <common-style-a-card-section-wrapper-block
-      section-id=73114
-      date=date
-      skip=1
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
     />
 
     <common-style-a-section-spacer-block />
