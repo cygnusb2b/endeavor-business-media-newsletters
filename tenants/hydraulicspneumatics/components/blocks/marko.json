@@ -9,6 +9,7 @@
       "type": "object",
       "required": true
     },
+    "@header-style": "string",
     "@image-path": "string"
   }
 }
