@@ -26,6 +26,14 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('product-spotlight', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df7ad53d30077bbfcf2e928',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('robotics-automation', [
     {
       name: 'leaderboardPrimary',
