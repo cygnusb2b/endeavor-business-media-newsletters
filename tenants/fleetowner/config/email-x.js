@@ -37,5 +37,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('info-tech', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df7d0e076787a5327126a80',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;

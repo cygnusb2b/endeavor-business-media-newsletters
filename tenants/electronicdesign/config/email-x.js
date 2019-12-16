@@ -33,5 +33,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('product-spotlight', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df7b919d300772820f2ea0e',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;
