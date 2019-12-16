@@ -42,7 +42,7 @@ $ const getReadMoreText = (node) => {
 $ const innerPadding = 20;
 $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
 $ const fallbackText = node.type === 'promotion' ? 'Advertisement' : '&nbsp;';
-$ teaserField = node.type === 'promotion' ? 'body' : 'teaser';
+$ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
 
 <if(node.primaryImage)>
   <common-table width=700 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=imageAlignment class=imageAlignment padding=0 spacing=0>
