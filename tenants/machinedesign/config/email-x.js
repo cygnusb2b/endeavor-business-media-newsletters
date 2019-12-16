@@ -10,6 +10,14 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('daily', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df7ca76d3007719d2f2efe4',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('medical-design', [
     {
       name: 'leaderboardPrimary',
