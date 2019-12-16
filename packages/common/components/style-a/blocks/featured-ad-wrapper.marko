@@ -55,38 +55,33 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
           <tr>
             <td valign="top" align="center">
               <for|node, index| of=nodes>
-                <common-table width="595" style="border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="center" class="center" padding=0 spacing=0>
+                $ const fallbackText = node.type === 'promotion' ? 'Advertisement' : '&nbsp;';
+                <common-table width="595" style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="center" class="main center" padding=0 spacing=0>
                   <tr>
                     <td>
-                      <common-table width="595" style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="center" class="center" padding=0 spacing=0>
-                        <tr>
-                          <td>
-                            <div style=`${labelStyle}`>
-                              $!{getSponsoredByText(node, '&nbsp;')}
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                              <marko-newsletter-imgix
-                                src=image.src
-                                alt=image.alt
-                                options={ w: 595 }
-                                class="main"
-                                attrs={ border: 0, width: 595 }
-                              >
-                                <@link href=node.siteContext.url target="_blank" />
-                              </marko-newsletter-imgix>
-                            </marko-core-obj-value>
-                            <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </common-table>
+                      <div style=`${labelStyle}`>
+                        $!{getSponsoredByText(node, fallbackText)}
+                      </div>
                     </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
+                        <marko-newsletter-imgix
+                          src=image.src
+                          alt=image.alt
+                          options={ w: 595 }
+                          class="main"
+                          attrs={ border: 0, width: 595 }
+                        >
+                          <@link href=node.siteContext.url target="_blank" />
+                        </marko-newsletter-imgix>
+                      </marko-core-obj-value>
+                      <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
                   </tr>
                 </common-table>
                 <if(!isLast(nodes, index))>
