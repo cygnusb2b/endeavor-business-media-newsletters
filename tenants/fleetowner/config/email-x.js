@@ -17,6 +17,18 @@ config
       width: 670,
       height: 90,
     },
+    {
+      name: 'leaderboardSecondary',
+      id: '5df79fd7d300772175f2e724',
+      width: 670,
+      height: 90,
+    },
+    {
+      name: 'leaderboardTertiary',
+      id: '5df7a020d3007739f2f2e747',
+      width: 670,
+      height: 90,
+    },
   ])
   .setAdUnits('commercial-work-truck', [
     {
