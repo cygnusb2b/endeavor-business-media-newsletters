@@ -33,5 +33,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('week-in-review', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df840d476787a8050128334',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;
