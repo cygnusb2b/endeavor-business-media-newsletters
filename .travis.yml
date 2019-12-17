@@ -364,6 +364,18 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
+    - stage: production
+      name: powerelectronics
+      script: npx @base-cms/newsletter-deployment-tool deploy powerelectronics gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: powerelectronics
+      script: npx @base-cms/newsletter-deployment-tool deploy powerelectronics gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #
     #############################

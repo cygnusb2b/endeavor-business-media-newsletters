@@ -448,5 +448,20 @@ services:
       - "19426:80"
       - "29426:29426"
 
+  powerelectronics:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/powerelectronics
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19427
+      LIVERELOAD_PORT: 29427
+      TENANT_KEY: ebm_powerelectronics
+    ports:
+      - "19427:80"
+      - "29427:29427"
+
 volumes:
   yarn-cache: {}
