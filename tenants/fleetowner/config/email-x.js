@@ -6,8 +6,8 @@ config
     {
       name: 'leaderboardPrimary',
       id: '5df1578dd30077fa36f2ae8d',
-      width: 670,
-      height: 90,
+      width: 580,
+      height: 80,
     },
   ])
   .setAdUnits('fleet-owner-newsline', [
@@ -30,20 +30,20 @@ config
       height: 80,
     },
   ])
-  .setAdUnits('commercial-work-truck', [
+  .setAdUnits('heavy-duty-pickup-van', [
     {
       name: 'leaderboardPrimary',
       id: '5df24f36d30077482ef2b38a',
-      width: 670,
-      height: 90,
+      width: 580,
+      height: 80,
     },
   ])
   .setAdUnits('info-tech', [
     {
       name: 'leaderboardPrimary',
       id: '5df7d0e076787a5327126a80',
-      width: 670,
-      height: 90,
+      width: 580,
+      height: 80,
     },
   ]);
 module.exports = config;
