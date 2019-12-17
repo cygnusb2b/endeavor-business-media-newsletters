@@ -3,10 +3,10 @@ import emailX from "../config/email-x";
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const featuredTitleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
-$ const featuredMainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; background-color: #034b8d; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const featuredMainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; background-color: #ccc; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const featuredContentLinkStyle = {
   "font-weight": "bold",
-  "color": "#fff",
+  "color": "#000",
   "font-size": "19.5px",
   "line-height": "20px",
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
@@ -16,10 +16,9 @@ $ const featuredTeaserStyle = {
   "line-height": "146%",
   "margin": "0",
   "padding": "0",
-  "color": "#fff",
+  "color": "#000",
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
 };
-$ const featuredLabelStyle =  "font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #fff; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;";
 $ const featuredButtonStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #fff;";
 $ const featuredButtonTextStyle = {
   "color": "#333333",
@@ -66,22 +65,22 @@ $ const buttonTextStyle = {
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-featured-ad-wrapper-block
+    <common-style-a-featured-section-wrapper-block
       section-id=73114
       date=date
       limit=1
       newsletter=newsletter
-      main-table-style=featuredMainTableStyle
-      content-link-style=featuredContentLinkStyle
-      teaser-style=featuredTeaserStyle
-      label-style=featuredLabelStyle
-      button-style=featuredButtonStyle
-      button-text-style=featuredButtonTextStyle
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
     />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block
+    <common-style-a-product-spotlight-180-section-wrapper-block
       section-id=73114
       date=date
       skip=1
@@ -92,6 +91,20 @@ $ const buttonTextStyle = {
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
+    />
+
+    <common-style-a-section-spacer-block />
+
+    <common-style-a-featured-ad-wrapper-block
+      section-id=74494
+      date=date
+      limit=1
+      newsletter=newsletter
+      main-table-style=featuredMainTableStyle
+      content-link-style=featuredContentLinkStyle
+      teaser-style=featuredTeaserStyle
+      button-style=featuredButtonStyle
+      button-text-style=featuredButtonTextStyle
     />
 
     <common-style-a-section-spacer-block />
