@@ -328,6 +328,30 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
+    - stage: production
+      name: forgingmagazine
+      script: npx @base-cms/newsletter-deployment-tool deploy forgingmagazine gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: forgingmagazine
+      script: npx @base-cms/newsletter-deployment-tool deploy forgingmagazine gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: foundrymag
+      script: npx @base-cms/newsletter-deployment-tool deploy foundrymag gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: foundrymag
+      script: npx @base-cms/newsletter-deployment-tool deploy foundrymag gemenon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #
     #############################
