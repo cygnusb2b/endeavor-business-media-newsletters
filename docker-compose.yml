@@ -403,5 +403,50 @@ services:
       - "19423:80"
       - "29423:29423"
 
+  forgingmagazine:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/forgingmagazine
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19424
+      LIVERELOAD_PORT: 29424
+      TENANT_KEY: ebm_forgingmagazine
+    ports:
+      - "19424:80"
+      - "29424:29424"
+
+  foundrymag:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/foundrymag
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19425
+      LIVERELOAD_PORT: 29425
+      TENANT_KEY: ebm_foundrymag
+    ports:
+      - "19425:80"
+      - "29425:29425"
+
+  americanmachinist:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/americanmachinist
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19426
+      LIVERELOAD_PORT: 29426
+      TENANT_KEY: ebm_americanmachinist
+    ports:
+      - "19426:80"
+      - "29426:29426"
+
 volumes:
   yarn-cache: {}
