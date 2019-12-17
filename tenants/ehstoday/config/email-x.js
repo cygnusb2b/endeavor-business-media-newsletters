@@ -10,6 +10,14 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('management', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df90f3276787a2334128e76',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('safety-tech-analytics-news', [
     {
       name: 'leaderboardPrimary',
