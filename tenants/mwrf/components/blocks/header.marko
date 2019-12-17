@@ -16,13 +16,15 @@ $ const {
       </marko-newsletter-imgix>
     </td>
   </tr>
-  <tr>
-    <td align="center" style="background-color: #333; color: #fff;">
-      <p>
-        ${newsletter.description}
-      </p>
-    </td>
-  </tr>
+  <if(newsletter.description)>
+    <tr>
+      <td align="center" style="background-color: #333; color: #fff;">
+        <p>
+          ${newsletter.description}
+        </p>
+      </td>
+    </tr>
+  </if>
   <tr>
     <td>
       <span style="text-transform: uppercase; font-size: 12px; line-height: 146%; margin: 0; padding: 0; color: #6b6b6b; -webkit-margin-after: 0; -webkit-margin-before: 0; -webkit-margin-end: 0; -webkit-margin-start: 0; font-weight: 700; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;">
