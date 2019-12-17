@@ -2,6 +2,14 @@ const EmailXConfiguration = require('@base-cms/marko-newsletters-email-x/config'
 
 const config = new EmailXConfiguration('https://ebm.serve.email-x.io');
 config
+  .setAdUnits('construction-safety', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5df8465d76787a6baf12836c',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('safety-tech-analytics-news', [
     {
       name: 'leaderboardPrimary',
