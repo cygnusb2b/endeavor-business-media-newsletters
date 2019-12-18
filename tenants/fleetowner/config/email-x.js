@@ -9,6 +9,12 @@ config
       width: 580,
       height: 80,
     },
+    {
+      name: 'leaderboardSecondary',
+      id: '5dfa7deed3007700f7f34176',
+      width: 580,
+      height: 80,
+    },
   ])
   .setAdUnits('fleet-owner-newsline', [
     {
@@ -42,6 +48,28 @@ config
     {
       name: 'leaderboardPrimary',
       id: '5df7d0e076787a5327126a80',
+      width: 580,
+      height: 80,
+    },
+    {
+      name: 'leaderboardSecondary',
+      id: '5dfa7e2476787a6e4d12af97',
+      width: 580,
+      height: 80,
+    },
+  ])
+  .setAdUnits('regulation-resource-center', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5dfa854776787a49c812b00f',
+      width: 580,
+      height: 80,
+    },
+  ])
+  .setAdUnits('top-5', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5dfa7e6cd3007720dff341da',
       width: 580,
       height: 80,
     },
