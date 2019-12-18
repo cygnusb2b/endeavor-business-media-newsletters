@@ -114,7 +114,7 @@ config
       height: 90,
     },
   ])
-  .setAdUnits('tool-monthly', [
+  .setAdUnits('tools-monthly', [
     {
       name: 'leaderboardPrimary',
       id: '5dfa57ba76787a566412aa76',
