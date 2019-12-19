@@ -40,5 +40,67 @@
     "@button-text-style": "object",
     "@main-table-style": "string",
     "@content-link-style": "object"
+  },
+  "<tenant-left-third-two-thirds-section-wrapper>": {
+    "template": "./left-third-two-thirds-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<tenant-left-featured-section-wrapper-block>": {
+    "template": "./left-featured-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
   }
 }
