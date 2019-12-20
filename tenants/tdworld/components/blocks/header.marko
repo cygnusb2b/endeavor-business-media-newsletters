@@ -1,6 +1,8 @@
 $ const {
   newsletter,
-  date
+  date,
+  logoPath,
+  headerHref
 } = input;
 <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
   <tr>
@@ -27,11 +29,12 @@ $ const {
     </td>
     <td height="75" valign="center" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; background-color: #ffffff; width: 140px; margin-left: 10px; border-top: 2px solid #bbb; border-bottom: 2px solid #bbb;">
       <marko-newsletter-imgix
-          src="/files/base/ebm/tdworld/image/static/newsletter/header_logo.jpg"
+          src=logoPath
           alt=newsletter.name
           options={ w: 140 }
           attrs={ border: 0, width: 140 }
         >
+        <@link href=headerHref target="_blank" />
         </marko-newsletter-imgix>
     </td>
     <td style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; width: 5px;">
