@@ -5,6 +5,14 @@
       "type": "object",
       "required": true
     },
+    "@logo-path" : {
+      "type": "string",
+      "default-value": "/files/base/ebm/tdworld/image/static/newsletter/header_logo.jpg"
+    },
+    "@header-href" : {
+      "type": "string",
+      "default-value": "https://www.tdworld.com/"
+    },
     "@newsletter": {
       "type": "object",
       "required": true
