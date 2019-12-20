@@ -9,5 +9,11 @@ config
       width: 670,
       height: 90,
     },
+    {
+      name: 'skyscraperPrimary',
+      id: '5dfbac67d300775529f36170',
+      width: 160,
+      height: 600,
+    },
   ]);
 module.exports = config;
