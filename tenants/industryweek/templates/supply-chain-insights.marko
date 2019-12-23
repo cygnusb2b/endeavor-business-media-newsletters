@@ -78,16 +78,16 @@ $ const teaserStyle = {
                         </tr>
                         <tr>
                           <td style=`padding: 0; padding-right: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
-                            <common-table width=260 style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
+                            <common-table width=200 style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
                               <tr>
                                 <td>
                                   <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
                                     <marko-newsletter-imgix
                                       src=image.src
                                       alt=image.alt
-                                      options={ w: 260 }
+                                      options={ w: 180 }
                                       class="main"
-                                      attrs={ border: 0, width: 260 }
+                                      attrs={ border: 0, width: 180 }
                                     >
                                       <@link href=node.siteContext.url target="_blank" />
                                     </marko-newsletter-imgix>
@@ -95,13 +95,9 @@ $ const teaserStyle = {
                                 </td>
                               </tr>
                             </common-table>
-                            <common-table width=410 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
+                            <common-table width=450 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
                               <tr>
                                 <td style=`padding: 0 ${innerPadding}px ${innerPadding}px ${innerPadding}px;`>
-                                  <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-                                    <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                                  </marko-core-obj-text>
-                                  <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
                                   <marko-core-obj-text tag="span" obj=node field="body" html=true attrs={ style: teaserStyle } />
                                 </td>
                               </tr>
@@ -129,10 +125,6 @@ $ const teaserStyle = {
                       <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
                         <tr>
                           <td style=`padding: ${innerPadding}px;`>
-                            <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                            </marko-core-obj-text>
-                            <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
                             <marko-core-obj-text tag="span" obj=node field="body" html=true attrs={ style: teaserStyle } />
                             <if(node.linkText)>
                               <common-table style=`padding-top: ${innerPadding}px;` align="center" padding=0 spacing=0>
