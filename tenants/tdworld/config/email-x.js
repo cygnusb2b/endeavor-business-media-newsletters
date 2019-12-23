@@ -66,10 +66,10 @@ config
   ])
   .setAdUnits('test-monitor-control', [
     {
-      name: 'mrPrimary',
+      name: 'leaderboardPrimary',
       id: '5de58f2dd300774199f1eabf',
-      width: 300,
-      height: 250,
+      width: 670,
+      height: 90,
     },
   ])
   .setAdUnits('vegetation-management-insights', [
