@@ -35,6 +35,7 @@ $ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
 });
 $ const getReadMoreText = (node) => {
   const { type, typeTitle } = node;
+  if (type === "promotion") return "full";
   const viewType = ["video", "photo-gallery", "whitepaper"];
   return viewType.includes(type) ? node.typeTitle : `Full ${node.typeTitle}`;
 };

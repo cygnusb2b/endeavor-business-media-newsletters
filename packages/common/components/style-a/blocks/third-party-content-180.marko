@@ -41,15 +41,13 @@ $ const getReadMoreText = (node) => {
 };
 $ const innerPadding = 20;
 $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
-$ const fallbackText = node.type === 'promotion' ? 'Advertisement' : '&nbsp;';
-$ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
 
 <if(node.primaryImage)>
   <common-table width=700 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=imageAlignment class=imageAlignment padding=0 spacing=0>
     <tr>
       <td>
         <div style=`padding-left: ${innerPadding}px; font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;`>
-          $!{getSponsoredByText(node, fallbackText)}
+          &nbsp;
         </div>
       </td>
     </tr>
@@ -81,7 +79,7 @@ $ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
                 </marko-core-obj-text>
                 <div height="10">&nbsp;</div>
               </if>
-              <marko-core-obj-text tag="span" obj=node field=teaserField html=true attrs={ style: teaserStyle } />
+              <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
             </td>
           </tr>
           <if(showButton)>
@@ -109,7 +107,7 @@ $ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
     <tr>
       <td>
         <div style=`padding-left: ${innerPadding}px; font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;`>
-          $!{getSponsoredByText(node, fallbackText)}
+          &nbsp;
         </div>
       </td>
     </tr>
@@ -121,7 +119,7 @@ $ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
           </marko-core-obj-text>
           <div height="10">&nbsp;</div>
         </if>
-        <marko-core-obj-text tag="span" obj=node field=teaserField html=true attrs={ style: teaserStyle } />
+        <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
         <if(showButton)>
           <common-table style=`padding-top: ${innerPadding}px;` align="center" padding=0 spacing=0>
             <tr>

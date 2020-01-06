@@ -10,5 +10,24 @@
       "required": true
     },
     "@image-path": "string"
+  },
+  "<tenant-header2-block>": {
+    "template": "./header2.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@logo-path" : {
+      "type": "string",
+      "default-value": "/files/base/ebm/electronicdesign/image/static/newsletter/header_logo.jpg"
+    },
+    "@header-href" : {
+      "type": "string",
+      "default-value": "https://www.electronicdesign.com/"
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    }
   }
 }

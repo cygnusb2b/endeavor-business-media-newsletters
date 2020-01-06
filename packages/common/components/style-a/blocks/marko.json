@@ -36,6 +36,37 @@
     "@main-table-style": "string",
     "@content-link-style": "object"
   },
+  "<common-style-a-third-party-featured-section-wrapper-block>": {
+    "template": "./third-party-featured-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
   "<common-style-a-featured-ad-wrapper-block>": {
     "template": "./featured-ad-wrapper.marko",
     "@date": {
@@ -136,6 +167,41 @@
   },
   "<common-style-a-product-spotlight-180-section-wrapper-block>": {
     "template": "./product-spotlight-180-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@image-alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<common-style-a-third-party-content-180-section-wrapper-block>": {
+    "template": "./third-party-content-180-section-wrapper.marko",
     "@date": {
       "type": "object",
       "required": true
@@ -288,6 +354,26 @@
   },
   "<common-style-a-product-spotlight-180-block>": {
     "template": "./product-spotlight-180.marko",
+    "@node": "object",
+    "@image-alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@show-title": {
+      "type": "boolean",
+      "default-value": false
+    },
+    "@show-button": {
+      "type": "boolean",
+      "default-value": false
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object"
+  },
+  "<common-style-a-third-party-content-180-block>": {
+    "template": "./third-party-content-180.marko",
     "@node": "object",
     "@image-alignment": {
       "type": "string",
