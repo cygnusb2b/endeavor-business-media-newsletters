@@ -295,6 +295,31 @@
     "@alignment": "string",
     "@content-link-style": "object"
   },
+  "<common-style-a-right-rail-block>": {
+    "template": "./right-rail.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@teaser-style": "object",
+    "@main-table-style": "string"
+  },
   "<common-style-a-title-teaser-block>": {
     "template": "./title-teaser.marko",
     "@date": {

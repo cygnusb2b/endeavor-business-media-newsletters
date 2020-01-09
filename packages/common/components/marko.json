@@ -13,6 +13,7 @@
     "@class": "string",
     "@spacing": "number",
     "@padding": "number",
+    "@valign": "string",
     "@align": "string",
     "@style": "string",
     "@attrs": "object"
