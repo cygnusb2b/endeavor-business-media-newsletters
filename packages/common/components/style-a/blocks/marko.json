@@ -292,6 +292,7 @@
     "@title-style": "string",
     "@main-table-style": "string",
     "@table-width": "string",
+    "@alignment": "string",
     "@content-link-style": "object"
   },
   "<common-style-a-title-teaser-block>": {
