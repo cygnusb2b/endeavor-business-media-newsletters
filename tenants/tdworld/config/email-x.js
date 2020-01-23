@@ -58,10 +58,10 @@ config
   ])
   .setAdUnits('smart-utility', [
     {
-      name: 'mrPrimary',
+      name: 'leaderboardPrimary',
       id: '5de58ed4d30077e405f1ea87',
-      width: 300,
-      height: 250,
+      width: 670,
+      height: 90,
     },
   ])
   .setAdUnits('test-monitor-control', [
