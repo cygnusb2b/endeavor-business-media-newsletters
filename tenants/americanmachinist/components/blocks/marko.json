@@ -35,11 +35,7 @@
     "@title": "string",
     "@title-table-style": "string",
     "@title-style": "string",
-    "@label-style": "string",
     "@teaser-style": "object",
-    "@button-style": "string",
-    "@button-text-style": "object",
-    "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@main-table-style": "string"
   }
 }
