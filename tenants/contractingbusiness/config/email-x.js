@@ -2,6 +2,14 @@ const EmailXConfiguration = require('@base-cms/marko-newsletters-email-x/config'
 
 const config = new EmailXConfiguration('https://ebm.serve.email-x.io');
 config
+  .setAdUnits('ahr-show-daily', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5e2f3c5722429729267268c1',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('hvac-talk', [
     {
       name: 'leaderboardPrimary',
