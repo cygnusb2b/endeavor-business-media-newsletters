@@ -362,7 +362,7 @@
     },
     "@img-width": {
       "type": "number",
-      "default-value": 310
+      "default-value": 300
     },
     "@content-link-style": "object",
     "@teaser-style": "object",
@@ -382,7 +382,7 @@
     },
     "@img-width": {
       "type": "number",
-      "default-value": 310
+      "default-value": 300
     },
     "@content-link-style": "object",
     "@teaser-style": "object",
@@ -543,7 +543,7 @@
     },
     "@img-width": {
       "type": "number",
-      "default-value": 310
+      "default-value": 300
     },
     "@content-link-style": "object",
     "@teaser-style": "object"
@@ -561,7 +561,56 @@
     },
     "@img-width": {
       "type": "number",
-      "default-value": 310
+      "default-value": 300
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object"
+  },
+  "<common-style-a-special-edition-full-wrapper-block>": {
+    "template": "./special-edition-full-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<common-style-a-special-edition-full-promotion-block>": {
+    "template": "./special-edition-full-promotion.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "center"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 600
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 600
     },
     "@content-link-style": "object",
     "@teaser-style": "object"
