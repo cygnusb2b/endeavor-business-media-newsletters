@@ -15,5 +15,17 @@ config
       width: 160,
       height: 600,
     },
+    {
+      name: 'skyscraperSecondary',
+      id: '5e371ba446423da7af512fc5',
+      width: 160,
+      height: 600,
+    },
+    {
+      name: 'skyscraperTertiary',
+      id: '5e371bbe46423dfd1a512fcf',
+      width: 160,
+      height: 600,
+    },
   ]);
 module.exports = config;

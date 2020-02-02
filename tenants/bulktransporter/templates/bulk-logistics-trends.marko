@@ -3,6 +3,8 @@ import emailX from "../config/email-x";
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const skyscraperPrimary = emailX.getAdUnit({ name: "skyscraperPrimary", alias: newsletter.alias });
+$ const skyscraperSecondary = emailX.getAdUnit({ name: "skyscraperSecondary", alias: newsletter.alias });
+<!-- $ const skyscraperTertiary = emailX.getAdUnit({ name: "skyscraperTertiary", alias: newsletter.alias }); -->
 $ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #5e1d5a; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #5e1d5a;";
 $ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const mainTableStyle ="border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
@@ -100,6 +102,20 @@ $ const buttonTextStyle = {
                   <@ad-unit ...skyscraperPrimary />
                   <@params date=date email="@{email name}@"/>
                 </marko-newsletters-email-x-display>
+                <h3 style="margin:0;font-weight:bold;height:27px;margin:1px 0 5px 0px; font-family:Helvetica, Arial, sans-serif; font-size:11px; color:#999;text-align:left;">
+                  Advertisement
+                </h3>
+                <marko-newsletters-email-x-display decoded-params=["email"]>
+                  <@ad-unit ...skyscraperSecondary />
+                  <@params date=date email="@{email name}@"/>
+                </marko-newsletters-email-x-display>
+                <!-- <h3 style="margin:0;font-weight:bold;height:27px;margin:1px 0 5px 0px; font-family:Helvetica, Arial, sans-serif; font-size:11px; color:#999;text-align:left;">
+                  Advertisement
+                </h3>
+                <marko-newsletters-email-x-display decoded-params=["email"]>
+                  <@ad-unit ...skyscraperTertiary />
+                  <@params date=date email="@{email name}@"/>
+                </marko-newsletters-email-x-display> -->
               </td>
             </tr>
           </common-table>
