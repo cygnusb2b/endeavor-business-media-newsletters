@@ -195,6 +195,41 @@
     "@main-table-style": "string",
     "@content-link-style": "object"
   },
+  "<common-style-a-180-alt-section-wrapper-block>": {
+    "template": "./180-alt-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@image-alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
   "<common-style-a-product-spotlight-180-section-wrapper-block>": {
     "template": "./product-spotlight-180-section-wrapper.marko",
     "@date": {
