@@ -2,6 +2,7 @@ import isLast from "@endeavor-business-media/common/utils/is-last";
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
+import getButtonText from "@endeavor-business-media/common/utils/get-button-text";
 
 $ const {
   newsletter,
@@ -24,13 +25,8 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "line-height": "20px",
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
 });
-$ const getReadMoreText = (node) => {
-  const { type, typeTitle } = node;
-  const viewType = ["video", "photo-gallery", "whitepaper"];
-  return viewType.includes(type) ? node.typeTitle : `Full ${node.typeTitle}`;
-};
-$ const innerPadding = 20;
 
+$ const innerPadding = 20;
 $ const imgWidth = 180;
 
 <common-table width="480" style="border-collapse:collapse;" align="left" class="main" padding=0 spacing=0>
@@ -159,7 +155,7 @@ $ const imgWidth = 180;
                                 <common-table align="center" padding=0 spacing=0>
                                   <tr>
                                     <td style=`${buttonStyle}`>
-                                      <marko-core-text value=getReadMoreText(node)>
+                                      <marko-core-text value=getButtonText(node.type)>
                                         <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
                                       </marko-core-text>
                                       </td>
@@ -185,7 +181,7 @@ $ const imgWidth = 180;
                           <common-table style=`padding-top: ${innerPadding}px;` align="center" padding=0 spacing=0>
                             <tr>
                               <td style=`${buttonStyle}`>
-                                <marko-core-text value=getReadMoreText(node)>
+                                <marko-core-text value=getButtonText(node.type)>
                                   <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
                                 </marko-core-text>
                                 </td>
