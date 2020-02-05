@@ -1,6 +1,6 @@
 module.exports = (node) => {
-  let buttonText = '';
   const { type } = node;
+  let buttonText = `Full ${type}`;
   switch (type) {
     case 'video':
       buttonText = 'Watch Video';
@@ -15,7 +15,6 @@ module.exports = (node) => {
       buttonText = 'Learn More';
       break;
     default:
-      buttonText = `Full ${type}`;
       break;
   }
   return buttonText;
