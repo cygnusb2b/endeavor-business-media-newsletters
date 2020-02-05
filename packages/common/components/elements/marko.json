@@ -3,6 +3,10 @@
     "template": "./view-online.marko",
     "@name": "string"
   },
+  "<common-stealth-link-element>": {
+    "template": "./stealth-link.marko",
+    "@name": "string"
+  },
   "<common-banner-element>": {
     "template": "./banner.marko",
     "@name": "string",
