@@ -1,5 +1,6 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
+import getButtonText from "@endeavor-business-media/common/utils/get-button-text";
 
 $ const {
   node,
@@ -33,12 +34,7 @@ $ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
   "text-decoration": "none",
   "text-transform": "uppercase"
 });
-$ const getReadMoreText = (node) => {
-  const { type, typeTitle } = node;
-  if (type === "promotion") return "full";
-  const viewType = ["video", "photo-gallery", "whitepaper"];
-  return viewType.includes(type) ? node.typeTitle : `Full ${node.typeTitle}`;
-};
+
 $ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
 
@@ -80,7 +76,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
               </tr>
               <tr>
                 <td style=`${buttonStyle}`>
-                  <marko-core-text value=getReadMoreText(node)>
+                  <marko-core-text value=getButtonText(node)>
                     <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
                   </marko-core-text>
                   </td>
