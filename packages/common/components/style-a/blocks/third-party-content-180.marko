@@ -84,7 +84,7 @@ $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
                 <common-table align="center" padding=0 spacing=0>
                   <tr>
                     <td style=`${buttonStyle}`>
-                      <marko-core-text value=getButtonText(node)>
+                      <marko-core-text value=getButtonText(node.type)>
                         <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
                       </marko-core-text>
                       </td>
@@ -120,7 +120,7 @@ $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
           <common-table style=`padding-top: ${innerPadding}px;` align="center" padding=0 spacing=0>
             <tr>
               <td style=`${buttonStyle}`>
-                <marko-core-text value=getButtonText(node)>
+                <marko-core-text value=getButtonText(node.type)>
                   <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
                 </marko-core-text>
                 </td>

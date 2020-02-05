@@ -1,5 +1,4 @@
-module.exports = (node) => {
-  const { type } = node;
+module.exports = (type) => {
   let buttonText = `Full ${type}`;
   switch (type) {
     case 'video':
