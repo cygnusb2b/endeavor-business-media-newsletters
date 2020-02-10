@@ -17,5 +17,19 @@
       "type": "object",
       "required": true
     }
+  },
+  "<tenant-header-full-image-block>": {
+    "template": "./header-full-image.marko",
+    "@logo-path" : {
+      "type": "string"
+    },
+    "@header-href" : {
+      "type": "string",
+      "default-value": "https://www.tdworld.com/"
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    }
   }
 }

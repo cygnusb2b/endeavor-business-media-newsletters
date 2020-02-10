@@ -14,12 +14,12 @@ $ const {
   buttonTextStyle,
   teaserStyle
 } = input;
-$ const titleTableStyle = defaultValue(input.titleTableStyle, "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: ##C73E31; background-color: #ffffff; border-top: 4px solid ##C73E31;");
+$ const titleTableStyle = defaultValue(input.titleTableStyle, "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;");
 $ const titleStyle = defaultValue(input.titleStyle, "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;");
-$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #757575; border-top: 2px solid #757575; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
+$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
 $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "font-weight": "bold",
-  "color": "#C73E31",
+  "color": "#00b398",
   "font-size": "19.5px",
   "line-height": "20px",
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
@@ -37,26 +37,29 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         skip: skip,
         queryFragment: contentList,
       }>
-        <common-table width="700" style=mainTableStyle align="left" class="main" padding=0 spacing=0>
-          <tr>
-            <td>
-              <common-table width="100%" style=titleTableStyle align="center" class="main" padding=0 spacing=0>
-                <tr>
-                  <td>
-                    <h3 style=`${titleStyle}`>${title}</h3>
-                  </td>
-                </tr>
-              </common-table>
-            </td>
-          </tr>
+        <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
+          <if(title)>
+            <tr>
+              <td>
+                <common-table width="100%" style=titleTableStyle align="center" class="main" padding=0 spacing=0>
+                  <tr>
+                    <td>
+                      <h3 style=`${titleStyle}`>${title}</h3>
+                    </td>
+                  </tr>
+                </common-table>
+              </td>
+            </tr>
+          </if>
           <tr>
             <td valign="top">
               <for|node, index| of=nodes>
-                $ const alignment = getAlignment(index);
                 <if(node.type === "promotion")>
-                  <common-style-a-special-edition-full-promotion-block
+                  <common-style-a-special-edition-featured-promotion-block
                     node=node
-                    alignment=alignment
+                    alignment="center"
+                    img-width=660
+                    table-width=700
                     content-link-style=contentLinkStyle
                     button-style=buttonStyle
                     button-text-style=buttonTextStyle
@@ -64,9 +67,11 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                   />
                 </if>
                 <else>
-                  <common-style-a-simple-card-full-block
+                  <common-style-a-simple-card-block
                     node=node
-                    alignment=alignment
+                    alignment="center"
+                    img-width=660
+                    table-width=700
                     content-link-style=contentLinkStyle
                     button-style=buttonStyle
                     button-text-style=buttonTextStyle
