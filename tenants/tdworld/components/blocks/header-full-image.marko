@@ -1,0 +1,20 @@
+$ const {
+  newsletter,
+  logoPath,
+  headerHref
+} = input;
+<common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+  <tr>
+    <td height="75" valign="center" style="font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-collapse: separate; background-color: #ffffff; width: 700px; margin-left: 10px; border-top: 2px solid #bbb; border-bottom: 2px solid #bbb;">
+      <marko-newsletter-imgix
+          src=logoPath
+          alt=newsletter.name
+          options={ w: 700 }
+          attrs={ border: 0, width: 700 }
+          class="main"
+        >
+        <@link href=headerHref target="_blank" />
+        </marko-newsletter-imgix>
+    </td>
+  </tr>
+</common-table>
