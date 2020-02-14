@@ -4,9 +4,9 @@ $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const featuredTitleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const featuredMainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; background-color: #ccc; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
-$ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
+$ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #3d4552; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #3d4552;";
 $ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
-$ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-top: 2px solid #757575; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const contentLinkStyle = {
   "font-weight": "bold",
   "color": "#d74022",
@@ -37,46 +37,273 @@ $ const buttonTextStyle = {
       name=newsletter.name
       date=date
     />
-    <tenant-header2-block logo-path="/files/base/ebm/electronicdesign/image/static/newsletter/microchip.jpg" header-href="https://www.microchip.com/" date=date newsletter=newsletter />
+    <tenant-special-edition-header-block date=date newsletter=newsletter />
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-third-party-featured-section-wrapper-block
-      section-id=80761
+    <!-- #01 Logo - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=80852
       date=date
-      limit=1
       newsletter=newsletter
       title-table-style=titleTableStyle
       title-style=titleStyle
       main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
     />
 
-    <common-style-a-section-spacer-block />
-
-    <common-style-a-third-party-content-180-section-wrapper-block
-      section-id=80761
-      date=date
-      skip=1
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
-    />
-
-    <common-style-a-section-spacer-block />
-
-    <common-style-a-featured-ad-wrapper-block
+    <!-- #02 Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
       section-id=80762
       date=date
-      limit=1
       newsletter=newsletter
-      main-table-style=featuredMainTableStyle
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #03 Features - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80761
+      title="Features"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #04 Features - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80853
+      title="Features"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #05 Generic - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80854
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #06 Generic - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80855
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #07 News - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80856
+      title="News"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #08 News - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80857
+      title="News"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #09 Generic - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80858
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #10 Generic - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80859
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #11 Products - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80860
+      title="Products"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #12 Products - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80861
+      title="Products"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #13 Generic - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80862
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #14 Generic - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80863
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #15 Videos - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80864
+      title="Videos"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #16 Videos - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80865
+      title="Videos"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #17 Generic - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80866
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #18 Generic - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80867
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #19 Whitepapers 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80868
+      title="Whitepapers"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #20 Whitepapers - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80869
+      title="Whitepapers"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #21 Generic - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=80870
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #22 Generic - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80871
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
