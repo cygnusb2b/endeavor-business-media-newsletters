@@ -10,5 +10,15 @@
       "required": true
     },
     "@image-path": "string"
-  }
+  },
+  "<tenant-special-edition-header-block>": {
+    "template": "./special-edition-header.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    }
 }
