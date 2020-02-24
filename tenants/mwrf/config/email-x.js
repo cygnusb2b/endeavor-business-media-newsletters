@@ -25,5 +25,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('update', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5e53db2cda238ea3a0deaca0',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;
