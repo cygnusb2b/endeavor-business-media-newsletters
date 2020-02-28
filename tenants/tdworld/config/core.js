@@ -6,6 +6,7 @@ module.exports = {
     phoneNumber: '800-547-7377',
     manageSubscriptions: 'https://endeavor.dragonforms.com/TWPrefPage?r=@{encrypted_customer_id}@&pk=NLFooter',
     signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=TWnewpref',
+    findJobsUrl: 'https://jobs.tdworld.com/?pk=UMeNL',
   },
   socialMediaLinks: [
     {
