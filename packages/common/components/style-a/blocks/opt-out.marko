@@ -38,6 +38,9 @@ $ const socialMediaProviders = config.getAsArray('socialMediaLinks');
         | <a style="text-decoration: underline !important;" href="@{forwardtoafriendlink}@">Forward to a Friend</a>
         | <a style="text-decoration: underline !important;" href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
         | <a style="text-decoration: underline !important;" href=`${config.get("optOut.privacyPolicyUrl")}`>Read Privacy Policy</a>
+        <if (config.get("optOut.findJobsUrl")) >
+        | <a style="text-decoration: underline !important;" href=`${config.get("optOut.findJobsUrl")}`>Find Jobs</a>
+        </if>
       </p>
 
       <p style="margin:0px;margin-bottom:1em;">
