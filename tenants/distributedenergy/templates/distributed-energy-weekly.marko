@@ -2,6 +2,9 @@ import emailX from "../config/email-x";
 
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
+$ const hpPrimary = emailX.getAdUnit({ name: "hpPrimary", alias: newsletter.alias });
+
 $ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #87022f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #87022f;";
 $ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
@@ -35,7 +38,7 @@ $ const buttonTextStyle = {
       name=newsletter.name
       date=date
     />
-    <tenant-header-red-block date=date newsletter=newsletter />
+    <tenant-header-block date=date newsletter=newsletter />
 
     <common-style-a-section-spacer-block />
 
