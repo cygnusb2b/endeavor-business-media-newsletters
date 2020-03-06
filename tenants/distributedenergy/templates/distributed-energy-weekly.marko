@@ -68,25 +68,64 @@ $ const buttonTextStyle = {
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block
-      section-id=64680
-      title="Product Spotlight"
-      date=date
-      limit=1
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
-    />
+    <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td width="370" align="left">
+          <common-style-a-card-simple-card-block
+            section-id=64680
+            title="Product Spotlight"
+            date=date
+            limit=1
+            newsletter=newsletter
+            title-table-style=titleTableStyle
+            title-style=titleStyle
+            main-table-style=mainTableStyle
+            content-link-style=contentLinkStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+          />
+        </td>
+        <td width="300" align="right">
+          <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
+            <@ad-unit ...mrPrimary />
+            <@params date=date email="@{email name}@"/>
+          </marko-newsletters-email-x-display>
+        </td>
+      </tr>
+    </common-table>
+
+    <common-style-a-section-spacer-block />
+
+    <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td width="370" align="left">
+          <common-style-a-card-simple-card-block
+            section-id=64681
+            title="Features"
+            date=date
+            limit=2
+            newsletter=newsletter
+            title-table-style=titleTableStyle
+            title-style=titleStyle
+            main-table-style=mainTableStyle
+            content-link-style=contentLinkStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+          />
+        </td>
+        <td width="300" align="right">
+          <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
+            <@ad-unit ...hpPrimary />
+            <@params date=date email="@{email name}@"/>
+          </marko-newsletters-email-x-display>
+        </td>
+      </tr>
+    </common-table>
 
     <common-style-a-section-spacer-block />
 
     <common-style-a-card-section-wrapper-block
       section-id=64681
-      title="Features"
       date=date
       newsletter=newsletter
       title-table-style=titleTableStyle
