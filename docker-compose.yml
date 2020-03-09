@@ -463,5 +463,20 @@ services:
       - "19427:80"
       - "29427:29427"
 
+  distributedenergy:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/distributedenergy
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19428
+      LIVERELOAD_PORT: 29428
+      TENANT_KEY: ebm_distributedenergy
+    ports:
+      - "19428:80"
+      - "29428:29428"
+
 volumes:
   yarn-cache: {}
