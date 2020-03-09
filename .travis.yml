@@ -377,10 +377,10 @@ jobs:
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
-    name: distributedenergy
-    script: npx @base-cms/newsletter-deployment-tool deploy distributedenergy gemenon
-    install: skip
-    env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+      name: distributedenergy
+      script: npx @base-cms/newsletter-deployment-tool deploy distributedenergy gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
     - stage: staging
       name: distributedenergy
