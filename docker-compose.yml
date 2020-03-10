@@ -469,11 +469,11 @@ services:
     working_dir: /root/tenants/distributedenergy
     environment:
       <<: *env
-      <<: *env-gemenon
+      <<: *env-picon
       PORT: 80
       EXPOSED_PORT: 19428
       LIVERELOAD_PORT: 29428
-      TENANT_KEY: ebm_distributedenergy
+      TENANT_KEY: ebm_dte
     ports:
       - "19428:80"
       - "29428:29428"
