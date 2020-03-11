@@ -26,6 +26,14 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('ieee-pes-show-update', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5de59009d300773218f1eb00',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('lineman-life', [
     {
       name: 'leaderboardPrimary',
