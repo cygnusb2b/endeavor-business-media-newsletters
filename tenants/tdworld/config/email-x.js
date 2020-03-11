@@ -33,6 +33,12 @@ config
       width: 670,
       height: 90,
     },
+    {
+      name: 'leaderboardSecondary',
+      id: '5e691472e8f0a35e22991234',
+      width: 670,
+      height: 90,
+    },
   ])
   .setAdUnits('lineman-life', [
     {
