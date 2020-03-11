@@ -26,6 +26,20 @@ config
       height: 90,
     },
   ])
+  .setAdUnits('ieee-pes-show-update', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5de59009d300773218f1eb00',
+      width: 670,
+      height: 90,
+    },
+    {
+      name: 'leaderboardSecondary',
+      id: '5e691472e8f0a35e22991234',
+      width: 670,
+      height: 90,
+    },
+  ])
   .setAdUnits('lineman-life', [
     {
       name: 'leaderboardPrimary',
@@ -76,14 +90,6 @@ config
     {
       name: 'leaderboardPrimary',
       id: '5de5647376787a064e115293',
-      width: 670,
-      height: 90,
-    },
-  ])
-  .setAdUnits('ieee-pes-show-update', [
-    {
-      name: 'leaderboardPrimary',
-      id: '5de59009d300773218f1eb00',
       width: 670,
       height: 90,
     },
