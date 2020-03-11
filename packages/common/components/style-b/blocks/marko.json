@@ -1,0 +1,177 @@
+{
+  "<common-style-b-simple-card-block>": {
+    "template": "./simple-card.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object"
+  },
+  "<common-style-b-simple-card-half-block>": {
+    "template": "./simple-card-half.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object"
+  },
+  "<common-style-b-simple-card-full-block>": {
+    "template": "./simple-card-full.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object"
+  },
+  "<common-style-b-card-section-wrapper-block>": {
+    "template": "./card-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<common-style-b-left-product-section-wrapper>": {
+    "template": "./left-product-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<common-style-b-image-only-header-block>": {
+    "template": "./image-only-header.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@image-path": "string"
+  },
+  "<common-style-b-text-promo-wrapper>": {
+    "template": "./text-promo-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@main-table-style": "string",
+    "@content-link-style": "object"
+  },
+  "<common-style-b-promo-card-block>": {
+    "template": "./promo-card.marko",
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "center"
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@button-style": "string",
+    "@button-text-style": "object"
+  }
+}

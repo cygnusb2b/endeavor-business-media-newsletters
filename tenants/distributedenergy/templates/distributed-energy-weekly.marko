@@ -5,10 +5,8 @@ $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alia
 $ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
 $ const hpPrimary = emailX.getAdUnit({ name: "hpPrimary", alias: newsletter.alias });
 
-$ const titleTableStyle = "";
 $ const titleStyle = "font: bold 1.25rem/1.5 sans-serif; color: #ffffff; background-color: #000000; padding: 5px 10px;";
-$ const featuredMainTableStyle = "";
-$ const mainTableStyle = "";
+$ const featuredMainTableStyle = "background-color: #ebebeb";
 $ const contentLinkStyle = {
   "font": "bold 1.15rem/1.5 sans-serif"
 };
@@ -24,7 +22,7 @@ $ const buttonTextStyle = {
   date=date
 >
   <@head>
-    <common-style-a-styles />
+    <common-style-b-styles />
   </@head>
   <@body style="margin: 0px !important; background-color: #efefef;">
     <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
@@ -69,9 +67,7 @@ $ const buttonTextStyle = {
                   date=date
                   limit=1
                   newsletter=newsletter
-                  title-table-style=titleTableStyle
                   title-style=titleStyle
-                  main-table-style=mainTableStyle
                   content-link-style=contentLinkStyle
                 />
               </td>
@@ -93,9 +89,7 @@ $ const buttonTextStyle = {
                   date=date
                   limit=2
                   newsletter=newsletter
-                  title-table-style=titleTableStyle
                   title-style=titleStyle
-                  main-table-style=mainTableStyle
                   content-link-style=contentLinkStyle
                 />
               </td>
@@ -113,9 +107,7 @@ $ const buttonTextStyle = {
             date=date
             newsletter=newsletter
             skip=2
-            title-table-style=titleTableStyle
             title-style=titleStyle
-            main-table-style=mainTableStyle
             content-link-style=contentLinkStyle
           />
 
@@ -124,9 +116,7 @@ $ const buttonTextStyle = {
             title="Industry News"
             date=date
             newsletter=newsletter
-            title-table-style=titleTableStyle
             title-style=titleStyle
-            main-table-style=mainTableStyle
             content-link-style=contentLinkStyle
           />
 
