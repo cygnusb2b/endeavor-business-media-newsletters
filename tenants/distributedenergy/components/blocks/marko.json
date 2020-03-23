@@ -1,14 +1,3 @@
 {
-  "<tenant-image-only-header-block>": {
-    "template": "./image-only-header.marko",
-    "@date": {
-      "type": "object",
-      "required": true
-    },
-    "@newsletter": {
-      "type": "object",
-      "required": true
-    },
-    "@image-path": "string"
-  }
+
 }
