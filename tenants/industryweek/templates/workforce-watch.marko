@@ -1,7 +1,7 @@
 import emailX from "../config/email-x";
+import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
 
 $ const { newsletter, date } = data;
-$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #ba1f31; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #ba1f31;";
 $ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const mainTableStyle ="border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
@@ -39,67 +39,29 @@ $ const buttonTextStyle = {
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-card-section-wrapper-block
-      section-id=74449
-      date=date
-      newsletter=newsletter
-      allow-full-promotion=true
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
-    />
-
-    <common-style-a-section-spacer-block />
-
-    <common-style-a-featured-section-wrapper-block
-      section-id=74450
-      title="WW Spotlight"
-      date=date
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
-    />
-
-    <common-style-a-card-section-wrapper-block
-      section-id=74451
-      title="Strategic Management"
-      date=date
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
-    />
-
-    <common-style-a-section-spacer-block />
-
-    <common-style-a-card-section-wrapper-block
-      section-id=74452
-      title="Recent Reads"
-      date=date
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
-    />
-
-    <common-style-a-section-spacer-block />
-
-    <common-style-a-card-section-wrapper-block
+    <!-- #01 - Generic - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
       section-id=74453
-      title="Gallery"
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #02 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=74452
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #03 - Editor's Note - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=74449
+      title="Editor's Note"
       date=date
       newsletter=newsletter
       title-table-style=titleTableStyle
@@ -108,6 +70,80 @@ $ const buttonTextStyle = {
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
+    />
+
+    <!-- #04 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=74451
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #05 - In The Spotlight - 1 Column - Big Image -->
+    <common-style-a-special-edition-featured-wrapper-block
+      section-id=81010
+      title="In The Spotlight"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #06 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=80993
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #07 - Top Stories - 1 Column  -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=81017
+      title="Top Stories"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #08 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=74450
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #09 - Editor’s Choice - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=81025
+      title="Editor's Choice"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #10 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=81003
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
     />
 
     <common-style-a-section-spacer-block />
