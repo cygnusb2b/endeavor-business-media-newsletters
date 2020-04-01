@@ -1,7 +1,7 @@
 import emailX from "../config/email-x";
+import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
 
 $ const { newsletter, date } = data;
-$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const featuredTitleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const featuredMainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; background-color: #333333; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const featuredContentLinkStyle = {
@@ -65,24 +65,30 @@ $ const buttonTextStyle = {
 
     <common-style-a-section-spacer-block />
 
-    <common-style-a-featured-section-wrapper-block
+    <!-- #01 - Generic - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
       section-id=74410
       date=date
-      limit=1
       newsletter=newsletter
-      main-table-style=featuredMainTableStyle
-      content-link-style=featuredContentLinkStyle
-      teaser-style=featuredTeaserStyle
-      button-style=featuredButtonStyle
-      button-text-style=featuredButtonTextStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
     />
 
-    <common-style-a-section-spacer-block />
-
-    <common-style-a-card-section-wrapper-block
-      section-id=74410
+    <!-- #02 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=80982
       date=date
-      skip=1
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #03 - Editor's Note - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=80983
+      title="Editor's Note"
+      date=date
       newsletter=newsletter
       title-table-style=titleTableStyle
       title-style=titleStyle
@@ -90,6 +96,80 @@ $ const buttonTextStyle = {
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
+    />
+
+    <!-- #04 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=80985
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #05 - In The Spotlight - 1 Column - Big Image -->
+    <common-style-a-special-edition-featured-wrapper-block
+      section-id=81005
+      title="In The Spotlight"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #06 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=80987
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #07 - Top Stories - 1 Column  -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=81012
+      title="Top Stories"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #08 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=80994
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #09 - Editor’s Choice - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=81019
+      title="Editor's Choice"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #10 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=80998
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
     />
 
     <common-style-a-section-spacer-block />
