@@ -69,14 +69,14 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
 
 <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="right" class="main right" padding=0 spacing=0>
   <tr>
-    <td style=`padding: 0 ${innerPadding}px;`>
+    <td style=`padding: 10px ${innerPadding}px 0;`>
       <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
         <tr>
           <td>
             <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left", "padding-bottom": "10px" } } >
               <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
             </marko-core-obj-text>
-            <marko-core-obj-text tag="p" obj=node field="body" html=true attrs={ style: teaserStyle } />
+            <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
           </td>
         </tr>
         <if(node.linkText)>
