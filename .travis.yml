@@ -376,6 +376,10 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
+    #############################
+    #       Picon Below         #
+    #############################
+
     - stage: production
       name: distributedenergy
       script: npx @base-cms/newsletter-deployment-tool deploy distributedenergy picon
@@ -385,6 +389,18 @@ jobs:
     - stage: staging
       name: distributedenergy
       script: npx @base-cms/newsletter-deployment-tool deploy distributedenergy picon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+      - stage: production
+      name: processingmagazine
+      script: npx @base-cms/newsletter-deployment-tool deploy processingmagazine picon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: processingmagazine
+      script: npx @base-cms/newsletter-deployment-tool deploy processingmagazine picon
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
