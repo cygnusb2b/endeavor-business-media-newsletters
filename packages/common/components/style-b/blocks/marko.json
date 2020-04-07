@@ -1,4 +1,7 @@
 {
+  "<common-style-b-opt-out-block>": {
+    "template": "./opt-out.marko"
+  },
   "<common-style-b-simple-card-block>": {
     "template": "./simple-card.marko",
     "@node": "object",
