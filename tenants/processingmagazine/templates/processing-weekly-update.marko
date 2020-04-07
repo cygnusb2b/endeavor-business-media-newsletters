@@ -3,7 +3,7 @@ import emailX from "../config/email-x";
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
-$ const hpPrimary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
+$ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
 
 $ const titleStyle = "font: bold 1.25rem/1.5 sans-serif; color: #ffffff; background-color: #000000; padding: 5px 10px;";
 $ const featuredMainTableStyle = "background-color: #ebebeb";
@@ -32,7 +32,7 @@ $ const buttonTextStyle = {
             name=newsletter.name
             date=date
           />
-          <common-style-b-image-only-header-block image-path="https://img.processingmagazine.comfiles/base/ebm/pm/image/static/eNL_Header_PS.jpg" date=date newsletter=newsletter />
+          <common-style-b-image-only-header-block image-path="https://img.processingmagazine.com/files/base/ebm/pm/image/static/eNL_Header_PS.jpg" date=date newsletter=newsletter />
 
           <common-style-a-section-spacer-block />
 
@@ -47,8 +47,24 @@ $ const buttonTextStyle = {
             </tr>
           </common-table>
 
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <common-style-b-left-product-section-wrapper
+                  section-id=64728
+                  title="Top Story"
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  title-style=titleStyle
+                  content-link-style=contentLinkStyle
+                />
+              </td>
+            </tr>
+          </common-table>
+
           <common-style-b-text-promo-wrapper
-            section-id=64679
+            section-id=64727
             date=date
             limit=1
             newsletter=newsletter
@@ -62,58 +78,21 @@ $ const buttonTextStyle = {
             <tr>
               <td>
                 <common-style-b-left-product-section-wrapper
-                  section-id=64680
-                  title="Product Spotlight"
-                  date=date
-                  limit=1
-                  newsletter=newsletter
-                  title-style=titleStyle
-                  content-link-style=contentLinkStyle
-                />
-              </td>
-              <td width="300" align="right">
-                <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
-                  <@ad-unit ...mrPrimary />
-                  <@params date=date email="@{email name}@"/>
-                </marko-newsletters-email-x-display>
-              </td>
-            </tr>
-          </common-table>
-
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td>
-                <common-style-b-left-product-section-wrapper
-                  section-id=64681
+                  section-id=64729
                   title="Features"
                   date=date
-                  limit=2
                   newsletter=newsletter
                   title-style=titleStyle
                   content-link-style=contentLinkStyle
                 />
               </td>
-              <td width="300" align="right">
-                <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
-                  <@ad-unit ...mrPrimary />
-                  <@params date=date email="@{email name}@"/>
-                </marko-newsletters-email-x-display>
-              </td>
             </tr>
           </common-table>
 
-          <common-style-b-card-section-wrapper-block
-            section-id=64681
-            date=date
-            newsletter=newsletter
-            skip=2
-            title-style=titleStyle
-            content-link-style=contentLinkStyle
-          />
 
           <common-style-b-card-section-wrapper-block
-            section-id=64682
-            title="Industry News"
+            section-id=64730
+            title="Industry News, Products, and Events"
             date=date
             newsletter=newsletter
             title-style=titleStyle
@@ -122,7 +101,13 @@ $ const buttonTextStyle = {
 
           <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td style="font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
+              <td width="300" align="left">
+                <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
+                  <@ad-unit ...mrPrimary />
+                  <@params date=date email="@{email name}@"/>
+                </marko-newsletters-email-x-display>
+              </td>
+              <td width="300" align="right">
                 <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
                   <@ad-unit ...mrSecondary />
                   <@params date=date email="@{email name}@"/>
@@ -133,7 +118,7 @@ $ const buttonTextStyle = {
 
           <common-style-a-section-spacer-block />
 
-          <common-style-a-opt-out-block />
+          <common-style-b-opt-out-block />
         </td>
       </tr>
     </common-table>
