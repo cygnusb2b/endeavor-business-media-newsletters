@@ -1,6 +1,7 @@
 {
   "taglib-imports": [
-    "./blocks/marko.json"
+    "./blocks/marko.json",
+    "./elements/marko.json"
   ],
   "<common-style-b-styles>": {
     "template": "./default-style.marko"

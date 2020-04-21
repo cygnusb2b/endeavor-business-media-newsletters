@@ -24,4 +24,22 @@ module.exports = {
       title: 'Follow us on LinkedIn',
     },
   ],
+  brandNavLinks: [
+    {
+      href: 'https://www.processingmagazine.com/',
+      title: 'Home',
+    },
+    {
+      href: 'https://www.processingmagazine.com/contact-us',
+      title: 'Contact Us',
+    },
+    {
+      href: 'https://www.processingmagazine.com/subscribe',
+      title: 'Subscribe',
+    },
+    {
+      href: 'https://www.processingmagazine.com/advertise',
+      title: 'Advertise',
+    },
+  ],
 };

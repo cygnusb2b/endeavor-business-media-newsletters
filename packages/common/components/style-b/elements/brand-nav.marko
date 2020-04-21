@@ -1,0 +1,13 @@
+import { getAsArray } from "@base-cms/object-path";
+import { asObject } from "@base-cms/utils";
+
+$ const { config } = out.global;
+$ const brandNav = config.getAsArray('brandNavLinks');
+
+<div class="brand-nav">
+  <for|brandNavLinks| of=brandNav>
+    <a class="link-list" href=brandNavLinks.href target="_blank">
+      ${brandNavLinks.title}
+    </a>
+  </for>
+</div>

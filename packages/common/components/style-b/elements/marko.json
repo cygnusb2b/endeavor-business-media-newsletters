@@ -1,0 +1,9 @@
+{
+  "<common-style-b-copyright-element>": {
+    "template": "./copyright.marko"
+  },
+  "<common-style-b-brand-nav-element>": {
+    "template": "./brand-nav.marko",
+    "@footer-style": "string"
+  }
+}
