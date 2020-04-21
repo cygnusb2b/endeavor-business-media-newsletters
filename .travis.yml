@@ -392,7 +392,7 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
-      - stage: production
+    - stage: production
       name: processingmagazine
       script: npx @base-cms/newsletter-deployment-tool deploy processingmagazine picon
       install: skip
