@@ -5,7 +5,8 @@ $ const {
   node,
   tableWidth,
   imgWidth,
-  alignment
+  alignment,
+  fallbackLabel
 } = input;
 $ const teaserStyle = defaultValue(input.teaserStyle, {
   "font-size": "12px",
@@ -25,7 +26,12 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
         <tr>
           <td>
             <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
-              $!{getSponsoredByText(node, 'Advertisement')}
+              <if(fallbackLabel == true)>
+                $!{getSponsoredByText(node, 'Advertisement')}
+              </if>
+              <else>
+                $!{getSponsoredByText(node, '&nbsp;')}
+              </else>
             </div>
           </td>
         </tr>
