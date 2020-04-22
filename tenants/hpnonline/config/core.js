@@ -24,4 +24,22 @@ module.exports = {
     //   title: 'Follow us on LinkedIn',
     // },
   ],
+  brandNavLinks: [
+    {
+      href: 'https://www.hpnonline.com/',
+      title: 'Home',
+    },
+    {
+      href: 'https://www.hpnonline.com/contact-us',
+      title: 'Contact Us',
+    },
+    {
+      href: 'https://www.hpnonline.com/subscribe',
+      title: 'Subscribe',
+    },
+    {
+      href: 'https://www.hpnonline.com/page/advertise',
+      title: 'Advertise',
+    },
+  ],
 };
