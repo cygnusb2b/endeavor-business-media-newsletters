@@ -132,7 +132,11 @@
     "@button-style": "string",
     "@button-text-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-full-third-two-thirds-section-wrapper-block>": {
     "template": "./full-third-two-thirds-section-wrapper.marko",
@@ -581,7 +585,11 @@
       "default-value": 300
     },
     "@content-link-style": "object",
-    "@teaser-style": "object"
+    "@teaser-style": "object",
+    "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-promotion-full-block>": {
     "template": "./promotion-full.marko",
@@ -599,7 +607,11 @@
       "default-value": 300
     },
     "@content-link-style": "object",
-    "@teaser-style": "object"
+    "@teaser-style": "object",
+    "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-special-edition-full-wrapper-block>": {
     "template": "./special-edition-full-wrapper.marko",
