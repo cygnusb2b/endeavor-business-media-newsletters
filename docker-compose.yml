@@ -493,5 +493,19 @@ services:
       - "19429:80"
       - "29429:29429"
 
+  hpnonline:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/hpnonline
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19430
+      LIVERELOAD_PORT: 29430
+      TENANT_KEY: ebm_hpn
+    ports:
+      - "19430:80"
+      - "29430:29430"
 volumes:
   yarn-cache: {}
