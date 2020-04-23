@@ -1,0 +1,126 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
+$ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
+
+$ const titleStyle = "font: bold 1.25rem/1.5 sans-serif; color: #fff; background-color: #00427B; padding: 5px 10px;";
+$ const featuredMainTableStyle = "background-color: #ebebeb";
+$ const contentLinkStyle = {
+  "font": "bold 1.15rem/1.5 sans-serif",
+  "color": "#BE2E31"
+};
+$ const buttonStyle = "background-color: #00427B; padding: 5px 20px;";
+$ const footerStyle = "background-color: #00427B; color: #fff;";
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-b-styles />
+  </@head>
+  <@body style="margin: 0px !important; background-color: #efefef;">
+    <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td>
+          <common-banner-element
+            name=newsletter.name
+            date=date
+          />
+          <common-style-b-image-only-header-block image-path="https://img.processingmagazine.com/files/base/ebm/pm/image/static/eNL_Header_PS.jpg" date=date newsletter=newsletter />
+
+          <common-section-spacer-element />
+
+          <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td style="font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
+                <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
+                  <@ad-unit ...leaderboardPrimary />
+                  <@params date=date email="@{email name}@"/>
+                </marko-newsletters-email-x-display>
+              </td>
+            </tr>
+          </common-table>
+
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <common-style-b-full-section-wrapper-block
+                  section-id=64728
+                  title="Top Story"
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  title-style=titleStyle
+                  content-link-style=contentLinkStyle
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <common-style-b-text-promo-wrapper
+            section-id=64727
+            date=date
+            limit=1
+            newsletter=newsletter
+            button-style=buttonStyle
+            content-link-style=contentLinkStyle
+            main-table-style=featuredMainTableStyle
+          />
+
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <common-style-b-full-section-wrapper-block
+                  section-id=64729
+                  title="Features"
+                  date=date
+                  newsletter=newsletter
+                  title-style=titleStyle
+                  content-link-style=contentLinkStyle
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td width="300" align="left">
+                <marko-newsletters-email-x-display decoded-params=["email"]>
+                  <@ad-unit ...mrPrimary />
+                  <@params date=date email="@{email name}@"/>
+                </marko-newsletters-email-x-display>
+              </td>
+              <td width="300" align="right">
+                <marko-newsletters-email-x-display decoded-params=["email"]>
+                  <@ad-unit ...mrSecondary />
+                  <@params date=date email="@{email name}@"/>
+                </marko-newsletters-email-x-display>
+              </td>
+            </tr>
+          </common-table>
+
+          <common-style-b-full-section-wrapper-block
+            section-id=64730
+            title="Industry News, Products, and Events"
+            date=date
+            newsletter=newsletter
+            title-style=titleStyle
+            content-link-style=contentLinkStyle
+          />
+
+          <common-section-spacer-element />
+
+          <common-style-b-footer-nav-block
+            footer-style=footerStyle
+          />
+
+          <common-style-b-opt-out-block />
+        </td>
+      </tr>
+    </common-table>
+  </@body>
+</marko-newsletter-root>

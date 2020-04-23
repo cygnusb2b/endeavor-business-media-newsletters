@@ -2,9 +2,6 @@
   "<common-style-a-opt-out-block>": {
     "template": "./opt-out.marko"
   },
-  "<common-style-a-section-spacer-block>": {
-    "template": "./section-spacer.marko"
-  },
   "<common-style-a-featured-section-wrapper-block>": {
     "template": "./featured-section-wrapper.marko",
     "@date": {

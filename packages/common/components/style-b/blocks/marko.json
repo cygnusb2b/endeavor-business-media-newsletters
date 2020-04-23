@@ -1,4 +1,10 @@
 {
+  "<common-style-b-opt-out-block>": {
+    "template": "./opt-out.marko"
+  },
+  "<common-style-b-footer-nav-block>": {
+    "template": "./footer-nav.marko"
+  },
   "<common-style-b-simple-card-block>": {
     "template": "./simple-card.marko",
     "@node": "object",
@@ -145,9 +151,6 @@
       "type": "number",
       "default-value": 0
     },
-    "@title": "string",
-    "@title-table-style": "string",
-    "@title-style": "string",
     "@teaser-style": "object",
     "@button-style": "string",
     "@button-text-style": "object",
@@ -156,22 +159,51 @@
   },
   "<common-style-b-promo-card-block>": {
     "template": "./promo-card.marko",
-    "@node": "object",
     "@alignment": {
       "type": "string",
-      "default-value": "center"
+      "default-value": "left"
     },
-    "@table-width": {
-      "type": "number",
-      "default-value": 345
-    },
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@content-link-style": "object",
     "@img-width": {
       "type": "number",
       "default-value": 300
     },
-    "@content-link-style": "object",
+    "@node": "object",
+    "@table-width": {
+      "type": "number",
+      "default-value": 355
+    },
+    "@teaser-style": "object"
+  },
+  "<common-style-b-full-section-wrapper-block>": {
+    "template": "./full-section-wrapper.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string",
     "@teaser-style": "object",
-    "@button-style": "string",
-    "@button-text-style": "object"
+    "@main-table-style": "string",
+    "@content-link-style": "object"
   }
 }
