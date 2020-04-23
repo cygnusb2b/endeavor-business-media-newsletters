@@ -1,5 +1,7 @@
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
 import defaultValue from "@base-cms/marko-core/utils/default-value";
+import isLast from "@endeavor-business-media/common/utils/is-last";
+import isFirst from "@endeavor-business-media/common/utils/is-first";
 
 $ const {
   date,
@@ -26,7 +28,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "color": "#0000EE"
 });
 
-<common-table width="700" style="border-collapse:collapse; background-color: #ebebeb" align="center" class="main text-promo-wrapper" padding=0 spacing=0>
+<common-table width="700" style="border-collapse:collapse;" align="center" class="main text-promo-wrapper" padding=0 spacing=0>
   <tr>
     <td>
       <!-- Section Query Wrapper -->
@@ -38,21 +40,31 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         skip: skip,
         queryFragment: contentList,
       }>
-        <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
-          <tr>
-            <td valign="top">
-              <for|node, index| of=nodes>
-                <common-style-b-promo-card-block
-                  node=node
-                  content-link-style=contentLinkStyle
-                  button-style=buttonStyle
-                  button-text-style=buttonTextStyle
-                  teaser-style=teaserStyle
-                />
-              </for>
-            </td>
-          </tr>
-        </common-table>
+        <for|node, index| of=nodes>
+          <if(!isFirst(nodes, index))>
+            <common-table width="700" class="main" padding=10 spacing=0>
+              &nbsp;
+            </common-table>
+          </if>
+          <common-table width="700" align="left"  style=`${mainTableStyle}` class="main" padding=0 spacing=0>
+            <tr>
+              <td valign="top">
+                  <common-style-b-promo-card-block
+                    node=node
+                    content-link-style=contentLinkStyle
+                    button-style=buttonStyle
+                    button-text-style=buttonTextStyle
+                    teaser-style=teaserStyle
+                  />
+              </td>
+            </tr>
+          </common-table>
+          <if(isLast(nodes, index))>
+            <common-table width="700" class="main" padding=10 spacing=0>
+              &nbsp;
+            </common-table>
+          </if>
+        </for>
       </marko-web-query>
     </td>
   </tr>
