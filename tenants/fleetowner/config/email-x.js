@@ -73,5 +73,13 @@ config
       width: 580,
       height: 80,
     },
+  ])
+  .setAdUnits('maintenance-matters', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5ea200cad3e7011a83baf7f7',
+      width: 580,
+      height: 80,
+    },
   ]);
 module.exports = config;
