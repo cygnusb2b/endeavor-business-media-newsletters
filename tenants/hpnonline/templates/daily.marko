@@ -6,14 +6,20 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
 $ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
 $ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
 
-$ const titleStyle = "font: bold 1.25rem/1.5 sans-serif; color: #fff; background-color: #00427B; padding: 5px 10px;";
+$ const titleStyle = "font: bold 20px/1.5 sans-serif; color: #000; background-color: #eeeeee; padding: 5px 10px;";
+$ const titleTableStyle = "font-family: Garamond, serif; font-size: 16px; line-height: 1.5; margin: 0 auto; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000";
 $ const featuredMainTableStyle = "background-color: #ebebeb";
 $ const contentLinkStyle = {
-  "font": "bold 1.15rem/1.5 sans-serif",
-  "color": "#BE2E31"
+  "font": "bold 18px/1.5 sans-serif",
+  "color": "#C13441"
 };
-$ const buttonStyle = "background-color: #00427B; padding: 5px 20px;";
-$ const footerStyle = "background-color: #00427B; color: #fff;";
+$ const buttonStyle = "background-color: transparent;";
+$ const buttonTextStyle = {
+  "color": "#000",
+  "font": "bold 16px/2 Helvetica, sans-serif",
+  "text-decoration": "underline"
+};
+$ const footerStyle = "background-color: #515151; color: #fff;";
 
 <marko-newsletter-root
   title=newsletter.name
@@ -31,85 +37,74 @@ $ const footerStyle = "background-color: #00427B; color: #fff;";
             name=newsletter.name
             date=date
           />
-          <common-style-b-image-only-header-block image-path="https://img.processingmagazine.com/files/base/ebm/pm/image/static/eNL_Header_PS.jpg" date=date newsletter=newsletter />
+          <common-style-b-image-only-header-block image-path="" date=date newsletter=newsletter />
 
           <common-section-spacer-element />
 
-          <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td style="font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
-                <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
-                  <@ad-unit ...leaderboardPrimary />
-                  <@params date=date email="@{email name}@"/>
-                </marko-newsletters-email-x-display>
-              </td>
-            </tr>
-          </common-table>
-
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+          <common-table width="700" style=titleTableStyle align="center" class="main" padding=0 spacing=0>
             <tr>
               <td>
-                <common-style-b-full-section-wrapper-block
-                  section-id=64728
-                  title="Top Story"
-                  date=date
-                  limit=1
-                  newsletter=newsletter
-                  title-style=titleStyle
-                  content-link-style=contentLinkStyle
-                />
+                <h3 style=`${titleStyle}`>Table of Contents</h3>
               </td>
             </tr>
           </common-table>
 
-          <common-style-b-text-promo-wrapper
-            section-id=64727
+          <common-leaderboard-primary-block
+            name=leaderboardPrimary
+          />
+
+          <!-- #1 Title Content -->
+          <common-style-b-title-only-block
+            section-id=64760
             date=date
-            limit=1
             newsletter=newsletter
-            button-style=buttonStyle
             content-link-style=contentLinkStyle
-            main-table-style=featuredMainTableStyle
           />
 
           <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td>
-                <common-style-b-full-section-wrapper-block
-                  section-id=64729
-                  title="Features"
-                  date=date
-                  newsletter=newsletter
-                  title-style=titleStyle
-                  content-link-style=contentLinkStyle
+              <td width="300" align="left">
+                <common-advertisement-element
+                  name=mrPrimary
+                />
+              </td>
+              <td width="300" align="right">
+                <common-advertisement-element
+                  name=mrSecondary
                 />
               </td>
             </tr>
           </common-table>
 
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td width="300" align="left">
-                <marko-newsletters-email-x-display decoded-params=["email"]>
-                  <@ad-unit ...mrPrimary />
-                  <@params date=date email="@{email name}@"/>
-                </marko-newsletters-email-x-display>
-              </td>
-              <td width="300" align="right">
-                <marko-newsletters-email-x-display decoded-params=["email"]>
-                  <@ad-unit ...mrSecondary />
-                  <@params date=date email="@{email name}@"/>
-                </marko-newsletters-email-x-display>
-              </td>
-            </tr>
-          </common-table>
-
-          <common-style-b-full-section-wrapper-block
-            section-id=64730
-            title="Industry News, Products, and Events"
+          <!-- #2 Title/Teaser Content -->
+          <common-style-b-title-teaser-block
+            section-id=64762
             date=date
             newsletter=newsletter
-            title-style=titleStyle
+            content-link-style=contentLinkStyle
+          />
+
+          <common-leaderboard-primary-block
+            name=leaderboardSecondary
+          />
+
+          <!-- #3 Text Promo -->
+          <common-style-b-text-promo-wrapper
+            section-id=64761
+            date=date
+            newsletter=newsletter
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            content-link-style=contentLinkStyle
+            main-table-style=featuredMainTableStyle
+          />
+
+          <!-- #4 Title/Teaser Content -->
+          <common-style-b-title-teaser-block
+            section-id=64763
+            date=date
+            newsletter=newsletter
+            limit=1
             content-link-style=contentLinkStyle
           />
 
