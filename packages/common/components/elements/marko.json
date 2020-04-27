@@ -21,5 +21,9 @@
     "@button-style": "string",
     "@button-text-style": "object",
     "@node": "object"
+  },
+  "<common-advertisement-element>": {
+    "template": "./advertisement.marko",
+    "@name": "string"
   }
 }
