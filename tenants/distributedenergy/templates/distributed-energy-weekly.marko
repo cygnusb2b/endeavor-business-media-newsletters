@@ -15,6 +15,8 @@ $ const buttonTextStyle = {
   "color": "#ffffff",
   "font": "bold 1.15rem/1.5 sans-serif"
 };
+$ const footerStyle = "background-color: #000; color: #fff;";
+
 
 <marko-newsletter-root
   title=newsletter.name
@@ -133,7 +135,11 @@ $ const buttonTextStyle = {
 
           <common-section-spacer-element />
 
-          <common-style-a-opt-out-block />
+          <common-style-b-footer-nav-block
+            footer-style=footerStyle
+          />
+
+          <common-style-b-opt-out-block />
         </td>
       </tr>
     </common-table>

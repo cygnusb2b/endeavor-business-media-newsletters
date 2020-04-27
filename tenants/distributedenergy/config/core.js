@@ -24,4 +24,22 @@ module.exports = {
     //   title: 'Follow us on LinkedIn',
     // },
   ],
+  brandNavLinks: [
+    {
+      href: 'https://www.distributedenergy.com/',
+      title: 'Home',
+    },
+    {
+      href: 'https://www.distributedenergy.com/contact-us',
+      title: 'Contact Us',
+    },
+    {
+      href: 'https://www.distributedenergy.com/subscribe',
+      title: 'Subscribe',
+    },
+    {
+      href: 'https://www.distributedenergy.com/advertise',
+      title: 'Advertise',
+    },
+  ],
 };
