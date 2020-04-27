@@ -748,5 +748,9 @@
     "@teaser-style": "object",
     "@button-style": "string",
     "@button-text-style": "object"
+  },
+  "<common-style-a-leaderboard-primary-block>": {
+    "template": "./leaderboard-primary.marko",
+    "@name": "string"
   }
 }
