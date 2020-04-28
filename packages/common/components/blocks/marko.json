@@ -1,6 +1,7 @@
 {
   "<common-leaderboard-primary-block>": {
     "template": "./leaderboard-primary.marko",
-    "@name": "string"
+    "@name": "string",
+    "@date": "date"
   }
 }

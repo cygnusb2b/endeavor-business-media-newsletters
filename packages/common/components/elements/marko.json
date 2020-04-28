@@ -24,6 +24,7 @@
   },
   "<common-advertisement-element>": {
     "template": "./advertisement.marko",
-    "@name": "string"
+    "@name": "string",
+    "@date": "date"
   }
 }
