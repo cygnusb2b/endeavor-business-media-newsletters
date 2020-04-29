@@ -507,5 +507,36 @@ services:
     ports:
       - "19430:80"
       - "29430:29430"
+
+  mlo-online:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/mlo-online
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19431
+      LIVERELOAD_PORT: 29431
+      TENANT_KEY: ebm_mlo
+    ports:
+      - "19431:80"
+      - "29431:29431"
+
+  flowcontrolnetwork:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/flowcontrolnetwork
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19432
+      LIVERELOAD_PORT: 29432
+      TENANT_KEY: ebm_fcn
+    ports:
+      - "19432:80"
+      - "29432:29432"
+
 volumes:
   yarn-cache: {}

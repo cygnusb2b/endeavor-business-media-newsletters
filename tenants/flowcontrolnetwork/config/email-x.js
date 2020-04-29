@@ -5,9 +5,9 @@ config
   .setAdUnits('weekly-update', [
     {
       name: 'leaderboardPrimary',
-      id: '<not set>',
-      width: 670,
-      height: 90,
+      id: '5ea9d8138a13ab029e3a6aac',
+      width: 600,
+      height: 100,
     },
     {
       name: 'mrPrimary',

@@ -404,7 +404,6 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
-
     - stage: production
       name: hpnonline
       script: npx @base-cms/newsletter-deployment-tool deploy hpnonline picon
@@ -414,6 +413,30 @@ jobs:
     - stage: staging
       name: hpnonline
       script: npx @base-cms/newsletter-deployment-tool deploy hpnonline picon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: mlo-online
+      script: npx @base-cms/newsletter-deployment-tool deploy mlo-online picon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: mlo-online
+      script: npx @base-cms/newsletter-deployment-tool deploy mlo-online picon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: flowcontrolnetwork
+      script: npx @base-cms/newsletter-deployment-tool deploy flowcontrolnetwork picon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: flowcontrolnetwork
+      script: npx @base-cms/newsletter-deployment-tool deploy flowcontrolnetwork picon
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
