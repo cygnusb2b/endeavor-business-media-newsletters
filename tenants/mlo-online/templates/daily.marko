@@ -1,0 +1,126 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", alias: newsletter.alias });
+$ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
+$ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
+
+$ const titleStyle = "font: bold 20px/1.5 sans-serif; color: #000; background-color: #eeeeee; padding: 5px 10px;";
+$ const titleTableStyle = "font-family: Garamond, serif; font-size: 16px; line-height: 1.5; margin: 0 auto; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000";
+$ const featuredMainTableStyle = "background-color: #ebebeb";
+$ const contentLinkStyle = {
+  "font": "bold 18px/1.5 sans-serif",
+  "color": "#C13441"
+};
+$ const buttonStyle = "background-color: transparent;";
+$ const buttonTextStyle = {
+  "color": "#000",
+  "font": "bold 16px/2 Helvetica, sans-serif",
+  "text-decoration": "underline"
+};
+$ const footerStyle = "background-color: #515151; color: #fff;";
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-b-styles />
+  </@head>
+  <@body style="margin: 0px !important; background-color: #efefef;">
+    <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td>
+          <common-banner-element
+            name=newsletter.name
+            date=date
+          />
+          <common-style-b-image-only-header-block image-path="" date=date newsletter=newsletter />
+
+          <common-section-spacer-element />
+
+          <common-table width="700" style=titleTableStyle align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <h3 style=`${titleStyle}`>Table of Contents</h3>
+              </td>
+            </tr>
+          </common-table>
+
+          <common-leaderboard-primary-block
+            name=leaderboardPrimary
+            date=date
+          />
+
+          <!-- #1 Title Only -->
+          <common-style-b-title-only-block
+            section-id=64771
+            date=date
+            newsletter=newsletter
+            content-link-style=contentLinkStyle
+          />
+
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td width="300" align="left">
+                <common-advertisement-element
+                  name=mrPrimary
+                  date=date
+                />
+              </td>
+              <td width="300" align="right">
+                <common-advertisement-element
+                  name=mrSecondary
+                  date=date
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- #2 Title/Teaser -->
+          <common-style-b-title-teaser-block
+            section-id=64772
+            date=date
+            newsletter=newsletter
+            content-link-style=contentLinkStyle
+          />
+
+          <common-leaderboard-primary-block
+            name=leaderboardSecondary
+            date=date
+          />
+
+          <!-- #3 Text Promo -->
+          <common-style-b-text-promo-wrapper
+            section-id=64773
+            date=date
+            newsletter=newsletter
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            content-link-style=contentLinkStyle
+            main-table-style=featuredMainTableStyle
+          />
+
+          <!-- #4 Title/Teaser -->
+          <common-style-b-title-teaser-block
+            section-id=64774
+            date=date
+            newsletter=newsletter
+            limit=1
+            content-link-style=contentLinkStyle
+          />
+
+          <common-section-spacer-element />
+
+          <common-style-b-footer-nav-block
+            footer-style=footerStyle
+          />
+
+          <common-style-b-opt-out-block />
+        </td>
+      </tr>
+    </common-table>
+  </@body>
+</marko-newsletter-root>
