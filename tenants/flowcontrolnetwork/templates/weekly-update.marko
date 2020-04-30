@@ -1,0 +1,117 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
+$ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
+
+$ const titleStyle = "font: bold 20px/30px sans-serif; color: #fff; background-color: #CB011B; padding: 5px 10px;";
+$ const featuredMainTableStyle = "background-color: #ebebeb";
+$ const contentLinkStyle = {
+  "font": "bold 18px/27px sans-serif",
+  "color": "#CB011B",
+  "text-decoration": "none"
+};
+$ const buttonTextStyle = {
+  "color": "#000",
+  "font": "bold 18px/27px sans-serif"
+};
+$ const buttonStyle = "background-color: transparent; padding: 5px 20px;";
+$ const footerStyle = "background-color: #CB011B; color: #fff;";
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-b-styles />
+  </@head>
+  <@body style="margin: 0px !important; background-color: #efefef;">
+    <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td>
+          <common-banner-element
+            name=newsletter.name
+            date=date
+          />
+          <common-style-b-image-only-header-block image-path="https://img.flowcontrolnetwork.com/files/base/ebm/fcn/image/static/eNL_Header_FC.jpg" date=date newsletter=newsletter />
+
+          <common-section-spacer-element />
+
+          <common-leaderboard-primary-block
+            name=leaderboardPrimary
+            date=date
+          />
+
+          <!-- #1 Top Story - 1 Column - 64776 -->
+          <common-style-b-full-section-wrapper-block
+            section-id=64776
+            title="Top Story"
+            date=date
+            limit=1
+            newsletter=newsletter
+            title-style=titleStyle
+            content-link-style=contentLinkStyle
+          />
+
+          <!-- #2 Text Promo - 1 Column - 64777 -->
+          <common-style-b-text-promo-wrapper
+            section-id=64777
+            date=date
+            newsletter=newsletter
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            content-link-style=contentLinkStyle
+            main-table-style=featuredMainTableStyle
+          />
+
+          <!-- #3 Features - 1 Column - 64778 -->
+          <common-style-b-full-section-wrapper-block
+            section-id=64778
+            title="Features"
+            date=date
+            newsletter=newsletter
+            title-style=titleStyle
+            content-link-style=contentLinkStyle
+          />
+
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td width="300" align="left">
+                <common-advertisement-element
+                  name=mrPrimary
+                  date=date
+                />
+              </td>
+              <td width="300" align="right">
+                <common-advertisement-element
+                  name=mrSecondary
+                  date=date
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- #4 Industry News - 1 Column - 64779 -->
+          <common-style-b-full-section-wrapper-block
+            section-id=64779
+            title="Industry News, Products, and Events"
+            date=date
+            newsletter=newsletter
+            title-style=titleStyle
+            content-link-style=contentLinkStyle
+          />
+
+          <common-section-spacer-element />
+
+          <common-style-b-footer-nav-block
+            footer-style=footerStyle
+          />
+
+          <common-style-b-opt-out-block />
+        </td>
+      </tr>
+    </common-table>
+  </@body>
+</marko-newsletter-root>
