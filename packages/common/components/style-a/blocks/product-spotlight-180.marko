@@ -6,7 +6,8 @@ $ const {
   node,
   imageAlignment,
   showTitle,
-  showButton
+  showButton,
+  fallbackLabel
 } = input;
 $ const teaserStyle = defaultValue(input.teaserStyle, {
   "font-size": "12px",
@@ -45,7 +46,12 @@ $ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
     <tr>
       <td>
         <div style=`padding-left: ${innerPadding}px; font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;`>
-          $!{getSponsoredByText(node, fallbackText)}
+          <if(fallbackLabel == true)>
+            $!{getSponsoredByText(node, 'Advertisement')}
+          </if>
+          <else>
+            $!{getSponsoredByText(node, '&nbsp;')}
+          </else>
         </div>
       </td>
     </tr>
@@ -105,7 +111,12 @@ $ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
     <tr>
       <td>
         <div style=`padding-left: ${innerPadding}px; font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;`>
-          $!{getSponsoredByText(node, fallbackText)}
+          <if(fallbackLabel == true)>
+            $!{getSponsoredByText(node, 'Advertisement')}
+          </if>
+          <else>
+            $!{getSponsoredByText(node, '&nbsp;')}
+          </else>
         </div>
       </td>
     </tr>

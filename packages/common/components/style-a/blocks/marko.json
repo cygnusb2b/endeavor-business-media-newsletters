@@ -31,7 +31,11 @@
     "@button-style": "string",
     "@button-text-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-third-party-featured-section-wrapper-block>": {
     "template": "./third-party-featured-section-wrapper.marko",
@@ -94,7 +98,11 @@
     "@button-style": "string",
     "@button-text-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-card-section-wrapper-block>": {
     "template": "./card-section-wrapper.marko",
@@ -264,7 +272,11 @@
     "@button-style": "string",
     "@button-text-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-third-party-content-180-section-wrapper-block>": {
     "template": "./third-party-content-180-section-wrapper.marko",
@@ -403,7 +415,11 @@
     "@content-link-style": "object",
     "@teaser-style": "object",
     "@button-style": "string",
-    "@button-text-style": "object"
+    "@button-text-style": "object",
+    "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-simple-card-full-block>": {
     "template": "./simple-card-full.marko",
@@ -513,7 +529,11 @@
     "@content-link-style": "object",
     "@teaser-style": "object",
     "@button-style": "string",
-    "@button-text-style": "object"
+    "@button-text-style": "object",
+    "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-third-party-content-180-block>": {
     "template": "./third-party-content-180.marko",
