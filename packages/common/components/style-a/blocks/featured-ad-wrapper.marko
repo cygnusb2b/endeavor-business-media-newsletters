@@ -13,7 +13,8 @@ $ const {
   buttonStyle,
   buttonTextStyle,
   teaserStyle,
-  labelStyle
+  labelStyle,
+  fallbackLabel
 } = input;
 $ const titleTableStyle = defaultValue(input.titleTableStyle, "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;");
 $ const titleStyle = defaultValue(input.titleStyle, "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;");
@@ -60,7 +61,12 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                   <tr>
                     <td>
                       <div style=`${labelStyle}`>
-                        $!{getSponsoredByText(node, fallbackText)}
+                        <if(fallbackLabel == true)>
+                          $!{getSponsoredByText(node, 'Advertisement')}
+                        </if>
+                        <else>
+                          $!{getSponsoredByText(node, '&nbsp;')}
+                        </else>
                       </div>
                     </td>
                   </tr>
