@@ -47,7 +47,7 @@ $ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
       <td>
         <div style=`padding-left: ${innerPadding}px; font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;`>
           <if(fallbackLabel == true)>
-            $!{getSponsoredByText(node, 'Advertisement')}
+            $!{getSponsoredByText(node, fallbackText)}
           </if>
           <else>
             $!{getSponsoredByText(node, '&nbsp;')}
@@ -112,7 +112,7 @@ $ const teaserField = node.type === 'promotion' ? 'body' : 'teaser';
       <td>
         <div style=`padding-left: ${innerPadding}px; font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;`>
           <if(fallbackLabel == true)>
-            $!{getSponsoredByText(node, 'Advertisement')}
+            $!{getSponsoredByText(node, fallbackText)}
           </if>
           <else>
             $!{getSponsoredByText(node, '&nbsp;')}
