@@ -34,7 +34,7 @@
     "@content-link-style": "object",
     "@fallback-label": {
       "type": "boolean",
-      "default-value":true
+      "default-value":false
     }
   },
   "<common-style-a-third-party-featured-section-wrapper-block>": {
@@ -101,7 +101,7 @@
     "@content-link-style": "object",
     "@fallback-label": {
       "type": "boolean",
-      "default-value":true
+      "default-value":false
     }
   },
   "<common-style-a-card-section-wrapper-block>": {
@@ -140,7 +140,7 @@
     "@content-link-style": "object",
     "@fallback-label": {
       "type": "boolean",
-      "default-value":true
+      "default-value":false
     }
   },
   "<common-style-a-full-third-two-thirds-section-wrapper-block>": {
@@ -418,7 +418,7 @@
     "@button-text-style": "object",
     "@fallback-label": {
       "type": "boolean",
-      "default-value":true
+      "default-value":false
     }
   },
   "<common-style-a-simple-card-full-block>": {
