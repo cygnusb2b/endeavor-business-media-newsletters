@@ -62,7 +62,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                     <td>
                       <div style=`${labelStyle}`>
                         <if(fallbackLabel == true)>
-                          $!{getSponsoredByText(node, 'Advertisement')}
+                          $!{getSponsoredByText(node, fallbackText)}
                         </if>
                         <else>
                           $!{getSponsoredByText(node, '&nbsp;')}
