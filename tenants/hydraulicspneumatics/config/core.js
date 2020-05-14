@@ -1,6 +1,6 @@
 module.exports = {
   optOut: {
-    address: 'Hydraulis Pneumatics<br />Endeavor Business Media<br />331 54th Avenue N.<br />Nashville, TN 37209',
+    address: 'Hydraulics Pneumatics<br />Endeavor Business Media<br />331 54th Avenue N.<br />Nashville, TN 37209',
     safeSenders: 'news.endeavorb2b.com and mail.endeavorb2b.com',
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
