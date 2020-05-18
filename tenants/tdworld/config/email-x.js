@@ -69,6 +69,18 @@ config
       width: 300,
       height: 250,
     },
+    {
+      name: 'leaderboardPrimary',
+      id: '5ec2e5b88f78f23fdbaebc1e',
+      width: 670,
+      height: 90,
+    },
+    {
+      name: 'leaderboardSecondary',
+      id: '5ec2e615ac1f2b2bcc0c9a12',
+      width: 670,
+      height: 90,
+    },
   ])
   .setAdUnits('smart-utility', [
     {
