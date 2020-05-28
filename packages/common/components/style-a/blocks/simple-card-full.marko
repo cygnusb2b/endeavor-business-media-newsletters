@@ -7,6 +7,8 @@ $ const {
   alignment,
   tableWidth,
   imgWidth,
+  showButton,
+  displayImage
 } = input;
 $ const teaserStyle = defaultValue(input.teaserStyle, {
   "font-size": "12px",
@@ -39,7 +41,7 @@ $ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
 $ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
 
-<if(node.primaryImage)>
+<if(node.primaryImage && displayImage)>
   <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left main" padding=0 spacing=0>
     <tr>
       <td style=`padding: 0; padding-left: ${innerPadding}px; padding-bottom: 0px;`>
@@ -96,23 +98,25 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
   </common-table>
 
   <common-table width="100%" style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="center" class=`${alignment}` padding=0 spacing=0>
-    <tr>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td align="center">
-        <common-table align="center" padding=0 spacing=0>
+    <if(showButton)>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">
+          <common-table align="center" padding=0 spacing=0>
 
-          <tr>
-            <td style=`${buttonStyle}`>
-              <marko-core-text value=getButtonText(node.type)>
-                <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
-              </marko-core-text>
-              </td>
-            </tr>
-        </common-table>
-      </td>
-    </tr>
+            <tr>
+              <td style=`${buttonStyle}`>
+                <marko-core-text value=getButtonText(node.type)>
+                  <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
+                </marko-core-text>
+                </td>
+              </tr>
+          </common-table>
+        </td>
+      </tr>
+    </if>
     <tr>
       <td>&nbsp;</td>
     </tr>
@@ -121,9 +125,6 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
 <else>
   <common-table width="100%" style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
     <tr>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
       <td style=`padding: ${innerPadding}px;`>
         <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
           <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
@@ -131,23 +132,25 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
       </td>
     </tr>
     <tr>
-      <td style=teaserWrapperStyle >
+      <td style=teaserWrapperStyle style="padding: 0 20px;">
         <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
       </td>
     </tr>
-    <tr>
-      <td style=`padding-top: ${innerPadding}px;` >
-        <common-table align="center" padding=0 spacing=0>
-          <tr>
-            <td style=`${buttonStyle}`>
-              <marko-core-text value=getButtonText(node.type)>
-                <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
-              </marko-core-text>
-              </td>
-            </tr>
-        </common-table>
-      </td>
-    </tr>
+    <if(showButton)>
+      <tr>
+        <td style=`padding-top: ${innerPadding}px;` >
+          <common-table align="center" padding=0 spacing=0>
+            <tr>
+              <td style=`${buttonStyle}`>
+                <marko-core-text value=getButtonText(node.type)>
+                  <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
+                </marko-core-text>
+                </td>
+              </tr>
+          </common-table>
+        </td>
+      </tr>
+    </if>
     <tr>
       <td>&nbsp;</td>
     </tr>

@@ -12,6 +12,7 @@ $ const {
   skip,
   buttonStyle,
   buttonTextStyle,
+  showButton,
   teaserStyle
 } = input;
 $ const titleTableStyle = defaultValue(input.titleTableStyle, "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: ##C73E31; background-color: #ffffff; border-top: 4px solid ##C73E31;");
@@ -71,6 +72,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                     button-style=buttonStyle
                     button-text-style=buttonTextStyle
                     teaser-style=teaserStyle
+                    show-button=showButton
                   />
                 </else>
                 <if(!isLast(nodes, index))>

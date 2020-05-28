@@ -141,6 +141,10 @@
     "@fallback-label": {
       "type": "boolean",
       "default-value":false
+    },
+    "@displayImage": {
+      "type": "boolean",
+      "default-value":true
     }
   },
   "<common-style-a-full-third-two-thirds-section-wrapper-block>": {
@@ -419,6 +423,10 @@
     "@fallback-label": {
       "type": "boolean",
       "default-value":false
+    },
+    "@display-image" : {
+      "type": "boolean",
+      "default-value":true
     }
   },
   "<common-style-a-simple-card-full-block>": {
@@ -436,10 +444,18 @@
       "type": "number",
       "default-value": 300
     },
+    "@show-button": {
+      "type": "boolean",
+      "default-value": true
+    },
     "@content-link-style": "object",
     "@teaser-style": "object",
     "@button-style": "string",
-    "@button-text-style": "object"
+    "@button-text-style": "object",
+    "@display-image" : {
+      "type": "boolean",
+      "default-value":true
+    }
   },
   "<common-style-a-simple-card-third-two-thirds-block>": {
     "template": "./simple-card-third-two-thirds.marko",
@@ -577,6 +593,10 @@
       "type": "number",
       "default-value": 0
     },
+    "@show-button": {
+      "type": "boolean",
+      "default-value": true
+    },
     "@title": "string",
     "@title-table-style": "string",
     "@title-style": "string",
@@ -606,6 +626,10 @@
     "@fallback-label": {
       "type": "boolean",
       "default-value":true
+    },
+    "@display-image" : {
+      "type": "boolean",
+      "default-value":true
     }
   },
   "<common-style-a-promotion-full-block>": {
@@ -626,6 +650,10 @@
     "@content-link-style": "object",
     "@teaser-style": "object",
     "@fallback-label": {
+      "type": "boolean",
+      "default-value":true
+    },
+    "@display-image" : {
       "type": "boolean",
       "default-value":true
     }
@@ -651,6 +679,10 @@
     "@skip": {
       "type": "number",
       "default-value": 0
+    },
+    "@show-button": {
+      "type": "boolean",
+      "default-value": true
     },
     "@title": "string",
     "@title-table-style": "string",
