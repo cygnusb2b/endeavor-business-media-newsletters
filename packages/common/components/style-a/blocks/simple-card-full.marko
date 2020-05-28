@@ -124,9 +124,6 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
 <else>
   <common-table width="100%" style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
     <tr>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
       <td style=`padding: ${innerPadding}px;`>
         <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
           <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
@@ -134,7 +131,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
       </td>
     </tr>
     <tr>
-      <td style=teaserWrapperStyle >
+      <td style=teaserWrapperStyle style="padding: 0 20px;">
         <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
       </td>
     </tr>
