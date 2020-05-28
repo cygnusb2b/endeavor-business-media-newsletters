@@ -7,7 +7,8 @@ $ const {
   alignment,
   tableWidth,
   imgWidth,
-  fallbackLabel
+  fallbackLabel,
+  displayImage
 } = input;
 $ const teaserStyle = defaultValue(input.teaserStyle, {
   "font-size": "12px",
@@ -57,17 +58,19 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
         </tr>
         <tr>
           <td>
-            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-              <marko-newsletter-imgix
-                src=image.src
-                alt=image.alt
-                options={ w: imgWidth }
-                class="main"
-                attrs={ border: 0, width: imgWidth }
-              >
-                <@link href=node.siteContext.url target="_blank" />
-              </marko-newsletter-imgix>
-            </marko-core-obj-value>
+            <if(displayImage)>
+              <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
+                <marko-newsletter-imgix
+                  src=image.src
+                  alt=image.alt
+                  options={ w: imgWidth }
+                  class="main"
+                  attrs={ border: 0, width: imgWidth }
+                >
+                  <@link href=node.siteContext.url target="_blank" />
+                </marko-newsletter-imgix>
+              </marko-core-obj-value>
+            </if>
 
             <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
               <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
