@@ -62,14 +62,24 @@ $ const buttonTextStyle = {
       name=newsletter.name
       date=date
     />
-    <tenant-header-block image-path="/files/base/ebm/fleetowner/image/static/newsletter/whitepaper_header.jpg" date=date newsletter=newsletter />
+    <tenant-header-block image-path="/files/base/ebm/fleetowner/image/static/newsletter/resources_header.jpg" date=date newsletter=newsletter />
 
     <common-section-spacer-element />
 
+    <!-- #01 - From the Editor - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=81476
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      show-button=false
+    />
+
+    <!-- #02 - Featured Resource - 1 Column - Big Image -->
     <common-style-a-featured-section-wrapper-block
       section-id=80774
       date=date
-      limit=1
       newsletter=newsletter
       main-table-style=featuredMainTableStyle
       content-link-style=featuredContentLinkStyle
@@ -78,14 +88,11 @@ $ const buttonTextStyle = {
       button-text-style=featuredButtonTextStyle
     />
 
-    <common-section-spacer-element />
-
-    <common-style-a-180-alt-section-wrapper-block
+    <!-- #03 - More Resources - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
       section-id=74558
       date=date
       newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
       main-table-style=mainTableStyle
       content-link-style=contentLinkStyle
       button-style=buttonStyle

@@ -1,9 +1,7 @@
-import emailX from "../config/email-x";
-
 $ const { newsletter, date } = data;
-$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const featuredTitleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const featuredMainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; background-color: #ccc; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+
 $ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
 $ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
@@ -41,17 +39,32 @@ $ const buttonTextStyle = {
 
     <common-section-spacer-element />
 
-    <common-style-a-leaderboard-primary-block
-      name=leaderboardPrimary
+    <!-- #01 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=81485
       date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
     />
 
-    <common-section-spacer-element />
+    <!-- #02 - From The Editor - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=81490
+      title="From The Editor"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      show-button=false
+    />
 
+    <!-- #03 - Featured - 1 Column - Big Image -->
     <common-style-a-featured-section-wrapper-block
       section-id=74525
+      title="Featured"
       date=date
-      limit=1
       newsletter=newsletter
       title-table-style=titleTableStyle
       title-style=titleStyle
@@ -61,10 +74,18 @@ $ const buttonTextStyle = {
       button-text-style=buttonTextStyle
     />
 
-    <common-section-spacer-element />
+    <!-- #04 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=81495
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
 
-    <common-style-a-180-alt-section-wrapper-block
+    <!-- #05 Latest News - 2 Column -->
+    <common-style-a-card-section-wrapper-block
       section-id=73110
+      title="Latest News"
       date=date
       newsletter=newsletter
       title-table-style=titleTableStyle
@@ -73,22 +94,46 @@ $ const buttonTextStyle = {
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
+      fallback-label=false
     />
 
-    <common-section-spacer-element />
-
-    <!-- <common-style-a-featured-ad-wrapper-block
-      section-id=74497 #section does not exsit
+    <!-- #06 Latest News - No Images - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=81500
       date=date
-      limit=1
       newsletter=newsletter
-      main-table-style=featuredMainTableStyle
+      main-table-style=mainTableStyle
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
-    /> -->
-<!--
-    <common-section-spacer-element /> -->
+      fallback-label=false
+      displayImage=false
+    />
+
+    <!-- #07 Trending - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=81504
+      title="Trending"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+      fallback-label=false
+    />
+
+    <!-- #08 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=81509
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <common-section-spacer-element />
 
     <common-style-a-opt-out-block />
 
