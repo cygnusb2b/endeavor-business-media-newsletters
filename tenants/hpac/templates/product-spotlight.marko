@@ -1,7 +1,4 @@
-import emailX from "../config/email-x";
-
 $ const { newsletter, date } = data;
-$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #1189a7; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #1189a7;";
 $ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
 $ const mainTableStyle ="border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
@@ -39,16 +36,31 @@ $ const buttonTextStyle = {
 
     <common-section-spacer-element />
 
-    <common-style-a-product-spotlight-180-section-wrapper-block
+    <!-- #01 Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=81210
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #02 Product Listings - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
       section-id=74473
       date=date
       newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
       main-table-style=mainTableStyle
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
+    />
+
+    <!-- #03 Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=81211
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
     />
 
     <common-section-spacer-element />
