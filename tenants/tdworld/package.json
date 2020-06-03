@@ -1,6 +1,6 @@
 {
   "name": "@endeavor-business-media/tdworld",
-  "version": "1.25.2",
+  "version": "1.25.5",
   "author": "Jacob Bare <jacob@limit0.io>",
   "repository": "https://github.com/base-cms-newsletters/endeavor-business-media/tree/master/tenants/tdworld",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "@base-cms/marko-newsletters-email-x": "^1.0.0-rc.1",
     "@base-cms/newsletter-cli": "^1.0.0-rc.5",
     "@base-cms/object-path": "^1.0.0-rc.1",
-    "@endeavor-business-media/common": "^1.25.0",
+    "@endeavor-business-media/common": "^1.25.5",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^5.11.0"
