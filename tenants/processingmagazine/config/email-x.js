@@ -6,8 +6,8 @@ config
     {
       name: 'leaderboardPrimary',
       id: '5e8c95aa8a13ab55db38acd4',
-      width: 670,
-      height: 90,
+      width: 600,
+      height: 100,
     },
     {
       name: 'mrPrimary',
