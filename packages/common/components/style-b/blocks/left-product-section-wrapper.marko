@@ -16,12 +16,12 @@ $ const {
   teaserStyle
 } = input;
 
-$ const titleTableStyle = defaultValue(input.titleTableStyle, "font: bold 16px/24px sans-serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398;");
-$ const titleStyle = defaultValue(input.titleStyle, "font: bold 16px/24px sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;");
-$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: normal 12px/18px sans-serif; margin: 0; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
+$ const titleStyle = defaultValue(input.titleStyle, "font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif");
+$ const titleTableStyle = defaultValue(input.titleTableStyle, titleStyle + "margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #000; background-color: #ffffff;");
+$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif margin: 0; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
 $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "color": "#00b398",
-  "font": "bold 18px/27px sans-serif"
+  "color": "#0000EE",
+  "font": "bold 18px/27px 'Helvetica Neue', Helvetica, sans-serif"
 });
 
 <common-table width="400" style="border-collapse:collapse;" align="center" class="main left-product-section-wrapper" padding=0 spacing=0>
