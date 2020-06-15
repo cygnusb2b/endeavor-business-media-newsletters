@@ -26,24 +26,24 @@ $ const socialMediaProviders = config.getAsArray('socialMediaLinks');
   </tr>
   <tr>
     <td style="background-color: #ffffff; padding: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 17px;">
-      <p style="margin:0px;margin-bottom:1em;">This email is being sent to
-        <a style="text-decoration: underline !important;" href="mailto:@{email name}@">@{email name}@</a>.
+      <p style="margin:0px; margin-bottom:1em;">This email is being sent to
+        <a href="mailto:@{email name}@">@{email name}@</a>.
       </p>
-      <p style="margin:0px;margin-bottom:1em;">
+      <p style="margin:0px; margin-bottom:1em;">
         Please add ${config.get("optOut.safeSenders")} to your address book or safe sender list to receive our emails in your inbox.
       </p>
       <p style="margin:0px;margin-bottom:1em;">
-        <a style="text-decoration: underline !important;" href="@{confirmunsubscribelink}@">Unsubscribe</a>
-        | <a style="text-decoration: underline !important;" href=`${config.get("optOut.manageSubscriptions")}`>Manage Newsletter Subscriptions</a>
-        | <a style="text-decoration: underline !important;" href="@{forwardtoafriendlink}@">Forward to a Friend</a>
-        | <a style="text-decoration: underline !important;" href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
-        | <a style="text-decoration: underline !important;" href=`${config.get("optOut.privacyPolicyUrl")}`>Read Privacy Policy</a>
+        <a href="@{confirmunsubscribelink}@">Unsubscribe</a>
+        | <a href=`${config.get("optOut.manageSubscriptions")}`>Manage Newsletter Subscriptions</a>
+        | <a href="@{forwardtoafriendlink}@">Forward to a Friend</a>
+        | <a href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
+        | <a href=`${config.get("optOut.privacyPolicyUrl")}`>Read Privacy Policy</a>
         <if (config.get("optOut.findJobsUrl")) >
-        | <a style="text-decoration: underline !important;" href=`${config.get("optOut.findJobsUrl")}`>Find Jobs</a>
+        | <a href=`${config.get("optOut.findJobsUrl")}`>Find Jobs</a>
         </if>
       </p>
 
-      <p style="margin:0px;margin-bottom:1em;">
+      <p style="margin:0px; margin-bottom:1em;">
         If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=`${config.get("optOut.signUp")}`>click here</a> to sign-up.
       </p>
 
