@@ -4,10 +4,14 @@ import { asObject } from "@base-cms/utils";
 $ const { config } = out.global;
 $ const brandNav = config.getAsArray('brandNavLinks');
 
-<div class="brand-nav">
+<common-table width="100%" class="brand-nav" padding=0 spacing=0>
+  <tr>
   <for|brandNavLinks| of=brandNav>
-    <a class="link-list" href=brandNavLinks.href target="_blank">
-      ${brandNavLinks.title}
-    </a>
+    <td class="brand-nav-list">
+      <a class="brand-nav-list__link" href=brandNavLinks.href target="_blank">
+        ${brandNavLinks.title}
+      </a>
+    </td>
   </for>
-</div>
+  </tr>
+</common-table>

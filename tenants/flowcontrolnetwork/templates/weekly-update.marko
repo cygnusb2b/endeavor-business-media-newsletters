@@ -5,7 +5,8 @@ $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alia
 $ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
 $ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
 
-$ const titleStyle = "font: bold 20px/30px sans-serif; color: #fff; background-color: #CB011B; padding: 5px 10px;";
+$ const titleStyle = "font: bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif; margin: 0;";
+$ const titleTableStyle = titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #fff; background-color: #CB011B;";
 $ const featuredMainTableStyle = "background-color: #ebebeb";
 $ const contentLinkStyle = {
   "font": "bold 18px/27px sans-serif",
@@ -52,6 +53,7 @@ $ const footerStyle = "background-color: #CB011B; color: #fff;";
             limit=1
             newsletter=newsletter
             title-style=titleStyle
+            title-table-style=titleTableStyle
             content-link-style=contentLinkStyle
           />
 
@@ -74,6 +76,7 @@ $ const footerStyle = "background-color: #CB011B; color: #fff;";
             date=date
             newsletter=newsletter
             title-style=titleStyle
+            title-table-style=titleTableStyle
             content-link-style=contentLinkStyle
           />
 
@@ -114,6 +117,7 @@ $ const footerStyle = "background-color: #CB011B; color: #fff;";
             date=date
             newsletter=newsletter
             title-style=titleStyle
+            title-table-style=titleTableStyle
             content-link-style=contentLinkStyle
           />
 

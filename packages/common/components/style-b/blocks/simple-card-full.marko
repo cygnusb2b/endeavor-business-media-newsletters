@@ -3,7 +3,6 @@ import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponso
 
 $ const {
   node,
-  alignment,
   tableWidth,
   imgWidth,
 } = input;
@@ -13,6 +12,7 @@ $ const teaserStyle = defaultValue(input.teaserStyle, {
   "margin": "0",
   "padding": "0"
 });
+$ const teaserWrapperStyle = {...teaserStyle, ...{lineHeight: "175%", msoLineHeightRule: "exactly", msoLineHeightAlt: "146%"}};
 $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "color": "#00b398",
   "font": "bold 18px/27px sans-serif"
@@ -20,7 +20,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
 $ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
 
-<common-table style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" class="main simple-card-full" padding=0 spacing=0>
+<common-table width="100%" style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" class="main simple-card-full" padding=0 spacing=0>
   <tr>
     <td>
       <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left main simple-card-full__image" padding=0 spacing=0>
@@ -60,28 +60,24 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
             <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
               <tr>
                 <td>
-                  <div style=" font-weight: normal; color: #6b6b6b; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-size: 11px;">
+                  <div style="font: normal 11px/17px Helvetica, 'Helvetica Neue', Arial, sans-serif;">
                     &nbsp;
                   </div>
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="padding-bottom: 5px;">
                   <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
                     <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
                   </marko-core-obj-text>
-                  <div height="10">&nbsp;</div>
+                </td>
+              </tr>
+              <tr>
+                <td style=teaserWrapperStyle>
                   <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
                 </td>
               </tr>
             </common-table>
-          </td>
-        </tr>
-      </common-table>
-
-      <common-table width="100%" style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="center" class=`${alignment}` padding=0 spacing=0>
-        <tr>
-          <td style=`padding: 0; padding-${alignment}: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
           </td>
         </tr>
       </common-table>
