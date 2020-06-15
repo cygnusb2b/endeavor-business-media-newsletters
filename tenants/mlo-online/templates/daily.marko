@@ -6,20 +6,30 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
 $ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
 $ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
 
-$ const titleStyle = "font: bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif; margin: 0;";
-$ const titleTableStyle = titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #000; background-color: #eee;";
-$ const featuredMainTableStyle = "background-color: #ebebeb";
+$ const titleStyle = "font: bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif; margin: 0; background-color: #eee; padding: 5px 20px;";
+$ const titleTableStyle = titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #000; background-color: #fff;";
+$ const featuredMainTableStyle = "background-color: #ebebeb;";
 $ const contentLinkStyle = {
-  "font": "bold 18px/24px sans-serif",
+  "font": "bold 18px/24px 'Helvetica Neue', Helvetica, sans-serif",
   "color": "#C13441"
 };
 $ const buttonStyle = "background-color: transparent;";
 $ const buttonTextStyle = {
   "color": "#000",
-  "font": "bold 16px/32px Helvetica, sans-serif",
+  "font": "bold 16px/32px 'Helvetica Neue', Helvetica, sans-serif",
   "text-decoration": "underline"
 };
 $ const footerStyle = "background-color: #515151; color: #fff;";
+$ const headerStyle = "background-color: #515151; color: #fff;";
+$ const sponsoredContentLinkStyle = {
+  "background-color": "#C13441",
+  "color": "#fff",
+  "display": "block",
+  "font": "bold 18px/27px 'Helvetica Neue', Helvetica, sans-serif",
+  "padding": "5px 10px"
+};
+$ const sponsoredByStyle = "color: #C13441; font: bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif; text-transform: uppercase; padding-right: 20px;";
+$ const bodyLinkStyle = "color: #C13441; text-decoration: underline;"
 
 <marko-newsletter-root
   title=newsletter.name
@@ -37,7 +47,12 @@ $ const footerStyle = "background-color: #515151; color: #fff;";
             name=newsletter.name
             date=date
           />
-          <common-style-b-image-only-header-block image-path="" date=date newsletter=newsletter />
+          <common-header-block
+            date=date
+            newsletter=newsletter
+            logo-source="/files/base/ebm/mlo/image/static/logo/site_logo.png"
+            header-style=headerStyle
+          />
 
           <common-section-spacer-element />
 
@@ -48,6 +63,8 @@ $ const footerStyle = "background-color: #515151; color: #fff;";
               </td>
             </tr>
           </common-table>
+
+          <common-section-spacer-element />
 
           <common-leaderboard-primary-block
             name=leaderboardPrimary
@@ -103,13 +120,17 @@ $ const footerStyle = "background-color: #515151; color: #fff;";
             main-table-style=featuredMainTableStyle
           />
 
-          <!-- #4 Title/Teaser -->
-          <common-style-b-title-teaser-block
+          <common-section-spacer-element />
+
+          <!-- #4 Sponsored -->
+          <common-sponsored-by-wrapper
             section-id=64774
             date=date
             newsletter=newsletter
-            limit=1
-            content-link-style=contentLinkStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            content-link-style=sponsoredContentLinkStyle
+            sponsored-by-style=sponsoredByStyle
           />
 
           <common-section-spacer-element />

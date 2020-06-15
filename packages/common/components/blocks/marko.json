@@ -45,5 +45,21 @@
     "@node": "object",
     "@teaser-style": "object",
     "@sponsored-by-style": "string"
+  },
+  "<common-header-block>": {
+    "template": "./header.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@header-style": "string",
+    "@logo-source": {
+      "type": "string",
+      "required": true
+    }
   }
 }
