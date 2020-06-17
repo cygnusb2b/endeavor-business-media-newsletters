@@ -38,7 +38,7 @@ module.exports = {
       title: 'Subscribe',
     },
     {
-      href: 'https://www.processflownetwork.com/',
+      href: 'https://industrial.endeavorb2b.com/flow-control/',
       title: 'Advertise',
     },
   ],
