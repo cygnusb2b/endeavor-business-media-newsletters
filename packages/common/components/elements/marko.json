@@ -20,11 +20,20 @@
     "template": "./button.marko",
     "@button-style": "string",
     "@button-text-style": "object",
-    "@node": "object"
+    "@node": "object",
+    "@alignment": {
+      "type": "string",
+      "default-value": "center"
+    }
   },
   "<common-advertisement-element>": {
     "template": "./advertisement.marko",
     "@name": "string",
     "@date": "date"
+  },
+  "<common-primary-image-element>": {
+    "template": "./primary-image.marko",
+    "@node": "object",
+    "@img-width": "string"
   }
 }
