@@ -441,6 +441,23 @@ jobs:
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     #############################
+    #       Aerilon Below         #
+    #############################
+
+    - stage: production
+      name: dentaleconomics
+      script: npx @base-cms/newsletter-deployment-tool deploy dentaleconomics aerilon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: dentaleconomics
+      script: npx @base-cms/newsletter-deployment-tool deploy dentaleconomics aerilon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+
+    #############################
     # ^^^ ADD SERVICES HERE ^^^ #
     #############################
 

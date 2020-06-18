@@ -22,6 +22,10 @@ x-env-defaults: &env
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
 
+
+x-env-aerilon: &env-aerilon
+  GRAPHQL_URI: ${GRAPHQL_URI-https://aerilon.graphql.base-cms.io}
+
 x-env-gemenon: &env-gemenon
   GRAPHQL_URI: ${GRAPHQL_URI-https://gemenon.graphql.base-cms.io}
 
@@ -537,6 +541,21 @@ services:
     ports:
       - "19432:80"
       - "29432:29432"
+
+  dentaleconomics:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/dentaleconomics
+    environment:
+      <<: *env
+      <<: *env-aerilon
+      PORT: 80
+      EXPOSED_PORT: 19433
+      LIVERELOAD_PORT: 29433
+      TENANT_KEY: ebm_de
+    ports:
+      - "19433:80"
+      - "29433:29433"
 
 volumes:
   yarn-cache: {}
