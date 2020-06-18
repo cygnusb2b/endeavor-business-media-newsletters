@@ -46,8 +46,8 @@
     "@teaser-style": "object",
     "@sponsored-by-style": "string"
   },
-  "<common-header-block>": {
-    "template": "./header.marko",
+  "<common-logo-header-block>": {
+    "template": "./logo-header.marko",
     "@date": {
       "type": "object",
       "required": true
