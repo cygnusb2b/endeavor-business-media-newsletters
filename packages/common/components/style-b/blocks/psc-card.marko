@@ -1,23 +1,5 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 import { getAsArray } from "@base-cms/object-path";
-import { buildImgixUrl } from "@base-cms/image";
-
-
-<!-- $ const imageOptions = {
-  ar: "16:9",
-  fit: "crop",
-  crop: "focalpoint",
-  fpX: 0.5,
-  fpY: 0.5,
-  w: 150,
-}; -->
-
-<!-- $ const images = getAsArray(input, "images.edges").map(({ node }) => node); -->
-<!-- $ const images = getAsArray(input, "images").map(node => {
-  const isLogo = Boolean(node.isLogo);
-  return { ...node};
-}); -->
-
 
 $ const {
   alignment,
@@ -69,33 +51,31 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
                     </marko-core-obj-value>
                   </td>
                 </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td align="center">
 
-                  $ const images = getAsArray(input, "images.edges").map(({ node }) => node);
+                $ const images = getAsArray(node, "images.edges").map(({ node }) => node);
 
-                    <for|image| of=images>
-                    $ console.log(image)
-                     <if(primaryImage.id !== image.id)>
-                     <p>testing</p>
-                        <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
+                <for|image| of=images>
+                  <if(node.primaryImage.id !== image.id)>
+                    <tr>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="center">
+                        <a href=node.siteContext.url target="_blank" >
                           <marko-newsletter-imgix
                             src=image.src
                             alt=image.alt
-                            options={ w: 180 }
+                            options={ w: 150 }
                             class="main"
-                            attrs={ border: 0, width: 180 }
+                            attrs={ border: 0, width: 150 }
                           >
-                            <@link href=node.siteContext.url target="_blank" />
-                          </marko-newsletter-imgix>
-                        </marko-core-obj-value>
-                      </if>
-                    </for>
-                  </td>
-                </tr>
+                        </marko-newsletter-imgix>
+                        </a>
+                      </td>
+                    </tr>
+                  </if>
+                </for>
+
               </common-table>
             </td>
           </tr>
