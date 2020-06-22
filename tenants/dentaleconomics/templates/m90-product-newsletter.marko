@@ -6,11 +6,12 @@ $ const buttonTextStyle = {
   "font": "bold 16px/24px sans-serif"
 };
 $ const contentLinkStyle = {
-  "font": "bold 18px/27px sans-serif",
-  "color": "#30659A"
+  "font": "bold 18px sans-serif",
+  "color": "#145d8e",
+  "text-decoration": "none"
 };
-$ const featuredMainTableStyle = "background-color: #ebebeb;";
-$ const footerStyle = "background-color: #515151; color: #fff;";
+$ const featuredMainTableStyle = "border: 10px solid #ecedee;";
+$ const footerStyle = "background-color: #383838; color: #fff;";
 
 <marko-newsletter-root
   title=newsletter.name
@@ -30,8 +31,6 @@ $ const footerStyle = "background-color: #515151; color: #fff;";
           />
           <common-style-b-image-only-header-block image-path="/files/base/ebm/de/image/static/newsletter/m90-product-newsletter_header.jpg" date=date newsletter=newsletter />
 
-          <common-section-spacer-element />
-
           <common-style-b-text-promo-wrapper
             section-id=35653
             date=date
@@ -40,6 +39,7 @@ $ const footerStyle = "background-color: #515151; color: #fff;";
             button-text-style=buttonTextStyle
             content-link-style=contentLinkStyle
             main-table-style=featuredMainTableStyle
+            psc=true
           />
 
           <common-style-b-footer-nav-block

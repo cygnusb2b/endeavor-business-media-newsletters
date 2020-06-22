@@ -13,6 +13,16 @@ fragment NewsletterContentListFragment on Content {
     src
     alt
   }
+  images {
+    edges {
+      node {
+        id
+        src
+        alt
+        isLogo
+      }
+    }
+  }
   labels
   company {
     id

@@ -9,6 +9,7 @@ $ const {
   newsletter,
   sectionId,
   skip,
+  psc
 } = input;
 
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: normal 12px/18px sans-serif; margin: 0; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
@@ -41,14 +42,26 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         queryFragment: contentList,
       }>
         <for|node, index| of=nodes>
-          <if(!isFirst(nodes, index))>
-            <common-table width="700" class="main" padding=10 spacing=0>
-              &nbsp;
+          <if(!isFirst(nodes, index) && !psc)>
+            <common-table width="100%" class="main" padding=0 spacing=0>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
             </common-table>
           </if>
-          <common-table width="700" align="left"  style=`${mainTableStyle}` class="main" padding=0 spacing=0>
+          <common-table width="700" align="center"  style=`${mainTableStyle}` class="main" padding=0 spacing=0>
             <tr>
               <td valign="top">
+                <if(psc)>
+                  <common-style-b-psc-card-block
+                    node=node
+                    content-link-style=contentLinkStyle
+                    button-style=buttonStyle
+                    button-text-style=buttonTextStyle
+                    teaser-style=teaserStyle
+                  />
+                </if>
+                <else>
                   <common-style-b-promo-card-block
                     node=node
                     content-link-style=contentLinkStyle
@@ -56,12 +69,15 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                     button-text-style=buttonTextStyle
                     teaser-style=teaserStyle
                   />
+                </else>
               </td>
             </tr>
           </common-table>
-          <if(isLast(nodes, index))>
-            <common-table width="700" class="main" padding=10 spacing=0>
-              &nbsp;
+          <if(isLast(nodes, index) && psc)>
+            <common-table width="100%" class="main" padding=0 spacing=0>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
             </common-table>
           </if>
         </for>
