@@ -1,3 +1,4 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 import { getAsArray } from "@base-cms/object-path";
 import { asObject } from "@base-cms/utils";
 
@@ -5,6 +6,7 @@ $ const { config } = out.global;
 $ const brandNav = config.getAsArray('brandNavLinks');
 
 <common-table width="100%" class="brand-nav" padding=0 spacing=0>
+$ const footerFontStyle = defaultValue(input.footerFontStyle, "color: #fff; text-decoration: none !important; text-align:left; font: 12px Arial, Helvetica, sans-serif;");
   <tr>
   <for|brandNavLinks| of=brandNav>
     <td class="brand-nav-list">
