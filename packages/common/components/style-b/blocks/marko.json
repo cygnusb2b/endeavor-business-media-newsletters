@@ -155,7 +155,11 @@
     "@button-style": "string",
     "@button-text-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@psc": {
+      "type": "boolean",
+      "default-value":false
+    }
   },
   "<common-style-b-promo-card-block>": {
     "template": "./promo-card.marko",
@@ -176,6 +180,27 @@
       "default-value": 355
     },
     "@teaser-style": "object"
+  },
+  "<common-style-b-psc-card-block>": {
+    "template": "./psc-card.marko",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@content-link-style": "object",
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@node": "object",
+    "@table-width": {
+      "type": "number",
+      "default-value": 355
+    },
+    "@teaser-style": "object",
+    "@images" : "array"
   },
   "<common-style-b-full-section-wrapper-block>": {
     "template": "./full-section-wrapper.marko",
