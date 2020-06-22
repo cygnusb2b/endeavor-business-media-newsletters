@@ -3,7 +3,8 @@
     "template": "./opt-out.marko"
   },
   "<common-style-b-footer-nav-block>": {
-    "template": "./footer-nav.marko"
+    "template": "./footer-nav.marko",
+    "@footer-style" : "string"
   },
   "<common-style-b-simple-card-block>": {
     "template": "./simple-card.marko",
