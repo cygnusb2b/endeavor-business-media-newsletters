@@ -10,12 +10,12 @@ module.exports = {
   socialMediaLinks: [
     {
       provider: 'twitter',
-      href: 'https://www.facebook.com/DentalEconomics',
+      href: 'https://twitter.com/dentalmagazine',
       title: 'Follow us on Twitter',
     },
     {
       provider: 'facebook',
-      href: 'https://twitter.com/dentalmagazine',
+      href: 'https://www.facebook.com/DentalEconomics',
       title: 'Follow us on Facebook',
     },
     {
