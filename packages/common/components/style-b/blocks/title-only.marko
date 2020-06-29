@@ -11,7 +11,9 @@ $ const {
   title,
   limit,
   skip,
+  ignoreDate
 } = input;
+
 $ const titleTableStyle = defaultValue(input.titleTableStyle, "font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0 auto; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000;");
 $ const titleStyle = defaultValue(input.titleStyle, "font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;");
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
@@ -30,6 +32,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         sectionId: sectionId,
         limit: limit,
         queryFragment: contentList,
+        ignoreStartDate: ignoreDate
       }>
         <common-table width="700" style=mainTableStyle align="left" class="main" padding=0 spacing=0>
           <if(title)>

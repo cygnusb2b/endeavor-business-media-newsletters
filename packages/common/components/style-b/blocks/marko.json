@@ -247,6 +247,10 @@
       "type": "object",
       "required": true
     },
+    "@ignore-date": {
+      "type": "boolean",
+      "default-value": false
+    },
     "@newsletter": {
       "type": "object",
       "required": true
@@ -275,6 +279,10 @@
     "@date": {
       "type": "object",
       "required": true
+    },
+    "@ignore-date": {
+      "type": "boolean",
+      "default-value": false
     },
     "@newsletter": {
       "type": "object",
