@@ -128,7 +128,8 @@
       "type": "object",
       "required": true
     },
-    "@image-path": "string"
+    "@image-path": "string",
+    "@date-style": "string"
   },
   "<common-style-b-text-promo-wrapper>": {
     "template": "./text-promo-wrapper.marko",
@@ -230,13 +231,25 @@
     "@title-style": "string",
     "@teaser-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    }
   },
   "<common-style-b-title-teaser-block>": {
     "template": "./title-teaser.marko",
     "@date": {
       "type": "object",
       "required": true
+    },
+    "@ignore-date": {
+      "type": "boolean",
+      "default-value": false
     },
     "@newsletter": {
       "type": "object",
@@ -266,6 +279,10 @@
     "@date": {
       "type": "object",
       "required": true
+    },
+    "@ignore-date": {
+      "type": "boolean",
+      "default-value": false
     },
     "@newsletter": {
       "type": "object",

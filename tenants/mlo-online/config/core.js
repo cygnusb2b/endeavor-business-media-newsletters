@@ -1,4 +1,5 @@
 module.exports = {
+  brandAcronym: 'MLO',
   optOut: {
     address: 'Medical Laboratory Observer<br />Endeavor Business Media<br />331 54th Avenue N.<br />Nashville, TN 37209',
     safeSenders: 'news.endeavorb2b.com and mail.endeavorb2b.com',
@@ -18,11 +19,11 @@ module.exports = {
       href: 'https://www.facebook.com/MLOMedicalLaboratoryObserver',
       title: 'Follow us on Facebook',
     },
-    // {
-    //   provider: 'linkedin',
-    //   href: '<not set>',
-    //   title: 'Follow us on LinkedIn',
-    // },
+    {
+      provider: 'linkedin',
+      href: 'https://www.linkedin.com/groups/2301731',
+      title: 'Follow us on LinkedIn',
+    },
   ],
   brandNavLinks: [
     {

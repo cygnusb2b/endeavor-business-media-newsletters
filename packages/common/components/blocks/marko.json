@@ -61,5 +61,32 @@
       "type": "string",
       "required": true
     }
+  },
+  "<common-publication-block>": {
+    "template": "./publication.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@publication-id": "string",
+    "@publication-description": "string",
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@main-table-style": "string",
+    "@table-width": {
+      "type": "number",
+      "default-value": 700
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@title": "string",
+    "@title-table-style": "string",
+    "@title-style": "string"
   }
 }
