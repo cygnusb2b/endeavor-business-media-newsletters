@@ -12,15 +12,12 @@ $ const {
   limit,
   skip,
 } = input;
-$ const titleTableStyle = defaultValue(input.titleTableStyle, "font-family: Garamond, serif; font-size: 16px; line-height: 24px; margin: 0 auto; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000;");
-$ const titleStyle = defaultValue(input.titleStyle, "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:16px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;");
-$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font-family: Garamond, serif; font-size: 16px; line-height: 24px; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
+$ const titleTableStyle = defaultValue(input.titleTableStyle, "font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0 auto; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000;");
+$ const titleStyle = defaultValue(input.titleStyle, "font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;");
+$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
 $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "font-weight": "bold",
+  "font": "700 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif",
   "color": "#000",
-  "font-size": "16px",
-  "line-height": "24px",
-  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
 });
 
 <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>

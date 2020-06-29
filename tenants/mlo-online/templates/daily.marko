@@ -6,30 +6,38 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
 $ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
 $ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
 
-$ const titleStyle = "font: bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif; margin: 0; background-color: #eee; padding: 5px 20px;";
-$ const titleTableStyle = titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #000; background-color: #fff;";
-$ const featuredMainTableStyle = "background-color: #ebebeb;";
+$ const titleStyle = "font: bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 5px 20px;";
+$ const featuredTitleStyle = "font: bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif; margin: 0; background-color: #307ED3; padding: 5px 20px; color: #fff; text-transform: uppercase;";
+$ const titleTableStyle = titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #555; background-color: #fff;";
+$ const featuredTitleTableStyle = titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #555; background-color: #307ED3; padding: 0;";
+$ const featuredMainTableStyle = "border-collapse:collapse; font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #eee;"
+$ const mainTableStyle = "background-color: #fff; border-top: 2px solid #eee; border-bottom: 2px solid #eee;";
 $ const contentLinkStyle = {
   "font": "bold 18px/24px 'Helvetica Neue', Helvetica, sans-serif",
-  "color": "#C13441"
+  "color": "#555"
+};
+$ const sponsoredContentLinkStyle = {
+  "background-color": "#307ED3",
+  "color": "#fff",
+  "display": "block",
+  "font": "bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif",
+  "padding": "5px 20px",
+  "text-transform": "uppercase"
+};
+$ const featuredContentLinkStyle = {
+  "color": "#307ED3",
+  "font": "bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif",
 };
 $ const buttonStyle = "background-color: transparent;";
 $ const buttonTextStyle = {
-  "color": "#000",
+  "color": "#555",
   "font": "bold 16px/32px 'Helvetica Neue', Helvetica, sans-serif",
   "text-decoration": "underline"
 };
 $ const footerStyle = "background-color: #515151; color: #fff;";
 $ const headerStyle = "background-color: #515151; color: #fff;";
-$ const sponsoredContentLinkStyle = {
-  "background-color": "#C13441",
-  "color": "#fff",
-  "display": "block",
-  "font": "bold 18px/27px 'Helvetica Neue', Helvetica, sans-serif",
-  "padding": "5px 10px"
-};
 $ const sponsoredByStyle = "color: #C13441; font: bold 20px/30px 'Helvetica Neue', Helvetica, sans-serif; text-transform: uppercase; padding-right: 20px;";
-$ const bodyLinkStyle = "color: #C13441; text-decoration: underline;"
+$ const dateStyle = "text-align: center; text-transform: uppercase; font: 700 14px/21px Helvetica, 'Helvetica Neue', Arial, sans-serif; color: #000; background-color: #eee;"
 
 <marko-newsletter-root
   title=newsletter.name
@@ -48,17 +56,12 @@ $ const bodyLinkStyle = "color: #C13441; text-decoration: underline;"
             date=date
           />
 
-          <common-style-b-image-only-header-block image-path="/files/base/ebm/mlo/image/static/daily-enl.jpg" date=date newsletter=newsletter />
-
-          <common-section-spacer-element />
-
-          <common-table width="700" style=titleTableStyle align="center" class="main" padding=0 spacing=0>
-            <tr>
-              <td>
-                <h3 style=`${titleStyle}`>Table of Contents</h3>
-              </td>
-            </tr>
-          </common-table>
+          <common-style-b-image-only-header-block
+            image-path="/files/base/ebm/mlo/image/static/daily-enl.jpg"
+            date=date
+            newsletter=newsletter
+            date-style=dateStyle
+            />
 
           <common-section-spacer-element />
 
@@ -67,14 +70,21 @@ $ const bodyLinkStyle = "color: #C13441; text-decoration: underline;"
             date=date
           />
 
-          <!-- #1 Title Only -->
-          <common-style-b-title-only-block
+          <!-- #1 - Standard Content (1) -->
+          <common-style-b-full-section-wrapper-block
             section-id=64771
             date=date
             newsletter=newsletter
+            title-style=titleStyle
+            title-table-style=titleTableStyle
             content-link-style=contentLinkStyle
+            img-width=225
+            table-width=420
           />
 
+          <common-section-spacer-element />
+
+          <!-- Square ads -->
           <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
             <tr>
               <td width="300" align="left">
@@ -92,18 +102,21 @@ $ const bodyLinkStyle = "color: #C13441; text-decoration: underline;"
             </tr>
           </common-table>
 
-          <!-- #2 Title/Teaser -->
-          <common-style-b-title-teaser-block
+          <common-section-spacer-element />
+
+          <!-- #2 Title Only -->
+          <common-style-b-title-only-block
             section-id=64772
+            title="MLO Webinar"
             date=date
             newsletter=newsletter
+            title-style=featuredTitleStyle
+            title-table-style=featuredTitleTableStyle
             content-link-style=contentLinkStyle
+            main-table-style=featuredMainTableStyle
           />
 
-          <common-leaderboard-primary-block
-            name=leaderboardSecondary
-            date=date
-          />
+          <common-section-spacer-element />
 
           <!-- #3 Text Promo -->
           <common-style-b-text-promo-wrapper
@@ -113,12 +126,85 @@ $ const bodyLinkStyle = "color: #C13441; text-decoration: underline;"
             button-style=buttonStyle
             button-text-style=buttonTextStyle
             content-link-style=contentLinkStyle
+            main-table-style=mainTableStyle
+          />
+
+          <common-section-spacer-element />
+
+          <!-- #4 - Standard Content (2) -->
+          <common-style-b-full-section-wrapper-block
+            section-id=64800
+            date=date
+            newsletter=newsletter
+            title-style=titleStyle
+            title-table-style=titleTableStyle
+            content-link-style=contentLinkStyle
+            img-width=225
+            table-width=420
+          />
+
+          <common-section-spacer-element />
+
+          <common-leaderboard-primary-block
+            name=leaderboardSecondary
+            date=date
+          />
+
+          <common-section-spacer-element />
+
+          <!-- Magazine -->
+          <!--
+          <common-publication-block
+            date=date
+            newsletter=newsletter
+            content-link-style=featuredContentLinkStyle
+          /> -->
+
+          <common-section-spacer-element />
+
+          <!-- #5 - Standard Content (3) -->
+          <common-style-b-full-section-wrapper-block
+            section-id=64801
+            date=date
+            newsletter=newsletter
+            title-style=titleStyle
+            title-table-style=titleTableStyle
+            content-link-style=contentLinkStyle
+            img-width=225
+            table-width=420
+          />
+
+          <common-section-spacer-element />
+
+          <!-- #6 Title Only -->
+          <common-style-b-title-only-block
+            section-id=64802
+            title="MLO Whitepapers"
+            date=date
+            newsletter=newsletter
+            title-style=featuredTitleStyle
+            title-table-style=featuredTitleTableStyle
+            content-link-style=contentLinkStyle
             main-table-style=featuredMainTableStyle
           />
 
           <common-section-spacer-element />
 
-          <!-- #4 Sponsored -->
+          <!-- #7 - Standard Content (4) -->
+          <common-style-b-full-section-wrapper-block
+            section-id=64803
+            date=date
+            newsletter=newsletter
+            title-style=titleStyle
+            title-table-style=titleTableStyle
+            content-link-style=contentLinkStyle
+            img-width=225
+            table-width=420
+          />
+
+          <common-section-spacer-element />
+
+          <!-- #8 Sponsored -->
           <common-sponsored-by-wrapper
             section-id=64774
             date=date

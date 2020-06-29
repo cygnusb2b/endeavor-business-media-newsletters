@@ -1,0 +1,25 @@
+$ const {
+  date,
+  newsletter,
+  teaserStyle,
+  mainTableStyle,
+  tableWidth,
+  imgWidth,
+  title,
+  titleTableStyle,
+  titleStyle
+} = input;
+
+$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
+  "font": "700 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "color": "#000",
+});
+$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
+
+<common-table width="700" style="border-collapse:collapse;" align="center" class="main publication" padding=0 spacing=0>
+  <tr>
+    <td>
+      Testing Publication Component
+    </td>
+  </tr>
+</common-table>
