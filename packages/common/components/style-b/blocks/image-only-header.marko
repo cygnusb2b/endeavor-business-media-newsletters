@@ -8,7 +8,7 @@ $ const {
 
 $ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; font-size: 12px; line-height: 146%; color: #6b6b6b; font-weight: 700; font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;")
 
-<common-table width="700" style="border-collapse:collapse;" align="center" class="main header image-only-header" padding=15 spacing=0>
+<common-table width="700" style="border-collapse:collapse;" align="center" class="main header image-only-header" padding=0 spacing=0>
   <tr>
     <td>
       <span>
@@ -23,7 +23,7 @@ $ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; fo
     </td>
   </tr>
   <tr>
-    <td style=dateStyle >
+    <td style=dateStyle>
       ${date.format("MMMM D, YYYY")}
     </td>
   </tr>
