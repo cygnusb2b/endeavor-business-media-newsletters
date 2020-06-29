@@ -1,6 +1,8 @@
 import emailX from "../config/email-x";
 
 $ const { newsletter, date } = data;
+$ const publicationId = "5c7d6fd747062b5a048b4567";
+$ const publicationDescription = "Lab professionals turn to MLO for unbiased answers, with more than 50 years of excellence in peer-reviewed editorial.";
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", alias: newsletter.alias });
 $ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
@@ -153,12 +155,16 @@ $ const dateStyle = "text-align: center; text-transform: uppercase; font: 700 14
           <common-section-spacer-element />
 
           <!-- Magazine -->
-          <!--
           <common-publication-block
             date=date
             newsletter=newsletter
+            publication-id=publicationId
+            publication-description=publicationDescription
             content-link-style=featuredContentLinkStyle
-          /> -->
+            main-table-style=featuredMainTableStyle
+            img-width=225
+            table-width=420
+          />
 
           <common-section-spacer-element />
 

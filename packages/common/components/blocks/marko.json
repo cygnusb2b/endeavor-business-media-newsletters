@@ -72,12 +72,14 @@
       "type": "object",
       "required": true
     },
+    "@publication-id": "string",
+    "@publication-description": "string",
     "@content-link-style": "object",
     "@teaser-style": "object",
     "@main-table-style": "string",
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 700
     },
     "@img-width": {
       "type": "number",
