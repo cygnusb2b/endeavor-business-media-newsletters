@@ -10,6 +10,17 @@
   "<common-section-spacer-element>": {
     "template": "./section-spacer.marko"
   },
+  "<common-hr-element>": {
+    "template": "./hr.marko",
+    "@hr-color": {
+      "type": "string",
+      "default-value": "#666"
+    },
+    "@hr-height": {
+      "type": "number",
+      "default-value": "0"
+    }
+  },
   "<common-banner-element>": {
     "template": "./banner.marko",
     "@name": "string",
