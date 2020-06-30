@@ -3,49 +3,36 @@ import emailX from "../config/email-x";
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", alias: newsletter.alias });
-$ const featuredTitleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
-$ const featuredMainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; background-color: #333333; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const featuredTitleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
+$ const featuredMainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; background-color: #333333; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const featuredContentLinkStyle = {
-  "font-weight": "bold",
   "color": "#fff",
-  "font-size": "19.5px",
-  "line-height": "20px",
-  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "font": "700 19.5px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif",
 };
 $ const featuredTeaserStyle = {
-  "font-size": "12px",
-  "line-height": "146%",
+  "font": "400 12px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
   "margin": "0",
   "padding": "0",
   "color": "#fff",
-  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
 };
-$ const featuredButtonStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #fff;";
+$ const featuredButtonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #fff;";
 $ const featuredButtonTextStyle = {
   "color": "#333333",
-  "font-family": "Helvetica, Arial, sans-serif",
-  "font-size": "14px",
-  "font-weight": "bold",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
   "text-decoration": "none",
   "text-transform": "uppercase"
 };
-$ const titleTableStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
-$ const titleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
-$ const mainTableStyle = "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const titleTableStyle = "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
+$ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
+$ const mainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const contentLinkStyle = {
-  "font-weight": "bold",
   "color": "#0190ba",
-  "font-size": "19.5px",
-  "line-height": "20px",
-  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "font": "700 19.5px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif",
 };
-$ const buttonStyle = "font-family: Garamond, serif; font-size: 13px; line-height: 21px; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #0190ba;";
+$ const buttonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #0190ba;";
 $ const buttonTextStyle = {
   "color": "#ffffff",
-  "font-family": "Helvetica, Arial, sans-serif",
-  "font-size": "14px",
-  "line-height": "21px",
-  "font-weight": "bold",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
   "text-decoration": "none",
   "text-transform": "uppercase"
 };

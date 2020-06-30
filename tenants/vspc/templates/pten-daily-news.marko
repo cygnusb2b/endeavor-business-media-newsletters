@@ -42,7 +42,7 @@ $ const { newsletter, date } = data;
             "aria-hidden": "false",
           } />
         </marko-core-obj-text>
-        <marko-core-obj-text tag="p" obj=node field="teaser" html=true />
+        <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
         <marko-core-obj-date tag="small" obj=node field="published" format="MMMM Do, YYYY" />
         <hr>
       </for>
@@ -62,7 +62,7 @@ $ const { newsletter, date } = data;
         <marko-core-obj-text tag="h4" obj=node field="name">
           <@link href=node.siteContext.url target="_blank" />
         </marko-core-obj-text>
-        <marko-core-obj-text tag="p" obj=node field="teaser" html=true />
+        <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle }/>
         <hr>
       </for>
     </marko-web-query>
