@@ -9,13 +9,13 @@ $ const {
   skip,
   teaserStyle
 } = input;
-$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font-family: Garamond, serif; font-size: 13px; line-height: 21px; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
+$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
 $ const imgWidth = 160;
 
 
 <common-table width="180" style="border-collapse:collapse; background-color: #ffffff;" align="center" class="main" padding=0 spacing=0>
   <tr>
-    <td style="font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
+    <td style="font: 400 13px/20px Arial, sans-serif; border-collapse: separate; padding: 0 15px 15px 15px; min-width: 100%; text-align: center;">
 
       <!-- Section Query Wrapper -->
       <marko-web-query|{ nodes }| name="newsletter-scheduled-content" params={
@@ -31,7 +31,7 @@ $ const imgWidth = 160;
         <common-table width="180" style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class=`right` padding=0 spacing=0>
           <tr>
             <td>
-              <h3 style="margin:0;font-weight:normal;height:27px;margin:1px 0 5px 0px; font-family:Helvetica, Arial, sans-serif; font-size:11px; color:#999;text-align:left;">
+              <h3 style="margin:0;height:27px;margin:1px 0 5px 0px; font: 400 11px/27px Helvetica, Arial, sans-serif; color:#999;text-align:left;">
                 Advertisement
               </h3>
             </td>
