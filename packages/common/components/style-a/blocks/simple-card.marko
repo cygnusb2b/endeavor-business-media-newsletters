@@ -33,7 +33,7 @@ $ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
 $ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
 
-<common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=alignment class=`${alignment} main` padding=0 spacing=0>
+<common-table class=`simple-card ${alignment} main` width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=alignment padding=0 spacing=0>
   <tr>
     <td style=`padding: 0; padding-${alignment}: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
       <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align=alignment class=`${alignment} main` padding=0 spacing=0>
@@ -65,11 +65,10 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
               </marko-core-obj-value>
             </if>
 
-            <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+            <marko-core-obj-text tag="h3" obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
               <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
             </marko-core-obj-text>
-            <div height="10">&nbsp;</div>
-            <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+            <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
             <common-table align="center" padding=0 spacing=0>
               <tr>
                 <td>

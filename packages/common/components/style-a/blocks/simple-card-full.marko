@@ -35,7 +35,7 @@ $ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
 
 <if(node.primaryImage && displayImage)>
-  <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left main" padding=0 spacing=0>
+  <common-table class="simple-card-full__with-image left main" width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" padding=0 spacing=0>
     <tr>
       <td style=`padding: 0; padding-left: ${innerPadding}px; padding-bottom: 0px;`>
         <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="left" class="left main" padding=0 spacing=0>
@@ -75,14 +75,14 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
           </tr>
           <tr>
             <td style="padding-bottom: 5px;">
-              <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
+              <marko-core-obj-text tag="h3" obj=node field="name" attrs={ style: { "text-align": "left" } } >
                 <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
               </marko-core-obj-text>
             </td>
           </tr>
           <tr>
              <td style=teaserWrapperStyle >
-              <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+              <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
             </td>
           </tr>
         </common-table>
@@ -116,17 +116,17 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
   </common-table>
 </if>
 <else>
-  <common-table width="100%" style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
+  <common-table class="simple-card-full left main" width="100%" style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" padding=0 spacing=0>
     <tr>
       <td style=`padding: ${innerPadding}px;`>
-        <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
+        <marko-core-obj-text tag="h3" obj=node field="name" attrs={ style: { "text-align": "left" } } >
           <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
         </marko-core-obj-text>
       </td>
     </tr>
     <tr>
       <td style=teaserWrapperStyle style="padding: 0 20px;">
-        <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+        <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
       </td>
     </tr>
     <if(showButton)>

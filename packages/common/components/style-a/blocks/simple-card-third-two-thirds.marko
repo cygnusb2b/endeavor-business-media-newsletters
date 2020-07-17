@@ -31,7 +31,7 @@ $ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
 $ const innerPadding = 20;
 
 <if(node.primaryImage)>
-  <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
+  <common-table class="simple-card-third-two-thirds__with-image" width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
     <tr>
       <td style=`padding: 0; padding-left: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
         <common-table width=260 style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="left" class="left" padding=0 spacing=0>
@@ -87,15 +87,13 @@ $ const innerPadding = 20;
   </common-table>
 </if>
 <else>
-  <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
+  <common-table class="simple-card-third-two-thirds" width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
     <tr>
       <td style=`padding: ${innerPadding}px;`>
-        <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
+        <marko-core-obj-text tag="h3" obj=node field="name" attrs={ style: { "text-align": "left" } } >
           <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
         </marko-core-obj-text>
-        <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp;</div>
-        <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-
+        <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
         <common-table style=`padding-top: ${innerPadding}px;` align="center" padding=0 spacing=0>
           <tr>
             <td style=`${buttonStyle}`>
