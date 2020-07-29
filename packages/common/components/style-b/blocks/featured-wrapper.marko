@@ -1,0 +1,127 @@
+import isLast from "@endeavor-business-media/common/utils/is-last";
+import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const {
+  newsletter,
+  date,
+  sectionId,
+  title,
+  limit,
+  skip,
+  buttonStyle,
+  buttonTextStyle,
+  sponsoredLabel,
+  hr
+} = input;
+$ const titleTableStyle = defaultValue(input.titleTableStyle, "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;");
+$ const titleStyle = defaultValue(input.titleStyle, "font:700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;");
+$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
+$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
+  "color": "#00b398",
+  "font": "700 19.5px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif",
+});
+$ const teaserStyle = defaultValue(input.teaserStyle, {
+  "color": "#666",
+  "font": "normal 12px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "margin": "0",
+  "padding": "0"
+});
+$ const innerPadding = 20;
+$ const innerTableWidth = 700 - (innerPadding * 2);
+
+<common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+  <tr>
+    <td>
+      <!-- Section Query Wrapper -->
+      <marko-web-query|{ nodes }| name="newsletter-scheduled-content" params={
+        date: date.valueOf(),
+        newsletterId: newsletter.id,
+        sectionId: sectionId,
+        limit: limit,
+        skip: skip,
+        queryFragment: contentList,
+      }>
+        <common-table width="700" style=`${mainTableStyle}` align="left" class="main" padding=0 spacing=0>
+          <if(title)>
+            <tr>
+              <td>
+                <common-table width="100%" style=titleTableStyle align="left" class="main" padding=0 spacing=0>
+                  <tr>
+                    <td>
+                      <h3 style=`${titleStyle}`>${title}</h3>
+                    </td>
+                  </tr>
+                </common-table>
+              </td>
+            </tr>
+          </if>
+          <tr>
+            <td valign="top">
+              <for|node, index| of=nodes>
+
+                <common-table class=`simple-card main` width=700 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="center" padding=0 spacing=0>
+                  <tr>
+                    <td style=`padding: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
+                      <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="center" class=`main` padding=0 spacing=0>
+                        <tr>
+                          <td>
+                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
+                              <marko-newsletter-imgix
+                                src=image.src
+                                alt=image.alt
+                                options={ w: 660 }
+                                class="main"
+                                attrs={ border: 0, width: 660 }
+                              >
+                                <@link href=node.siteContext.url target="_blank" />
+                              </marko-newsletter-imgix>
+                            </marko-core-obj-value>
+
+                            <marko-core-obj-text tag="h3" obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
+                            </marko-core-obj-text>
+
+                            <if(node.type === "promotion")>
+                              <marko-core-obj-text tag="p" obj=node field="body" html=true attrs={ style: teaserStyle } />
+                              <common-table align="center" padding=0 spacing=0>
+                                <tr>
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                  <td style=`${buttonStyle}`>
+                                    <marko-core-text value=getButtonText(node.type)>
+                                      <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
+                                    </marko-core-text>
+                                    </td>
+                                  </tr>
+                              </common-table>
+                            </if>
+                            <else>
+                              <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ class: 'main', style: teaserStyle } />
+                            </else>
+                          </td>
+                        </tr>
+                      </common-table>
+                    </td>
+                  </tr>
+                </common-table>
+
+                <if(hr)>
+                  <common-table width="100%" style="border-bottom: 2px solid #d7d7d7; border-collapse:collapse;" align="center" padding=0 spacing=0>
+                    <tr>
+                      <td></td>
+                    </tr>
+                  </common-table>
+                </if>
+              </for>
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </common-table>
+      </marko-web-query>
+    </td>
+  </tr>
+</common-table>

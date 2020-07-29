@@ -1,0 +1,103 @@
+$ const { newsletter, date } = data;
+
+$ const contentLinkStyle = {
+  "font": "bold 18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "color": "#44647d",
+  "text-decoration": "none"
+};
+$ const footerStyle = "background-color: #000000; text-decoration: none !important;";
+
+$ const titleTableStyle = "font: 400 12px/18px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #ffffff; background-color: #000000";
+$ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
+$ const mainTableStyle ="border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const featuredMainTableStyle = "background-color: #ebebeb";
+
+$ const teaserStyle = {
+  "color": "#666",
+  "font": "normal 12px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "margin": "0",
+  "padding": "0"
+};
+
+$ const buttonStyle = "background-color: #22252a; padding: 5px 20px;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font": "bold 16px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif"
+};
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-b-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td>
+          <common-banner-element
+            name=newsletter.name
+            date=date
+          />
+          <common-style-b-image-only-header-block image-path="/files/base/ebm/ee/image/static/newsletter/evaluation-test-news_header.jpg" date=date newsletter=newsletter />
+
+          <!-- #01 - Sponsored By -->
+          <common-sponsored-by-wrapper
+            section-id=64827
+            date=date
+            newsletter=newsletter
+            button=false
+            title=false
+            img-width="200px"
+            alignment="center"
+          />
+
+          <!-- #02 - Featured -->
+          <common-style-b-featured-wrapper-block
+            section-id=64824
+            title="Feature Story"
+            date=date
+            newsletter=newsletter
+            title-table-style=titleTableStyle
+            title-style=titleStyle
+            main-table-style=mainTableStyle
+            content-link-style=contentLinkStyle
+            hr=true
+          />
+
+          <!-- #03 - Sponsored -->
+          <common-style-b-text-promo-wrapper
+            section-id=64826
+            date=date
+            newsletter=newsletter
+            main-table-style=featuredMainTableStyle
+            content-link-style=contentLinkStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            sponsored-label=true
+          />
+
+          <!-- #04 - Must Reads -->
+          <common-style-b-full-section-wrapper-block
+            section-id=64825
+            title="Must Reads"
+            date=date
+            newsletter=newsletter
+            title-table-style=titleTableStyle
+            title-style=titleStyle
+            main-table-style=mainTableStyle
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+          />
+
+          <common-style-b-footer-nav-block
+            footer-style=footerStyle
+          />
+
+          <common-style-b-opt-out-block />
+        </td>
+      </tr>
+    </common-table>
+  </@body>
+</marko-newsletter-root>

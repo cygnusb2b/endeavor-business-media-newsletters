@@ -10,6 +10,10 @@ $ const {
   sectionId,
   skip,
   teaserStyle,
+  alignment,
+  imgWidth,
+  title,
+  button,
   buttonStyle,
   buttonTextStyle,
   contentLinkStyle,
@@ -32,13 +36,15 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
       }>
         <for|node, index| of=nodes>
           <if(!isFirst(nodes, index))>
-            <common-table width="700" class="main" padding=10 spacing=0>
-              &nbsp;
+            <common-table width="700" class="main" padding=0 spacing=0>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
             </common-table>
           </if>
           <common-table width="700" style=`${mainTableStyle}` class="main" padding=0 spacing=0>
             <tr>
-              <td valign="top">
+              <td>
                   <common-sponsored-by-block
                     node=node
                     content-link-style=contentLinkStyle
@@ -46,6 +52,10 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
                     button-text-style=buttonTextStyle
                     teaser-style=teaserStyle
                     sponsored-by-style=sponsoredByStyle
+                    button=button
+                    title=title
+                    img-width=imgWidth
+                    alignment=alignment
                   />
               </td>
             </tr>

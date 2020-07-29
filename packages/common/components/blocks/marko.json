@@ -27,6 +27,19 @@
       "default-value": 0
     },
     "@teaser-style": "object",
+    "@alignment" : {
+      "type" : "string",
+      "default-value" : "left"
+    },
+    "@img-width" : "string",
+    "@title": {
+      "type" : "boolean",
+      "default-value": true
+    },
+    "@button": {
+      "type" : "boolean",
+      "default-value": true
+    },
     "@button-style": "string",
     "@button-text-style": "object",
     "@main-table-style": "string",
@@ -38,6 +51,15 @@
     "@alignment": {
       "type": "string",
       "default-value": "left"
+    },
+    "@img-width" : "string",
+    "@title": {
+      "type" : "boolean",
+      "default-value": true
+    },
+    "@button": {
+      "type" : "boolean",
+      "default-value": true
     },
     "@button-style": "string",
     "@button-text-style": "object",
