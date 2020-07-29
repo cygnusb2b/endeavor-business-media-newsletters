@@ -35,11 +35,11 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
         <common-table style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left main promo-card__image" padding=0 spacing=0>
           <tr>
             <td style=`padding-top: ${innerPadding}px; padding-right: 0; padding-bottom: ${innerPadding}px; padding-left: ${innerPadding}px;`>
-              <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="left" class="left main" padding=0 spacing=0>
+              <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="left" padding=0 spacing=0>
                 <tr>
                   <td>
-                    <div  style="font: 400 11px/16px Helvetica, 'Helvetica Neue', Arial, sans-serif; color: #6b6b6b;">
-                      $!{getSponsoredByText(node, '&nbsp;')}
+                    <div style="font: 400 11px/16px Helvetica, 'Helvetica Neue', Arial, sans-serif; color: #6b6b6b;">
+                      $!{getSponsoredByText(node, '')}
                     </div>
                   </td>
                 </tr>
@@ -50,7 +50,6 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
                         src=image.src
                         alt=image.alt
                         options={ w: imgWidth }
-                        class="main"
                         attrs={ border: 0, width: imgWidth }
                       >
                         <@link href=node.siteContext.url target="_blank" />
@@ -66,19 +65,21 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
         <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="right" class="main right promo-card__content" padding=0 spacing=0>
           <tr>
             <td style=`padding-top: ${innerPadding}px; padding-left: 0; padding-bottom: ${innerPadding}px; padding-right: ${innerPadding}px;`>
-              <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
+              <common-table width=300 style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
                 <tr>
                   <td>
                     <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
                       <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
                     </marko-core-obj-text>
-                    <div height="10">&nbsp;</div>
-                    <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+                    <if(node.body)>
+                      <marko-core-obj-text tag="p" obj=node field="body" html=true attrs={ style: teaserStyle } />
+                    </if>
+                    <else>
+                      <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+                    </else>
                     <common-table align="center" padding=0 spacing=0>
                       <tr>
-                        <td>
-                          &nbsp;
-                        </td>
+                        <td>&nbsp;</td>
                       </tr>
                       <tr>
                         <td align="center">
@@ -117,13 +118,17 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
               <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
                 <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
               </marko-core-obj-text>
-              <div height="10">&nbsp;</div>
-              <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+
+              <if(node.body)>
+                <marko-core-obj-text tag="p" obj=node field="body" html=true attrs={ style: teaserStyle } />
+              </if>
+              <else>
+                <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+              </else>
+
               <common-table align="center" padding=0 spacing=0>
                 <tr>
-                  <td>
-                    &nbsp;
-                  </td>
+                  <td>&nbsp;</td>
                 </tr>
                 <tr>
                   <td align="center">
