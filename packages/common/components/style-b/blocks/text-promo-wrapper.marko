@@ -9,7 +9,9 @@ $ const {
   newsletter,
   sectionId,
   skip,
-  psc
+  psc,
+  sponsoredLabel,
+  hr
 } = input;
 
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: normal 12px/18px sans-serif; margin: 0; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
@@ -30,6 +32,15 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
 });
 
 <common-table width="700" style="border-collapse:collapse;" align="center" class="main text-promo-wrapper" padding=0 spacing=0>
+  <if(sponsoredLabel)>
+    <tr>
+      <td>
+        <div style="color: #6b6b6b; font: 400 11px/16px Helvetica, 'Helvetica Neue', Arial, sans-serif;">
+            Sponsored
+        </div>
+      </td>
+    </tr>
+  </if>
   <tr>
     <td>
       <!-- Section Query Wrapper -->
@@ -42,7 +53,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         queryFragment: contentList,
       }>
         <for|node, index| of=nodes>
-          <if(!isFirst(nodes, index) && !psc)>
+          <if(!isFirst(nodes, index) && !psc && !sponsoredLabel)>
             <common-table width="100%" class="main" padding=0 spacing=0>
               <tr>
                 <td>&nbsp;</td>

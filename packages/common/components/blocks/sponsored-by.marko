@@ -2,10 +2,13 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
 
 $ const {
-  node
+  node,
+  button,
+  title,
+  alignment
 } = input;
 
-$ const imgWidth = "100px";
+$ const imgWidth = defaultValue(input.imgWidth, "100px");
 $ const tableCellPadding = "padding-bottom: 10px;"
 $ const teaserStyle = defaultValue(input.teaserStyle, {
   "color": "#000",

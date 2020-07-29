@@ -161,6 +161,10 @@
     "@psc": {
       "type": "boolean",
       "default-value":false
+    },
+    "@sponsored-label": {
+      "type": "boolean",
+      "default-value": false
     }
   },
   "<common-style-b-promo-card-block>": {
