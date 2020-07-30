@@ -1,0 +1,54 @@
+$ const { newsletter, date } = data;
+
+$ const buttonStyle = "background-color: transparent;";
+$ const buttonTextStyle = {
+  "color": "#000",
+  "font": "bold 16px/24px sans-serif"
+};
+$ const contentLinkStyle = {
+  "font": "bold 18px sans-serif",
+  "color": "#145d8e",
+  "text-decoration": "none"
+};
+$ const featuredMainTableStyle = "border: 10px solid #ecedee;";
+$ const footerStyle = "background-color: #145d8e; text-decoration: none !important;";
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-b-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td>
+          <common-banner-element
+            name=newsletter.name
+            date=date
+          />
+          <common-style-b-image-only-header-block image-path="/files/base/ebm/rdh/image/static/newsletter/rdh-products-enl.jpg" date=date newsletter=newsletter />
+
+          <common-style-b-text-promo-wrapper
+            section-id=35704
+            date=date
+            newsletter=newsletter
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            content-link-style=contentLinkStyle
+            main-table-style=featuredMainTableStyle
+            psc=true
+          />
+
+          <common-style-b-footer-nav-block
+            footer-style=footerStyle
+          />
+
+          <common-style-b-opt-out-block />
+        </td>
+      </tr>
+    </common-table>
+  </@body>
+</marko-newsletter-root>
