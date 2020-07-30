@@ -29,11 +29,27 @@ $ const footerStyle = "background-color: #145d8e; text-decoration: none !importa
             name=newsletter.name
             date=date
           />
-          <common-style-b-image-only-header-block image-path="/files/base/ebm/rdh/image/static/newsletter/rdh-product-enl.jpg" date=date newsletter=newsletter />
+          <common-style-b-image-only-header-block image-path="/files/base/ebm/rdh/image/static/newsletter/rdh-trade-show-enl.png" date=date newsletter=newsletter />
 
-          <!-- products - 32788 -->
+          <!-- #1 - Promo - 32787 -->
+          <common-style-b-text-promo-wrapper
+            section-id=32787
+            date=date
+            limit=1
+            newsletter=newsletter
+            main-table-style=featuredMainTableStyle
+            content-link-style=contentLinkStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+          />
 
-          <!-- promo - 32787 -->
+          <!-- #2 - Products - 32788 -->
+          <common-style-b-card-section-wrapper-block
+            section-id=32788
+            date=date
+            newsletter=newsletter
+            content-link-style=contentLinkStyle
+          />
 
           <common-style-b-footer-nav-block
             footer-style=footerStyle
