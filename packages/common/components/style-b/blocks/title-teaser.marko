@@ -51,17 +51,23 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
               </td>
             </tr>
           </if>
-          <tr>
-            <td valign="top" style="padding-left: 20px; padding-right: 20px; padding-bottom: 20px;">
-              <for|node, index| of=nodes>
-                <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "20px", "text-align": "left" } } >
+          <for|node, index| of=nodes>
+            <tr>
+              <td valign="top" style="padding: 5px 20px;">
+                <marko-core-obj-text obj=node field="name">
                   <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
                 </marko-core-obj-text>
-
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" style="padding: 5px 20px;">
                 <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-              </for>
-            </td>
-          </tr>
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </for>
         </common-table>
       </marko-web-query>
     </td>
