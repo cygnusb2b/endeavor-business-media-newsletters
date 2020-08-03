@@ -5,12 +5,18 @@ $ const { newsletter, date } = data;
 $ const buttonStyle = "background-color: transparent;";
 $ const buttonTextStyle = {
   "color": "#000",
-  "font": "bold 16px/24px sans-serif"
+  "font": "bold 14px/21px sans-serif"
 };
 $ const contentLinkStyle = {
-  "font": "bold 18px/24px sans-serif",
+  "font": "bold 16px/20px sans-serif",
   "color": "#145d8e",
   "text-decoration": "none"
+};
+$ const teaserStyle = {
+  "font": "400 14px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "margin": "0",
+  "padding": "0",
+  "color": "#000000",
 };
 $ const featuredMainTableStyle = "border: 10px solid #ecedee;";
 $ const footerStyle = "background-color: #145d8e; text-decoration: none !important;";
@@ -55,6 +61,7 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
             content-link-style=contentLinkStyle
             button-style=buttonStyle
             button-text-style=buttonTextStyle
+            teaser-style=teaserStyle
           />
 
           <!-- #2 - Content - 33004  and mrPrimary -->
@@ -67,6 +74,7 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
                   limit=1
                   newsletter=newsletter
                   content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
                 />
               </td>
               <td width="300" align="right">
@@ -89,6 +97,7 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
                   skip=1
                   newsletter=newsletter
                   content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
                 />
               </td>
               <td width="300" align="right">
@@ -117,6 +126,7 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
                   skip=2
                   newsletter=newsletter
                   content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
                 />
               </td>
             </tr>
@@ -139,6 +149,7 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
                   skip=3
                   newsletter=newsletter
                   content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
                 />
               </td>
             </tr>
@@ -151,6 +162,7 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
             newsletter=newsletter
             skip=4
             content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
           />
 
           <!-- #7 - Sponsored (2) - 33003 -->
@@ -163,6 +175,7 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
             content-link-style=contentLinkStyle
             button-style=buttonStyle
             button-text-style=buttonTextStyle
+            teaser-style=teaserStyle
           />
 
           <common-leaderboard-primary-block
