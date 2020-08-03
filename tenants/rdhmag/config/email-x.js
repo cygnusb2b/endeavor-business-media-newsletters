@@ -77,5 +77,43 @@ config
       width: 300,
       height: 250,
     },
+  ])
+  .setAdUnits('whats-trending', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5e9480ecd3e701d0d9ba5747',
+      width: 600,
+      height: 100,
+    },
+    {
+      name: 'leaderboardSecondary',
+      id: '5e948136d3e7017461ba576c',
+      width: 600,
+      height: 100,
+    },
+    {
+      name: 'mrPrimary',
+      id: '5e94814bd3e7010aafba5776',
+      width: 300,
+      height: 250,
+    },
+    {
+      name: 'mrSecondary',
+      id: '5e94815fd3e7012d96ba5789',
+      width: 300,
+      height: 250,
+    },
+    {
+      name: 'mrTertiary',
+      id: '5e94817bd3e7018eafba579c',
+      width: 300,
+      height: 250,
+    },
+    {
+      name: 'mrQuaternary',
+      id: '5e948190d3e701db55ba57b8',
+      width: 300,
+      height: 250,
+    },
   ]);
 module.exports = config;
