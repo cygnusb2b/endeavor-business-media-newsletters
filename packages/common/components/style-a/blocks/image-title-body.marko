@@ -64,7 +64,7 @@ $ const innerPadding = "20px 30px 20px 15px";
           <tr>
             <td style='padding: 10px 20px 10px 20px;'>
               <if(node.type === "promotion")>
-                <marko-core-obj-text tag="p" obj=node field="body" html=true attrs={ style: promotionStyle } />
+                <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: promotionStyle } />
               </if>
               <else>
                 <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
@@ -91,7 +91,7 @@ $ const innerPadding = "20px 30px 20px 15px";
     <tr>
       <td style='padding: 0px 20px 20px 20px;'>
         <if(node.type === "promotion")>
-          <marko-core-obj-text tag="p" obj=node field="body" html=true attrs={ style: promotionStyle } />
+          <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: promotionStyle } />
         </if>
         <else>
           <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
