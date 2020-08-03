@@ -468,6 +468,17 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
+    - stage: production
+      name: rdhmag
+      script: npx @base-cms/newsletter-deployment-tool deploy rdhmag aerilon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: rdhmag
+      script: npx @base-cms/newsletter-deployment-tool deploy rdhmag aerilon
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #

@@ -572,5 +572,20 @@ services:
       - "19434:80"
       - "29434:29434"
 
+  rdhmag:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/rdhmag
+    environment:
+      <<: *env
+      <<: *env-aerilon
+      PORT: 80
+      EXPOSED_PORT: 19435
+      LIVERELOAD_PORT: 29435
+      TENANT_KEY: ebm_rdh
+    ports:
+      - "19435:80"
+      - "29435:29435"
+
 volumes:
   yarn-cache: {}

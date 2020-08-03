@@ -11,7 +11,8 @@ $ const {
   skip,
   psc,
   sponsoredLabel,
-  hr
+  hr,
+  imgWidth
 } = input;
 
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: normal 12px/18px sans-serif; margin: 0; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
@@ -70,6 +71,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                     button-style=buttonStyle
                     button-text-style=buttonTextStyle
                     teaser-style=teaserStyle
+                    img-width=imgWidth
                   />
                 </if>
                 <else>
@@ -79,6 +81,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                     button-style=buttonStyle
                     button-text-style=buttonTextStyle
                     teaser-style=teaserStyle
+                    img-width=imgWidth
                   />
                 </else>
               </td>

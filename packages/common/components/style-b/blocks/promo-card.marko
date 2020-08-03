@@ -72,7 +72,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
                       <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
                     </marko-core-obj-text>
                     <if(node.body)>
-                      <marko-core-obj-text tag="p" obj=node field="body" html=true attrs={ style: teaserStyle } />
+                      <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
                     </if>
                     <else>
                       <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
@@ -120,7 +120,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
               </marko-core-obj-text>
 
               <if(node.body)>
-                <marko-core-obj-text tag="p" obj=node field="body" html=true attrs={ style: teaserStyle } />
+                <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
               </if>
               <else>
                 <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />

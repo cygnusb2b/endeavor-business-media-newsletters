@@ -1,0 +1,195 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+
+$ const buttonStyle = "background-color: transparent;";
+$ const buttonTextStyle = {
+  "color": "#000",
+  "font": "bold 14px/21px sans-serif"
+};
+$ const contentLinkStyle = {
+  "font": "bold 16px/20px sans-serif",
+  "color": "#145d8e",
+  "text-decoration": "none"
+};
+$ const teaserStyle = {
+  "font": "400 14px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "margin": "0",
+  "padding": "0",
+  "color": "#000000",
+};
+$ const featuredMainTableStyle = "border: 10px solid #ecedee;";
+$ const footerStyle = "background-color: #145d8e; text-decoration: none !important;";
+
+$ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
+$ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
+$ const mrTertiary = emailX.getAdUnit({ name: "mrTertiary", alias: newsletter.alias });
+$ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newsletter.alias });
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", alias: newsletter.alias });
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-b-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td>
+          <common-banner-element
+            name=newsletter.name
+            date=date
+          />
+          <common-style-b-image-only-header-block image-path="/files/base/ebm/rdh/image/static/newsletter/rdh-graduate-enl.png" date=date newsletter=newsletter />
+
+          <common-leaderboard-primary-block
+            name=leaderboardPrimary
+            date=date
+          />
+
+          <!-- Sponsored - 33011 -->
+          <common-style-b-text-promo-wrapper
+            section-id=33011
+            date=date
+            limit=1
+            newsletter=newsletter
+            main-table-style=featuredMainTableStyle
+            content-link-style=contentLinkStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            teaser-style=teaserStyle
+          />
+
+          <!-- Content - 33007  and mrPrimary -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <common-style-b-left-product-section-wrapper
+                  section-id=33007
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
+                />
+              </td>
+              <td width="300" align="right">
+                <common-advertisement-element
+                  name=mrPrimary
+                  date=date
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- Content (2) - 33007 and mrSecondary -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <common-style-b-left-product-section-wrapper
+                  section-id=33007
+                  date=date
+                  limit=1
+                  skip=1
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
+                />
+              </td>
+              <td width="300" align="right">
+                <common-advertisement-element
+                  name=mrSecondary
+                  date=date
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- Content (3) - 33007 and mrTertiary -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td width="300" align="right">
+                <common-advertisement-element
+                  name=mrTertiary
+                  date=date
+                />
+              </td>
+              <td>
+                <common-style-b-left-product-section-wrapper
+                  section-id=33007
+                  date=date
+                  limit=1
+                  skip=2
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- Content (4) - 33007 and mrQuaternary -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td width="300" align="right">
+                <common-advertisement-element
+                  name=mrQuaternary
+                  date=date
+                />
+              </td>
+              <td>
+                <common-style-b-left-product-section-wrapper
+                  section-id=33007
+                  date=date
+                  limit=1
+                  skip=3
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- Sponsored (2) - 33011 -->
+          <common-style-b-text-promo-wrapper
+            section-id=33011
+            date=date
+            skip=1
+            newsletter=newsletter
+            main-table-style=featuredMainTableStyle
+            content-link-style=contentLinkStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            teaser-style=teaserStyle
+          />
+
+          <!-- Content (5) - 33007 -->
+          <common-style-b-card-section-wrapper-block
+            section-id=33007
+            date=date
+            newsletter=newsletter
+            skip=4
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+          />
+
+          <common-leaderboard-primary-block
+            name=leaderboardSecondary
+            date=date
+          />
+
+          <common-style-b-footer-nav-block
+            footer-style=footerStyle
+          />
+
+          <common-style-b-opt-out-block />
+        </td>
+      </tr>
+    </common-table>
+  </@body>
+</marko-newsletter-root>

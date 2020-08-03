@@ -46,11 +46,10 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
               </marko-newsletter-imgix>
             </marko-core-obj-value>
 
-            <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
+            <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "10px", "margin-bottom": "10px", "text-align": "left" } } >
               <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
             </marko-core-obj-text>
-            <div height="10">&nbsp;</div>
-            <marko-core-obj-text tag="span" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+            <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
           </td>
         </tr>
       </common-table>
