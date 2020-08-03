@@ -158,6 +158,10 @@
     "@button-text-style": "object",
     "@main-table-style": "string",
     "@content-link-style": "object",
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
     "@psc": {
       "type": "boolean",
       "default-value":false
@@ -183,7 +187,7 @@
     "@node": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 355
+      "default-value": 345
     },
     "@teaser-style": "object"
   },
@@ -203,7 +207,7 @@
     "@node": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 355
+      "default-value": 345
     },
     "@teaser-style": "object",
     "@images" : "array"
