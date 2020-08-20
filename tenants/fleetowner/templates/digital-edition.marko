@@ -8,6 +8,13 @@ $ const contentLinkStyle = {
   "color": "#78272e",
   "font": "700 19.5px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif",
 };
+$ const buttonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #d00a2d;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
 
 <marko-newsletter-root
   title=newsletter.name
@@ -26,7 +33,7 @@ $ const contentLinkStyle = {
 
     <common-section-spacer-element />
 
-    <common-style-a-image-title-body-wrapper-block
+    <common-style-a-featured-section-wrapper-block
       section-id=80776
       date=date
       newsletter=newsletter
@@ -34,6 +41,8 @@ $ const contentLinkStyle = {
       title-style=titleStyle
       main-table-style=mainTableStyle
       content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
     />
 
     <common-section-spacer-element />
