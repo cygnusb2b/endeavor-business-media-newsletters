@@ -18,15 +18,13 @@ $ const teaserStyle = {
   "padding": "0",
   "color": "#000000",
 };
-$ const featuredMainTableStyle = "border: 10px solid #ecedee;";
+$ const featuredMainTableStyle = "background-color: #ecedee;";
 $ const footerStyle = "background-color: #145d8e; text-decoration: none !important;";
 
 $ const mrPrimary = emailX.getAdUnit({ name: "mrPrimary", alias: newsletter.alias });
 $ const mrSecondary = emailX.getAdUnit({ name: "mrSecondary", alias: newsletter.alias });
 $ const mrTertiary = emailX.getAdUnit({ name: "mrTertiary", alias: newsletter.alias });
 $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newsletter.alias });
-$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
-$ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", alias: newsletter.alias });
 
 <marko-newsletter-root
   title=newsletter.name
@@ -46,11 +44,6 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
             teaser=newsletter.teaser
           />
           <common-style-b-image-only-header-block image-path="/files/base/ebm/rdh/image/static/newsletter/rdh-graduate-enl.png" date=date newsletter=newsletter />
-
-          <common-leaderboard-primary-block
-            name=leaderboardPrimary
-            date=date
-          />
 
           <!-- Sponsored - 33011 -->
           <common-style-b-text-promo-wrapper
@@ -167,6 +160,7 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
             button-style=buttonStyle
             button-text-style=buttonTextStyle
             teaser-style=teaserStyle
+            psc=true
           />
 
           <!-- Content (5) - 33007 -->
@@ -177,11 +171,6 @@ $ const leaderboardSecondary = emailX.getAdUnit({ name: "leaderboardSecondary", 
             skip=4
             content-link-style=contentLinkStyle
             teaser-style=teaserStyle
-          />
-
-          <common-leaderboard-primary-block
-            name=leaderboardSecondary
-            date=date
           />
 
           <common-style-b-footer-nav-block
