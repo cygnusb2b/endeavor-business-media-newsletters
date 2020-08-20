@@ -5,7 +5,7 @@
   },
   "<common-teaser-element>": {
     "template": "./teaser.marko",
-    "@name": "string"
+    "@teaser": "string"
   },
   "<common-stealth-link-element>": {
     "template": "./stealth-link.marko",
