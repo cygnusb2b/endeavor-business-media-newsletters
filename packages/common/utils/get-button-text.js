@@ -13,6 +13,9 @@ module.exports = (type) => {
     case 'product':
       buttonText = 'Learn More';
       break;
+    case 'press-release':
+      buttonText = 'Full Press Release';
+      break;
     default:
       break;
   }
