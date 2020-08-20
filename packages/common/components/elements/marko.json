@@ -3,6 +3,10 @@
     "template": "./view-online.marko",
     "@name": "string"
   },
+  "<common-teaser-element>": {
+    "template": "./teaser.marko",
+    "@name": "string"
+  },
   "<common-stealth-link-element>": {
     "template": "./stealth-link.marko",
     "@name": "string"
@@ -25,7 +29,8 @@
     "template": "./banner.marko",
     "@name": "string",
     "@date": "date",
-    "@ad-unit": "object"
+    "@ad-unit": "object",
+    "@teaser": "string"
   },
   "<common-button-element>": {
     "template": "./button.marko",
