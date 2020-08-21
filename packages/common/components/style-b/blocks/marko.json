@@ -162,11 +162,19 @@
       "type": "number",
       "default-value": 300
     },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
     "@psc": {
       "type": "boolean",
       "default-value":false
     },
     "@sponsored-label": {
+      "type": "boolean",
+      "default-value": false
+    },
+    "@columns": {
       "type": "boolean",
       "default-value": false
     }
@@ -193,6 +201,47 @@
   },
   "<common-style-b-psc-card-block>": {
     "template": "./psc-card.marko",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@content-link-style": "object",
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@node": "object",
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@teaser-style": "object",
+    "@images" : "array"
+  },
+  "<common-style-b-promo-card-half-block>": {
+    "template": "./promo-card-half.marko",
+    "@alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@button-style": "string",
+    "@button-text-style": "object",
+    "@content-link-style": "object",
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@node": "object",
+    "@teaser-style": "object"
+  },
+  "<common-style-b-psc-card-half-block>": {
+    "template": "./psc-card-half.marko",
     "@alignment": {
       "type": "string",
       "default-value": "left"
