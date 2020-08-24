@@ -17,6 +17,7 @@ $ const teaserStyle = {
   "margin": "0",
   "padding": "0",
   "color": "#000000",
+  "text-align": "left"
 };
 $ const featuredMainTableStyle = "background-color: #ecedee;";
 $ const footerStyle = "background-color: #145d8e; text-decoration: none !important;";
@@ -61,7 +62,7 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
           <!-- #2 - Content - 33004  and mrPrimary -->
           <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td>
+              <td class="template-column">
                 <common-style-b-left-product-section-wrapper
                   section-id=33004
                   date=date
@@ -71,7 +72,7 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
                   teaser-style=teaserStyle
                 />
               </td>
-              <td width="300" align="right">
+              <td class="template-column">
                 <common-advertisement-element
                   name=mrPrimary
                   date=date
@@ -83,7 +84,7 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
           <!-- #3 - Content (2) - 33004 and mrSecondary -->
           <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td>
+              <td class="template-column">
                 <common-style-b-left-product-section-wrapper
                   section-id=33004
                   date=date
@@ -94,7 +95,7 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
                   teaser-style=teaserStyle
                 />
               </td>
-              <td width="300" align="right">
+              <td class="template-column">
                 <common-advertisement-element
                   name=mrSecondary
                   date=date
@@ -106,13 +107,13 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
           <!-- #4 - Content (3) - 33004 and mrTertiary -->
           <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td width="300" align="right">
+              <td class="template-column">
                 <common-advertisement-element
                   name=mrTertiary
                   date=date
                 />
               </td>
-              <td>
+              <td class="template-column">
                 <common-style-b-left-product-section-wrapper
                   section-id=33004
                   date=date
@@ -129,13 +130,13 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
           <!-- #5 - Content (4) - 33004 and mrQuaternary -->
           <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td width="300" align="right">
+              <td class="template-column">
                 <common-advertisement-element
                   name=mrQuaternary
                   date=date
                 />
               </td>
-              <td>
+              <td class="template-column">
                 <common-style-b-left-product-section-wrapper
                   section-id=33004
                   date=date
@@ -170,6 +171,7 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
             button-style=buttonStyle
             button-text-style=buttonTextStyle
             teaser-style=teaserStyle
+            columns=true
           />
 
           <common-style-b-footer-nav-block

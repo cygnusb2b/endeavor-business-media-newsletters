@@ -1,6 +1,12 @@
 $ const { name, date } = input;
 
-<marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
-  <@ad-unit ...name />
-  <@params date=date email="@{email name}@"/>
-</marko-newsletters-email-x-display>
+<common-table style="border-collapse:collapse;" class="main advertisement-wrapper" align="center" padding=0 spacing=0>
+  <tr>
+    <td>
+      <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
+        <@ad-unit ...name />
+        <@params date=date email="@{email name}@"/>
+      </marko-newsletters-email-x-display>
+    </td>
+  </tr>
+</common-table>

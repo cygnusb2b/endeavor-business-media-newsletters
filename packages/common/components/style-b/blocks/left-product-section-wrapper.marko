@@ -18,13 +18,13 @@ $ const {
 
 $ const titleStyle = defaultValue(input.titleStyle, "font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif; margin: 0;");
 $ const titleTableStyle = defaultValue(input.titleTableStyle, titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #000; background-color: #ffffff;");
-$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif; margin: 0; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
+$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
 $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "color": "#0000EE",
   "font": "bold 18px/27px 'Helvetica Neue', Helvetica, sans-serif"
 });
 
-<common-table width="400" style="border-collapse:collapse;" align="center" class="main left-product-section-wrapper" padding=0 spacing=0>
+<common-table width="100%" style=mainTableStyle class="main left-product-section-wrapper" align="center" padding=0 spacing=0>
   <tr>
     <td>
       <!-- Section Query Wrapper -->
@@ -36,7 +36,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         skip: skip,
         queryFragment: contentList,
       }>
-        <common-table width="380" style=mainTableStyle align="center" class="main" padding=0 spacing=0>
+        <common-table width="100%" style=mainTableStyle class="main" padding=0 spacing=0>
           <if(title)>
             <tr>
               <td>
@@ -53,13 +53,18 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
           <tr>
             <td valign="top">
               <for|node, index| of=nodes>
-                <common-style-b-simple-card-block
-                  node=node
-                  alignment="center"
-                  table-width="380"
-                  content-link-style=contentLinkStyle
-                  teaser-style=teaserStyle
-                />
+                $ const alignment = getAlignment(index);
+                <if(node.type === "promotion")>
+                    <common-style-a-promotion-block node=node alignment=alignment content-link-style=contentLinkStyle teaser-style=teaserStyle />
+                </if>
+                <else>
+                  <common-style-b-simple-card-half-block
+                    node=node
+                    alignment=alignment
+                    content-link-style=contentLinkStyle
+                    teaser-style=teaserStyle
+                  />
+                </else>
               </for>
             </td>
           </tr>

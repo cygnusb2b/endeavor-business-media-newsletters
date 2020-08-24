@@ -15,11 +15,11 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     },
     "@content-link-style": "object",
     "@teaser-style": "object"
@@ -33,11 +33,11 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     },
     "@content-link-style": "object",
     "@teaser-style": "object"
@@ -51,11 +51,11 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     },
     "@content-link-style": "object",
     "@teaser-style": "object"
@@ -160,11 +160,11 @@
     "@content-link-style": "object",
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     },
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@psc": {
       "type": "boolean",
@@ -190,12 +190,12 @@
     "@content-link-style": "object",
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     },
     "@node": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@teaser-style": "object"
   },
@@ -210,12 +210,12 @@
     "@content-link-style": "object",
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     },
     "@node": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@teaser-style": "object",
     "@images" : "array"
@@ -231,11 +231,11 @@
     "@content-link-style": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     },
     "@node": "object",
     "@teaser-style": "object"
@@ -251,12 +251,12 @@
     "@content-link-style": "object",
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     },
     "@node": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@teaser-style": "object",
     "@images" : "array"
@@ -291,11 +291,11 @@
     "@content-link-style": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 345
+      "default-value": 349
     },
     "@img-width": {
       "type": "number",
-      "default-value": 300
+      "default-value": 309
     }
   },
   "<common-style-b-title-teaser-block>": {
