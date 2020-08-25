@@ -1,22 +1,14 @@
-import defaultValue from "@base-cms/marko-core/utils/default-value";
 import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
 
 $ const {
   node,
   tableWidth,
   imgWidth,
+  teaserStyle,
+  contentLinkStyle
 } = input;
-$ const teaserStyle = defaultValue(input.teaserStyle, {
-  "color": "#000000",
-  "font": "normal 14px/18px sans-serif",
-  "margin": "0",
-  "padding": "0"
-});
+$ const contentLinkWrapperStyle = { "margin-bottom": "10px", "text-align": "left" };
 $ const teaserWrapperStyle = {...teaserStyle, ...{msoLineHeightRule: "exactly", msoLineHeightAlt: "146%"}};
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "color": "#00b398",
-  "font": "bold 18px/27px sans-serif"
-});
 $ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
 $ const imageTableWidth = imgWidth + (innerPadding * 2);
@@ -36,18 +28,8 @@ $ const imageTableWidth = imgWidth + (innerPadding * 2);
                 </td>
               </tr>
               <tr>
-                <td>
-                  <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                    <marko-newsletter-imgix
-                      src=image.src
-                      alt=image.alt
-                      options={ w: imgWidth }
-                      class="main"
-                      attrs={ border: 0, width: imgWidth }
-                    >
-                      <@link href=node.siteContext.url target="_blank" />
-                    </marko-newsletter-imgix>
-                  </marko-core-obj-value>
+                <td align="center">
+                  <common-primary-image-element node=node img-width=imgWidth/>
                 </td>
               </tr>
             </common-table>
@@ -68,14 +50,12 @@ $ const imageTableWidth = imgWidth + (innerPadding * 2);
               </tr>
               <tr>
                 <td style="padding-bottom: 5px;">
-                  <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-                    <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                  </marko-core-obj-text>
+                  <common-content-title-element node=node content-link-style=contentLinkStyle content-link-wrapper-style=contentLinkWrapperStyle />
                 </td>
               </tr>
               <tr>
                 <td style=teaserWrapperStyle>
-                  <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+                  <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
                 </td>
               </tr>
             </common-table>
