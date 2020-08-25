@@ -17,7 +17,7 @@ $ const teaserStyle = {
   "color": "#000000",
   "text-align": "left"
 };
-$ const featuredMainTableStyle = "border: 10px solid #ecedee;";
+$ const featuredMainTableStyle = "background-color: #fff; margin: 10px;";
 $ const footerStyle = "background-color: #145d8e; text-decoration: none !important;";
 
 <marko-newsletter-root
@@ -40,17 +40,25 @@ $ const footerStyle = "background-color: #145d8e; text-decoration: none !importa
           <common-style-b-image-only-header-block image-path="/files/base/ebm/rdh/image/static/newsletter/rdh-products-enl.jpg" date=date newsletter=newsletter />
 
         <!-- #1 - Products - 35704 -->
-          <common-style-b-text-promo-wrapper
-            section-id=35704
-            date=date
-            newsletter=newsletter
-            button-style=buttonStyle
-            button-text-style=buttonTextStyle
-            content-link-style=contentLinkStyle
-            main-table-style=featuredMainTableStyle
-            psc=true
-            teaser-style=teaserStyle
-          />
+          <common-table width="700" style="border-collapse: collapse; background-color: #ecedee;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <common-style-b-text-promo-wrapper
+                  section-id=35704
+                  date=date
+                  newsletter=newsletter
+                  button-style=buttonStyle
+                  button-text-style=buttonTextStyle
+                  content-link-style=contentLinkStyle
+                  main-table-style=featuredMainTableStyle
+                  psc=true
+                  width=680
+                  table-width=335
+                />
+              </td>
+            </tr>
+          </common-table>
+
 
           <common-style-b-footer-nav-block
             footer-style=footerStyle

@@ -13,29 +13,19 @@ $ const {
   psc,
   sponsoredLabel,
   hr,
+  tableWidth,
   imgWidth,
   columns,
-  tableWidth,
+  teaserStyle,
+  contentLinkStyle,
+  buttonStyle,
+  buttonTextStyle,
+  width
 } = input;
 
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: normal 12px/18px sans-serif; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
-$ const teaserStyle = defaultValue(input.teaserStyle, {
-  "color": "#000",
-  "font": "normal 14px/18px sans-serif",
-  "margin": "0",
-  "padding": "0"
-});
-$ const buttonStyle = defaultValue(input.buttonStyle, "background-color: #000; padding: 5px 20px;");
-$ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
-  "color": "#fff",
-  "font": "bold 16px/24px sans-serif"
-});
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "font": "bold 18px/27px sans-serif",
-  "color": "#0000EE"
-});
 
-<common-table width="700" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="center" class="main text-promo-wrapper" padding=0 spacing=0>
+<common-table width=width style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="center" class="main text-promo-wrapper" padding=0 spacing=0>
   <if(sponsoredLabel)>
     <tr>
       <td>
@@ -59,7 +49,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         <for|node, index| of=nodes>
           <if(columns)>
             $ const alignment = getAlignment(index);
-            <common-table width=tableWidth align=alignment style=mainTableStyle class="main text-promo-wrapper__half-card" padding=0 spacing=0>
+            <common-table width=tableWidth align=alignment style=mainTableStyle class="main text-promo__half-card" padding=0 spacing=0>
               <tr>
                 <td valign="top">
                   <if(psc)>
@@ -70,6 +60,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                       button-text-style=buttonTextStyle
                       teaser-style=teaserStyle
                       img-width=imgWidth
+                      table-width=tableWidth
                       alignment=alignment
                     />
                   </if>
@@ -81,6 +72,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                       button-text-style=buttonTextStyle
                       teaser-style=teaserStyle
                       img-width=imgWidth
+                      table-width=tableWidth
                       alignment=alignment
                     />
                   </else>
@@ -89,7 +81,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
             </common-table>
           </if>
           <else>
-            <common-table width="100%" align="center"  style=`${mainTableStyle}` class="main" padding=0 spacing=0>
+            <common-table width=width align="center" style=mainTableStyle class="main text-promo" padding=0 spacing=0>
               <tr>
                 <td valign="top">
                   <if(psc)>
@@ -100,6 +92,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                       button-text-style=buttonTextStyle
                       teaser-style=teaserStyle
                       img-width=imgWidth
+                      table-width=tableWidth
                     />
                   </if>
                   <else>
@@ -110,6 +103,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                       button-text-style=buttonTextStyle
                       teaser-style=teaserStyle
                       img-width=imgWidth
+                      table-width=tableWidth
                     />
                   </else>
                 </td>
@@ -117,7 +111,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
             </common-table>
           </else>
           <if(isLast(nodes, index) && psc)>
-            <common-table width="100%" class="main last-psc" padding=0 spacing=0>
+            <common-table width=width class="main last-psc" padding=0 spacing=0>
               <tr>
                 <td>&nbsp;</td>
               </tr>
