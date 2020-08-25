@@ -18,7 +18,7 @@ $ const {
   tableWidth,
 } = input;
 
-$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: normal 12px/18px sans-serif; margin: 0; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
+$ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: normal 12px/18px sans-serif; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
 $ const teaserStyle = defaultValue(input.teaserStyle, {
   "color": "#000",
   "font": "normal 14px/18px sans-serif",
@@ -35,7 +35,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "color": "#0000EE"
 });
 
-<common-table width="700" style=`${mainTableStyle}` align="center" class="main text-promo-wrapper" padding=0 spacing=0>
+<common-table width="700" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="center" class="main text-promo-wrapper" padding=0 spacing=0>
   <if(sponsoredLabel)>
     <tr>
       <td>
@@ -59,7 +59,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         <for|node, index| of=nodes>
           <if(columns)>
             $ const alignment = getAlignment(index);
-            <common-table width=tableWidth align=alignment  style=mainTableStyle class="main text-promo-wrapper__half-card" padding=0 spacing=0>
+            <common-table width=tableWidth align=alignment style=mainTableStyle class="main text-promo-wrapper__half-card" padding=0 spacing=0>
               <tr>
                 <td valign="top">
                   <if(psc)>
