@@ -19,6 +19,7 @@ $ const teaserStyle = {
   "color": "#000000",
   "text-align": "left"
 };
+$ const mainTableStyle = "border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
 $ const featuredMainTableStyle = "background-color: #ecedee;";
 $ const footerStyle = "background-color: #145d8e; text-decoration: none !important;";
 
@@ -60,9 +61,9 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
           />
 
           <!-- Content - 33007  and mrPrimary -->
-          <common-table width="700" style="border-collapse:collapse; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="center" class="main" padding=0 spacing=0>
+          <common-table width="700" border="0" spacing=0 padding=0 align="center" style="border-collapse:collapse;" class="main">
             <tr>
-              <td class="template-column">
+              <td>
                 <common-style-b-left-product-section-wrapper
                   section-id=33007
                   date=date
@@ -70,21 +71,21 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
                   newsletter=newsletter
                   content-link-style=contentLinkStyle
                   teaser-style=teaserStyle
+                  alignment="left"
                 />
-              </td>
-              <td class="template-column">
                 <common-advertisement-element
                   name=mrPrimary
                   date=date
+                  alignment="right"
                 />
               </td>
             </tr>
           </common-table>
 
           <!-- Content (2) - 33007 and mrSecondary -->
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+          <common-table width="700" style=mainTableStyle align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td class="template-column">
+              <td>
                 <common-style-b-left-product-section-wrapper
                   section-id=33007
                   date=date
@@ -93,27 +94,26 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
                   newsletter=newsletter
                   content-link-style=contentLinkStyle
                   teaser-style=teaserStyle
+                  alignment="left"
                 />
-              </td>
-              <td class="template-column">
                 <common-advertisement-element
                   name=mrSecondary
                   date=date
+                  alignment="right"
                 />
               </td>
             </tr>
           </common-table>
 
           <!-- Content (3) - 33007 and mrTertiary -->
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+          <common-table width="700" style=mainTableStyle align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td class="template-column">
+              <td>
                 <common-advertisement-element
                   name=mrTertiary
                   date=date
+                  alignment="left"
                 />
-              </td>
-              <td class="template-column">
                 <common-style-b-left-product-section-wrapper
                   section-id=33007
                   date=date
@@ -122,21 +122,21 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
                   newsletter=newsletter
                   content-link-style=contentLinkStyle
                   teaser-style=teaserStyle
+                  alignment="right"
                 />
               </td>
             </tr>
           </common-table>
 
           <!-- Content (4) - 33007 and mrQuaternary -->
-          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+          <common-table width="700" style=mainTableStyle align="center" class="main" padding=0 spacing=0>
             <tr>
-              <td class="template-column">
+              <td>
                 <common-advertisement-element
                   name=mrQuaternary
                   date=date
+                  alignment="left"
                 />
-              </td>
-              <td class="template-column">
                 <common-style-b-left-product-section-wrapper
                   section-id=33007
                   date=date
@@ -145,6 +145,7 @@ $ const mrQuaternary = emailX.getAdUnit({ name: "mrQuaternary", alias: newslette
                   newsletter=newsletter
                   content-link-style=contentLinkStyle
                   teaser-style=teaserStyle
+                  alignment="right"
                 />
               </td>
             </tr>

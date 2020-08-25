@@ -15,11 +15,11 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     },
     "@content-link-style": "object",
     "@teaser-style": "object"
@@ -33,11 +33,11 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     },
     "@content-link-style": "object",
     "@teaser-style": "object"
@@ -51,11 +51,11 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     },
     "@content-link-style": "object",
     "@teaser-style": "object"
@@ -111,12 +111,17 @@
       "type": "number",
       "default-value": 0
     },
+    "@table-width": {
+      "type": "number",
+      "default-value": 345
+    },
     "@title": "string",
     "@title-table-style": "string",
     "@title-style": "string",
     "@teaser-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@alignment": "string"
   },
   "<common-style-b-image-only-header-block>": {
     "template": "./image-only-header.marko",
@@ -160,11 +165,11 @@
     "@content-link-style": "object",
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     },
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@psc": {
       "type": "boolean",
@@ -190,12 +195,12 @@
     "@content-link-style": "object",
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     },
     "@node": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@teaser-style": "object"
   },
@@ -210,12 +215,12 @@
     "@content-link-style": "object",
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     },
     "@node": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@teaser-style": "object",
     "@images" : "array"
@@ -231,11 +236,11 @@
     "@content-link-style": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     },
     "@node": "object",
     "@teaser-style": "object"
@@ -251,12 +256,12 @@
     "@content-link-style": "object",
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     },
     "@node": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@teaser-style": "object",
     "@images" : "array"
@@ -291,11 +296,11 @@
     "@content-link-style": "object",
     "@table-width": {
       "type": "number",
-      "default-value": 349
+      "default-value": 345
     },
     "@img-width": {
       "type": "number",
-      "default-value": 309
+      "default-value": 300
     }
   },
   "<common-style-b-title-teaser-block>": {

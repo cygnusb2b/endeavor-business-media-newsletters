@@ -45,7 +45,8 @@
   "<common-advertisement-element>": {
     "template": "./advertisement.marko",
     "@name": "string",
-    "@date": "date"
+    "@date": "date",
+    "@alignment": "string"
   },
   "<common-primary-image-element>": {
     "template": "./primary-image.marko",

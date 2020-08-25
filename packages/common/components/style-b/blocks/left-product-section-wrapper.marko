@@ -3,7 +3,6 @@ import contentList from "@endeavor-business-media/common/graphql/fragments/conte
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
 import getAlignment from "@endeavor-business-media/common/utils/get-alignment";
-import getIsFullWidth from "@endeavor-business-media/common/utils/get-is-full-width";
 import showDivider from "@endeavor-business-media/common/utils/show-divider";
 
 $ const {
@@ -13,7 +12,9 @@ $ const {
   title,
   limit,
   skip,
-  teaserStyle
+  teaserStyle,
+  alignment,
+  tableWidth
 } = input;
 
 $ const titleStyle = defaultValue(input.titleStyle, "font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif; margin: 0;");
@@ -24,7 +25,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "font": "bold 18px/27px 'Helvetica Neue', Helvetica, sans-serif"
 });
 
-<common-table width="100%" style=mainTableStyle class="main left-product-section-wrapper" align="center" padding=0 spacing=0>
+<common-table width=tableWidth style=mainTableStyle class="main" align=alignment padding=0 spacing=0>
   <tr>
     <td>
       <!-- Section Query Wrapper -->
@@ -36,11 +37,11 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         skip: skip,
         queryFragment: contentList,
       }>
-        <common-table width="100%" style=mainTableStyle class="main" padding=0 spacing=0>
+        <common-table width=tableWidth style=mainTableStyle class=alignment spacing=0 padding=0 align=alignment>
           <if(title)>
             <tr>
               <td>
-                <common-table width="100%" style=titleTableStyle align="center" class="main" padding=0 spacing=0>
+                <common-table width=tableWidth style=titleTableStyle align="center"  padding=0 spacing=0>
                   <tr>
                     <td>
                       <h3 style=`${titleStyle}`>${title}</h3>
@@ -51,7 +52,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
             </tr>
           </if>
           <tr>
-            <td valign="top">
+            <td>
               <for|node, index| of=nodes>
                 $ const alignment = getAlignment(index);
                 <if(node.type === "promotion")>

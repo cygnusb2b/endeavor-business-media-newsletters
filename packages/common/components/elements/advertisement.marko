@@ -1,9 +1,9 @@
-$ const { name, date } = input;
+$ const { name, date, alignment } = input;
 
-<common-table style="border-collapse:collapse;" class="main advertisement-wrapper" align="center" padding=0 spacing=0>
+<common-table width="345" style="border-collapse:collapse;" class=`advertisement-wrapper ${ alignment }` align=alignment padding=0 spacing=0>
   <tr>
-    <td>
-      <marko-newsletters-email-x-display class="scaleAd" decoded-params=["email"]>
+    <td align="center" style="padding: 20px;">
+      <marko-newsletters-email-x-display class="scaleAd advertisement" decoded-params=["email"]>
         <@ad-unit ...name />
         <@params date=date email="@{email name}@"/>
       </marko-newsletters-email-x-display>
