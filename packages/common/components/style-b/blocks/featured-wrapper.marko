@@ -27,6 +27,11 @@ $ const teaserStyle = defaultValue(input.teaserStyle, {
   "margin": "0",
   "padding": "0"
 });
+$ const contentLinkWrapperStyle = {
+  "margin-top": "10px",
+  "margin-bottom": "10px",
+  "text-align": "left",
+});
 $ const innerPadding = 20;
 $ const innerTableWidth = 700 - (innerPadding * 2);
 
@@ -66,24 +71,14 @@ $ const innerTableWidth = 700 - (innerPadding * 2);
                       <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="center" class=`main` padding=0 spacing=0>
                         <tr>
                           <td>
-                            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                              <marko-newsletter-imgix
-                                src=image.src
-                                alt=image.alt
-                                options={ w: 660 }
-                                class="main"
-                                attrs={ border: 0, width: 660 }
-                              >
-                                <@link href=node.siteContext.url target="_blank" />
-                              </marko-newsletter-imgix>
-                            </marko-core-obj-value>
-
+                            <common-primary-image-element node=node img-width=660/>
+                            <common-content-title-element node=node content-link-style=contentLinkStyle content-link-wrapper-style=contentLinkWrapperStyle tag="h3"/>
                             <marko-core-obj-text tag="h3" obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
                               <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
                             </marko-core-obj-text>
 
                             <if(node.type === "promotion")>
-                              <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
+                              <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
                               <common-table align="center" padding=0 spacing=0>
                                 <tr>
                                   <td>&nbsp;</td>
@@ -98,7 +93,7 @@ $ const innerTableWidth = 700 - (innerPadding * 2);
                               </common-table>
                             </if>
                             <else>
-                              <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ class: 'main', style: teaserStyle } />
+                              <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
                             </else>
                           </td>
                         </tr>

@@ -56,7 +56,11 @@
     "template": "./content-title.marko",
     "@node": "object",
     "@content-link-style": "object",
-    "@content-link-wrapper-style": "object"
+    "@content-link-wrapper-style": "object",
+    "@tag": {
+      "type": "string",
+      "default-value": null
+    }
   },
   "<common-content-teaser-element>": {
     "template": "./content-teaser.marko",
