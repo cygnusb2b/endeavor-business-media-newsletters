@@ -1,14 +1,14 @@
 {
   "<common-view-online-element>": {
-    "template": "./view-online.marko",
+    "template": "./banner/view-online.marko",
     "@name": "string"
   },
   "<common-teaser-element>": {
-    "template": "./teaser.marko",
+    "template": "./banner/teaser.marko",
     "@teaser": "string"
   },
   "<common-stealth-link-element>": {
-    "template": "./stealth-link.marko",
+    "template": "./banner/stealth-link.marko",
     "@name": "string"
   },
   "<common-section-spacer-element>": {
@@ -26,7 +26,7 @@
     }
   },
   "<common-banner-element>": {
-    "template": "./banner.marko",
+    "template": "./banner/banner.marko",
     "@name": "string",
     "@date": "date",
     "@ad-unit": "object",
