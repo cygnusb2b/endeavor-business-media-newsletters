@@ -12,21 +12,14 @@ $ const {
   buttonStyle,
   buttonTextStyle,
   sponsoredLabel,
-  hr
+  hr,
+  contentLinkStyle,
+  teaserStyle
 } = input;
 $ const titleTableStyle = defaultValue(input.titleTableStyle, "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;");
 $ const titleStyle = defaultValue(input.titleStyle, "font:700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;");
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "color": "#00b398",
-  "font": "700 19.5px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif",
-});
-$ const teaserStyle = defaultValue(input.teaserStyle, {
-  "color": "#666",
-  "font": "normal 12px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
-  "margin": "0",
-  "padding": "0"
-});
+
 $ const contentLinkWrapperStyle = {
   "margin-top": "10px",
   "margin-bottom": "10px",
@@ -73,9 +66,6 @@ $ const innerTableWidth = 700 - (innerPadding * 2);
                           <td>
                             <common-primary-image-element node=node img-width=660/>
                             <common-content-title-element node=node content-link-style=contentLinkStyle content-link-wrapper-style=contentLinkWrapperStyle tag="h3"/>
-                            <marko-core-obj-text tag="h3" obj=node field="name" attrs={ style: { "margin-top": "10px", "text-align": "left" } } >
-                              <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                            </marko-core-obj-text>
 
                             <if(node.type === "promotion")>
                               <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
