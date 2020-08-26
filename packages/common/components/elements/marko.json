@@ -51,5 +51,24 @@
     "template": "./primary-image.marko",
     "@node": "object",
     "@img-width": "string"
+  },
+  "<common-content-title-element>": {
+    "template": "./content-title.marko",
+    "@node": "object",
+    "@content-link-style": "object",
+    "@content-link-wrapper-style": "object"
+  },
+  "<common-content-teaser-element>": {
+    "template": "./content-teaser.marko",
+    "@node": "object",
+    "@teaser-style": "object",
+    "@tag": {
+      "type": "string",
+      "default-value": null
+    },
+    "@field": {
+      "type": "string",
+      "default-value": "teaser"
+    }
   }
 }

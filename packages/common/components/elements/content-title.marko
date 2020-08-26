@@ -1,0 +1,15 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const { node } = input;
+$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
+  "color": "#00b398",
+  "font": "bold 18px/27px sans-serif"
+});
+$ const contentLinkWrapperStyle = defaultValue(input.contentLinkWrapperStyle, {
+  "margin-bottom": "10px",
+  "text-align": "left",
+});
+
+<marko-core-obj-text obj=node field="name" attrs={ style: contentLinkWrapperStyle } >
+  <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
+</marko-core-obj-text>
