@@ -1,6 +1,3 @@
-import getAlignment from "@endeavor-business-media/common/utils/get-alignment";
-import getIsFullWidth from "@endeavor-business-media/common/utils/get-is-full-width";
-import showDivider from "@endeavor-business-media/common/utils/show-divider";
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 
@@ -10,15 +7,12 @@ $ const {
   sectionId,
   title,
   limit,
-  skip
+  skip,
+  contentLinkStyle
 } = input;
 $ const titleTableStyle = defaultValue(input.titleTableStyle, "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;");
 $ const titleStyle = defaultValue(input.titleStyle, "font:700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;");
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "color": "#00b398",
-  "font": "700 16px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif",
-});
 
 $ const alignment = defaultValue(input.alignment, "center");
 $ const tableWidth = defaultValue(input.tableWidth, "700");
@@ -49,11 +43,9 @@ $ const tableWidth = defaultValue(input.tableWidth, "700");
             </tr>
           </if>
           <tr>
-            <td valign="top" style="padding-left: 20px; padding-right: 20px; padding-bottom: 20px;">
+            <td valign="top" style="padding: 20px;">
               <for|node, index| of=nodes>
-                <marko-core-obj-text obj=node field="name" attrs={ style: { "margin-top": "20px", "text-align": "left" } } >
-                  <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                </marko-core-obj-text>
+                <common-content-link-element node=node content-link-style=contentLinkStyle />
               </for>
             </td>
           </tr>

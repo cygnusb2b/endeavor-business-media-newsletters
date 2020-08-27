@@ -47,10 +47,8 @@ $ const contentLinkStyle = {
       queryFragment: contentList,
     }>
       <for|node| of=nodes>
-        <marko-core-obj-text tag="h4" obj=node field="name">
-          <@link href=node.siteContext.url target="_blank" />
-        </marko-core-obj-text>
-        <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle }/>
+        <common-content-link-element node=node content-link-style=contentLinkStyle tag="h4"/>
+        <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
         <hr>
       </for>
     </marko-web-query>
