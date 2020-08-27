@@ -1,30 +1,15 @@
 import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
-import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const {
   node,
   tableWidth,
   imgWidth,
-  alignment
+  alignment,
+  teaserStyle,
+  contentLinkStyle,
+  buttonStyle,
+  buttonTextStyle
 } = input;
-$ const teaserStyle = defaultValue(input.teaserStyle, {
-  "margin": "0",
-  "padding-right": "5%",
-  "color": "#000000",
-  "font": "400 12px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif"
-});
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "color": "#000",
-  "font": "700 19.5px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif",
-});
-
-$ const buttonStyle = defaultValue(input.buttonStyle, "font: 400 14px/21px Helvetica, Arial, sans-serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00b398;");
-$ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
-  "color": "#ffffff",
-  "font": "700 14px/21px Helvetica, Arial, sans-serif",
-  "text-decoration": "none",
-  "text-transform": "uppercase"
-});
 
 $ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
@@ -42,17 +27,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
         </tr>
         <tr>
           <td>
-            <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-              <marko-newsletter-imgix
-                src=image.src
-                alt=image.alt
-                options={ w: imgWidth }
-                attrs={ border: 0, width: imgWidth }
-                class="main"
-              >
-              <@link href=node.siteContext.url target="_blank" />
-              </marko-newsletter-imgix>
-            </marko-core-obj-value>
+            <common-primary-image-element node=node img-width=imgWidth class-name="main" />
           </td>
         </tr>
       </common-table>
@@ -66,10 +41,8 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
       <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
         <tr>
           <td style="padding-bottom: 10px;">
-            <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left"} } >
-              <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-            </marko-core-obj-text>
-            <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+            <common-content-link-element node=node content-link-style=contentLinkStyle />
+            <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
           </td>
         </tr>
         <if(node.linkText)>
@@ -78,15 +51,12 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
           </tr>
           <tr>
             <td align="center">
-              <common-table align="center" padding=0 spacing=0>
-                <tr>
-                  <td style=`${buttonStyle}`>
-                    <marko-core-text value=node.linkText>
-                      <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
-                    </marko-core-text>
-                    </td>
-                  </tr>
-              </common-table>
+              <common-button-element
+                button-style=buttonStyle
+                button-text-style=buttonTextStyle
+                node=node
+                alignment=alignment
+              />
             </td>
           </tr>
         </if>
