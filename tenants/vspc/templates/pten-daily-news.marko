@@ -1,6 +1,11 @@
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
 
 $ const { newsletter, date } = data;
+$ const contentLinkStyle = {
+  "color": "red",
+  "data-foo": "bar",
+  "aria-hidden": "false",
+};
 
 <marko-newsletter-root
   title=newsletter.name
@@ -23,26 +28,9 @@ $ const { newsletter, date } = data;
       queryFragment: contentList,
     }>
       <for|node| of=nodes>
-        <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-          <marko-newsletter-imgix
-            src=image.src
-            alt=image.alt
-            options={ w: 300 }
-            class="main"
-            attrs={ border: 0, width: 300 }
-          >
-            <@link href=node.siteContext.url target="_blank" />
-          </marko-newsletter-imgix>
-        </marko-core-obj-value>
-
-        <marko-core-obj-text tag="h4" obj=node field="name">
-          <@link href=node.siteContext.url target="_blank" class="my-cool-class" attrs={
-            style: "color: red;",
-            "data-foo": "bar",
-            "aria-hidden": "false",
-          } />
-        </marko-core-obj-text>
-        <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+        <common-primary-image-element node=node img-width=300 class-name="main" />
+        <common-content-link-element node=node content-link-style=contentLinkStyle tag="h4"/>
+        <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
         <marko-core-obj-date tag="small" obj=node field="published" format="MMMM Do, YYYY" />
         <hr>
       </for>
