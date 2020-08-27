@@ -5,69 +5,47 @@ $ const {
   alignment,
   tableWidth,
   imgWidth,
+  teaserStyle,
+  contentLinkStyle
 } = input;
-$ const teaserStyle = defaultValue(input.teaserStyle, {
-  "font": "400 12px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
-  "margin": "0",
-  "padding": "0",
-  "color": "#000000",
-});
+
 $ const promotionStyle = defaultValue(input.promotionStyle, {
   "margin": "0",
   "color": "#222 !important",
   "text-decoration": "none !important",
   "font": "400 18px/26px Arial, 'Helvetica Neue', Helvetica, sans-serif"
 });
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "text-align": "left",
-  "text-decoration": "none !important",
-  "font": "700 14px/24px Arial, Helvetica, sans-serif",
-  "color": "#00B39E",
-});
-
-$ const innerPadding = "20px 30px 20px 15px";
+$ const tableStyle = "border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;";
 
 <if(node.primaryImage)>
-  <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
+  <common-table width=tableWidth style=tableStyle align="left" class="left" padding=0 spacing=0>
     <tr>
-      <td style=`padding: 0; padding-left: 20px; padding-bottom: 20px;`>
-        <common-table width=250 style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="left" class="left" padding=0 spacing=0>
+      <td style="padding: 0 20px 20px 0;">
+        <common-table width=250 style=tableStyle align="left" class="left" padding=0 spacing=0>
           <tr>
             <td>&nbsp;</td>
           </tr>
           <tr>
             <td>
-              <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                <marko-newsletter-imgix
-                  src=image.src
-                  alt=image.alt
-                  options={ w: imgWidth }
-                  class="main"
-                  attrs={ border: 0, width: imgWidth }
-                >
-                  <@link href=node.siteContext.url target="_blank" />
-                </marko-newsletter-imgix>
-              </marko-core-obj-value>
+              <common-primary-image-element node=node img-width=imgWidth />
             </td>
           </tr>
         </common-table>
-        <common-table width=420 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="right" class="right" padding=0 spacing=0>
+        <common-table width=420 style=tableStyle align="right" class="right" padding=0 spacing=0>
           <if(node.type !== "promotion")>
             <tr>
-              <td style=`padding: 20px 20px 5px 20px;`>
-                <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-                  <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                </marko-core-obj-text>
+              <td style=`padding: 10px 20px 5px 10px;`>
+                <common-content-link-element node=node content-link-style=contentLinkStyle />
               </td>
             </tr>
           </if>
           <tr>
             <td style='padding: 10px 20px 10px 20px;'>
               <if(node.type === "promotion")>
-                <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: promotionStyle } />
+                <common-content-teaser-element node=node teaser-style=promotionStyle field="body" />
               </if>
               <else>
-                <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+                <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
               </else>
             </td>
           </tr>
@@ -78,23 +56,21 @@ $ const innerPadding = "20px 30px 20px 15px";
   </common-table>
 </if>
 <else>
-  <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
+  <common-table width=tableWidth style=tableStyle align="left" class="left" padding=0 spacing=0>
     <if(node.type !== "promotion")>
       <tr>
-        <td style=`padding: 20px 20px 5px 20px;`>
-          <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-            <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-          </marko-core-obj-text>
+        <td style=`padding: 10px 20px 5px 10px;`>
+          <common-content-link-element node=node content-link-style=contentLinkStyle />
         </td>
       </tr>
     </if>
     <tr>
-      <td style='padding: 0px 20px 20px 20px;'>
+      <td style='padding: 0 20px 20px 20px;'>
         <if(node.type === "promotion")>
-          <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: promotionStyle } />
+          <common-content-teaser-element node=node teaser-style=promotionStyle field="body" />
         </if>
         <else>
-          <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+          <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
         </else>
       </td>
     </tr>

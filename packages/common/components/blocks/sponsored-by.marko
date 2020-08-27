@@ -5,28 +5,15 @@ $ const {
   node,
   button,
   title,
-  alignment
+  alignment,
+  teaserStyle,
+  buttonStyle,
+  buttonTextStyle,
+  contentLinkStyle
 } = input;
 
 $ const imgWidth = defaultValue(input.imgWidth, "100px");
 $ const tableCellPadding = "padding-bottom: 10px;"
-$ const teaserStyle = defaultValue(input.teaserStyle, {
-  "color": "#000",
-  "font": "normal 14px/18px sans-serif",
-  "margin": "0",
-  "padding": "0"
-});
-$ const buttonStyle = defaultValue(input.buttonStyle, "background-color: transparent; padding: 5px 0;");
-$ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
-  "color": "#000",
-  "font": "bold 16px/24px sans-serif",
-  "text-decoration": "underline"
-});
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "font": "bold 18px/27px sans-serif",
-  "color": "#0000EE",
-  "text-decoration": "none"
-});
 $ const sponsoredByStyle = defaultValue(input.sponsoredByStyle, "font: bold 16px/32px sans-serif; color: #000; text-transform: uppercase; padding-right: 15px;");
 
 <common-table style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" class="main sponsored-by" padding=0 spacing=0 width="100%">
@@ -37,9 +24,7 @@ $ const sponsoredByStyle = defaultValue(input.sponsoredByStyle, "font: bold 16px
         <common-table style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" class="main sponsored-by__title" padding=0 spacing=0 width="100%">
           <tr>
             <td style=`${tableCellPadding}`>
-              <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-                <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-              </marko-core-obj-text>
+              <common-content-link-element node=node field="name" />
             </td>
           </tr>
         </common-table>
