@@ -64,11 +64,16 @@ $ const innerTableWidth = 700 - (innerPadding * 2);
                       <common-table width=innerTableWidth style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="center" class=`main` padding=0 spacing=0>
                         <tr>
                           <td>
-                            <common-primary-image-element node=node img-width=660/>
-                            <common-content-title-element node=node content-link-style=contentLinkStyle content-link-wrapper-style=contentLinkWrapperStyle tag="h3"/>
+                            <common-primary-image-element node=node img-width=660 class-name="main" />
+                            <common-content-link-element node=node content-link-style=contentLinkStyle content-link-wrapper-style=contentLinkWrapperStyle tag="h3"/>
 
                             <if(node.type === "promotion")>
-                              <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
+                              <if(node.body)>
+                                <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
+                              </if>
+                              <else>
+                                <common-content-teaser-element node=node teaser-style=teaserStyle />
+                              </else>
                               <common-button-element
                                 button-style=buttonStyle
                                 button-text-style=buttonTextStyle

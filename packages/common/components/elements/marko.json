@@ -50,16 +50,24 @@
   "<common-primary-image-element>": {
     "template": "./primary-image.marko",
     "@node": "object",
-    "@img-width": "string"
+    "@img-width": "string",
+    "@class-name": {
+      "type": "string",
+      "default-value": null
+    }
   },
-  "<common-content-title-element>": {
-    "template": "./content-title.marko",
+  "<common-content-link-element>": {
+    "template": "./content-link.marko",
     "@node": "object",
     "@content-link-style": "object",
     "@content-link-wrapper-style": "object",
     "@tag": {
       "type": "string",
       "default-value": null
+    },
+    "@field": {
+      "type": "string",
+      "default-value": "name"
     }
   },
   "<common-content-teaser-element>": {
