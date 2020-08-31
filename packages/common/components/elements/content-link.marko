@@ -3,7 +3,8 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 $ const { node, tag } = input;
 $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "color": "#00b398",
-  "font": "bold 18px/27px sans-serif"
+  "font": "bold 18px/27px sans-serif",
+  "text-decoration": "none !important"
 });
 $ const contentLinkWrapperStyle = defaultValue(input.contentLinkWrapperStyle, {
   "margin-bottom": "10px",
