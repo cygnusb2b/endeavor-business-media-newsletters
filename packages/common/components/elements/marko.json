@@ -82,5 +82,15 @@
       "type": "string",
       "default-value": "teaser"
     }
+  },
+  "<common-section-title-element>": {
+    "template": "./section-title.marko",
+    "@title": "string",
+    "@title-alignment": {
+      "type": "string",
+      "default-value": "center"
+    },
+    "@title-table-style": "string",
+    "@title-style": "string"
   }
 }
