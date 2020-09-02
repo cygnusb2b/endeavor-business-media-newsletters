@@ -1,14 +1,18 @@
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const {
   contentLinkStyle,
+  date,
   limit,
   newsletter,
   sectionId,
   skip,
+  teaserStyle,
   title,
   titleAlignment,
-  titleStyle
+  titleStyle,
+  titleTableStyle
 } = input;
 
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse: collapse; font: 400 13px/21px Garamond, serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
@@ -30,8 +34,18 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse: co
             <common-section-title-element title=title title-alignment=titleAlignment title-style=titleStyle title-table-style=titleTableStyle />
           </if>
           <tr>
-            <td>
-
+            <td valign="top" style="padding: 5px 20px;">
+              <ul>
+                <for|node, index| of=nodes>
+                  <li>
+                    <common-content-link-element node=node content-link-style=contentLinkStyle  tag="span"/>
+                    <if(node.teaser)>
+                      <span>&nbsp;&ndash;&nbsp;</span>
+                      <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+                    </if>
+                  </li>
+                </for>
+              </ul>
             </td>
           </tr>
         </common-table>

@@ -21,18 +21,17 @@ $ const contentLinkStyle = {
   "line-height": "20px",
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
 };
+$ const listContentLinkStyle = {
+  "font": "400 14px/21px Arial, 'Helvetica Neue', Helvetica, sans-serif",
+  "color": "#0989c0",
+};
+$ const listTableStyle = "border-collapse: collapse; font: 400 13px/21px Garamond, serif; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const buttonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #0989c0;";
 $ const buttonTextStyle = {
   "color": "#ffffff",
   "font": "700 14px/21px Helvetica, Arial, sans-serif",
   "text-decoration": "none",
   "text-transform": "uppercase"
-};
-$ const teaserStyle = {
-  "margin": "0",
-  "padding": "0",
-  "color": "#000000",
-  "font": "400 12px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif"
 };
 
 $ const getReadMoreText = (node) => {
@@ -141,6 +140,25 @@ $ const getReadMoreText = (node) => {
       button-text-style=buttonTextStyle
     />
 
+    <!-- #9 UAI Connect - List -->
+    <common-list-block
+      title="Top Discussions on UAI Connect"
+      section-id=81714
+      date=date
+      newsletter=newsletter
+      content-link-style=listContentLinkStyle
+      title-style=titleStyle
+      title-table-style=titleTableStyle
+      main-table-style=`border-top: 2px solid #d7d7d7; ${listTableStyle}`
+    />
+
+    <common-table width="700" style=`border-bottom: 4px solid #d7d7d7; ${listTableStyle}` align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td style="padding: 5px 20px; font: 400 14px/21px Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+          If you are a UAI member, join the conversation or start a new discussion today on <a style="color: #0989c0;" href="https://connect.utilityanalytics.com/collaborate/community-home/digestviewer?communitykey=73d3de4a-6c01-4c8c-a9e6-55c35f8960c6&tab=digestviewer" target="_blank">Ask Your Network</a> on <a  style="color: #0989c0;"  href="https://connect.utilityanalytics.com/home" target="_blank">UAI Connect</a>! Not a member? <a  style="color: #0989c0;" href="https://utilityanalytics.com/join/" target="_blank">Join today!</a>
+        </td>
+      </tr>
+    </common-table>
 
     <common-section-spacer-element />
 
