@@ -10,7 +10,7 @@ $ const {
   title,
   limit,
   skip,
-  teaserStyle,
+  teaserStyle
 } = input;
 $ const titleTableStyle = defaultValue(input.titleTableStyle, "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;");
 $ const titleStyle = defaultValue(input.titleStyle, "font:700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;");
@@ -48,7 +48,7 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
                 <common-table width="660" style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="center" class="main center" padding=0 spacing=0>
                   <tr>
                     <td>
-                      <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
+                      <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
                     </td>
                   </tr>
                   <tr>

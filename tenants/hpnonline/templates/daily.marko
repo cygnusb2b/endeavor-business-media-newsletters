@@ -21,6 +21,12 @@ $ const buttonTextStyle = {
   "text-decoration": "underline"
 };
 $ const footerStyle = "background-color: #515151; color: #fff;";
+$ const teaserStyle = {
+  "color": "#000000",
+  "font": "400 14px/21px sans-serif",
+  "margin": "0",
+  "padding": "0"
+};
 
 <marko-newsletter-root
   title=newsletter.name
@@ -87,6 +93,7 @@ $ const footerStyle = "background-color: #515151; color: #fff;";
             date=date
             newsletter=newsletter
             content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
           />
 
           <common-leaderboard-primary-block
@@ -111,6 +118,7 @@ $ const footerStyle = "background-color: #515151; color: #fff;";
             date=date
             newsletter=newsletter
             content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
           />
 
           <common-section-spacer-element />

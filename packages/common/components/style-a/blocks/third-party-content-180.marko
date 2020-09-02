@@ -1,32 +1,15 @@
-import defaultValue from "@base-cms/marko-core/utils/default-value";
 import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
-import getButtonText from "@endeavor-business-media/common/utils/get-button-text";
 
 $ const {
   node,
   imageAlignment,
   showTitle,
-  showButton
+  showButton,
+  teaserStyle,
+  contentLinkStyle,
+  buttonStyle,
+  buttonTextStyle
 } = input;
-$ const teaserStyle = defaultValue(input.teaserStyle, {
-  "font": "400 12px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
-  "margin": "0",
-  "padding": "0",
-  "color": "#000000",
-});
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "text-align": "left",
-  "text-decoration": "none !important",
-  "font": "700 14px/24px Arial, Helvetica, sans-serif",
-  "color": "#00B39E",
-});
-$ const buttonStyle = defaultValue(input.buttonStyle, "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00b398;");
-$ const buttonTextStyle = defaultValue(input.buttonTextStyle, {
-  "color": "#ffffff",
-  "font": "700 14px/21px Helvetica, Arial, sans-serif",
-  "text-decoration": "none",
-  "text-transform": "uppercase"
-});
 
 $ const innerPadding = 20;
 $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
@@ -45,17 +28,7 @@ $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
         <common-table width=220 style=`border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align=imageAlignment class=imageAlignment padding=0 spacing=0>
           <tr>
             <td>
-              <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                <marko-newsletter-imgix
-                  src=image.src
-                  alt=image.alt
-                  options={ w: 180 }
-                  class="main"
-                  attrs={ border: 0, width: 180 }
-                >
-                  <@link href=node.siteContext.url target="_blank" />
-                </marko-newsletter-imgix>
-              </marko-core-obj-value>
+              <common-primary-image-element node=node img-width=180 class-name="main" />
             </td>
           </tr>
         </common-table>
@@ -63,26 +36,19 @@ $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
           <tr>
             <td style=`padding-${contentAlignment}: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
               <if(showTitle)>
-                <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-                  <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                </marko-core-obj-text>
-                <div height="10">&nbsp;</div>
+                <common-content-link-element node=node content-link-style=contentLinkStyle />
               </if>
-              <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+              <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
             </td>
           </tr>
           <if(showButton)>
             <tr>
               <td style=`padding: 0; padding-right: ${innerPadding}px; padding-left: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
-                <common-table align="center" padding=0 spacing=0>
-                  <tr>
-                    <td style=`${buttonStyle}`>
-                      <marko-core-text value=getButtonText(node.type)>
-                        <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
-                      </marko-core-text>
-                      </td>
-                    </tr>
-                </common-table>
+                <common-button-element
+                  button-style=buttonStyle
+                  button-text-style=buttonTextStyle
+                  node=node
+                />
               </td>
             </tr>
           </if>
@@ -103,22 +69,16 @@ $ const contentAlignment = imageAlignment === 'left' ? 'right' : 'left';
     <tr>
       <td style=`padding: ${innerPadding}px;`>
         <if(showTitle)>
-          <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-            <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-          </marko-core-obj-text>
-          <div height="10">&nbsp;</div>
+          <common-content-link-element node=node content-link-style=contentLinkStyle />>
         </if>
-        <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+        <common-content-link-element node=node content-link-style=contentLinkStyle />
         <if(showButton)>
-          <common-table style=`padding-top: ${innerPadding}px;` align="center" padding=0 spacing=0>
-            <tr>
-              <td style=`${buttonStyle}`>
-                <marko-core-text value=getButtonText(node.type)>
-                  <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
-                </marko-core-text>
-                </td>
-              </tr>
-          </common-table>
+          <common-section-spacer-element />
+          <common-button-element
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            node=node
+          />
         </if>
       </td>
     </tr>

@@ -6,13 +6,18 @@ $ const buttonTextStyle = {
   "font": "bold 16px/24px sans-serif"
 };
 $ const contentLinkStyle = {
-  "font": "bold 18px sans-serif",
+  "font": "bold 18px/27px sans-serif",
   "color": "#145d8e",
   "text-decoration": "none"
 };
 $ const featuredMainTableStyle = "border: 10px solid #ecedee;";
 $ const footerStyle = "background-color: #383838; text-decoration: none !important;";
-
+$ const pscTeaserStyle = {
+  "color": "#666",
+  "font": "normal 13px/15px sans-serif",
+  "margin": "0",
+  "padding": "0"
+};
 <marko-newsletter-root
   title=newsletter.name
   description=newsletter.description
@@ -41,6 +46,7 @@ $ const footerStyle = "background-color: #383838; text-decoration: none !importa
             content-link-style=contentLinkStyle
             main-table-style=featuredMainTableStyle
             psc=true
+            teaser-style=pscTeaserStyle
           />
 
           <common-style-b-footer-nav-block

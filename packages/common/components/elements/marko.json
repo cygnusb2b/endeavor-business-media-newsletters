@@ -1,14 +1,14 @@
 {
   "<common-view-online-element>": {
-    "template": "./view-online.marko",
+    "template": "./banner/view-online.marko",
     "@name": "string"
   },
   "<common-teaser-element>": {
-    "template": "./teaser.marko",
+    "template": "./banner/teaser.marko",
     "@teaser": "string"
   },
   "<common-stealth-link-element>": {
-    "template": "./stealth-link.marko",
+    "template": "./banner/stealth-link.marko",
     "@name": "string"
   },
   "<common-section-spacer-element>": {
@@ -26,7 +26,7 @@
     }
   },
   "<common-banner-element>": {
-    "template": "./banner.marko",
+    "template": "./banner/banner.marko",
     "@name": "string",
     "@date": "date",
     "@ad-unit": "object",
@@ -50,6 +50,37 @@
   "<common-primary-image-element>": {
     "template": "./primary-image.marko",
     "@node": "object",
-    "@img-width": "string"
+    "@img-width": "string",
+    "@class-name": {
+      "type": "string",
+      "default-value": null
+    }
+  },
+  "<common-content-link-element>": {
+    "template": "./content-link.marko",
+    "@node": "object",
+    "@content-link-style": "object",
+    "@content-link-wrapper-style": "object",
+    "@tag": {
+      "type": "string",
+      "default-value": null
+    },
+    "@field": {
+      "type": "string",
+      "default-value": "name"
+    }
+  },
+  "<common-content-teaser-element>": {
+    "template": "./content-teaser.marko",
+    "@node": "object",
+    "@teaser-style": "object",
+    "@tag": {
+      "type": "string",
+      "default-value": null
+    },
+    "@field": {
+      "type": "string",
+      "default-value": "teaser"
+    }
   }
 }

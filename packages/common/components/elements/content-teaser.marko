@@ -1,0 +1,11 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const { node, tag, field } = input;
+$ const teaserStyle = defaultValue(input.teaserStyle, {
+  "color": "#000000",
+  "font": "400 14px/18px sans-serif",
+  "margin": "0",
+  "padding": "0"
+});
+
+<marko-core-obj-text tag=tag obj=node field=field html=true attrs={ style: teaserStyle } />

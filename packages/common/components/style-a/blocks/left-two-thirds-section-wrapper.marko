@@ -13,15 +13,12 @@ $ const {
   skip,
   buttonStyle,
   buttonTextStyle,
-  teaserStyle
+  teaserStyle,
+  contentLinkStyle
 } = input;
 $ const titleTableStyle = defaultValue(input.titleTableStyle, "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;");
 $ const titleStyle = defaultValue(input.titleStyle, "font:700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;");
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
-$ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
-  "color": "#00b398",
-  "font": "700 19.5px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif",
-});
 
 $ const innerPadding = 20;
 $ const imgWidth = 180;
@@ -70,17 +67,7 @@ $ const imgWidth = 180;
                           </tr>
                           <tr>
                             <td>
-                              <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                                <marko-newsletter-imgix
-                                  src=image.src
-                                  alt=image.alt
-                                  options={ w: imgWidth }
-                                  class="main"
-                                  attrs={ border: 0, width: imgWidth }
-                                >
-                                  <@link href=node.siteContext.url target="_blank" />
-                                </marko-newsletter-imgix>
-                              </marko-core-obj-value>
+                              <common-primary-image-element node=node img-width=imgWidth class-name="main" />
                             </td>
                           </tr>
                           <tr>
@@ -93,12 +80,12 @@ $ const imgWidth = 180;
 
                   <common-table width=200 style="border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="right" class="right" padding=0 spacing=0>
                     <tr>
-                      <td style=`padding: 0; padding-right: 25px; padding-bottom: ${innerPadding}px;`>
+                      <td style=`padding: 0 0 ${innerPadding}px 25px;`>
                         <common-table width=200 style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="right" class="right" padding=0 spacing=0>
 
                           <tr>
                             <td>
-                              <marko-core-obj-text tag=null obj=node field="body" html=true attrs={ style: teaserStyle } />
+                              <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
                             </td>
                           </tr>
                           <tr>
@@ -124,40 +111,24 @@ $ const imgWidth = 180;
                             </tr>
                             <tr>
                               <td>
-                                <marko-core-obj-value|{ value: image }| obj=node field="primaryImage" as="object">
-                                  <marko-newsletter-imgix
-                                    src=image.src
-                                    alt=image.alt
-                                    options={ w: 180 }
-                                    class="main"
-                                    attrs={ border: 0, width: 180 }
-                                  >
-                                    <@link href=node.siteContext.url target="_blank" />
-                                  </marko-newsletter-imgix>
-                                </marko-core-obj-value>
+                                <common-primary-image-element node=node img-width=180 class-name="main" />
                               </td>
                             </tr>
                           </common-table>
                           <common-table width=250 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="right" class="right" padding=0 spacing=0>
                             <tr>
                               <td style=`padding: ${innerPadding}px;`>
-                                <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-                                  <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                                </marko-core-obj-text>
-                                <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
+                                <common-content-link-element node=node content-link-style=contentLinkStyle />
+                                <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
                               </td>
                             </tr>
                             <tr>
-                              <td style=`padding: 0; padding-right: ${innerPadding}px; padding-left: ${innerPadding}px; padding-bottom: ${innerPadding}px;`>
-                                <common-table align="center" padding=0 spacing=0>
-                                  <tr>
-                                    <td style=`${buttonStyle}`>
-                                      <marko-core-text value=getButtonText(node.type)>
-                                        <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
-                                      </marko-core-text>
-                                      </td>
-                                    </tr>
-                                </common-table>
+                              <td style=`padding: 0 ${innerPadding}px ${innerPadding} ${innerPadding}px;`>
+                                <common-button-element
+                                  button-style=buttonStyle
+                                  button-text-style=buttonTextStyle
+                                  node=node
+                                />
                               </td>
                             </tr>
                           </common-table>
@@ -169,21 +140,15 @@ $ const imgWidth = 180;
                     <common-table width=480 style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="left" class="left" padding=0 spacing=0>
                       <tr>
                         <td style=`padding: ${innerPadding}px;`>
-                          <marko-core-obj-text obj=node field="name" attrs={ style: { "text-align": "left" } } >
-                            <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle } />
-                          </marko-core-obj-text>
-                          <div height="10" style="font-size: 10px; margin: 0; padding: 0;">&nbsp</div>
-                          <marko-core-obj-text tag="p" obj=node field="teaser" html=true attrs={ style: teaserStyle } />
-
-                          <common-table style=`padding-top: ${innerPadding}px;` align="center" padding=0 spacing=0>
-                            <tr>
-                              <td style=`${buttonStyle}`>
-                                <marko-core-text value=getButtonText(node.type)>
-                                  <@link href=node.siteContext.url target="_blank" attrs={ style: buttonTextStyle } />
-                                </marko-core-text>
-                                </td>
-                              </tr>
-                          </common-table>
+                          <common-content-link-element node=node content-link-style=contentLinkStyle />
+                          <common-section-spacer-element />
+                          <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+                          <common-section-spacer-element />
+                          <common-button-element
+                            button-style=buttonStyle
+                            button-text-style=buttonTextStyle
+                            node=node
+                          />
                         </td>
                       </tr>
                     </common-table>
