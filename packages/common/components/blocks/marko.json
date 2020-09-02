@@ -110,5 +110,38 @@
     "@title": "string",
     "@title-table-style": "string",
     "@title-style": "string"
+  },
+  "<common-list-block>": {
+    "template": "./list.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@content-link-style": "object",
+    "@teaser-style": "object",
+    "@main-table-style": "string",
+    "@title": "string",
+    "@title-alignment": {
+      "type": "string",
+      "default-value": "left"
+    },
+    "@title-table-style": "string",
+    "@title-style": "string"
   }
 }
