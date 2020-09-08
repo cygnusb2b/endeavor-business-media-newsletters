@@ -20,8 +20,8 @@
     "@style": "string",
     "@attrs": "object"
   },
-  "<common-dpm-emailx>": {
-    "template": "./dpm-emailx.marko",
+  "<common-emailx-dpm>": {
+    "template": "./emailx-dpm.marko",
     "<dpm>": {
       "@enabled": "boolean",
       "@ln": "string",
