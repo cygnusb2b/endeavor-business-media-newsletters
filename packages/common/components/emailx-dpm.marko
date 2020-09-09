@@ -11,7 +11,7 @@ $ const classNames = [`email-x-${alias}-${name}`, input.class];
 
 <marko-newsletters-email-x-data|{ response }| decoded-params=["email", "send"]>
   <@ad-unit ...adUnit />
-  <@params date=input.date email="%%emailaddr%%" send="%%jobid%%" />
+  <@params date=input.date email="@{email name}@" send="@{track_id}@" />
   <if(response)>
     $ const { data, clickHref, imageSrc } = response;
     $ const { ad } = data;
