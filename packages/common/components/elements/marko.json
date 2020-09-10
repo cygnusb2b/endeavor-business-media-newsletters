@@ -101,5 +101,9 @@
     },
     "@title-table-style": "string",
     "@title-style": "string"
+  },
+  "<common-content-dpm>": {
+    "template": "./content-dpm.marko",
+    "@node": "object"
   }
 }
