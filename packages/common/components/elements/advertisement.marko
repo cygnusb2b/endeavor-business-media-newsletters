@@ -1,14 +1,19 @@
-import default defaultValue from "@base-cms/marko-core/utils/default-value";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 import { getAsObject } from "@base-cms/object-path";
+
+$ const { config } = out.global;
 
 <!-- the `name` var was previously used for the ad unit; changing the internal var name for clarity but leaving the external var as-is to prevent BC breaks -->
 $ const adUnit = getAsObject(input, "name");
 
-<!-- get the <emailx-dpm> input object -->
-$ const dpm = getAsObject(input, "dpm");
-$ const dpmEnabled = defaultValue(dpm.enabled, false);
+<!-- merge the dpm input config with the global dpm config -->
+<!-- passing input directly to the component will override the global config values -->
+$ const dpm = {
+  ...config.getAsObject("emailx.dpm"),
+  ...getAsObject(input, "dpm"),
+};
 
-<if(dpmEnabled)>
+<if(dpm.enabled)>
   <!-- use the emailx-dpm component when enabled -->
   <!-- by default, do not use the emailx click url unless explicitly requested -->
   <common-emailx-dpm
