@@ -9,7 +9,7 @@ $ const adUnit = getAsObject(input, "name");
 <!-- merge the dpm input config with the global dpm config -->
 <!-- passing input directly to the component will override the global config values -->
 $ const dpm = {
-  ...config.getAsObject("emailx.dpm"),
+  ...config.getAsObject("dpm.emailx"),
   ...getAsObject(input, "dpm"),
 };
 
