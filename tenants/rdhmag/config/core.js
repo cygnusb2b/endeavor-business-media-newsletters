@@ -1,4 +1,9 @@
 module.exports = {
+  emailx: {
+    dpm: {
+      enabled: true,
+    },
+  },
   optOut: {
     address: 'Registered Dental Hygienist (RDH) Magazine <br />Endeavor Business Media<br />331 54th Avenue N.<br />Nashville, TN 37209',
     safeSenders: 'news.rdhmag.com and mail.rdhmag.com',
