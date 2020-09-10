@@ -14,7 +14,7 @@ $ const contentLinkWrapperStyle = defaultValue(input.contentLinkWrapperStyle, {
 <marko-core-obj-text tag=tag obj=node field="name" attrs={ style: contentLinkWrapperStyle } >
   <@link href=node.siteContext.url target="_blank" attrs={ style: contentLinkStyle }>
     <@after>
-      <common-content-dpm node=node />
+      <common-dpm-content node=node />
     </@after>
   </@link>
 </marko-core-obj-text>

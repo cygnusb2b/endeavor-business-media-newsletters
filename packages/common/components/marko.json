@@ -2,6 +2,7 @@
   "taglib-imports": [
     "./elements/marko.json",
     "./blocks/marko.json",
+    "./dpm/marko.json",
     "./style-a/marko.json",
     "./style-b/marko.json"
   ],
@@ -18,29 +19,6 @@
     "@valign": "string",
     "@align": "string",
     "@style": "string",
-    "@attrs": "object"
-  },
-  "<common-emailx-dpm>": {
-    "template": "./emailx-dpm.marko",
-    "<dpm>": {
-      "@enabled": "boolean",
-      "@ln": "string",
-      "@lc": "string",
-      "@lcv": "string",
-      "@lkw": "string"
-    },
-    "<ad-unit>": {
-      "@uri": "string",
-      "@id": "string",
-      "@name": "string",
-      "@alias": "string"
-    },
-    "<image>": {},
-    "<link>": {},
-    "<when-empty>": {},
-    "@date": "date",
-    "@use-emailx-href": "boolean",
-    "@class": "string",
     "@attrs": "object"
   }
 }

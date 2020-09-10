@@ -16,7 +16,7 @@ $ const dpm = {
 <if(dpm.enabled)>
   <!-- use the emailx-dpm component when enabled -->
   <!-- by default, do not use the emailx click url unless explicitly requested -->
-  <common-emailx-dpm
+  <common-dpm-emailx
     ad-unit=adUnit
     class="scaleAd"
     use-emailx-href=defaultValue(dpm.useEmailxHref, false)
@@ -24,7 +24,7 @@ $ const dpm = {
   >
     <!-- pass dpm ln, lc, lcv, lkw values if passed, otherwise the defaults will be used -->
     <@dpm ln=dpm.ln lc=dpm.lc lcv=dpm.lcv lkw=dpm.lkw />
-  </common-emailx-dpm>
+  </common-dpm-emailx>
 </if>
 <else>
   <!-- use the default email-x-display component as before -->
