@@ -1,6 +1,9 @@
 module.exports = {
-  emailx: {
-    dpm: {
+  dpm: {
+    emailx: {
+      enabled: true,
+    },
+    content: {
       enabled: true,
     },
   },
