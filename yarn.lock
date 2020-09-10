@@ -78,10 +78,10 @@
     marko "~4.20.0"
     yargs "^14.1.0"
 
-"@base-cms/marko-core@^1.37.0":
-  version "1.37.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-core/-/marko-core-1.37.0.tgz#f388a823335792b1b59d1418fe573e6d3c6ffa31"
-  integrity sha512-zuDmXI2NvSATnEoVCm+18vbxuGBN90wkEBBpDgDJHokEjdUNxrzOXusLxxJbxUz1+vyciOF3JbJFokd64XaRdQ==
+"@base-cms/marko-core@^1.38.0":
+  version "1.38.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-core/-/marko-core-1.38.0.tgz#9f5ea88fa5103ef852296553b56857354c764496"
+  integrity sha512-sFKhIXFeaRrV0oyEdYCVSUJTLGnPHzQeU4hsx/HzfjigSWX+i7EaI7IMtri65PL0NHKWhkHVXlm8rNxqOTI04A==
   dependencies:
     "@base-cms/object-path" "^1.37.0"
     "@base-cms/utils" "^1.37.0"

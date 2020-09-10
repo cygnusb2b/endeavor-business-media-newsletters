@@ -10,7 +10,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "@base-cms/marko-core": "^1.37.0",
+    "@base-cms/marko-core": "^1.38.0",
     "@base-cms/marko-newsletters": "^1.37.0",
     "@base-cms/marko-newsletters-email-x": "^1.37.0",
     "@base-cms/marko-newsletters-omail": "^1.37.0",
