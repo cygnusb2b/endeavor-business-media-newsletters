@@ -1,8 +1,12 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
+import emailConfigurationFragment from "@endeavor-business-media/common/graphql/fragments/email-configuration";
 
 $ const footerStyle = defaultValue(input.footerStyle, "background-color: #000;");
 
-<common-table width="700" align="center" class="main footer-nav" style=`${footerStyle}` padding=10 spacing=0 >
+<!-- using temporarily for testing -->
+<h1>${input.footerColor}</h1>
+
+<common-table width="700" align="center" class="main footer-nav" padding=10 spacing=0 >
   <tr>
     <td>
       <common-style-b-brand-nav-element />

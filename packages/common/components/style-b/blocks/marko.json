@@ -4,6 +4,7 @@
   },
   "<common-style-b-footer-nav-block>": {
     "template": "./footer-nav.marko",
+    "@footer-color" : "string",
     "@footer-style" : "string"
   },
   "<common-style-b-simple-card-block>": {

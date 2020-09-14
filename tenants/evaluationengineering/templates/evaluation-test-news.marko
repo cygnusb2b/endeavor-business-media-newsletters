@@ -1,3 +1,4 @@
+import emailConfigurationFragment from "@endeavor-business-media/common/graphql/fragments/email-configuration";
 $ const { newsletter, date } = data;
 
 $ const contentLinkStyle = {
@@ -48,11 +49,10 @@ $ const buttonTextStyle = {
             section-id=64827
             date=date
             newsletter=newsletter
+            button=false
+            title=false
             img-width="200px"
             alignment="center"
-            content-link-style=contentLinkStyle
-            button-style=buttonStyle
-            button-text-style=buttonTextStyle
           />
 
           <!-- #02 - Featured -->
@@ -96,6 +96,7 @@ $ const buttonTextStyle = {
 
           <common-style-b-footer-nav-block
             footer-style=footerStyle
+            footer-color=newsletter.footerColor
           />
 
           <common-style-b-opt-out-block />
