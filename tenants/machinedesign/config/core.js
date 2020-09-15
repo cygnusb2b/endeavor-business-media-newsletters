@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       provider: 'linkedin',
-      href: 'https://www.linkedin.com/organization/10998894?elqTrack=true',
+      href: 'https://www.linkedin.com/company/10998894?elqTrack=true',
       title: 'Follow us on LinkedIn',
     },
   ],

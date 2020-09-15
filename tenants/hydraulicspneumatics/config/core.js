@@ -10,13 +10,18 @@ module.exports = {
   socialMediaLinks: [
     {
       provider: 'twitter',
-      href: 'https://twitter.com/Hppenton?elqTrack=true',
+      href: 'https://www.twitter.com/H_and_P_knows?elqTrack=true',
       title: 'Follow us on Twitter',
     },
     {
       provider: 'facebook',
       href: 'https://www.facebook.com/HydraulicsPneumatics?elqTrack=true',
       title: 'Follow us on Facebook',
+    },
+    {
+      provider: 'linkedin',
+      href: 'https://www.linkedin.com/company/11091630?elqTrack=true',
+      title: 'Follow us on LinkedIn',
     },
   ],
 };
