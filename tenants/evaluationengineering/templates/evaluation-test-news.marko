@@ -1,4 +1,13 @@
+import { getAsArray } from "@base-cms/object-path";
+import emailConfigurationFragment from "@endeavor-business-media/common/graphql/fragments/email-configuration";
+
 $ const { newsletter, date } = data;
+
+<!-- $ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges'); -->
+<!-- $ const footerColor = alphaThemeConfigs[0].node.footerColor; -->
+
+<!-- $ console.log(footerColor); -->
+<!-- $ console.log(emailConfigurationFragment.alphaThemeConfigs.edges[0].node); -->
 
 $ const contentLinkStyle = {
   "font": "bold 18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
@@ -93,9 +102,7 @@ $ const buttonTextStyle = {
             teaser-style=teaserStyle
           />
 
-          <common-style-b-footer-nav-block
-            footer-style=footerStyle
-          />
+          <common-style-b-footer-nav-block newsletter=newsletter/>
 
           <common-style-b-opt-out-block />
         </td>
