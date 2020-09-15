@@ -2,17 +2,16 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 import emailConfigurationFragment from "@endeavor-business-media/common/graphql/fragments/email-configuration";
 import { getAsArray } from "@base-cms/object-path";
 
+$ const footerStyle = defaultValue(input.footerStyle, "background-color: #000;");
+
 $ const { newsletter, date } = data;
 
 $ const {
   node,
 } = input;
 
-
-
 $ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
 $ console.log(alphaThemeConfigs[0].node);
-
 
 <!-- Removing later, just using for testing -->
 <for|alphaThemeConfig| of=alphaThemeConfigs>
