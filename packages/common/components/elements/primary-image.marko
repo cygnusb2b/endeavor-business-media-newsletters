@@ -8,6 +8,10 @@ $ const { node, imgWidth, className } = input;
     class=className
     attrs={ border: 0, width: imgWidth }
   >
-    <@link href=node.siteContext.url target="_blank" />
+    <@link href=node.siteContext.url target="_blank">
+      <@after>
+        <common-dpm-content node=node />
+      </@after>
+    </@link>
   </marko-newsletter-imgix>
 </marko-core-obj-value>
