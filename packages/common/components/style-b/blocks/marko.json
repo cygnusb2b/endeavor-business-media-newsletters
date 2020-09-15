@@ -4,7 +4,11 @@
   },
   "<common-style-b-footer-nav-block>": {
     "template": "./footer-nav.marko",
-    "@footer-style" : "string"
+    "@node": "object",
+    "@alphaThemeConfigs": "array",
+    "@newsletter": {
+      "type": "object"
+    }
   },
   "<common-style-b-simple-card-block>": {
     "template": "./simple-card.marko",

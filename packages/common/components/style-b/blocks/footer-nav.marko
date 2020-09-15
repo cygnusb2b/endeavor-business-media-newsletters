@@ -1,12 +1,27 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
+import emailConfigurationFragment from "@endeavor-business-media/common/graphql/fragments/email-configuration";
+import { getAsArray } from "@base-cms/object-path";
 
-$ const footerStyle = defaultValue(input.footerStyle, "background-color: #000;");
+$ const { newsletter, date } = data;
 
-<common-table width="700" align="center" class="main footer-nav" style=`${footerStyle}` padding=10 spacing=0 >
+$ const {
+  node,
+} = input;
+
+
+
+$ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
+$ console.log(alphaThemeConfigs[0].node);
+
+
+<!-- Removing later, just using for testing -->
+<for|alphaThemeConfig| of=alphaThemeConfigs>
+<common-table width="700" align="center" class="main footer-nav" padding=10 spacing=0 >
   <tr>
-    <td>
+    <td bgColor="${node.footerColor}">
       <common-style-b-brand-nav-element />
       <common-style-b-copyright-element />
     </td>
   </tr>
 </common-table>
+</for>
