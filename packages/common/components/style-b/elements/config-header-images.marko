@@ -1,0 +1,35 @@
+$ const { config, alt } = input;
+
+<if(config)>
+  <if(config.headerTemplate === 'image-full-700px')>
+    <span>
+      <marko-newsletter-imgix
+        src=config.headerLeft.src
+        alt=alt
+        options={ w: 700 }
+        attrs={ border: 0, width: 700 }
+      >
+      </marko-newsletter-imgix>
+    </span>
+  </if>
+  <else>
+    <span>
+      <marko-newsletter-imgix
+        src=config.headerLeft.src
+        alt=alt
+        options={ w: 350 }
+        attrs={ border: 0, align: 'left', width: 350 }
+      >
+      </marko-newsletter-imgix>
+      <if(config.headerRight && config.headerRight.src)>
+      <marko-newsletter-imgix
+        src=config.headerRight.src
+        alt=alt
+        options={ w: 350 }
+        attrs={ border: 0, align: 'left', width: 350 }
+      >
+      </marko-newsletter-imgix>
+      </if>
+    </span>
+  </else>
+</if>

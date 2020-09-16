@@ -6,5 +6,10 @@
   "<common-style-b-brand-nav-element>": {
     "template": "./brand-nav.marko",
     "@footer-font-style": "string"
+  },
+  "<common-style-b-config-header-images>": {
+    "template": "./config-header-images.marko",
+    "@config": "object",
+    "@alt": "string"
   }
 }
