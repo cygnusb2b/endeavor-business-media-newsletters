@@ -29,8 +29,9 @@ $ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; co
       </td>
     </tr>
     <if('hide' !== config.dateToggle)>
+      $ const configDateStyle = config.headerTextColor ? `${dateStyle} color: ${config.headerTextColor}` : dateStyle;
       <tr>
-        <td style=dateStyle>
+        <td style=configDateStyle>
           ${date.format(config.dateToggle)}
         </td>
       </tr>
