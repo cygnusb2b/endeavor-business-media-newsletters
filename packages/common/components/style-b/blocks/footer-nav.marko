@@ -1,26 +1,31 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
-import emailConfigurationFragment from "@endeavor-business-media/common/graphql/fragments/email-configuration";
-import { getAsArray } from "@base-cms/object-path";
+import { getAsArray, getAsObject } from "@base-cms/object-path";
+
+$ const { newsletter } = data;
+$ const { node } = input;
 
 $ const footerStyle = defaultValue(input.footerStyle, "background-color: #000;");
 
-$ const { newsletter, date } = data;
-
-$ const {
-  node,
-} = input;
-
 $ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
-$ console.log(alphaThemeConfigs[0].node);
+$ const config = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[0], 'node') : null;
 
-<!-- Removing later, just using for testing -->
-<for|alphaThemeConfig| of=alphaThemeConfigs>
-<common-table width="700" align="center" class="main footer-nav" padding=10 spacing=0 >
-  <tr>
-    <td bgColor="${node.footerColor}">
-      <common-style-b-brand-nav-element />
-      <common-style-b-copyright-element />
-    </td>
-  </tr>
-</common-table>
-</for>
+<if(config)>
+  <common-table width="700" align="center" class="main footer-nav" padding=10 spacing=0 >
+    <tr>
+      <td bgColor=config.footerColor>
+        <common-style-b-brand-nav-element />
+        <common-style-b-copyright-element />
+      </td>
+    </tr>
+  </common-table>
+</if>
+<else>
+  <common-table width="700" align="center" style=`${footerStyle}` class="main footer-nav" padding=10 spacing=0 >
+    <tr>
+      <td>
+        <common-style-b-brand-nav-element />
+        <common-style-b-copyright-element />
+      </td>
+    </tr>
+  </common-table>
+</else>
