@@ -28,11 +28,13 @@ $ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; co
         </else>
       </td>
     </tr>
-    <tr>
-      <td style=dateStyle>
-        ${date.format("MMMM D, YYYY")}
-      </td>
-    </tr>
+    <if('hide' !== config.dateToggle)>
+      <tr>
+        <td style=dateStyle>
+          ${date.format(config.dateToggle)}
+        </td>
+      </tr>
+    </if>
   </common-table>
 </if>
 <else>
