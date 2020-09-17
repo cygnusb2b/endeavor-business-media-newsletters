@@ -29,17 +29,5 @@ module.exports = {
       href: 'https://www.evaluationengineering.com/',
       title: 'Home',
     },
-    {
-      href: 'https://www.evaluationengineering.com/contact-us',
-      title: 'Contact Us',
-    },
-    {
-      href: 'https://www.evaluationengineering.com/subscribe',
-      title: 'Subscribe',
-    },
-    {
-      href: 'https://www.evaluationengineering.com/page/advertise',
-      title: 'Advertise',
-    },
   ],
 };
