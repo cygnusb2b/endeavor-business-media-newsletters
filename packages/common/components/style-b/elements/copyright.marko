@@ -6,13 +6,10 @@ $ const { newsletter } = data;
 $ const year = new Date().getFullYear();
 $ const company = "Endeavor Business Media, LLC.";
 $ const copyrightText = "All rights reserved.";
-$ const copyrightFontStyle = defaultValue(input.copyrightFontStyle, "text-decoration: none !important; text-align:left; font: 12px Arial, Helvetica, sans-serif;");
+$ const copyrightFontStyle = defaultValue(input.copyrightFontStyle, "color: #fff; text-align:left; font: 12px Arial, Helvetica, sans-serif;");
 
 $ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
 $ const config = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[0], 'node') : null;
-
-$ const footerFontStyle = defaultValue(input.footerFontStyle, "text-decoration: none !important; text-align:left; font: 12px Arial, Helvetica, sans-serif;");
-$ const footerTextColor = "color: #fff";
 
 <common-table align="right" class="main" width="325" padding=0 spacing=0>
   <tr>
