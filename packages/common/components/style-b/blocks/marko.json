@@ -4,9 +4,7 @@
   },
   "<common-style-b-footer-nav-block>": {
     "template": "./footer-nav.marko",
-    "@node": "object",
     "@footer-style" : "string",
-    "@alphaThemeConfigs": "array",
     "@newsletter": {
       "type": "object"
     }
