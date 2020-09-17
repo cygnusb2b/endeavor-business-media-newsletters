@@ -1,0 +1,90 @@
+import { getAsArray, getAsObject } from "@base-cms/object-path";
+
+$ const { newsletter } = data;
+$ const { website, config } = out.global;
+
+$ const socialMediaProviders = config.getAsArray('socialMediaLinks');
+$ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
+$ const newsletterConfig = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[0], 'node') : null;
+
+<if(newsletterConfig)>
+  <if(newsletterConfig.facebook)>
+    <marko-newsletter-imgix
+      src=`/files/base/newsletter/facebook-${newsletterConfig.socialIcons}.png`
+      alt="social icon"
+      options={ w: 39 }
+      attrs={ border: 0, width: 39 }
+    >
+      <@link href=newsletterConfig.facebook title="Follow us on Facebook" target="_blank" />
+    </marko-newsletter-imgix>
+    &nbsp;&nbsp;
+  </if>
+  <if(newsletterConfig.linkedin)>
+    <marko-newsletter-imgix
+      src=`/files/base/newsletter/linkedin-${newsletterConfig.socialIcons}.png`
+      alt="social icon"
+      options={ w: 39 }
+      attrs={ border: 0, width: 39 }
+    >
+      <@link href=newsletterConfig.linkedin title="Follow us on LinkedIn" target="_blank" />
+    </marko-newsletter-imgix>
+    &nbsp;&nbsp;
+  </if>
+  <if(newsletterConfig.twitter)>
+    <marko-newsletter-imgix
+      src=`/files/base/newsletter/twitter-${newsletterConfig.socialIcons}.png`
+      alt="social icon"
+      options={ w: 39 }
+      attrs={ border: 0, width: 39 }
+    >
+      <@link href=newsletterConfig.twitter title="Follow us on Twitter" target="_blank" />
+    </marko-newsletter-imgix>
+    &nbsp;&nbsp;
+  </if>
+  <if(newsletterConfig.instagram)>
+    <marko-newsletter-imgix
+      src=`/files/base/newsletter/instagram-${newsletterConfig.socialIcons}.png`
+      alt="social icon"
+      options={ w: 39 }
+      attrs={ border: 0, width: 39 }
+    >
+      <@link href=newsletterConfig.instagram title="Follow us on Instagram" target="_blank" />
+    </marko-newsletter-imgix>
+    &nbsp;&nbsp;
+  </if>
+  <if(newsletterConfig.youtube)>
+    <marko-newsletter-imgix
+      src=`/files/base/newsletter/youtube-${newsletterConfig.socialIcons}.png`
+      alt="social icon"
+      options={ w: 39 }
+      attrs={ border: 0, width: 39 }
+    >
+      <@link href=newsletterConfig.youtube title="Follow us on YouTube" target="_blank" />
+    </marko-newsletter-imgix>
+    &nbsp;&nbsp;
+  </if>
+  <if(newsletterConfig.pinterest)>
+    <marko-newsletter-imgix
+      src=`/files/base/newsletter/pinterest-${newsletterConfig.socialIcons}.png`
+      alt="social icon"
+      options={ w: 39 }
+      attrs={ border: 0, width: 39 }
+    >
+      <@link href=newsletterConfig.pinterest title="Follow us on pinterest" target="_blank" />
+    </marko-newsletter-imgix>
+    &nbsp;&nbsp;
+  </if>
+</if>
+<else>
+  <for|socialLinks| of=socialMediaProviders>
+    <marko-newsletter-imgix
+      src=`/files/base/newsletter/connect/${socialLinks.provider}.png`
+      alt="social icon"
+      options={ w: 39 }
+      attrs={ border: 0, width: 39 }
+    >
+      <@link href=socialLinks.href title=socialLinks.title target="_blank" />
+    </marko-newsletter-imgix>
+    &nbsp;&nbsp;
+  </for>
+</else>

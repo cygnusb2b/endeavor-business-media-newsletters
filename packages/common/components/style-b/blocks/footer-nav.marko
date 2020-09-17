@@ -2,7 +2,6 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 import { getAsArray, getAsObject } from "@base-cms/object-path";
 
 $ const { newsletter } = data;
-$ const { node } = input;
 
 $ const footerStyle = defaultValue(input.footerStyle, "background-color: #000;");
 
@@ -13,8 +12,8 @@ $ const config = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[0], 'node'
   <common-table width="700" align="center" class="main footer-nav" padding=10 spacing=0 >
     <tr>
       <td bgColor=config.footerColor>
-        <common-style-b-brand-nav-element />
-        <common-style-b-copyright-element />
+        <common-style-b-brand-nav-element newsletter=newsletter/>
+        <common-style-b-copyright-element newsletter=newsletter/>
       </td>
     </tr>
   </common-table>

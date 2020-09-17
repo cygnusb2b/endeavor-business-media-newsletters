@@ -1,12 +1,13 @@
 {
   "<common-style-b-opt-out-block>": {
-    "template": "./opt-out.marko"
+    "template": "./opt-out.marko",
+    "@newsletter": {
+      "type": "object"
+    }
   },
   "<common-style-b-footer-nav-block>": {
     "template": "./footer-nav.marko",
-    "@node": "object",
     "@footer-style" : "string",
-    "@alphaThemeConfigs": "array",
     "@newsletter": {
       "type": "object"
     }

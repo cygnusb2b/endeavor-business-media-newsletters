@@ -25,6 +25,7 @@ fragment EmailConfigurationFragment on EmailNewsletter {
         dateToggle
         footerColor
         footerTextColor
+        subscribe
         manageSubscriptions
         contactUs
         advertise
