@@ -1,9 +1,11 @@
-import { getAsArray } from "@base-cms/object-path";
-import { asObject } from "@base-cms/utils";
+import { getAsArray, getAsObject } from "@base-cms/object-path";
 
+$ const { newsletter } = data;
 $ const { website, config } = out.global;
-$ const socialMediaProviders = config.getAsArray('socialMediaLinks');
 
+$ const socialMediaProviders = config.getAsArray('socialMediaLinks');
+$ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
+$ const newsletterConfig = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[0], 'node') : null;
 
 <common-table width="700" style="border-collapse:collapse;" align="center" class="main opt-out" padding=0 spacing=0 attrs={ style: { "background-color": "#ffffff" } } >
   <tr>
@@ -34,9 +36,19 @@ $ const socialMediaProviders = config.getAsArray('socialMediaLinks');
       </p>
       <p style="margin:0px;margin-bottom:1em;">
         <a href="@{confirmunsubscribelink}@">Unsubscribe</a>
-        | <a href=`${config.get("optOut.manageSubscriptions")}`>Manage Newsletter Subscriptions</a>
-        | <a href="@{forwardtoafriendlink}@">Forward to a Friend</a>
-        | <a href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
+        <if(newsletterConfig.manageSubscriptions)>
+          &nbsp;| <a href=newsletterConfig.manageSubscriptions>Manage Newsletter Subscriptions</a>
+        </if>
+        <else>
+          &nbsp;| <a href=`${config.get("optOut.manageSubscriptions")}`>Manage Newsletter Subscriptions</a>
+        </else>
+          &nbsp;| <a href="@{forwardtoafriendlink}@">Forward to a Friend</a>
+        <if(newsletterConfig.contactUs)>
+          &nbsp;| <a href=newsletterConfig.contactUs>Customer Service Center</a>
+        </if>
+        <else>
+          &nbsp;| <a href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
+        </else>
         | <a href=`${config.get("optOut.privacyPolicyUrl")}`>Read Privacy Policy</a>
         <if (config.get("optOut.findJobsUrl")) >
         | <a href=`${config.get("optOut.findJobsUrl")}`>Find Jobs</a>
@@ -44,7 +56,12 @@ $ const socialMediaProviders = config.getAsArray('socialMediaLinks');
       </p>
 
       <p style="margin:0px; margin-bottom:1em;">
-        If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=`${config.get("optOut.signUp")}`>click here</a> to sign-up.
+        <if(newsletterConfig.subscribe)>
+          If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=newsletterConfig.subscribe>click here</a> to sign-up.
+        </if>
+        <else>
+          If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=`${config.get("optOut.signUp")}`>click here</a> to sign-up.
+        </else>
       </p>
 
       <p style="margin:0px;margin-bottom:1em;">
