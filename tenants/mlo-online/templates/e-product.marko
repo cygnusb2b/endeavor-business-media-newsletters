@@ -12,7 +12,6 @@ $ const contentLinkStyle = {
   "color": "#555"
 };
 $ const featuredMainTableStyle = "background-color: #ebebeb;";
-$ const footerStyle = "background-color: #515151; color: #fff;";
 
 <marko-newsletter-root
   title=newsletter.name
@@ -45,11 +44,10 @@ $ const footerStyle = "background-color: #515151; color: #fff;";
             main-table-style=featuredMainTableStyle
           />
 
-          <common-style-b-footer-nav-block
-            footer-style=footerStyle
-          />
+          <common-style-b-footer-nav-block newsletter=newsletter/>
 
-          <common-style-b-opt-out-block />
+          <common-style-b-opt-out-block newsletter=newsletter />
+
         </td>
       </tr>
     </common-table>

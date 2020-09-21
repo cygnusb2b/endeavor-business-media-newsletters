@@ -20,7 +20,6 @@ $ const buttonTextStyle = {
   "font": "bold 16px/32px Helvetica, sans-serif",
   "text-decoration": "underline"
 };
-$ const footerStyle = "background-color: #515151; color: #fff;";
 $ const teaserStyle = {
   "color": "#000000",
   "font": "400 14px/21px sans-serif",
@@ -123,11 +122,10 @@ $ const teaserStyle = {
 
           <common-section-spacer-element />
 
-          <common-style-b-footer-nav-block
-            footer-style=footerStyle
-          />
+          <common-style-b-footer-nav-block newsletter=newsletter/>
 
-          <common-style-b-opt-out-block />
+          <common-style-b-opt-out-block newsletter=newsletter />
+
         </td>
       </tr>
     </common-table>

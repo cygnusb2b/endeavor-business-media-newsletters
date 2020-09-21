@@ -36,8 +36,6 @@ $ const buttonTextStyle = {
   "font": "700 16px/32px 'Helvetica Neue', Helvetica, sans-serif",
   "text-decoration": "underline"
 };
-$ const footerStyle = "background-color: #515151; color: #fff;";
-$ const headerStyle = "background-color: #515151; color: #fff;";
 $ const sponsoredByStyle = "color: #C13441; font: 700 20px/30px 'Helvetica Neue', Helvetica, sans-serif; text-transform: uppercase; padding-right: 20px;";
 $ const dateStyle = "text-align: center; text-transform: uppercase; font: 700 14px/21px Helvetica, 'Helvetica Neue', Arial, sans-serif; color: #000; background-color: #eee; padding: 15px;"
 
@@ -226,11 +224,10 @@ $ const dateStyle = "text-align: center; text-transform: uppercase; font: 700 14
 
           <common-section-spacer-element />
 
-          <common-style-b-footer-nav-block
-            footer-style=footerStyle
-          />
+          <common-style-b-footer-nav-block newsletter=newsletter/>
 
-          <common-style-b-opt-out-block />
+          <common-style-b-opt-out-block newsletter=newsletter />
+
         </td>
       </tr>
     </common-table>

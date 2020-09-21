@@ -4,42 +4,11 @@ module.exports = {
     safeSenders: 'news.endeavorb2b.com and mail.endeavorb2b.com',
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
-    manageSubscriptions: 'https://endeavor.dragonforms.com/loading.do?omedasite=HPNPrefPage',
-    signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=HPNnewpref',
   },
-  socialMediaLinks: [
-    {
-      provider: 'twitter',
-      href: 'https://twitter.com/HPN_Online',
-      title: 'Follow us on Twitter',
-    },
-    {
-      provider: 'facebook',
-      href: 'https://www.facebook.com/hpnonline',
-      title: 'Follow us on Facebook',
-    },
-    // {
-    //   provider: 'linkedin',
-    //   href: '',
-    //   title: 'Follow us on LinkedIn',
-    // },
-  ],
   brandNavLinks: [
     {
       href: 'https://www.hpnonline.com/',
       title: 'Home',
-    },
-    {
-      href: 'https://www.hpnonline.com/contact-us',
-      title: 'Contact Us',
-    },
-    {
-      href: 'https://www.hpnonline.com/subscribe',
-      title: 'Subscribe',
-    },
-    {
-      href: 'https://www.hpnonline.com/page/advertise',
-      title: 'Advertise',
     },
   ],
 };
