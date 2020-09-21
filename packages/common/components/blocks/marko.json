@@ -1,6 +1,15 @@
 {
   "<common-leaderboard-primary-block>": {
     "template": "./leaderboard-primary.marko",
+    "<dpm>": {
+      "<when-empty>": {},
+      "@enabled": "boolean",
+      "@use-emailx-href": "boolean",
+      "@ln": "string",
+      "@lc": "string",
+      "@lcv": "string",
+      "@lkw": "string"
+    },
     "@name": "string",
     "@date": "date"
   },

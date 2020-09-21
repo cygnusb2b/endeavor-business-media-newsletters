@@ -1,6 +1,6 @@
 {
   "name": "@endeavor-business-media/forgingmagazine",
-  "version": "1.28.0",
+  "version": "1.28.1",
   "author": "Jacob Bare <jacob@limit0.io>",
   "repository": "https://github.com/base-cms-newsletters/endeavor-business-media/tree/master/tenants/forgingmagazine",
   "license": "MIT",
@@ -12,12 +12,12 @@
     "test": "yarn lint && yarn compile"
   },
   "dependencies": {
-    "@base-cms/marko-core": "^1.36.1",
-    "@base-cms/marko-newsletters": "^1.36.3",
-    "@base-cms/marko-newsletters-email-x": "^1.25.0",
-    "@base-cms/newsletter-cli": "^1.13.0",
-    "@base-cms/object-path": "^1.25.0",
-    "@endeavor-business-media/common": "^1.28.0",
+    "@base-cms/marko-core": "^1.38.0",
+    "@base-cms/marko-newsletters": "^1.37.0",
+    "@base-cms/marko-newsletters-email-x": "^1.37.0",
+    "@base-cms/newsletter-cli": "^1.37.0",
+    "@base-cms/object-path": "^1.37.0",
+    "@endeavor-business-media/common": "^1.28.1",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^5.11.0"
