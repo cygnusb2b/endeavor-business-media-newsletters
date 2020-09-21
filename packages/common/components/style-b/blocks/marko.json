@@ -1,16 +1,12 @@
 {
   "<common-style-b-opt-out-block>": {
     "template": "./opt-out.marko",
-    "@newsletter": {
-      "type": "object"
-    }
+    "@newsletter": "object"
   },
   "<common-style-b-footer-nav-block>": {
     "template": "./footer-nav.marko",
     "@footer-style" : "string",
-    "@newsletter": {
-      "type": "object"
-    }
+    "@newsletter": "object"
   },
   "<common-style-b-simple-card-block>": {
     "template": "./simple-card.marko",

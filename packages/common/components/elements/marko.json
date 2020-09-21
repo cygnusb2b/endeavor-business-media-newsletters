@@ -95,8 +95,6 @@
   },
   "<common-social-icons-element>": {
     "template": "./social-icons.marko",
-    "@newsletter": {
-      "type": "object"
-    }
+    "@newsletter": "object"
   }
 }
