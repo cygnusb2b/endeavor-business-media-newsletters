@@ -105,10 +105,10 @@
   resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters-omail/-/marko-newsletters-omail-1.37.0.tgz#0c613b199a7819d1a5ee21d629ef88db49452885"
   integrity sha512-t9LkO97uKjhRCcPCBI0Yb+i1LswAUaVXzqac8QHYRgJZoNzflzSnz5FQrQMwdFMjmFtyhRGeM3Iu63FY9jETyA==
 
-"@base-cms/marko-newsletters@^1.37.0":
-  version "1.37.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters/-/marko-newsletters-1.37.0.tgz#79d877888b1912ad1158b8f612923632c19d337c"
-  integrity sha512-2oYapA40cPNF8k4pREn6KWXCyB1KmQI3+s1NSlkdAKfC2CdcbHBHtRZCZlxgM2L+66DVdRyQSNTdntolzfowiA==
+"@base-cms/marko-newsletters@^1.39.0":
+  version "1.39.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters/-/marko-newsletters-1.39.0.tgz#e17e520d850fe007f88fa072f2777d545a8087ba"
+  integrity sha512-GCweTKEYjBUIANT+KEIIxviP607CpJQj2i5pRFULAzU8moXA2ILuIMOD3yptQj+5ee09GWE3aqTXFNEBJk/Gig==
   dependencies:
     "@base-cms/express-apollo" "^1.37.0"
     "@base-cms/image" "^1.37.0"
