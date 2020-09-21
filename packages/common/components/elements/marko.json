@@ -101,5 +101,9 @@
     },
     "@title-table-style": "string",
     "@title-style": "string"
+  },
+  "<common-social-icons-element>": {
+    "template": "./social-icons.marko",
+    "@newsletter": "object"
   }
 }

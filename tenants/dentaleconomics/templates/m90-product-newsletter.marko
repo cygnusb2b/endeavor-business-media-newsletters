@@ -11,7 +11,6 @@ $ const contentLinkStyle = {
   "text-decoration": "none"
 };
 $ const featuredMainTableStyle = "border: 10px solid #ecedee;";
-$ const footerStyle = "background-color: #383838; text-decoration: none !important;";
 $ const pscTeaserStyle = {
   "color": "#666",
   "font": "normal 13px/15px sans-serif",
@@ -49,11 +48,10 @@ $ const pscTeaserStyle = {
             teaser-style=pscTeaserStyle
           />
 
-          <common-style-b-footer-nav-block
-            footer-style=footerStyle
-          />
+          <common-style-b-footer-nav-block newsletter=newsletter/>
 
-          <common-style-b-opt-out-block />
+          <common-style-b-opt-out-block newsletter=newsletter />
+
         </td>
       </tr>
     </common-table>

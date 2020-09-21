@@ -1,4 +1,5 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
+import { getAsArray, getAsObject } from "@base-cms/object-path";
 
 $ const {
   newsletter,
@@ -6,28 +7,52 @@ $ const {
   imagePath
 } = input;
 
+$ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
+$ const config = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[0], 'node') : null;
 $ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; color: #6b6b6b; font: 700 12px/18px Helvetica, 'Helvetica Neue', Arial, sans-serif;");
 
-<common-table width="700" style="border-collapse:collapse;" align="center" class="main header image-only-header" padding=0 spacing=0>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>
-      <span>
-        <marko-newsletter-imgix
-          src=imagePath
-          alt=newsletter.name
-          options={ w: 700 }
-          attrs={ border: 0, width: 700 }
-        >
-        </marko-newsletter-imgix>
-      </span>
-    </td>
-  </tr>
-  <tr>
-    <td style=dateStyle>
-      ${date.format("MMMM D, YYYY")}
-    </td>
-  </tr>
-</common-table>
+<if(config && config.headerLeft)>
+  <common-table width="700" style="border-collapse:collapse;" align="center" class="main header image-only-header" padding=0 spacing=0>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td bgcolor=config.headerBgColor>
+        <common-style-b-config-header-images config=config alt=newsletter.name newsletter=newsletter/>
+      </td>
+    </tr>
+    <if('hide' !== config.dateToggle)>
+      $ const configDateStyle = config.headerTextColor ? `${dateStyle} color: ${config.headerTextColor}` : dateStyle;
+      <tr>
+        <td style=configDateStyle>
+          ${date.format(config.dateToggle)}
+        </td>
+      </tr>
+    </if>
+  </common-table>
+</if>
+<else>
+  <common-table width="700" style="border-collapse:collapse;" align="center" class="main header image-only-header" padding=0 spacing=0>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+        <span>
+          <marko-newsletter-imgix
+            src=imagePath
+            alt=newsletter.name
+            options={ w: 700 }
+            attrs={ border: 0, width: 700 }
+          >
+          </marko-newsletter-imgix>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td style=dateStyle>
+        ${date.format("MMMM D, YYYY")}
+      </td>
+    </tr>
+  </common-table>
+</else>
