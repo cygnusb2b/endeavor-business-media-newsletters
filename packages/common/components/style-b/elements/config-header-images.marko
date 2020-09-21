@@ -1,6 +1,8 @@
 $ const { config, alt, newsletter } = input;
 $ const mainTableStyle = "border-collapse:collapse; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 
+$ const headerLink = config.headerLink ? config.headerLink : `https://${newsletter.site.host}`;
+
 <if(config)>
   <if(config.headerTemplate === 'image-full-700px')>
     <common-table width="700" align="center" style=`${mainTableStyle}` class="main" padding=0 spacing=0>
@@ -12,7 +14,7 @@ $ const mainTableStyle = "border-collapse:collapse; margin: 0; mso-table-lspace:
             options={ w: 700 }
             attrs={ border: 0, width: 700 }
           >
-            <@link href=config.headerLink title=alt target="_blank" />
+            <@link href=headerLink title=alt target="_blank" />
           </marko-newsletter-imgix>
         </td>
       </tr>
@@ -28,7 +30,7 @@ $ const mainTableStyle = "border-collapse:collapse; margin: 0; mso-table-lspace:
             options={ w: 350 }
             attrs={ border: 0, align: 'left', width: 350 }
           >
-            <@link href=config.headerLink title=alt target="_blank" />
+            <@link href=headerLink title=alt target="_blank" />
           </marko-newsletter-imgix>
         </td>
       </tr>
@@ -43,7 +45,7 @@ $ const mainTableStyle = "border-collapse:collapse; margin: 0; mso-table-lspace:
               options={ w: 350 }
               attrs={ border: 0, align: 'left', width: 350 }
             >
-              <@link href=config.headerLink title=alt target="_blank" />
+              <@link href=headerLink title=alt target="_blank" />
             </marko-newsletter-imgix>
           </td>
         </tr>
