@@ -26,14 +26,14 @@ $ const newsletterConfig = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[
       </p>
       <p style="margin:0px;margin-bottom:1em;">
         <a href="@{confirmunsubscribelink}@">Unsubscribe</a>
-        <if(newsletterConfig.manageSubscriptions)>
+        <if(newsletterConfig && newsletterConfig.manageSubscriptions)>
           &nbsp;| <a href=newsletterConfig.manageSubscriptions>Manage Newsletter Subscriptions</a>
         </if>
         <else>
           &nbsp;| <a href=`${config.get("optOut.manageSubscriptions")}`>Manage Newsletter Subscriptions</a>
         </else>
           &nbsp;| <a href="@{forwardtoafriendlink}@">Forward to a Friend</a>
-        <if(newsletterConfig.contactUs)>
+        <if(newsletterConfig && newsletterConfig.contactUs)>
           &nbsp;| <a href=newsletterConfig.contactUs>Customer Service Center</a>
         </if>
         <else>
@@ -46,7 +46,7 @@ $ const newsletterConfig = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[
       </p>
 
       <p style="margin:0px; margin-bottom:1em;">
-        <if(newsletterConfig.subscribe)>
+        <if(newsletterConfig && newsletterConfig.subscribe)>
           If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=newsletterConfig.subscribe>click here</a> to sign-up.
         </if>
         <else>

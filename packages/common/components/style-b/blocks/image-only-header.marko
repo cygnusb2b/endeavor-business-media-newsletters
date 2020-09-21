@@ -11,7 +11,7 @@ $ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
 $ const config = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[0], 'node') : null;
 $ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; color: #6b6b6b; font: 700 12px/18px Helvetica, 'Helvetica Neue', Arial, sans-serif;");
 
-<if(config.headerLeft)>
+<if(config && config.headerLeft)>
   <common-table width="700" style="border-collapse:collapse;" align="center" class="main header image-only-header" padding=0 spacing=0>
     <tr>
       <td>&nbsp;</td>
