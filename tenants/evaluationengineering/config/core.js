@@ -4,8 +4,8 @@ module.exports = {
     safeSenders: 'news.evaluationengineering.com and mail.evaluationengineering.com',
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
-    manageSubscriptions: 'https://endeavor.dragonforms.com/loading.do?omedasite=DECPrefPage',
-    signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=DECnewpref',
+    manageSubscriptions: 'https://endeavor.dragonforms.com/EEPrefPage?r=@{encrypted_customer_id}@&pk=NLFooter',
+    signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=EEnewpref',
   },
   socialMediaLinks: [
     {
