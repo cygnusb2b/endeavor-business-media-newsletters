@@ -90,10 +90,10 @@
     moment "^2.24.0"
     moment-timezone "^0.5.26"
 
-"@base-cms/marko-newsletters-email-x@^1.37.0":
-  version "1.37.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters-email-x/-/marko-newsletters-email-x-1.37.0.tgz#1cad1189711f0f5acc498b09c7c08c2760b1c4ae"
-  integrity sha512-oiMhmAHsFLomyBpIV6I6RRx8mQOSMwSl8oBw+prmONWp7GLLtVUqDlzGyywQ7t0BCCQ+ptrAlr/CL06ZM9vXKw==
+"@base-cms/marko-newsletters-email-x@^1.41.0":
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters-email-x/-/marko-newsletters-email-x-1.41.0.tgz#fc068eb8868cfdd9cd97cd802e8c94428b77298f"
+  integrity sha512-rG0STQgAX8t9gP7hcdZdMRTWDAwQ/U6DXo9v7BjmtKsZdCG02MRzFpXMTLmbxJiEZZjyvyQBSdsrdoX7P2XbwQ==
   dependencies:
     "@base-cms/object-path" "^1.37.0"
     "@base-cms/utils" "^1.37.0"
