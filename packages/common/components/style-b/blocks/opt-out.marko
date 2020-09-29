@@ -8,14 +8,16 @@ $ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
 $ const newsletterConfig = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[0], 'node') : null;
 
 <common-table width="700" style="border-collapse:collapse;" align="center" class="main opt-out" padding=0 spacing=0 attrs={ style: { "background-color": "#ffffff" } } >
-  <tr>
-    <td style="background-color: #ffffff; text-align: center;">
-      <p class="connect_info" style="margin: 10px; padding: 0; color: #000000; -webkit-margin-after: 10px; -webkit-margin-before: 10px; -webkit-margin-end: 10px; -webkit-margin-start: 10px; font: 700 14px/21px Helvetica, 'Helvetica Neue', Arial, sans-serif;">Connect With Us</p>
-      <div>
-        <common-social-icons-element newsletter=newsletter/>
-      </div>
-    </td>
-  </tr>
+  <if(newsletterConfig && newsletterConfig.socialIcons != 'none')>
+    <tr>
+      <td style="background-color: #ffffff; text-align: center;">
+        <p class="connect_info" style="margin: 10px; padding: 0; color: #000000; -webkit-margin-after: 10px; -webkit-margin-before: 10px; -webkit-margin-end: 10px; -webkit-margin-start: 10px; font: 700 14px/21px Helvetica, 'Helvetica Neue', Arial, sans-serif;">Connect With Us</p>
+        <div>
+          <common-social-icons-element newsletter=newsletter/>
+        </div>
+      </td>
+    </tr>
+  </if>
   <tr>
     <td style="background-color: #ffffff; padding: 10px; font: 400 10px/17px Arial, Helvetica, sans-serif;">
       <p style="margin:0px; margin-bottom:1em;">This email is being sent to
