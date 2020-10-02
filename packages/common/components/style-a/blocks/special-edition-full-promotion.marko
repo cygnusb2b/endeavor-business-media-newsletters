@@ -8,7 +8,8 @@ $ const {
   teaserStyle,
   contentLinkStyle,
   buttonStyle,
-  buttonTextStyle
+  buttonTextStyle,
+  field
 } = input;
 
 $ const teaserWrapperStyle = {...teaserStyle, ...{lineHeight: "175%",msoLineHeightRule: "exactly", msoLineHeightAlt: "146%"}};
@@ -51,7 +52,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
           </tr>
           <tr>
             <td style=teaserWrapperStyle >
-              <common-content-teaser-element field="body" node=node teaser-style=teaserStyle tag="p" />
+              <common-content-teaser-element field=field node=node teaser-style=teaserStyle tag="p" />
             </td>
           </tr>
           <if(node.linkText)>
@@ -79,7 +80,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
     </tr>
     <tr>
       <td style=teaserWrapperStyle style="padding: 0 20px;" >
-        <common-content-teaser-element field="body" node=node teaser-style=teaserStyle tag="p" />
+        <common-content-teaser-element field=field node=node teaser-style=teaserStyle tag="p" />
       </td>
     </tr>
     <if(node.linkText)>
