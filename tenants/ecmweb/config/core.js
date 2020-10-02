@@ -1,4 +1,12 @@
 module.exports = {
+  dpm: {
+    emailx: {
+      enabled: true,
+    },
+    content: {
+      enabled: true,
+    },
+  },
   optOut: {
     address: 'EC&M<br />Endeavor Business Media<br />331 54th Avenue N.<br />Nashville, TN 37209',
     safeSenders: 'enews.ecmweb.com and mail.ecmweb.com',

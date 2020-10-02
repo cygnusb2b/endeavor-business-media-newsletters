@@ -1,4 +1,12 @@
 module.exports = {
+  dpm: {
+    emailx: {
+      enabled: true,
+    },
+    content: {
+      enabled: true,
+    },
+  },
   brandAcronym: 'MLO',
   optOut: {
     address: 'Medical Laboratory Observer<br />Endeavor Business Media<br />331 54th Avenue N.<br />Nashville, TN 37209',
