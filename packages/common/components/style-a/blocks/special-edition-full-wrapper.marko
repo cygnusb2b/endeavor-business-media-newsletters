@@ -13,7 +13,8 @@ $ const {
   buttonStyle,
   buttonTextStyle,
   showButton,
-  teaserStyle
+  teaserStyle,
+  field
 } = input;
 $ const titleTableStyle = defaultValue(input.titleTableStyle, "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: ##C73E31; background-color: #ffffff; border-top: 4px solid ##C73E31;");
 $ const titleStyle = defaultValue(input.titleStyle, "font:700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;");
@@ -59,6 +60,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                     button-style=buttonStyle
                     button-text-style=buttonTextStyle
                     teaser-style=teaserStyle
+                    field=field
                   />
                 </if>
                 <else>
