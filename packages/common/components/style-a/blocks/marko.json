@@ -691,8 +691,7 @@
     "@button-style": "string",
     "@button-text-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object",
-    "@field": "string"
+    "@content-link-style": "object"
   },
   "<common-style-a-leaderboard-block>": {
     "template": "./leaderboard.marko",
@@ -800,8 +799,7 @@
     "@content-link-style": "object",
     "@teaser-style": "object",
     "@button-style": "string",
-    "@button-text-style": "object",
-    "@field": "string"
+    "@button-text-style": "object"
   },
   "<common-style-a-leaderboard-primary-block>": {
     "template": "./leaderboard-primary.marko",
