@@ -58,8 +58,9 @@ $ const buttonTextStyle = {
     <common-banner-element
       name=newsletter.name
       date=date
+      teaser=newsletter.teaser
     />
-    <tenant-header-block header-style="background-color: #034b8d; color: #fff;" image-path="/files/base/ebm/hydraulicspneumatics/image/static/newsletter/fluid_power_header.png" date=date newsletter=newsletter />
+    <common-style-b-image-only-header-block date=date newsletter=newsletter />
 
     <common-section-spacer-element />
 
@@ -107,7 +108,7 @@ $ const buttonTextStyle = {
 
     <common-section-spacer-element />
 
-    <common-style-a-opt-out-block />
+    <common-style-a-opt-out-block newsletter=newsletter/>
 
   </@body>
 </marko-newsletter-root>

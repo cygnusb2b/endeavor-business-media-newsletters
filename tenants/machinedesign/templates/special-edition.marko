@@ -36,8 +36,9 @@ $ const isFull = false;
     <common-banner-element
       name=newsletter.name
       date=date
+      teaser=newsletter.teaser
     />
-    <tenant-special-edition-header-block date=date newsletter=newsletter />
+    <common-style-a-header-block date=date newsletter=newsletter />
 
     <common-section-spacer-element />
 
@@ -657,7 +658,7 @@ $ const isFull = false;
 
     <common-section-spacer-element />
 
-    <common-style-a-opt-out-block />
+    <common-style-a-opt-out-block newsletter=newsletter/>
 
   </@body>
 </marko-newsletter-root>

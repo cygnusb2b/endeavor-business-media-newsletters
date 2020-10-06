@@ -31,8 +31,9 @@ $ const buttonTextStyle = {
     <common-banner-element
       name=newsletter.name
       date=date
+      teaser=newsletter.teaser
     />
-    <tenant-header-block image-path="/files/base/ebm/fleetowner/image/static/newsletter/maintenance_matters.jpg" date=date newsletter=newsletter />
+    <common-style-b-image-only-header-block date=date newsletter=newsletter />
 
     <common-section-spacer-element />
 
@@ -70,7 +71,7 @@ $ const buttonTextStyle = {
 
     <common-section-spacer-element />
 
-    <common-style-a-opt-out-block />
+    <common-style-a-opt-out-block newsletter=newsletter/>
 
   </@body>
 </marko-newsletter-root>

@@ -12,24 +12,5 @@ module.exports = {
     safeSenders: 'news.endeavorb2b.com and mail.endeavorb2b.com',
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
-    manageSubscriptions: 'https://endeavor.dragonforms.com/HYPNPrefPage?r=@{encrypted_customer_id}@&pk=NLFooter',
-    signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=HYPNnewpref',
   },
-  socialMediaLinks: [
-    {
-      provider: 'twitter',
-      href: 'https://www.twitter.com/H_and_P_knows?elqTrack=true',
-      title: 'Follow us on Twitter',
-    },
-    {
-      provider: 'facebook',
-      href: 'https://www.facebook.com/HydraulicsPneumatics?elqTrack=true',
-      title: 'Follow us on Facebook',
-    },
-    {
-      provider: 'linkedin',
-      href: 'https://www.linkedin.com/company/11091630?elqTrack=true',
-      title: 'Follow us on LinkedIn',
-    },
-  ],
 };

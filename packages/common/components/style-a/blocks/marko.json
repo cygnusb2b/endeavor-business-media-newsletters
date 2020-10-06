@@ -1,6 +1,7 @@
 {
   "<common-style-a-opt-out-block>": {
-    "template": "./opt-out.marko"
+    "template": "./opt-out.marko",
+    "@newsletter": "object"
   },
   "<common-style-a-featured-section-wrapper-block>": {
     "template": "./featured-section-wrapper.marko",
@@ -805,5 +806,17 @@
     "template": "./leaderboard-primary.marko",
     "@name": "string",
     "@date": "date"
+  },
+  "<common-style-a-header-block>": {
+    "template": "./header.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@image-path": "string"
   }
 }
