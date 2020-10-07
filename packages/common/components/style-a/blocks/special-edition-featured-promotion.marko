@@ -42,7 +42,12 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
         <tr>
           <td style="padding-bottom: 10px;">
             <common-content-link-element node=node content-link-style=contentLinkStyle />
-            <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+            <if(node.body)>
+              <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
+            </if>
+            <else>
+              <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+            </else>
           </td>
         </tr>
         <if(node.linkText)>
