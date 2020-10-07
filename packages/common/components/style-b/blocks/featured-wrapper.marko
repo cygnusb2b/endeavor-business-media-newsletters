@@ -68,7 +68,7 @@ $ const innerTableWidth = 700 - (innerPadding * 2);
                             <common-content-link-element node=node content-link-style=contentLinkStyle content-link-wrapper-style=contentLinkWrapperStyle tag="h3"/>
 
                             <if(node.type === "promotion")>
-                              <if(node.body === "string")>
+                              <if(node.body)>
                                 <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
                               </if>
                               <else>

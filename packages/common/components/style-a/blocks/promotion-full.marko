@@ -53,7 +53,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
         </tr>
         <tr>
           <td>
-            <if(node.body === "string")>
+            <if(node.body)>
               <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
             </if>
             <else>
