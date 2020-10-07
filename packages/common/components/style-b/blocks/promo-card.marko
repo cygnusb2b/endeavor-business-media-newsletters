@@ -46,7 +46,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
                 <tr>
                   <td>
                     <common-content-link-element node=node content-link-style=contentLinkStyle />
-                    <if(node.body)>
+                    <if(node.body === "string")>
                       <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
                     </if>
                     <else>

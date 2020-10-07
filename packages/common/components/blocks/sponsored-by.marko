@@ -59,12 +59,12 @@ $ const sponsoredByStyle = defaultValue(input.sponsoredByStyle, "font: bold 16px
       <common-table style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" class="main sponsored-by__content" padding=0 spacing=0 width="100%">
         <tr>
           <td align=alignment style=`${tableCellPadding}`>
-             <if(node.body)>
-                <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
-              </if>
-              <else>
-                <common-content-teaser-element node=node teaser-style=teaserStyle />
-              </else>
+            <if(node.body === "string")>
+              <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
+            </if>
+            <else>
+              <common-content-teaser-element node=node teaser-style=teaserStyle />
+            </else>
           </td>
         </tr>
       </common-table>

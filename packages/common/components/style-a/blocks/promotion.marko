@@ -33,7 +33,7 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
             <if(displayImage)>
               <common-primary-image-element node=node img-width=imgWidth class-name="main" />
             </if>
-            <if(node.body)>
+            <if(node.body === "string")>
               <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
             </if>
             <else>
