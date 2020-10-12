@@ -587,10 +587,10 @@ services:
       - "19435:80"
       - "29435:29435"
 
-  gxc:
+  gxcontractor:
     <<: *node
     <<: *newsletter-cmd
-    working_dir: /root/tenants/gxc
+    working_dir: /root/tenants/gxcontractor
     environment:
       <<: *env
       <<: *env-picon
