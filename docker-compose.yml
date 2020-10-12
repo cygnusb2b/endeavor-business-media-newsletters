@@ -602,5 +602,20 @@ services:
       - "19436:80"
       - "29436:29436"
 
+  plasticsmachinerymagazine:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/plasticsmachinerymagazine
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19437
+      LIVERELOAD_PORT: 29437
+      TENANT_KEY: ebm_pmm
+    ports:
+      - "19437:80"
+      - "29437:29437"
+
 volumes:
   yarn-cache: {}
