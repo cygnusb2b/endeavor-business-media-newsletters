@@ -587,5 +587,20 @@ services:
       - "19435:80"
       - "29435:29435"
 
+  gxc:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/gxc
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19436
+      LIVERELOAD_PORT: 29436
+      TENANT_KEY: ebm_gxc
+    ports:
+      - "19436:80"
+      - "29436:29436"
+
 volumes:
   yarn-cache: {}
