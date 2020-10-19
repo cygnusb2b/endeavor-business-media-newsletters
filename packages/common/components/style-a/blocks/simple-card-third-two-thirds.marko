@@ -35,7 +35,12 @@ $ const innerPadding = 20;
           <tr>
             <td style=`padding: ${innerPadding}px;`>
               <common-content-link-element node=node content-link-style=contentLinkStyle />
-              <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+              <if(node.type === 'promotion' && node.body)>
+                <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
+              </if>
+              <else>
+                <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+              </else>
             </td>
           </tr>
           <tr>
@@ -57,7 +62,12 @@ $ const innerPadding = 20;
     <tr>
       <td style=`padding: ${innerPadding}px;`>
         <common-content-link-element node=node content-link-style=contentLinkStyle tag="h3" />
-        <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+        <if(node.type === 'promotion' && node.body)>
+          <common-content-teaser-element node=node teaser-style=teaserStyle field="body" />
+        </if>
+        <else>
+          <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+        </else>
         <common-section-spacer-element />
         <common-button-element
           button-style=buttonStyle
