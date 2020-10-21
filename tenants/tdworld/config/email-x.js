@@ -113,5 +113,13 @@ config
       width: 670,
       height: 90,
     },
+  ])
+  .setAdUnits('distributed-energy-resources', [
+    {
+      name: 'leaderboardPrimary',
+      id: '5f902fd13c4cc6d965a5839d',
+      width: 670,
+      height: 90,
+    },
   ]);
 module.exports = config;
