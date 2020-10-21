@@ -1,0 +1,116 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
+$ const titleTableStyle = "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;";
+$ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
+$ const mainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const contentLinkStyle = {
+  "font-weight": "bold",
+  "color": "#00b398",
+  "font-size": "19.5px",
+  "line-height": "20px",
+  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+};
+$ const buttonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00b398;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-a-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+      teaser=newsletter.teaser
+    />
+    <common-style-a-header-block date=date newsletter=newsletter />
+
+    <common-section-spacer-element />
+
+    <common-style-a-leaderboard-primary-block
+      name=leaderboardPrimary
+      date=date
+    />
+
+    <common-section-spacer-element />
+
+    <!-- #1 - Featured Section - Top Story -->
+    <common-style-a-featured-section-wrapper-block
+      section-id=81991
+      title="Top Story"
+      limit=1
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <common-section-spacer-element />
+
+    <!-- #2 - Card Section - News -->
+    <common-style-a-card-section-wrapper-block
+      section-id=81992
+      title="News"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <common-section-spacer-element />
+
+    <!-- #3 - Full Third Two Thirds Section - Distributed Energy Spotlight -->
+    <common-style-a-full-third-two-thirds-section-wrapper-block
+      section-id=81993
+      title="Distributed Energy Spotlight"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <common-section-spacer-element />
+
+    <!-- #4 - Full Third Two Thirds Section - Sponsored -->
+    <common-style-a-full-third-two-thirds-section-wrapper-block
+      section-id=81994
+      title="Sponsored"
+      date=date
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <common-section-spacer-element />
+
+    <common-style-a-opt-out-block newsletter=newsletter/>
+
+  </@body>
+</marko-newsletter-root>
