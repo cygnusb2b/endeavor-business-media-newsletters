@@ -21,38 +21,38 @@ $ const newsletterConfig = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[
   <tr>
     <td style="background-color: #ffffff; padding: 10px; font: 400 10px/17px Arial, Helvetica, sans-serif;">
       <p style="margin:0px; margin-bottom:1em;">This email is being sent to
-        <a href="mailto:@{email name}@">@{email name}@</a>.
+        <a target="_blank" href="mailto:@{email name}@">@{email name}@</a>.
       </p>
       <p style="margin:0px; margin-bottom:1em;">
         Please add ${config.get("optOut.safeSenders")} to your address book or safe sender list to receive our emails in your inbox.
       </p>
       <p style="margin:0px;margin-bottom:1em;">
-        <a href="@{confirmunsubscribelink}@">Unsubscribe</a>
+        <a target="_blank" href="@{confirmunsubscribelink}@">Unsubscribe</a>
         <if(newsletterConfig && newsletterConfig.manageSubscriptions)>
-          &nbsp;| <a href=newsletterConfig.manageSubscriptions>Manage Newsletter Subscriptions</a>
+          &nbsp;| <a target="_blank" href=newsletterConfig.manageSubscriptions>Manage Newsletter Subscriptions</a>
         </if>
         <else>
-          &nbsp;| <a href=`${config.get("optOut.manageSubscriptions")}`>Manage Newsletter Subscriptions</a>
+          &nbsp;| <a target="_blank" href=`${config.get("optOut.manageSubscriptions")}`>Manage Newsletter Subscriptions</a>
         </else>
-          &nbsp;| <a href="@{forwardtoafriendlink}@">Forward to a Friend</a>
+          &nbsp;| <a target="_blank" href="@{forwardtoafriendlink}@">Forward to a Friend</a>
         <if(newsletterConfig && newsletterConfig.contactUs)>
-          &nbsp;| <a href=newsletterConfig.contactUs>Customer Service Center</a>
+          &nbsp;| <a target="_blank" href=newsletterConfig.contactUs>Customer Service Center</a>
         </if>
         <else>
-          &nbsp;| <a href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
+          &nbsp;| <a target="_blank" href=`${website.get("origin")}/contact-us`>Customer Service Center</a>
         </else>
-        | <a href=`${config.get("optOut.privacyPolicyUrl")}`>Read Privacy Policy</a>
+        | <a target="_blank" href=`${config.get("optOut.privacyPolicyUrl")}`>Read Privacy Policy</a>
         <if (config.get("optOut.findJobsUrl")) >
-        | <a href=`${config.get("optOut.findJobsUrl")}`>Find Jobs</a>
+        | <a target="_blank" href=`${config.get("optOut.findJobsUrl")}`>Find Jobs</a>
         </if>
       </p>
 
       <p style="margin:0px; margin-bottom:1em;">
         <if(newsletterConfig && newsletterConfig.subscribe)>
-          If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=newsletterConfig.subscribe>click here</a> to sign-up.
+          If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" target="_blank" href=newsletterConfig.subscribe>click here</a> to sign-up.
         </if>
         <else>
-          If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" href=`${config.get("optOut.signUp")}`>click here</a> to sign-up.
+          If this email was forwarded to you and you are interested in subscribing, please <a style="text-decoration: underline !important;" target="_blank" href=`${config.get("optOut.signUp")}`>click here</a> to sign-up.
         </else>
       </p>
 
