@@ -130,6 +130,7 @@
       "type": "object",
       "required": true
     },
+    "@image-path": "string",
     "@date-style": "string"
   },
   "<common-style-b-text-promo-wrapper>": {
