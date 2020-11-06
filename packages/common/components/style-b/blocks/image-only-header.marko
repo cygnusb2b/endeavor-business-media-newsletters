@@ -3,8 +3,7 @@ import { getAsArray, getAsObject } from "@base-cms/object-path";
 
 $ const {
   newsletter,
-  date,
-  imagePath
+  date
 } = input;
 
 $ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
@@ -40,11 +39,12 @@ $ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; co
       <td>
         <span>
           <marko-newsletter-imgix
-            src=imagePath
+            src=config.headerLeft.src
             alt=newsletter.name
             options={ w: 700 }
             attrs={ border: 0, width: 700 }
           >
+            <@link href=headerLink title=newsletter.name target="_blank" />
           </marko-newsletter-imgix>
         </span>
       </td>

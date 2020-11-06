@@ -1,8 +1,10 @@
+import emailX from "../config/email-x";
 $ const { newsletter, date } = data;
-$ const publicationId = '5f9826ccb4d3c622488b4596';
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const titleTableStyle = "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
 $ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
 $ const mainTableStyle ="border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const noTopBorderTableStyle ="border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const contentLinkStyle = {
   "font-weight": "bold",
   "color": "#57b84d",
@@ -32,11 +34,11 @@ $ const buttonTextStyle = {
       date=date
       teaser=newsletter.teaser
     />
-    <common-style-a-header-block date=date newsletter=newsletter />
+    <common-style-b-image-only-header-block date=date newsletter=newsletter />
 
     <common-section-spacer-element />
 
-    <!-- #1 - Promotions - 1 Column -->
+    <!-- #1 - Promotions - 1 Column (first half)-->
     <common-style-a-special-edition-full-wrapper-block
       section-id=64916
       date=date
@@ -45,6 +47,25 @@ $ const buttonTextStyle = {
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
+      limit=2
+    />
+
+    <common-leaderboard-primary-block
+      name=leaderboardPrimary
+      date=date
+    />
+
+    <!-- #1 - Promotions - 1 Column (second half)-->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=64916
+      date=date
+      newsletter=newsletter
+      main-table-style=noTopBorderTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+      limit=2
+      skip=2
     />
 
     <!-- #2 - Magazine Issue -->
