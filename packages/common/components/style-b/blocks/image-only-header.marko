@@ -39,26 +39,14 @@ $ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; co
     <tr>
       <td>
         <span>
-          <if(imagePath)>
-            <marko-newsletter-imgix
-              src=imagePath
-              alt=newsletter.name
-              options={ w: 700 }
-              attrs={ border: 0, width: 700 }
-            >
-              <@link href=headerLink title=newsletter.name target="_blank" />
-            </marko-newsletter-imgix>
-          </if>
-          <else>
-            <marko-newsletter-imgix
-              src=config.headerLeft.src
-              alt=newsletter.name
-              options={ w: 700 }
-              attrs={ border: 0, width: 700 }
-            >
-              <@link href=headerLink title=newsletter.name target="_blank" />
-            </marko-newsletter-imgix>
-          </else>
+          <marko-newsletter-imgix
+            src=imagePath
+            alt=newsletter.name
+            options={ w: 700 }
+            attrs={ border: 0, width: 700 }
+          >
+            <@link href=headerLink title=newsletter.name target="_blank" />
+          </marko-newsletter-imgix>
         </span>
       </td>
     </tr>
