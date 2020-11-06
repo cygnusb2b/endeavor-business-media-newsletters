@@ -1,6 +1,5 @@
 import emailX from "../config/email-x";
 $ const { newsletter, date } = data;
-$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const titleTableStyle = "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
 $ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
 $ const mainTableStyle ="border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
@@ -50,9 +49,12 @@ $ const buttonTextStyle = {
       limit=2
     />
 
-    <common-leaderboard-primary-block
-      name=leaderboardPrimary
+    <!-- #2 - Sponsor - 1 column -->
+    <common-style-a-leaderboard-block
+      section-id=65065
       date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
     />
 
     <!-- #1 - Promotions - 1 Column (second half)-->
@@ -68,7 +70,7 @@ $ const buttonTextStyle = {
       skip=2
     />
 
-    <!-- #2 - Magazine Issue -->
+    <!-- #3 - Magazine Issue -->
     <common-style-a-special-edition-full-wrapper-block
       section-id=64917
       date=date
@@ -79,7 +81,7 @@ $ const buttonTextStyle = {
       button-text-style=buttonTextStyle
     />
 
-    <!-- #3 - Promotions #2 - 1 Column -->
+    <!-- #4 - Promotions #2 - 1 Column -->
     <common-style-a-special-edition-full-wrapper-block
       section-id=64918
       date=date
