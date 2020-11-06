@@ -1,0 +1,156 @@
+$ const { newsletter, date } = data;
+
+$ const mainTableStyle ="border-collapse:collapse; font: 400 13px/21px Arial, Helvetica, sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const contentLinkStyle = {
+  "color": "#012559;",
+  "font": "700 18px/24px Arial, Helvetica, sans-serif;",
+  "text-decoration": "none !important;"
+};
+$ const teaserStyle = {
+  "color": "#666666;",
+  "font": "400 13px/18px Arial, Helvetica, sans-serif;",
+  "text-decoration": "none !important;"
+};
+$ const buttonStyle = "font: 400 13px/21px Arial, Helvetica, sans-serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #012559;";
+$ const buttonTextStyle = {
+  "color": "#fff",
+  "font": "700 16px/24px Arial, Helvetica, sans-serif;",
+  "text-decoration": "none !important;"
+};
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-b-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td>
+          <common-banner-element
+            name=newsletter.name
+            date=date
+            teaser=newsletter.teaser
+          />
+
+          <!-- #01 - Leaderboard - 1 Column -->
+          <common-style-a-leaderboard-block
+            section-id=64969
+            date=date
+            newsletter=newsletter
+            main-table-style=mainTableStyle
+          />
+
+          <common-style-b-image-only-header-block date=date newsletter=newsletter />
+
+          <common-section-spacer-element />
+
+          <!-- #02 Latest News - 2 Column -->
+          <common-style-a-card-section-wrapper-block
+            section-id=64970
+            date=date
+            newsletter=newsletter
+            main-table-style=mainTableStyle
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            fallback-label=true
+          />
+
+          <!-- #03 Sponsored Content - 1 Column -->
+          <common-style-b-text-promo-wrapper
+            section-id=64971
+            date=date
+            newsletter=newsletter
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            main-table-style=mainTableStyle
+            show-button=true
+          />
+
+          <!-- #04 - Leaderboard - 1 Column -->
+          <common-style-a-leaderboard-block
+            section-id=64972
+            date=date
+            newsletter=newsletter
+            main-table-style=mainTableStyle
+          />
+
+          <!-- #05 More News - 2 Column -->
+          <common-style-a-card-section-wrapper-block
+            section-id=64973
+            date=date
+            newsletter=newsletter
+            main-table-style=mainTableStyle
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            fallback-label=true
+          />
+
+          <!-- #06 Sponsored Content - 1 Column -->
+          <common-style-b-text-promo-wrapper
+            section-id=64974
+            date=date
+            newsletter=newsletter
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            main-table-style=mainTableStyle
+            show-button=true
+          />
+
+          <!-- #07 More News - 2 Column -->
+          <common-style-a-card-section-wrapper-block
+            section-id=64975
+            date=date
+            newsletter=newsletter
+            main-table-style=mainTableStyle
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            fallback-label=true
+          />
+
+          <!-- #08 Sponsored Content - 1 Column -->
+          <common-style-b-text-promo-wrapper
+            section-id=64976
+            date=date
+            newsletter=newsletter
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+            button-style=buttonStyle
+            button-text-style=buttonTextStyle
+            main-table-style=mainTableStyle
+            show-button=true
+          />
+
+          <!-- #09 Latest News Links - 1 Column -->
+          <common-style-b-text-promo-wrapper
+            section-id=64977
+            date=date
+            newsletter=newsletter
+            content-link-style=contentLinkStyle
+            teaser-style=teaserStyle
+            main-table-style="background-color: #e7e7e7; border-collapse:collapse; font: 400 13px/21px Arial, Helvetica, sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
+            show-button=false
+          />
+
+          <common-style-b-footer-nav-block newsletter=newsletter/>
+
+          <common-style-b-opt-out-block newsletter=newsletter />
+
+        </td>
+      </tr>
+    </common-table>
+  </@body>
+</marko-newsletter-root>

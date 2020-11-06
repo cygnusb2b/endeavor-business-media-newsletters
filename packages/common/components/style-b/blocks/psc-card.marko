@@ -8,7 +8,8 @@ $ const {
   teaserStyle,
   contentLinkStyle,
   buttonStyle,
-  buttonTextStyle
+  buttonTextStyle,
+  showButton
 } = input;
 
 $ const innerPadding = 20;
@@ -70,11 +71,13 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
                       <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
                     </else>
                     <common-section-spacer-element />
-                    <common-button-element
-                      button-style=buttonStyle
-                      button-text-style=buttonTextStyle
-                      node=node
-                    />
+                    <if(showButton)>
+                      <common-button-element
+                        button-style=buttonStyle
+                        button-text-style=buttonTextStyle
+                        node=node
+                      />
+                    </if>
                   </td>
                 </tr>
               </common-table>
@@ -95,11 +98,13 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
               <common-content-link-element node=node content-link-style=contentLinkStyle />
               <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
               <common-section-spacer-element />
-              <common-button-element
-                button-style=buttonStyle
-                button-text-style=buttonTextStyle
-                node=node
-              />
+              <if(showButton)>
+                <common-button-element
+                  button-style=buttonStyle
+                  button-text-style=buttonTextStyle
+                  node=node
+                />
+              </if>
             </td>
           </tr>
         </common-table>

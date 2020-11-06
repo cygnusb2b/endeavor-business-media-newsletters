@@ -171,6 +171,10 @@
     "@sponsored-label": {
       "type": "boolean",
       "default-value": false
+    },
+    "@show-button": {
+      "type" : "boolean",
+      "default-value": true
     }
   },
   "<common-style-b-promo-card-block>": {
@@ -191,7 +195,11 @@
       "type": "number",
       "default-value": 345
     },
-    "@teaser-style": "object"
+    "@teaser-style": "object",
+    "@show-button": {
+      "type" : "boolean",
+      "default-value": true
+    }
   },
   "<common-style-b-psc-card-block>": {
     "template": "./psc-card.marko",
@@ -212,7 +220,11 @@
       "default-value": 345
     },
     "@teaser-style": "object",
-    "@images" : "array"
+    "@images" : "array",
+    "@show-button": {
+      "type" : "boolean",
+      "default-value": true
+    }
   },
   "<common-style-b-full-section-wrapper-block>": {
     "template": "./full-section-wrapper.marko",
