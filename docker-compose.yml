@@ -617,5 +617,20 @@ services:
       - "19437:80"
       - "29437:29437"
 
+  fleetmaintenance:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/fleetmaintenance
+    environment:
+      <<: *env
+      <<: *env-picon
+      PORT: 80
+      EXPOSED_PORT: 19438
+      LIVERELOAD_PORT: 29438
+      TENANT_KEY: ebm_fm
+    ports:
+      - "19438:80"
+      - "29438:29438"
+
 volumes:
   yarn-cache: {}
