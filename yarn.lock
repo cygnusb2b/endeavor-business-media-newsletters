@@ -78,14 +78,14 @@
     marko "~4.20.0"
     yargs "^14.1.0"
 
-"@base-cms/marko-core@^1.38.0":
-  version "1.38.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-core/-/marko-core-1.38.0.tgz#9f5ea88fa5103ef852296553b56857354c764496"
-  integrity sha512-sFKhIXFeaRrV0oyEdYCVSUJTLGnPHzQeU4hsx/HzfjigSWX+i7EaI7IMtri65PL0NHKWhkHVXlm8rNxqOTI04A==
+"@base-cms/marko-core@^1.46.1":
+  version "1.46.1"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-core/-/marko-core-1.46.1.tgz#2c5c545097e2d32b3e509eb50f1dcb18bf95a0c6"
+  integrity sha512-lAQENbGprQjBKDyY2mB2y36YVbf63m68zmeBconzwFfQZuuo0eGO/NdwSG23GKDwVTTR40kEJF/QCQM4Sy5iMQ==
   dependencies:
     "@base-cms/object-path" "^1.37.0"
     "@base-cms/utils" "^1.37.0"
-    "@base-cms/web-common" "^1.37.0"
+    "@base-cms/web-common" "^1.46.1"
     marko "~4.20.0"
     moment "^2.24.0"
     moment-timezone "^0.5.26"
@@ -105,17 +105,17 @@
   resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters-omail/-/marko-newsletters-omail-1.37.0.tgz#0c613b199a7819d1a5ee21d629ef88db49452885"
   integrity sha512-t9LkO97uKjhRCcPCBI0Yb+i1LswAUaVXzqac8QHYRgJZoNzflzSnz5FQrQMwdFMjmFtyhRGeM3Iu63FY9jETyA==
 
-"@base-cms/marko-newsletters@^1.39.0":
-  version "1.39.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters/-/marko-newsletters-1.39.0.tgz#e17e520d850fe007f88fa072f2777d545a8087ba"
-  integrity sha512-GCweTKEYjBUIANT+KEIIxviP607CpJQj2i5pRFULAzU8moXA2ILuIMOD3yptQj+5ee09GWE3aqTXFNEBJk/Gig==
+"@base-cms/marko-newsletters@^1.47.0":
+  version "1.47.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-newsletters/-/marko-newsletters-1.47.0.tgz#5474e6959b120e2e1a1ebfa880e2a2b28bcec931"
+  integrity sha512-4XQCucLn/nbVduWZE57YtMPbeieVuT3SaMaAKz9AFNTC3BtPJ3rp7ctwbU6v8lR1iUVx5TtdtWAcCrEUnfjWhA==
   dependencies:
     "@base-cms/express-apollo" "^1.37.0"
     "@base-cms/image" "^1.37.0"
     "@base-cms/object-path" "^1.37.0"
     "@base-cms/tenant-context" "^1.37.0"
     "@base-cms/utils" "^1.37.0"
-    "@base-cms/web-common" "^1.37.0"
+    "@base-cms/web-common" "^1.46.1"
     "@godaddy/terminus" "^4.2.0"
     express "^4.17.1"
     graphql "^14.5.4"
@@ -162,10 +162,10 @@
   resolved "https://registry.yarnpkg.com/@base-cms/utils/-/utils-1.37.0.tgz#c2ac887615b9b5007bae6d6fae102bff3662b706"
   integrity sha512-YVNnlziwb/MdSjt8oywqgXmCwmK/7y3V8niF0GxWYggqLPHRqWWI5ZKO/lq3ZaBv6szSxqfNS/b+B3MNfj1h3Q==
 
-"@base-cms/web-common@^1.37.0":
-  version "1.37.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/web-common/-/web-common-1.37.0.tgz#6da0a7079f0e8a9d8e7679350209510a2791882a"
-  integrity sha512-oP9rs1z97mO97VPYrFuTwxdF+DQmVSa+SNmDIs7AOp5akzerTRAbqvikSPYcJy7ACeI7DE4ulrVeQZfXYJgvlA==
+"@base-cms/web-common@^1.46.1":
+  version "1.46.1"
+  resolved "https://registry.yarnpkg.com/@base-cms/web-common/-/web-common-1.46.1.tgz#6b865864328b83da09c1031e1979d9636f48d892"
+  integrity sha512-kU9dIbJdBevgfhD45o6e3pFjqrdSxYqWymmF3yG7G0pj91JESBoe26tM7fYVR7NkF4Nmfrwbbga+py9qQ9qkOg==
   dependencies:
     "@base-cms/inflector" "^1.37.0"
     "@base-cms/object-path" "^1.37.0"
