@@ -465,14 +465,14 @@ jobs:
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
-      name: plasticsmachinerymagazine
-      script: npx @base-cms/newsletter-deployment-tool deploy plasticsmachinerymagazine picon
+      name: plasticsmachinerymanufacturing
+      script: npx @base-cms/newsletter-deployment-tool deploy plasticsmachinerymanufacturing picon
       install: skip
       env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
     - stage: staging
-      name: plasticsmachinerymagazine
-      script: npx @base-cms/newsletter-deployment-tool deploy plasticsmachinerymagazine picon
+      name: plasticsmachinerymanufacturing
+      script: npx @base-cms/newsletter-deployment-tool deploy plasticsmachinerymanufacturing picon
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 

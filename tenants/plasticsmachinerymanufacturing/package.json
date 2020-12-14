@@ -1,8 +1,8 @@
 {
-  "name": "@endeavor-business-media/plasticsmachinerymagazine",
+  "name": "@endeavor-business-media/plasticsmachinerymanufacturing",
   "version": "1.31.3",
   "author": "Jacob Bare <jacob@limit0.io>",
-  "repository": "https://github.com/base-cms-newsletters/endeavor-business-media/tree/master/tenants/plasticsmachinerymagazine",
+  "repository": "https://github.com/base-cms-newsletters/endeavor-business-media/tree/master/tenants/plasticsmachinerymanufacturing",
   "license": "MIT",
   "private": true,
   "scripts": {
