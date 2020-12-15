@@ -602,10 +602,10 @@ services:
       - "19436:80"
       - "29436:29436"
 
-  plasticsmachinerymagazine:
+  plasticsmachinerymanufacturing:
     <<: *node
     <<: *newsletter-cmd
-    working_dir: /root/tenants/plasticsmachinerymagazine
+    working_dir: /root/tenants/plasticsmachinerymanufacturing
     environment:
       <<: *env
       <<: *env-picon
