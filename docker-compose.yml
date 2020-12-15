@@ -527,10 +527,10 @@ services:
       - "19431:80"
       - "29431:29431"
 
-  flowcontrolnetwork:
+  piprocessinstrumentation:
     <<: *node
     <<: *newsletter-cmd
-    working_dir: /root/tenants/flowcontrolnetwork
+    working_dir: /root/tenants/piprocessinstrumentation
     environment:
       <<: *env
       <<: *env-picon
