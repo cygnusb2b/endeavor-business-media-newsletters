@@ -1,8 +1,8 @@
 {
   "name": "@endeavor-business-media/newsletters",
-  "description": "Newsletters for Industrial Media",
+  "description": "Newsletters for Endeavor Business Media",
   "repository": "https://github.com/base-cms-newsletters/endeavor-business-media.git",
-  "author": "Jacob Bare <jacob@limit0.io>",
+  "author": "Endeavor Business Media",
   "license": "MIT",
   "private": true,
   "root": true,
