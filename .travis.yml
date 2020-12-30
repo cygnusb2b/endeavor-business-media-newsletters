@@ -12,13 +12,6 @@ stages:
   - name: production-finished
     if: tag =~ /^v\d+\.\d+\.\d+$/
 
-  - name: staging-started
-    if: tag is present
-  - name: staging
-    if: tag is present
-  - name: staging-finished
-    if: tag is present
-
 jobs:
   include:
     - stage: test
