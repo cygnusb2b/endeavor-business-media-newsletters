@@ -2,6 +2,7 @@ import { getAsArray, getAsObject } from "@base-cms/object-path";
 
 $ const { newsletter } = data;
 $ const { website, config } = out.global;
+$ const { optOutEmail } = input;
 
 $ const socialMediaProviders = config.getAsArray('socialMediaLinks');
 $ const alphaThemeConfigs = getAsArray(newsletter, 'alphaThemeConfigs.edges');
@@ -23,9 +24,11 @@ $ const newsletterConfig = alphaThemeConfigs[0] ? getAsObject(alphaThemeConfigs[
       <p style="margin:0px; margin-bottom:1em;">This email is being sent to
         <a target="_blank" href="mailto:@{email name}@">@{email name}@</a>.
       </p>
+
       <p style="margin:0px; margin-bottom:1em;">
-        Please add ${config.get("optOut.safeSenders")} to your address book or safe sender list to receive our emails in your inbox.
+        Please add <if(optOutEmail)>${optOutEmail}</if><else>${config.get("optOut.safeSenders")}</else> to your address book or safe sender list to receive our emails in your inbox.
       </p>
+
       <p style="margin:0px;margin-bottom:1em;">
         <a target="_blank" href="@{confirmunsubscribelink}@">Unsubscribe</a>
         <if(newsletterConfig && newsletterConfig.manageSubscriptions)>

@@ -1,7 +1,8 @@
 {
   "<common-style-b-opt-out-block>": {
     "template": "./opt-out.marko",
-    "@newsletter": "object"
+    "@newsletter": "object",
+    "@opt-out-email": "string"
   },
   "<common-style-b-footer-nav-block>": {
     "template": "./footer-nav.marko",
