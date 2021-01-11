@@ -1,0 +1,55 @@
+$ const { newsletter, date } = data;
+$ const publicationId = "53cd1d791784f8066eb2ca76";
+$ const publicationDescription = "Fleet Maintenance magazine delivers best practices for fleet maintenance managers to keep their vehicles operating with minimal downtime. Fleet Maintenance delivers information in chapter format for best peer practices, categorized under equipment, in the bay, and shop operations.";
+$ const titleTableStyle = "margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
+$ const titleStyle = "font: 700 15px/23px Arial, Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
+$ const mainTableStyle = "border-collapse:collapse; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const contentLinkStyle = {
+  "color": "#d00a2d",
+  "font": "700 19.5px/20px Arial, Helvetica, sans-serif",
+};
+$ const buttonStyle = "border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #d00a2d;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
+
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-a-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+      teaser=newsletter.teaser
+    />
+    <common-style-a-header-block date=date newsletter=newsletter />
+
+    <common-section-spacer-element />
+
+    <!-- Magazine -->
+    <common-publication-block
+      date=date
+      newsletter=newsletter
+      publication-id=publicationId
+      publication-description=publicationDescription
+      content-link-style=featuredContentLinkStyle
+      main-table-style=featuredMainTableStyle
+      img-width=225
+      table-width=420
+    />
+
+    <common-section-spacer-element />
+
+    <common-style-a-opt-out-block newsletter=newsletter/>
+
+  </@body>
+</marko-newsletter-root>
