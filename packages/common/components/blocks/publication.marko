@@ -21,6 +21,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
 });
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: 300 16px/24px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
 
+
 <common-table width="700" border="0" spacing=0 padding=0 align="center" style="border-top: 2px solid #eee; border-bottom: 2px solid #eee; padding: 20px 0;" class="main publication">
   <tr>
     <td style=`${mainTableStyle} padding: 20px;`>
@@ -31,6 +32,58 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
         $ const publicationDescription = defaultValue(input.publicationDescription, latestIssue.publication.description);
 
         <common-table width="100%" border="0" spacing=0 padding=0 align="center" style="border-collapse:collapse;" class="main">
+          <if(imgWidth > 700)>
+            <tr>
+              <td width=imgWidth align="center" valign="center">
+                <marko-core-obj-value|{ value: coverImage }| obj=latestIssue field="coverImage" as="object">
+                  <marko-newsletter-imgix
+                    src=coverImage.src
+                    alt=coverImage.alt
+                    options={ w: imgWidth }
+                    class="main"
+                    attrs={ border: 0, width: imgWidth }
+                  >
+                    <@link href=latestIssue.digitalEditionUrl  target="_blank" />
+                  </marko-newsletter-imgix>
+                </marko-core-obj-value>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%" valign="top" style="padding-left: 20px;">
+                <common-table width="100%" border="0" spacing=0 padding=0 align="center" style="border-collapse:collapse;">
+                  <tr>
+                    <td align="center">
+                        <if(latestIssue.digitalEditionUrl)>
+                          <a href=latestIssue.digitalEditionUrl target="_blank" style=contentLinkStyle>
+                            VIEW
+                          </a>
+                          the ${latestIssue.name} issue of <em>${latestIssue.publication.name}</em>.
+                        </if>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <if(latestIssue.publication.subscribeUrl)>
+                        <a style=contentLinkStyle href=latestIssue.publication.subscribeUrl target="_blank" rel="noopener noreferrer">
+                          SUBSCRIBE
+                        </a>
+                      </if>
+                      <else>
+                        <a style=contentLinkStyle href=`${website.get("origin")}/subscribe` target="_blank" rel="noopener noreferrer">
+                          <strong>SUBSCRIBE</strong>
+                        </a>
+                      </else>
+                      for more leading edge content from <em>${latestIssue.publication.name}</em>!
+                    </td>
+                  </tr>
+                </common-table>
+              </td>
+            </tr>
+          </if>
+          <else>
           <tr>
             <td width=imgWidth align="center" valign="center">
               <marko-core-obj-value|{ value: coverImage }| obj=latestIssue field="coverImage" as="object">
@@ -82,6 +135,7 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
               </common-table>
             </td>
           </tr>
+          </else>
         </common-table>
       </marko-web-query>
     </td>
