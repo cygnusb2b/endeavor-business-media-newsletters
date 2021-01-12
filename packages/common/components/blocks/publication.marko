@@ -32,7 +32,7 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
         $ const publicationDescription = defaultValue(input.publicationDescription, latestIssue.publication.description);
 
         <common-table width="100%" border="0" spacing=0 padding=0 align="center" style="border-collapse:collapse;" class="main">
-          <if(imgWidth > 700)>
+          <if(imgWidth > 300)>
             <tr>
               <td width=imgWidth align="center" valign="center">
                 <marko-core-obj-value|{ value: coverImage }| obj=latestIssue field="coverImage" as="object">
@@ -51,6 +51,9 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
             <tr>
               <td width="100%" valign="top" style="padding-left: 20px;">
                 <common-table width="100%" border="0" spacing=0 padding=0 align="center" style="border-collapse:collapse;">
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
                   <tr>
                     <td align="center">
                         <if(latestIssue.digitalEditionUrl)>
