@@ -1,5 +1,7 @@
-$ const { newsletter, date } = data;
+import emailX from "../config/email-x";
 
+$ const { newsletter, date } = data;
+$ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
 $ const titleTableStyle = "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00b398; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00b398;";
 $ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
 $ const mainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
@@ -33,6 +35,13 @@ $ const buttonTextStyle = {
       teaser=newsletter.teaser
     />
     <common-style-a-header-block date=date newsletter=newsletter />
+
+    <common-section-spacer-element />
+
+    <common-style-a-leaderboard-primary-block
+      name=leaderboardPrimary
+      date=date
+    />
 
     <common-section-spacer-element />
 
