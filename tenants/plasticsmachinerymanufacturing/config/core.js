@@ -8,7 +8,7 @@ module.exports = {
     },
   },
   optOut: {
-    address: 'Plastics Machinery & Manufacturing Magazine <br>2 Summit Park, Suite 300, Third Floor <br>Independence, OH 44131',
+    address: 'Plastics Machinery & Manufacturing Magazine<br>Endeavor Business Media<br>331 54th Avenue N.<br>Nashville, TN 37209',
     safeSenders: 'news.plasticsmachinerymagazine.com and mail.plasticsmachinerymagazine.com',
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
