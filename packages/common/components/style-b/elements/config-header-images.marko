@@ -1,7 +1,9 @@
-$ const { config, alt, newsletter } = input;
-$ const mainTableStyle = "border-collapse:collapse; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 
+$ const { config, alt, newsletter, date } = input;
+$ const mainTableStyle = "border-collapse:collapse; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const headerLink = config.headerLink ? config.headerLink : `https://${newsletter.site.host}`;
+$ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; color: #6b6b6b; font: 700 12px/18px Helvetica, 'Helvetica Neue', Arial, sans-serif;");
 
 <if(config)>
   <if(config.headerTemplate === 'image-full-700px')>
@@ -18,6 +20,16 @@ $ const headerLink = config.headerLink ? config.headerLink : `https://${newslett
           </marko-newsletter-imgix>
         </td>
       </tr>
+    </common-table>
+    <common-table width="700" align="center" style=`${mainTableStyle}` class="main" padding=0 spacing=0>
+      <if('hide' !== config.dateToggle)>
+        $ const configDateStyle = config.headerTextColor ? `${dateStyle} color: ${config.headerTextColor}` : dateStyle;
+        <tr>
+          <td style=configDateStyle>
+            ${date.format(config.dateToggle)}
+          </td>
+        </tr>
+      </if>
     </common-table>
   </if>
   <else>
@@ -53,6 +65,14 @@ $ const headerLink = config.headerLink ? config.headerLink : `https://${newslett
     </if>
     <else>
       <common-table width="340" align="right" style='margin-top: 10px;' class="mobileHide" padding=5 spacing=0>
+        <if('hide' !== config.dateToggle)>
+          $ const configDateStyle = config.headerTextColor ? `${dateStyle} color: ${config.headerTextColor}` : dateStyle;
+          <tr>
+            <td align="right" style=`padding-right: 20px; ${configDateStyle}`>
+              ${date.format(config.dateToggle)}
+            </td>
+          </tr>
+        </if>
         <tr>
           <td valign="top" align="right">
             <common-social-icons-element newsletter=newsletter/>

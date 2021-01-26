@@ -13,6 +13,8 @@
     "template": "./config-header-images.marko",
     "@config": "object",
     "@newsletter": "object",
-    "@alt": "string"
+    "@alt": "string",
+    "@date-style": "string",
+    "@date": "date"
   }
 }
