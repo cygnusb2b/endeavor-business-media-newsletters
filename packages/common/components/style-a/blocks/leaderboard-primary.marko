@@ -1,15 +1,21 @@
 $ const { name, date } = input;
 
-<common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
-  <tr>
-    <td style="padding: 0 15px 15px 15px; min-width: 100%;">
-      <h3 style="font: 700 11px/16px Helvetica, Arial, sans-serif;margin: 5px; color: #999; text-align: left;">
-        Advertisement
-      </h3>
-      <common-advertisement-element
-        name=name
-        date=date
-      />
-    </td>
-  </tr>
-</common-table>
+<marko-newsletters-email-x-data|{ response }| decoded-params=["email", "send"]>
+  <@ad-unit ...name />
+  <@params date=input.date email="@{email name}@" send="@{track_id}@" />
+  <if(response)>
+    <common-table width="700" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td style="padding: 0 15px 15px 15px; min-width: 100%;">
+              <h3 style="font: 700 11px/16px Helvetica, Arial, sans-serif;margin: 5px; color: #999; text-align: left;">
+                Advertisement
+              </h3>
+          <common-advertisement-element
+            name=name
+            date=date
+          />
+        </td>
+      </tr>
+    </common-table>
+  </if>
+</marko-newsletters-email-x-data>
