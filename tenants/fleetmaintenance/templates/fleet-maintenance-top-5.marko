@@ -49,7 +49,6 @@ $ const buttonTextStyle = {
     <common-style-b-image-only-header-block date=date newsletter=newsletter />
 
     <common-section-spacer-element />
-
     <!-- #01 - Leaderboard - 1 Column -->
     <common-style-a-leaderboard-block
       section-id=65419
@@ -58,27 +57,11 @@ $ const buttonTextStyle = {
       main-table-style=mainTableStyle
     />
 
-    <!-- #02 - From The Editor - 1 Column -->
-    <common-style-a-special-edition-full-wrapper-block
-      section-id=65420
-      title="From The Editor"
-      date=date
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      show-button=false
-    />
-
-    <!-- #03 - Featured - 1 Column - Big Image -->
+    <!-- #02 - Top News Story - 1 Column - Big Image -->
     <common-style-a-featured-section-wrapper-block
-      section-id=65421
-      title="Featured"
+      section-id=65420
       date=date
       newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
       main-table-style=featuredMainTableStyle
       content-link-style=featuredContentLinkStyle
       teaser-style=featuredTeaserStyle
@@ -86,63 +69,43 @@ $ const buttonTextStyle = {
       button-text-style=featuredButtonTextStyle
     />
 
-    <!-- #04 - Leaderboard - 1 Column -->
+    <!-- #03 - Leaderboard - 1 Column -->
     <common-style-a-leaderboard-block
+      section-id=65421
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #04 - More News - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
       section-id=65422
       date=date
       newsletter=newsletter
       main-table-style=mainTableStyle
-    />
-
-    <!-- #05 Latest News - 2 Column -->
-    <common-style-a-card-section-wrapper-block
-      section-id=65423
-      title="Latest News"
-      date=date
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
-      fallback-label=false
     />
 
-    <!-- #06 Latest News - No Images - 2 Column -->
-    <common-style-a-card-section-wrapper-block
+    <!-- #05 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=65423
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #06 - Featured Media - 1 Column - Big Image -->
+    <common-style-a-featured-section-wrapper-block
       section-id=65424
       date=date
       newsletter=newsletter
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
-      fallback-label=false
-      displayImage=false
-    />
-
-    <!-- #07 Trending - 2 Column -->
-    <common-style-a-card-section-wrapper-block
-      section-id=65425
-      title="Trending"
-      date=date
-      newsletter=newsletter
-      title-table-style=titleTableStyle
-      title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
-      fallback-label=false
-    />
-
-    <!-- #08 - Leaderboard - 1 Column -->
-    <common-style-a-leaderboard-block
-      section-id=65426
-      date=date
-      newsletter=newsletter
-      main-table-style=mainTableStyle
+      main-table-style=featuredMainTableStyle
+      content-link-style=featuredContentLinkStyle
+      teaser-style=featuredTeaserStyle
+      button-style=featuredButtonStyle
+      button-text-style=featuredButtonTextStyle
     />
 
     <common-section-spacer-element />
