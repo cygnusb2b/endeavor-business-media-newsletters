@@ -1,0 +1,116 @@
+$ const { newsletter, date } = data;
+$ const featuredMainTableStyle = "border-collapse:collapse; margin: 0; background-color: #333333; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const featuredContentLinkStyle = {
+  "color": "#ffffff",
+  "font": "700 19.5px/20px Arial, Helvetica, sans-serif",
+};
+$ const featuredTeaserStyle = {
+  "margin": "0",
+  "padding": "0",
+  "color": "#d7d7d7",
+  "font": "400 14px/18px Arial, Helvetica, sans-serif"
+};
+$ const featuredButtonStyle = "border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #ffffff;";
+$ const featuredButtonTextStyle = {
+  "color": "#333333",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
+$ const titleTableStyle = "margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
+$ const titleStyle = "font: 700 15px/23px Arial, Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
+$ const mainTableStyle = "border-collapse:collapse; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const contentLinkStyle = {
+  "color": "#d00a2d",
+  "font": "700 19.5px/20px Arial, Helvetica, sans-serif",
+};
+$ const buttonStyle = "border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #d00a2d;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-a-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+      teaser=newsletter.teaser
+    />
+    <common-style-b-image-only-header-block date=date newsletter=newsletter />
+
+    <common-section-spacer-element />
+    <!-- #01 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=65419
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #02 - Top News Story - 1 Column - Big Image -->
+    <common-style-a-featured-section-wrapper-block
+      section-id=65420
+      date=date
+      newsletter=newsletter
+      main-table-style=featuredMainTableStyle
+      content-link-style=featuredContentLinkStyle
+      teaser-style=featuredTeaserStyle
+      button-style=featuredButtonStyle
+      button-text-style=featuredButtonTextStyle
+    />
+
+    <!-- #03 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=65421
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #04 - More News - 1 Column -->
+    <common-style-a-special-edition-full-wrapper-block
+      section-id=65422
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <!-- #05 - Leaderboard - 1 Column -->
+    <common-style-a-leaderboard-block
+      section-id=65423
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+    />
+
+    <!-- #06 - Featured Media - 1 Column - Big Image -->
+    <common-style-a-featured-section-wrapper-block
+      section-id=65424
+      date=date
+      newsletter=newsletter
+      main-table-style=featuredMainTableStyle
+      content-link-style=featuredContentLinkStyle
+      teaser-style=featuredTeaserStyle
+      button-style=featuredButtonStyle
+      button-text-style=featuredButtonTextStyle
+    />
+
+    <common-section-spacer-element />
+
+    <common-style-a-opt-out-block newsletter=newsletter/>
+
+  </@body>
+</marko-newsletter-root>
