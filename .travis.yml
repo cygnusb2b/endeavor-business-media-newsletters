@@ -195,6 +195,12 @@ jobs:
       install: skip
       env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
+    - stage: production
+      name: smartbuildingstech
+      script: npx @base-cms/newsletter-deployment-tool deploy smartbuildingstech gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
     #############################
     #       Picon Below         #
     #############################

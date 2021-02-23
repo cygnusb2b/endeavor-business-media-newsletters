@@ -632,5 +632,20 @@ services:
       - "19438:80"
       - "29438:29438"
 
+  smartbuildingstech:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/smartbuildingstech
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19439
+      LIVERELOAD_PORT: 29439
+      TENANT_KEY: ebm_sbt
+    ports:
+      - "19439:80"
+      - "29439:29439"
+
 volumes:
   yarn-cache: {}
