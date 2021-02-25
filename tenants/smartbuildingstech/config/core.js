@@ -12,8 +12,8 @@ module.exports = {
     safeSenders: 'news.smartbuildingstech.com and mail.smartbuildingstech.com',
     privacyPolicyUrl: 'https://www.endeavorbusinessmedia.com/privacy-policy',
     phoneNumber: '800-547-7377',
-    // manageSubscriptions: 'https://endeavor.dragonforms.com/loading.do?omedasite=RDHPrefPage',
-    // signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=RDHnewpref',
+    manageSubscriptions: 'https://endeavor.dragonforms.com/loading.do?omedasite=SBTprefpage',
+    signUp: 'https://endeavor.dragonforms.com/loading.do?omedasite=SBTNewPref&pk=NLFooter',
   },
   // socialMediaLinks: [
   //   {

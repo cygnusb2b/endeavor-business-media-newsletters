@@ -1,23 +1,25 @@
 $ const { newsletter, date } = data;
-
-$ const buttonStyle = "background-color: transparent;";
-$ const buttonTextStyle = {
-  "color": "#000",
-  "font": "bold 14px/21px sans-serif"
-};
+$ const mainTableStyle ="border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const contentLinkStyle = {
-  "font": "bold 16px/20px sans-serif",
-  "color": "#1B5D8F",
-  "text-decoration": "none"
+  "font": "bold 19.5px/20px Arial, 'Helvetica Neue', Helvetica, sans-serif"
+  "color": "#00944d",
 };
-$ const teaserStyle = {
-  "font": "400 14px/18px Arial, 'Helvetica Neue', Helvetica, sans-serif",
-  "margin": "0",
-  "padding": "0",
-  "color": "#000000",
+$ const buttonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00944d;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
 };
+$ const footerStyle = "background-color: #00944d; text-decoration: none !important;";
 $ const featuredMainTableStyle = "border: 10px solid #ecedee;";
-$ const footerStyle = "background-color: #1B5D8F; text-decoration: none !important;";
+$ const featuredButtonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #ffffff;";
+$ const featuredButtonTextStyle = {
+  "color": "#333333",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none !important",
+  "text-transform": "uppercase"
+};
 
 <marko-newsletter-root
   title=newsletter.name
@@ -36,6 +38,114 @@ $ const footerStyle = "background-color: #1B5D8F; text-decoration: none !importa
             date=date
             teaser=newsletter.teaser
           />
+
+          <common-style-b-image-only-header-block date=date newsletter=newsletter />
+
+          <!-- scheduled content 1-3 -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <!-- #01 - Product Article - Big Image - 1 Column -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=*****
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                />
+                <!-- Number order is a bit wonky in this section because the brand requested that all ad sections be numbered with even numbers>
+                <!-- #03 - Featured Articles - No image - 1 Column -->
+                <common-style-a-title-teaser-block
+                  section-id=*****
+                  date=date
+                  limit=2
+                  skip=1
+                  newsletter=newsletter
+                  title-table-style=titleTableStyle
+                  title-style=titleStyle
+                  main-table-style=mainTableStyle
+                  content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
+                />
+              </td>
+              <td width="300" align="right">
+                <!-- #02 - Skyscraper Ad - 1 Column -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=*****
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- #04 - Text/Promo - 1 Column -->
+          <common-style-b-text-promo-wrapper
+            section-id=*****
+            date=date
+            limit=1
+            newsletter=newsletter
+            main-table-style=featuredMainTableStyle
+            content-link-style=contentLinkStyle
+            button-style=featuredButtonStyle
+            button-text-style=featuredButtonTextStyle
+          />
+
+          <!-- scheduled content 5 and 6 -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <!-- #05 - Product Article - Big Image - 1 Column -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=*****
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
+                />
+              </td>
+              <td width="300" align="right">
+                <!-- #06 - 300 x 250 ad - 1 Column -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=*****
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- scheduled content 7 and 8 -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td>
+                <!-- #07 - Product Article - Big Image - 1 Column -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=*****
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  teaser-style=teaserStyle
+                />
+              </td>
+              <td width="300" align="right">
+                <!-- #08 - 300 x 250 ad - 1 Column -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=*****
+                  date=date
+                  limit=1
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                />
+              </td>
+            </tr>
+          </common-table>
 
           <common-style-b-footer-nav-block
             footer-style=footerStyle
