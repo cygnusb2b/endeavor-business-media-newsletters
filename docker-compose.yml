@@ -642,7 +642,7 @@ services:
       PORT: 80
       EXPOSED_PORT: 19439
       LIVERELOAD_PORT: 29439
-      TENANT_KEY: ebm_sbt
+      TENANT_KEY: ebm_smartbuildingstech
     ports:
       - "19439:80"
       - "29439:29439"
