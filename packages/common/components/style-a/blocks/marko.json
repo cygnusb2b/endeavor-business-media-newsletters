@@ -375,6 +375,7 @@
   },
   "<common-style-a-title-teaser-block>": {
     "template": "./title-teaser.marko",
+    "@width": "string",
     "@date": {
       "type": "object",
       "required": true

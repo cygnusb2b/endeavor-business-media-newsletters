@@ -119,7 +119,8 @@
     "@title-style": "string",
     "@teaser-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@width": "string"
   },
   "<common-style-b-image-only-header-block>": {
     "template": "./image-only-header.marko",
