@@ -1,5 +1,4 @@
 import contentList from "@endeavor-business-media/common/graphql/fragments/content-list";
-import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const {
   newsletter,
@@ -8,12 +7,11 @@ $ const {
   limit,
   skip,
   node,
+  tableWidth,
+  imgWidth
 } = input;
 
-$ const tableWidth = defaultValue(input.tableWidth, "320");
-$ const imgWidth = defaultValue(input.imageWidth, "300");
-
-<common-table width=tableWidth style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+<common-table style="border-collapse:collapse;" align="center" class="main" width=tableWidth padding=0 spacing=0>
   <tr>
     <td>
       <!-- Section Query Wrapper -->
@@ -25,25 +23,27 @@ $ const imgWidth = defaultValue(input.imageWidth, "300");
         skip: skip,
         queryFragment: contentList,
       }>
-        <common-table width="100%" align="left" class="main" padding=0 spacing=0>
-          <tr>
-            <td align="center" style="padding: 0 10px;" valign="top">
-              <common-table width="100%" style="border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="center" class="main" padding=0 spacing=0>
-                <tr>
-                  <td align="center" class="main">
-                    <common-table width="100%" style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="center" class="main" padding=0 spacing=0>
-                      <tr>
-                        <td>
-                          <common-primary-image-element node=node img-width=imgWidth class-name="sponsored" />
-                        </td>
-                      </tr>
-                    </common-table>
-                  </td>
-                </tr>
-              </common-table>
-            </td>
-          </tr>
-        </common-table>
+        <for|node, index| of=nodes>
+          <common-table width="100%" align="left" class="main" padding=0 spacing=0>
+            <tr>
+              <td align="center" style="padding: 0 10px;" valign="top">
+                <common-table width="100%" style="border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align="center" class="main" padding=0 spacing=0>
+                  <tr>
+                    <td align="center" class="main">
+                      <common-table width="100%" style=`border-collapse:collapse;  mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;` align="center" class="main" padding=0 spacing=0>
+                        <tr>
+                          <td>
+                            <common-primary-image-element node=node img-width=imgWidth class-name="sponsored" />
+                          </td>
+                        </tr>
+                      </common-table>
+                    </td>
+                  </tr>
+                </common-table>
+              </td>
+            </tr>
+          </common-table>
+        </for>
       </marko-web-query>
     </td>
   </tr>

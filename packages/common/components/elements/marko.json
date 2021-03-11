@@ -130,11 +130,11 @@
     },
     "@table-width": {
       "type": "number",
-      "default-value": 600
+      "default-value": 320
     },
     "@img-width": {
       "type": "number",
-      "default-value": 600
+      "default-value": 300
     }
   }
 }

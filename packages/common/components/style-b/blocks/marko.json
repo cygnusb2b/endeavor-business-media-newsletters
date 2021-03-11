@@ -296,7 +296,8 @@
     "@teaser-style": "object",
     "@title-style": "string",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@width": "string"
   },
   "<common-style-b-title-only-block>": {
     "template": "./title-only.marko",
