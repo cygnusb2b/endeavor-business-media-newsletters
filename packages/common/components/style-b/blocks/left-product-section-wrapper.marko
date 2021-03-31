@@ -16,6 +16,8 @@ $ const {
   teaserStyle
 } = input;
 
+$ const width = defaultValue(input.width, "380");
+$ const innerWidth = width - 20;
 $ const titleStyle = defaultValue(input.titleStyle, "font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif; margin: 0;");
 $ const titleTableStyle = defaultValue(input.titleTableStyle, titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #000; background-color: #ffffff;");
 $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:collapse; font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif; margin: 0; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;");
@@ -24,7 +26,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
   "font": "bold 18px/27px 'Helvetica Neue', Helvetica, sans-serif"
 });
 
-<common-table width="400" style="border-collapse:collapse;" align="center" class="main left-product-section-wrapper" padding=0 spacing=0>
+<common-table width=width style="border-collapse:collapse;" align="center" class="main left-product-section-wrapper" padding=0 spacing=0>
   <tr>
     <td>
       <!-- Section Query Wrapper -->
@@ -36,7 +38,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
         skip: skip,
         queryFragment: contentList,
       }>
-        <common-table width="380" style=mainTableStyle align="center" class="main" padding=0 spacing=0>
+        <common-table width=innerWidth style=mainTableStyle align="center" class="main" padding=0 spacing=0>
           <if(title)>
             <tr>
               <td>
@@ -56,7 +58,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                 <common-style-b-simple-card-block
                   node=node
                   alignment="center"
-                  table-width="380"
+                  table-width=innerWidth
                   content-link-style=contentLinkStyle
                   teaser-style=teaserStyle
                 />

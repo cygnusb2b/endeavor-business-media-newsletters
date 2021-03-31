@@ -105,5 +105,36 @@
   "<common-social-icons-element>": {
     "template": "./social-icons.marko",
     "@newsletter": "object"
+  },
+  "<common-promotion-advertisement-element>": {
+    "template": "./promotion-advertisement.marko",
+    "@date": {
+      "type": "object",
+      "required": true
+    },
+    "@newsletter": {
+      "type": "object",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@limit": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@skip": {
+      "type": "number",
+      "default-value": 0
+    },
+    "@table-width": {
+      "type": "number",
+      "default-value": 320
+    },
+    "@img-width": {
+      "type": "number",
+      "default-value": 300
+    }
   }
 }
