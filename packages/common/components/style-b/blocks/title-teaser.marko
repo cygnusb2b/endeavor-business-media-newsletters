@@ -41,21 +41,12 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
               </td>
             </tr>
           </if>
-          <for|node, index| of=nodes>
-            <tr>
-              <td valign="top" style="padding: 5px 20px;">
-                <common-content-link-element node=node content-link-style=contentLinkStyle />
-              </td>
-            </tr>
-            <tr>
-              <td valign="top" style="padding: 5px 20px;">
-                <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
-              </td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </for>
+          <td valign="top" style="padding: 20px;">
+            <for|node, index| of=nodes>
+              <common-content-link-element node=node content-link-style=contentLinkStyle />
+              <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+            </for>
+          </td>
         </common-table>
       </marko-web-query>
     </td>
