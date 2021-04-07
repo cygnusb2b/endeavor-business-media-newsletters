@@ -135,6 +135,7 @@
     "@img-width": {
       "type": "number",
       "default-value": 300
-    }
+    },
+    "@teaser-style": "object"
   }
 }

@@ -3,7 +3,8 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 $ const { config, alt, newsletter, date } = input;
 $ const mainTableStyle = "border-collapse:collapse; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const headerLink = config.headerLink ? config.headerLink : `https://${newsletter.site.host}`;
-$ const dateStyle = defaultValue(input.dateStyle, "text-transform: uppercase; color: #6b6b6b; font: 700 12px/18px Helvetica, 'Helvetica Neue', Arial, sans-serif;");
+$ const headerDatePadding = config.headerBgColor ? '3px 10px 6px' : '0';
+$ const dateStyle = defaultValue(input.dateStyle, `text-transform: uppercase; color: #6b6b6b; font: 700 12px/18px Helvetica, 'Helvetica Neue', Arial, sans-serif; padding:${headerDatePadding};`);
 
 <if(config)>
   <if(config.headerTemplate === 'image-full-700px')>

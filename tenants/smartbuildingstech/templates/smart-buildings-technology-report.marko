@@ -12,7 +12,6 @@ $ const buttonTextStyle = {
   "text-decoration": "none",
   "text-transform": "uppercase"
 };
-$ const footerStyle = "background-color: #00944d; text-decoration: none !important;";
 $ const featuredMainTableStyle = "border: 10px solid #ecedee;";
 $ const featuredButtonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #ffffff;";
 $ const featuredButtonTextStyle = {
@@ -44,111 +43,101 @@ $ const featuredButtonTextStyle = {
 
           <common-section-spacer-element />
 
-          <!-- content wrapper -->
+          <!-- scheduled content 1-3 -->
           <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-
-            <!-- scheduled content 1-3 -->
-            <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-              <tr>
-                <td align="left" width="380">
-                  <!-- #01 - Product Article - Big Image - 1 Column -->
-                  <common-style-b-left-product-section-wrapper
-                    section-id=82603
-                    date=date
-                    limit=1
-                    newsletter=newsletter
-                    content-link-style=contentLinkStyle
-                  />
-                  <!-- Number order is a bit wonky in this section because the brand requested that all ad sections be numbered with even numbers>
-                  <!-- #03 - Featured Articles - No image - 1 Column -->
-                  <common-style-a-title-teaser-block
-                    section-id=82605
-                    date=date
-                    skip=1
-                    newsletter=newsletter
-                    main-table-style=mainTableStyle
-                    content-link-style=contentLinkStyle
-                    width="380"
-                  />
-                </td>
-                <td width="320" align="right">
-                  <!-- #02 - Skyscraper Ad - 1 Column -->
-                  <common-promotion-advertisement-element
-                    section-id=82604
-                    date=date
-                    limit=1
-                    newsletter=newsletter
-                  />
-                </td>
-              </tr>
-            </common-table>
-
-            <!-- #04 - Text/Promo - 1 Column -->
-            <common-style-b-text-promo-wrapper
-              section-id=82606
-              date=date
-              limit=1
-              newsletter=newsletter
-              main-table-style=featuredMainTableStyle
-              content-link-style=contentLinkStyle
-              button-style=featuredButtonStyle
-              button-text-style=featuredButtonTextStyle
-            />
-
-            <!-- scheduled content 5 and 6 -->
-            <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-              <tr>
-                <td align="left" width="380">
-                  <!-- #05 - Product Article - Big Image - 1 Column -->
-                  <common-style-b-left-product-section-wrapper
-                    section-id=82607
-                    date=date
-                    limit=1
-                    newsletter=newsletter
-                    content-link-style=contentLinkStyle
-                  />
-                </td>
-                <td align="right" width="320">
-                  <!-- #06 - 300 x 250 ad - 1 Column -->
-                  <common-promotion-advertisement-element
-                    section-id=82608
-                    date=date
-                    limit=1
-                    newsletter=newsletter
-                  />
-                </td>
-              </tr>
-            </common-table>
-
-            <!-- scheduled content 7 and 8 -->
-            <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
-              <tr>
-                <td align="left" width="380">
-                  <!-- #07 - Product Article - Big Image - 1 Column -->
-                  <common-style-b-left-product-section-wrapper
-                    section-id=82609
-                    date=date
-                    limit=1
-                    newsletter=newsletter
-                    content-link-style=contentLinkStyle
-                  />
-                </td>
-                <td align="right" width="300" >
-                  <!-- #08 - 300 x 250 ad - 1 Column -->
-                  <common-promotion-advertisement-element
-                    section-id=82610
-                    date=date
-                    limit=1
-                    newsletter=newsletter
-                  />
-                </td>
-              </tr>
-            </common-table>
-
+            <tr>
+              <td valign="top" align="left">
+                <!-- #01 - Product Article - With Image - 82603 -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=82603
+                  date=date
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  width=360
+                />
+                <!-- Number order is a bit wonky in this section because the brand requested that all ad sections be numbered with even numbers> -->
+                <!-- #03 - Featured Articles - No Image - 82605 -->
+                <common-style-b-title-teaser-block
+                  section-id=82605
+                  date=date
+                  newsletter=newsletter
+                  main-table-style=mainTableStyle
+                  content-link-style=contentLinkStyle
+                  width=360
+                />
+              </td>
+              <td valign="top" align="right">
+                <!-- #02 - Skyscraper / 300x600 advertisement - 82604 -->
+                <common-promotion-advertisement-element
+                  section-id=82604
+                  date=date
+                  img-width=300
+                  newsletter=newsletter
+                />
+              </td>
+            </tr>
           </common-table>
-          <!-- end of content wrapper-->
 
-          <common-section-spacer-element />
+          <!-- #04 - Text/Promo - 1 Column - 82606 -->
+          <common-style-b-text-promo-wrapper
+            section-id=82606
+            date=date
+            newsletter=newsletter
+            main-table-style=featuredMainTableStyle
+            content-link-style=contentLinkStyle
+            button-style=featuredButtonStyle
+            button-text-style=featuredButtonTextStyle
+          />
+
+          <!-- scheduled content 5 and 6 -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td valign="top" align="left">
+                <!-- #05 - Product Article - With Image - 82607 -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=82607
+                  date=date
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  width=360
+                />
+              </td>
+              <td valign="top" align="right">
+                <!-- #06 - Medium Rectangle / 300x250 advertisement - 82608 -->
+                <common-promotion-advertisement-element
+                  section-id=82608
+                  date=date
+                  newsletter=newsletter
+                  img-width=300
+                />
+              </td>
+            </tr>
+          </common-table>
+
+          <!-- scheduled content 7 and 8 -->
+          <common-table width="700" style="border-collapse:collapse;" align="center" class="main" padding=0 spacing=0>
+            <tr>
+              <td align="left" width="380">
+                <!-- #07 - Product Article - With Image - 82609 -->
+                <common-style-b-left-product-section-wrapper
+                  section-id=82609
+                  date=date
+                  newsletter=newsletter
+                  content-link-style=contentLinkStyle
+                  width=360
+                />
+              </td>
+              <td align="right" width="300" >
+                <!-- #08 - Medium Rectangle / 300x250 advertisement - 82610 -->
+                <common-promotion-advertisement-element
+                  section-id=82610
+                  date=date
+                  newsletter=newsletter
+                  img-width=300
+                />
+              </td>
+            </tr>
+          </common-table>
 
           <common-style-b-footer-nav-block newsletter=newsletter/>
 
