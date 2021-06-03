@@ -10,7 +10,8 @@ $ const {
   title,
   limit,
   skip,
-  teaserStyle
+  teaserStyle,
+  customPromotionDisplay,
   linkTextStyle
 } = input;
 $ const titleStyle = defaultValue(input.titleStyle, "font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif; margin: 0;");
@@ -51,7 +52,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
             <td valign="top">
               <for|node, index| of=nodes>
                 $ const alignment = getAlignment(index);
-                <if(node.type === "promotion")>
+                <if(node.type === "promotion" && customPromotionDisplay === true)>
                     <common-style-a-promotion-block node=node alignment=alignment content-link-style=contentLinkStyle teaser-style=teaserStyle />
                 </if>
                 <else>
