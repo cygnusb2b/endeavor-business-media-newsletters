@@ -11,6 +11,7 @@ $ const {
   limit,
   skip,
   teaserStyle
+  linkTextStyle
 } = input;
 $ const titleStyle = defaultValue(input.titleStyle, "font: bold 16px/24px 'Helvetica Neue', Helvetica, sans-serif; margin: 0;");
 $ const titleTableStyle = defaultValue(input.titleTableStyle, titleStyle + "table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; color: #000; background-color: #ffffff;");
@@ -59,6 +60,7 @@ $ const contentLinkStyle = defaultValue(input.contentLinkStyle, {
                     alignment=alignment
                     content-link-style=contentLinkStyle
                     teaser-style=teaserStyle
+                    link-text-style=linkTextStyle
                   />
                 </else>
               </for>
