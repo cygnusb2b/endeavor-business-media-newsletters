@@ -52,7 +52,12 @@ $ const mainTableStyle = defaultValue(input.mainTableStyle, "border-collapse:col
             </tr>
             <tr>
               <td style="padding: 0 20px;">
-                <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+                <if(node.type === "promotion" && node.body)>
+                  <common-content-teaser-element node=node teaser-style=teaserStyle field="body" tag="p" />
+                </if>
+                <else>
+                  <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+                </else>
               </td>
             </tr>
             <tr>
