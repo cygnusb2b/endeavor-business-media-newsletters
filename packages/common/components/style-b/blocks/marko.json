@@ -43,7 +43,8 @@
       "default-value": 300
     },
     "@content-link-style": "object",
-    "@teaser-style": "object"
+    "@teaser-style": "object",
+    "@link-text-style": "object"
   },
   "<common-style-b-simple-card-full-block>": {
     "template": "./simple-card-full.marko",
@@ -90,7 +91,12 @@
     "@title-style": "string",
     "@teaser-style": "object",
     "@main-table-style": "string",
-    "@content-link-style": "object"
+    "@content-link-style": "object",
+    "@custom-promotion-display": {
+      "type": "boolean",
+      "default-value": true
+    },
+    "@link-text-style": "object"
   },
   "<common-style-b-left-product-section-wrapper>": {
     "template": "./left-product-section-wrapper.marko",

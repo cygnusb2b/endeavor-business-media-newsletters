@@ -1,4 +1,5 @@
 import getSponsoredByText from "@endeavor-business-media/common/utils/get-sponsored-by-text";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const {
   node,
@@ -11,6 +12,7 @@ $ const {
 
 $ const innerPadding = 20;
 $ const innerTableWidth = tableWidth - (innerPadding * 2);
+$ const linkTextStyle = defaultValue(input.linkTextStyle, "font: bold 14px/16px Arial, Helvetica, sans-serif; color: #d5211c;");
 
 <common-table width=tableWidth style="border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0; margin:0;" align=alignment class=`${alignment} main simple-card-half` padding=0 spacing=0>
   <tr>
@@ -27,7 +29,23 @@ $ const innerTableWidth = tableWidth - (innerPadding * 2);
           <td style="line-height: 175%; mso-line-heigh-rule: exactly; mso-line-height-alt: 146%;">
             <common-primary-image-element node=node img-width=imgWidth class-name="main" />
             <common-content-link-element node=node content-link-style=contentLinkStyle />
-            <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+            <if(node.type === "promotion" && node.body)>
+              <common-content-teaser-element node=node teaser-style=teaserStyle field="body" tag="p" />
+            </if>
+            <else>
+              <common-content-teaser-element node=node teaser-style=teaserStyle tag="p" />
+            </else>
+            <if(node.type === "promotion" && node.linkText)>
+              <common-table align="left" padding=0 spacing=0>
+                <tr>
+                  <td style="margin:10px 0;">
+                    <marko-core-text value=node.linkText>
+                      <@link href=node.siteContext.url target="_blank" attrs={ style: linkTextStyle } />
+                    </marko-core-text>
+                    </td>
+                  </tr>
+              </common-table>
+            </if>
           </td>
         </tr>
       </common-table>

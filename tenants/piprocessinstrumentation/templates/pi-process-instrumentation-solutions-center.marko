@@ -1,0 +1,74 @@
+$ const { newsletter, date } = data;
+$ const mainTableStyle = "border-collapse:collapse; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const buttonTextStyle = {
+  "color": "#d5211c",
+  "font": "bold 16px/22px Arial, Helvetica, sans-serif"
+};
+$ const buttonStyle = "background-color: transparent; padding: 5px 20px;";
+$ const teaserStyle = "text-decoration: none !important; font: normal 14px Arial,Helvetica, sans-serif; color: #777;"
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-b-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-table width="740" style="border-collapse:collapse; background-color: #fff;" align="center" class="main" padding=0 spacing=0>
+      <tr>
+        <td>
+          <common-banner-element
+            name=newsletter.name
+            date=date
+            teaser=newsletter.teaser
+          />
+          <common-style-b-image-only-header-block date=date newsletter=newsletter />
+
+          <common-table width="700" padding="0" align="center" style="border-collapse:collapse;" class="main">
+            <tr>
+              <td height="6" bgcolor="#d5211c"></td>
+            </tr>
+          </common-table>
+
+          <!-- #01 Top Story - 1 Column - 65478 -->
+          <common-style-b-title-teaser-block
+            section-id=65478
+            date=date
+            limit=1
+            newsletter=newsletter
+            main-table-style=mainTableStyle
+            teaser-style=teaserStyle
+            content-link-style={
+              "font": "bold 24px Trebuchet MS, Helvetica, sans-serif;",
+              "color": "#333",
+              "text-decoration": "none"
+            };
+          />
+
+          <!-- #2 Sponsored - 2 Column - 65479 -->
+          <common-style-b-card-section-wrapper-block
+            section-id=65479
+            date=date
+            newsletter=newsletter
+            main-table-style=mainTableStyle
+            custom-promotion-display=false
+            content-link-style={
+              "font": "bold 16px Trebuchet MS, Helvetica, sans-serif;",
+              "color": "#333",
+              "text-decoration": "none"
+            };
+          />
+
+          <common-section-spacer-element />
+
+          <common-style-b-footer-nav-block newsletter=newsletter/>
+
+          <common-style-b-opt-out-block newsletter=newsletter />
+
+        </td>
+      </tr>
+    </common-table>
+  </@body>
+</marko-newsletter-root>
