@@ -1,0 +1,92 @@
+import emailX from "../config/email-x";
+
+$ const { newsletter, date } = data;
+$ const featuredTitleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
+$ const featuredMainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; background-color: #ccc; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const titleTableStyle = "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
+$ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
+$ const mainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const contentLinkStyle = {
+  "font-weight": "bold",
+  "color": "#d74022",
+  "font-size": "19.5px",
+  "line-height": "20px",
+  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+};
+$ const buttonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #d74022;";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-a-styles />
+  </@head>
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+      teaser=newsletter.teaser
+      />
+
+    <common-style-b-image-only-header-block date=date newsletter=newsletter />
+
+    <common-section-spacer-element />
+
+    <!-- Latest -->
+    <common-style-a-third-party-featured-section-wrapper-block
+      section-id=82801
+      date=date
+      limit=1
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <common-section-spacer-element />
+
+    <!-- Latest -->
+    <common-style-a-third-party-content-180-section-wrapper-block
+      section-id=82801
+      date=date
+      skip=1
+      newsletter=newsletter
+      title-table-style=titleTableStyle
+      title-style=titleStyle
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <common-section-spacer-element />
+
+    <!-- Sponsor -->
+    <common-style-a-featured-ad-wrapper-block
+      section-id=82802
+      date=date
+      limit=1
+      newsletter=newsletter
+      main-table-style=featuredMainTableStyle
+      content-link-style=contentLinkStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+    />
+
+    <common-section-spacer-element />
+
+    <common-style-a-opt-out-block newsletter=newsletter/>
+
+  </@body>
+</marko-newsletter-root>
