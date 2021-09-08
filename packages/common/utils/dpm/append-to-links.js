@@ -1,4 +1,4 @@
-const DPMContentComponent = require('../../components/dpm/content');
+const DPMContentComponent = require('../../components/dpm/content.marko');
 const extractUrls = require('../extract-urls');
 
 /**
