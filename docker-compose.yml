@@ -647,5 +647,20 @@ services:
       - "19439:80"
       - "29439:29439"
 
+  energytech:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/energytech
+    environment:
+      <<: *env
+      <<: *env-gemenon
+      PORT: 80
+      EXPOSED_PORT: 19439
+      LIVERELOAD_PORT: 29439
+      TENANT_KEY: ebm_energytech
+    ports:
+      - "19439:80"
+      - "29439:29439"
+
 volumes:
   yarn-cache: {}
