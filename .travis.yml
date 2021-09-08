@@ -201,6 +201,12 @@ jobs:
       install: skip
       env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
+    - stage: production
+      name: energytech
+      script: npx @base-cms/newsletter-deployment-tool deploy energytech gemenon
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
     #############################
     #       Picon Below         #
     #############################
