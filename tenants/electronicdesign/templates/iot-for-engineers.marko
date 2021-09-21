@@ -2,19 +2,36 @@ import emailX from "../config/email-x";
 
 $ const { newsletter, date } = data;
 $ const leaderboardPrimary = emailX.getAdUnit({ name: "leaderboardPrimary", alias: newsletter.alias });
-$ const featuredTitleStyle = "font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; margin-top: 9px; margin-left: 20px; margin-bottom: 9px; font-weight: bold;";
-$ const featuredMainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; background-color: #ccc; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const adMainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; background-color: #ccc; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const titleTableStyle = "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
 $ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
-$ const mainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
-$ const contentLinkStyle = {
+
+$ const featuredContentLinkStyle = {
   "font-weight": "bold",
-  "color": "#d14726",
+  "color": "#ffffff",
   "font-size": "19.5px",
   "line-height": "20px",
   "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
 };
-$ const buttonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #d14726;";
+$ const featuredTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #333333; color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const featuredButtonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #ffffff;";
+$ const featuredButtonTextStyle = {
+  "color": "#333333",
+  "font": "700 14px/21px Helvetica, Arial, sans-serif",
+  "text-decoration": "none",
+  "text-transform": "uppercase"
+};
+$ const featuredTeaserStyle = "color:#ffffff;font:400 14px/18px sans-serif;";
+
+$ const mainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const contentLinkStyle = {
+  "font-weight": "bold",
+  "color": "#00add9",
+  "font-size": "19.5px",
+  "line-height": "20px",
+  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+};
+$ const buttonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #00add9;";
 $ const buttonTextStyle = {
   "color": "#ffffff",
   "font": "700 14px/21px Helvetica, Arial, sans-serif",
@@ -48,10 +65,11 @@ $ const buttonTextStyle = {
       newsletter=newsletter
       title-table-style=titleTableStyle
       title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
+      main-table-style=featuredTableStyle
+      content-link-style=featuredContentLinkStyle
+      button-style=featuredButtonStyle
+      button-text-style=featuredButtonTextStyle
+      teaser-style=featuredTeaserStyle
     />
 
     <common-section-spacer-element />
@@ -76,7 +94,7 @@ $ const buttonTextStyle = {
       date=date
       limit=1
       newsletter=newsletter
-      main-table-style=featuredMainTableStyle
+      main-table-style=adMainTableStyle
       content-link-style=contentLinkStyle
       button-style=buttonStyle
       button-text-style=buttonTextStyle
