@@ -6,7 +6,14 @@ $ const adMainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamo
 $ const titleTableStyle = "font: 400 13px/21px Garamond, serif; margin: 0; table-layout: fixed; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100% !important; color: #00464f; background-color: #ffffff; border-bottom: 3px solid #d7d7d7; border-top: 4px solid #00464f;";
 $ const titleStyle = "font: 700 15px/23px Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 9px; margin-left: 20px; margin-bottom: 9px;";
 
-$ const featuredTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #333333; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
+$ const featuredContentLinkStyle = {
+  "font-weight": "bold",
+  "color": "#ffffff",
+  "font-size": "19.5px",
+  "line-height": "20px",
+  "font-family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+};
+$ const featuredTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #333333; color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const featuredButtonStyle = "font: 400 13px/21px Garamond, serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #ffffff;";
 $ const featuredButtonTextStyle = {
   "color": "#333333",
@@ -14,6 +21,7 @@ $ const featuredButtonTextStyle = {
   "text-decoration": "none",
   "text-transform": "uppercase"
 };
+$ const featuredTeaserStyle = "color:#ffffff;font:400 14px/18px sans-serif;";
 
 $ const mainTableStyle = "border-collapse:collapse; font: 400 13px/21px Garamond, serif; margin: 0; border-bottom: 2px solid #d7d7d7; border-top: 2px solid #d7d7d7; background-color: #ffffff; mso-table-lspace: 0pt; mso-table-rspace: 0pt;";
 $ const contentLinkStyle = {
@@ -57,10 +65,11 @@ $ const buttonTextStyle = {
       newsletter=newsletter
       title-table-style=titleTableStyle
       title-style=titleStyle
-      main-table-style=mainTableStyle
-      content-link-style=contentLinkStyle
-      button-style=buttonStyle
-      button-text-style=buttonTextStyle
+      main-table-style=featuredTableStyle
+      content-link-style=featuredContentLinkStyle
+      button-style=featuredButtonStyle
+      button-text-style=featuredButtonTextStyle
+      teaser-style=featuredTeaserStyle
     />
 
     <common-section-spacer-element />
