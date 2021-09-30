@@ -1,0 +1,101 @@
+$ const { newsletter, date } = data;
+
+$ const mainTableStyle ="background-color:#ffffff;border-collapse:collapse; font: 400 13px/21px Arial, Helvetica, sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt";
+$ const contentLinkStyle = {
+  "color": "#02679e",
+  "font": "700 18px/24px Arial, Helvetica, sans-serif",
+  "text-decoration": "none !important"
+};
+$ const teaserStyle = {
+  "color": "#666666",
+  "font": "400 13px/18px Arial, Helvetica, sans-serif",
+  "text-decoration": "none !important"
+};
+$ const buttonStyle = "font: 400 13px/21px Arial, Helvetica, sans-serif; border-spacing: 0; padding: 10px 15px; table-layout: fixed; background-color: #02679e";
+$ const buttonTextStyle = {
+  "color": "#ffffff",
+  "font": "700 16px/24px Arial, Helvetica, sans-serif",
+  "text-decoration": "none !important"
+};
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-style-a-styles />
+  </@head>
+
+  <@body style="margin: 0px !important; padding: 0 !important; mso-line-height-rule: exactly; background-color: #efefef;">
+    <common-banner-element
+      name=newsletter.name
+      date=date
+      teaser=newsletter.teaser
+    />
+
+    <common-style-b-image-only-header-block date=date newsletter=newsletter />
+
+    <common-section-spacer-element />
+
+    <!-- #01 Content - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=82879
+      date=date
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      teaser-style=teaserStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+      fallback-label=false
+    />
+
+    <!-- #02 Content - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=82879
+      date=date
+      skip=2
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      teaser-style=teaserStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+      fallback-label=false
+    />
+
+    <!-- #03 Content - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=82879
+      date=date
+      skip=4
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      teaser-style=teaserStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+      fallback-label=false
+    />
+
+    <!-- #04 Content - 2 Column -->
+    <common-style-a-card-section-wrapper-block
+      section-id=82879
+      date=date
+      skip=6
+      newsletter=newsletter
+      main-table-style=mainTableStyle
+      content-link-style=contentLinkStyle
+      teaser-style=teaserStyle
+      button-style=buttonStyle
+      button-text-style=buttonTextStyle
+      fallback-label=false
+    />
+
+    <common-section-spacer-element />
+
+    <common-style-a-opt-out-block newsletter=newsletter/>
+
+  </@body>
+</marko-newsletter-root>
